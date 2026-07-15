@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f2ee;
+  --foreground: #1a1c1e;
+  --acc: #17c05f;
+  --accd: #0a7a3c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-barlow-condensed);
+  --font-sans: var(--font-instrument-sans);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
