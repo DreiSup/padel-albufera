@@ -330,10 +330,14 @@ export default function HomePage() {
       <main className="pt-16 pb-[58px]">
         {/* Hero */}
         <section className="relative flex min-h-[648px] bg-[#17191B]">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
-            <span className="font-mono text-[11px] tracking-wide text-[#8A8E92]">
-              FOTO REAL OBRA — hero 4:5
-            </span>
+          <div className="absolute inset-0">
+            <Image
+              src="/hero.webp"
+              alt="Pista de pádel en construcción"
+              fill
+              priority
+              className="object-cover"
+            />
           </div>
           <div
             className="absolute inset-0"
