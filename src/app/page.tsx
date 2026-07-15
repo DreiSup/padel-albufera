@@ -216,9 +216,9 @@ export default function HomePage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px]">
+      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
         {/* Hero */}
-        <section className="relative flex min-h-[648px] bg-[#17191B]">
+        <section className="relative flex min-h-[648px] bg-[#17191B] min-[900px]:min-h-[680px]">
           <div className="absolute inset-0">
             <Image
               src="/hero.webp"
@@ -235,17 +235,17 @@ export default function HomePage() {
                 "linear-gradient(180deg, rgba(13,15,16,.45), rgba(13,15,16,.12) 34%, rgba(13,15,16,.9) 76%)",
             }}
           />
-          <div className="relative mt-auto flex w-full flex-col gap-3.5 px-5 pb-7">
+          <div className="relative mt-auto flex w-full flex-col gap-3.5 px-5 pb-7 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:gap-[18px] min-[900px]:px-10 min-[900px]:pb-[68px]">
             <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--acc)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
               Constructora de pistas · ES · FR · DE · BE
             </span>
-            <h1 className="font-display text-[43px] leading-[0.95] font-bold uppercase text-white">
+            <h1 className="font-display text-[43px] leading-[0.95] font-bold uppercase text-white min-[900px]:max-w-[820px] min-[900px]:text-[66px]">
               Construimos tu pista de pádel o pickleball llave en mano
             </h1>
-            <p className="m-0 text-[15.5px] leading-[1.5] text-[#D9D7D1]">
+            <p className="m-0 text-[15.5px] leading-[1.5] text-[#D9D7D1] min-[900px]:max-w-[600px] min-[900px]:text-[19px]">
               Del hormigón al último acabado. 17 años de obra deportiva. Garantía de 10 años.
             </p>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2.5 min-[900px]:max-w-[560px] min-[900px]:flex-row">
               <Button asChild>
                 <a href={`tel:${TEL}`}>Pide presupuesto gratis</a>
               </Button>
@@ -261,7 +261,7 @@ export default function HomePage() {
                 (b) => (
                   <span
                     key={b}
-                    className="rounded-md border border-white/30 bg-black/40 px-[9px] py-[5px] text-[11.5px] font-semibold text-[#E8E6E0]"
+                    className="rounded-md border border-white/30 bg-black/40 px-[9px] py-[5px] text-[11.5px] font-semibold text-[#E8E6E0] min-[900px]:text-[12.5px]"
                   >
                     {b}
                   </span>
@@ -272,11 +272,11 @@ export default function HomePage() {
         </section>
 
         {/* Trust logos */}
-        <section className="px-5 pt-[52px] pb-10">
+        <section className="px-5 pt-[52px] pb-10 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
           <p className="m-0 mb-4 text-center text-[12px] font-semibold uppercase tracking-[0.14em] text-[#565A5E]">
             Confían en nosotros
           </p>
-          <div className="grid grid-cols-3 gap-2.5">
+          <div className="grid grid-cols-3 gap-2.5 min-[900px]:grid-cols-6">
             {Array.from({ length: 6 }).map((_, i) => (
               <span
                 key={i}
@@ -289,17 +289,17 @@ export default function HomePage() {
         </section>
 
         {/* Qué construimos */}
-        <section className="px-5 py-[52px]">
+        <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
           <Eyebrow>Qué construimos</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             Una pista para cada proyecto
           </h2>
-          <div className="mt-4 flex flex-col gap-4">
+          <div className="mt-4 flex flex-col gap-4 min-[900px]:grid min-[900px]:grid-cols-2 min-[900px]:gap-[22px] min-[1100px]:grid-cols-4">
             {CARDS.map((c) => (
               <div key={c.t} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
-                <div className="relative aspect-4/3 bg-[#E7E4DC]" />
+                <div className="relative aspect-4/3 bg-[#E7E4DC] min-[900px]:aspect-[16/10]" />
                 <div className="flex flex-col gap-2.5 p-4 pb-[18px]">
-                  <h3 className="font-display m-0 text-[23px] font-bold uppercase leading-none">
+                  <h3 className="font-display m-0 text-[23px] font-bold uppercase leading-none min-[1100px]:text-xl">
                     {c.t}
                   </h3>
                   <p className="m-0 text-sm leading-[1.5] text-[#565A5E]">{c.d}</p>
@@ -316,42 +316,44 @@ export default function HomePage() {
         </section>
 
         {/* Proyectos destacados */}
-        <section className="bg-[#17191B] px-5 py-[52px] text-white">
-          <Eyebrow>Proyectos destacados</Eyebrow>
-          <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Obra real, resultados reales
-          </h2>
-          <div className="mt-4 -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-2">
-            {PROYECTOS.map((p) => (
-              <div
-                key={p.t}
-                className="w-[295px] shrink-0 snap-start overflow-hidden rounded-[10px] border border-[#2B2F33] bg-[#1E2124]"
-              >
-                <div className="aspect-4/3 bg-[#26292D]" />
-                <div className="flex flex-col gap-1.5 p-4">
-                  <span className="inline-flex self-start rounded-md bg-[var(--acc)] px-2 py-1 text-[10.5px] font-bold uppercase tracking-wide text-[#07130C]">
-                    {p.tipo}
-                  </span>
-                  <h3 className="font-display m-0 text-[19px] font-semibold uppercase leading-tight text-white">
-                    {p.t}
-                  </h3>
-                  <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#9FA4A8]">
-                    <MapPin className="size-[15px]" /> {p.loc}
-                  </p>
-                  <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#D8D6CF]">
-                    <Clock className="size-[15px]" /> {p.dato}
-                  </p>
+        <section className="bg-[#17191B] text-white">
+          <div className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
+            <Eyebrow>Proyectos destacados</Eyebrow>
+            <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
+              Obra real, resultados reales
+            </h2>
+            <div className="mt-4 -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-2 min-[900px]:mx-0 min-[900px]:px-0">
+              {PROYECTOS.map((p) => (
+                <div
+                  key={p.t}
+                  className="w-[295px] shrink-0 snap-start overflow-hidden rounded-[10px] border border-[#2B2F33] bg-[#1E2124]"
+                >
+                  <div className="aspect-4/3 bg-[#26292D]" />
+                  <div className="flex flex-col gap-1.5 p-4">
+                    <span className="inline-flex self-start rounded-md bg-[var(--acc)] px-2 py-1 text-[10.5px] font-bold uppercase tracking-wide text-[#07130C]">
+                      {p.tipo}
+                    </span>
+                    <h3 className="font-display m-0 text-[19px] font-semibold uppercase leading-tight text-white">
+                      {p.t}
+                    </h3>
+                    <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#9FA4A8]">
+                      <MapPin className="size-[15px]" /> {p.loc}
+                    </p>
+                    <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#D8D6CF]">
+                      <Clock className="size-[15px]" /> {p.dato}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <Button variant="outline" className="mt-4 w-full border-white/30 min-[900px]:mx-auto min-[900px]:max-w-[460px]">
+              Ver todos los proyectos <ChevronRight className="size-[17px]" />
+            </Button>
           </div>
-          <Button variant="outline" className="mt-4 w-full border-white/30">
-            Ver todos los proyectos <ChevronRight className="size-[17px]" />
-          </Button>
         </section>
 
         {/* Proceso */}
-        <section className="px-5 py-[52px]">
+        <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
           <Eyebrow>Cómo trabajamos</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             De la visita a la entrega, en 4 pasos
@@ -375,8 +377,8 @@ export default function HomePage() {
         </section>
 
         {/* Cifras */}
-        <section ref={statsRef} className="bg-[#17191B] px-5 py-[52px] text-white">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-7">
+        <section ref={statsRef} className="bg-[#17191B] px-5 py-[52px] text-white min-[900px]:py-[88px]">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-7 min-[900px]:mx-auto min-[900px]:max-w-[1000px] min-[900px]:grid-cols-4">
             <Stat value={`${c0}+`} label="años de experiencia" />
             <Stat value={`+${c1}`} label="proyectos entregados" />
             <Stat value={`${c2}`} label="años de garantía" />
@@ -385,12 +387,12 @@ export default function HomePage() {
         </section>
 
         {/* Testimonios */}
-        <section className="px-5 py-[52px]">
+        <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
           <Eyebrow>Testimonios</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             Lo que dicen nuestros clientes
           </h2>
-          <div className="mt-4 -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-2">
+          <div className="mt-4 -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-2 min-[900px]:mx-0 min-[900px]:px-0">
             {TESTIS.map((t) => (
               <div
                 key={t.n + t.q.slice(0, 8)}
@@ -429,7 +431,7 @@ export default function HomePage() {
         </section>
 
         {/* Por qué nosotros */}
-        <section className="px-5 pt-0 pb-[52px]">
+        <section className="px-5 pt-0 pb-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:pb-[88px]">
           <Eyebrow>Por qué nosotros</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             Construcción seria, sin letra pequeña
@@ -450,24 +452,26 @@ export default function HomePage() {
         </section>
 
         {/* Vídeo */}
-        <section className="bg-[#17191B] px-5 py-[52px] text-white">
-          <Eyebrow>La obra, en movimiento</Eyebrow>
-          <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Así se construye una pista
-          </h2>
-          <VideoThumb />
-          <p className="m-0 mt-3 text-center text-[13px] text-[#A2A7AB]">
-            Vídeo real de obra
-          </p>
+        <section className="bg-[#17191B] text-white">
+          <div className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
+            <Eyebrow>La obra, en movimiento</Eyebrow>
+            <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
+              Así se construye una pista
+            </h2>
+            <VideoThumb />
+            <p className="m-0 mt-3 text-center text-[13px] text-[#A2A7AB]">
+              Vídeo real de obra
+            </p>
+          </div>
         </section>
 
         {/* FAQ */}
-        <section className="px-5 py-[52px]">
+        <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
           <Eyebrow>Preguntas frecuentes</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             Resolvemos tus dudas
           </h2>
-          <Accordion type="single" collapsible className="mt-2">
+          <Accordion type="single" collapsible className="mt-2 min-[900px]:max-w-[900px]">
             {FAQS.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`}>
                 <AccordionTrigger>{f.q}</AccordionTrigger>
@@ -480,7 +484,7 @@ export default function HomePage() {
         {/* CTA final */}
         <section className="relative overflow-hidden bg-[#17191B]">
           <div className="absolute inset-0 bg-[#0F1113]/88" />
-          <div className="relative flex flex-col gap-3.5 px-5 py-14 text-white">
+          <div className="relative flex flex-col gap-3.5 px-5 py-14 text-white min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:items-start min-[900px]:px-10">
             <Eyebrow>Presupuesto gratis</Eyebrow>
             <h2 className="font-display text-[34px] font-bold uppercase leading-[0.95] text-white">
               ¿Hablamos de tu proyecto?
@@ -573,7 +577,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-[62px] font-bold leading-[0.9] text-[var(--acc)]">
+      <div className="font-display text-[62px] font-bold leading-[0.9] text-[var(--acc)] min-[900px]:text-[78px]">
         {value}
       </div>
       <div className="mt-1.5 text-[12.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">

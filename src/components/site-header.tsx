@@ -24,10 +24,10 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 border-b border-[#E2DFD6] bg-[#F6F4EF]/95 backdrop-blur transition-[height] ${
-        compact ? "h-[54px]" : "h-16"
+        compact ? "h-[54px] min-[900px]:h-16" : "h-16 min-[900px]:h-[74px]"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-5xl items-center justify-between px-4">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 min-[900px]:px-10">
         <Link href="/">
           <Image
             src="/logo.webp"
@@ -38,7 +38,31 @@ export function SiteHeader() {
             priority
           />
         </Link>
-        <div className="flex items-center gap-2">
+
+        <nav className="hidden items-center gap-5 min-[900px]:flex">
+          {NAV_LINKS.map((link) =>
+            link.href ? (
+              <Link key={link.label} href={link.href} className="text-sm font-semibold text-[#1A1C1E] hover:text-[var(--accd)]">
+                {link.shortLabel}
+              </Link>
+            ) : (
+              <span key={link.label} className="text-sm font-semibold text-[#A7A399]">
+                {link.shortLabel}
+              </span>
+            )
+          )}
+          <span className="ml-1.5 rounded-md border border-[#D8D4C9] px-[9px] py-[5px] text-xs font-bold text-[#7A7E82]">
+            ES
+          </span>
+          <a
+            href={waHref()}
+            className="rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold text-[#07130C] hover:brightness-95"
+          >
+            Presupuesto gratis
+          </a>
+        </nav>
+
+        <div className="flex items-center gap-2 min-[900px]:hidden">
           <a
             href={`tel:${TEL}`}
             aria-label="Llamar"

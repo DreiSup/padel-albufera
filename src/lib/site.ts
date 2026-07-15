@@ -8,14 +8,14 @@ export function waHref(message: string = WA_MESSAGE_DEFAULT) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-export const NAV_LINKS: { label: string; href: string | null }[] = [
-  { label: "Inicio", href: "/" },
-  { label: "Pistas de pádel", href: null },
-  { label: "Pistas de pickleball", href: null },
-  { label: "Proyectos", href: null },
-  { label: "Proceso", href: null },
-  { label: "Sobre nosotros", href: null },
-  { label: "Contacto", href: "/contacto" },
+export const NAV_LINKS: { label: string; shortLabel: string; href: string | null }[] = [
+  { label: "Inicio", shortLabel: "Inicio", href: "/" },
+  { label: "Pistas de pádel", shortLabel: "Pádel", href: "/padel" },
+  { label: "Pistas de pickleball", shortLabel: "Pickleball", href: null },
+  { label: "Proyectos", shortLabel: "Proyectos", href: null },
+  { label: "Proceso", shortLabel: "Proceso", href: null },
+  { label: "Sobre nosotros", shortLabel: "Nosotros", href: null },
+  { label: "Contacto", shortLabel: "Contacto", href: "/contacto" },
 ];
 
 export const LANGS = ["ES", "FR", "EN", "DE", "NL"];

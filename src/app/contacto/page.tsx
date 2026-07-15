@@ -48,50 +48,52 @@ export default function ContactoPage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px]">
+      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
         {/* Cabecera contacto */}
-        <section className="bg-[#17191B] px-5 pt-[34px] pb-[30px] text-[#EDEBE5]">
-          <Eyebrow>Contacto</Eyebrow>
-          <h1 className="font-display mt-2 text-[36px] font-bold uppercase leading-[0.95] text-white">
-            Pide tu presupuesto gratis
-          </h1>
-          <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#C9CDD0]">
-            Respondemos en menos de 24 h laborables — normalmente mucho antes.
-          </p>
-          <div className="mt-[18px] grid grid-cols-2 gap-2.5">
-            <a
-              href={waHref()}
-              className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]"
-            >
-              <WhatsappIcon className="size-5" />
-              <div>
-                <div className="text-[11px] font-semibold uppercase tracking-wide opacity-75">
-                  Escríbenos
+        <section className="bg-[#17191B] text-[#EDEBE5]">
+          <div className="px-5 pt-[34px] pb-[30px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
+            <Eyebrow>Contacto</Eyebrow>
+            <h1 className="font-display mt-2 text-[36px] font-bold uppercase leading-[0.95] text-white">
+              Pide tu presupuesto gratis
+            </h1>
+            <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#C9CDD0]">
+              Respondemos en menos de 24 h laborables — normalmente mucho antes.
+            </p>
+            <div className="mt-[18px] grid grid-cols-2 gap-2.5 min-[900px]:max-w-[560px]">
+              <a
+                href={waHref()}
+                className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]"
+              >
+                <WhatsappIcon className="size-5" />
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wide opacity-75">
+                    Escríbenos
+                  </div>
+                  <div className="font-display text-[19px] font-bold uppercase leading-none">
+                    WhatsApp
+                  </div>
                 </div>
-                <div className="font-display text-[19px] font-bold uppercase leading-none">
-                  WhatsApp
+              </a>
+              <a
+                href={`tel:${TEL}`}
+                className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white"
+              >
+                <Phone className="size-5 text-[var(--acc)]" />
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wide opacity-70">
+                    Llámanos
+                  </div>
+                  <div className="font-display text-[19px] font-bold uppercase leading-none">
+                    Teléfono
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a
-              href={`tel:${TEL}`}
-              className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white"
-            >
-              <Phone className="size-5 text-[var(--acc)]" />
-              <div>
-                <div className="text-[11px] font-semibold uppercase tracking-wide opacity-70">
-                  Llámanos
-                </div>
-                <div className="font-display text-[19px] font-bold uppercase leading-none">
-                  Teléfono
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Formulario multipaso */}
-        <section className="px-5 pt-[26px] pb-10">
+        <section className="px-5 pt-[26px] pb-10 min-[900px]:mx-auto min-[900px]:max-w-[640px]">
           {!done ? (
             <>
               <div className="mb-[22px] flex items-center gap-1.5">
@@ -258,7 +260,7 @@ export default function ContactoPage() {
         </section>
 
         {/* Datos de contacto */}
-        <section className="px-5 py-11">
+        <section className="px-5 py-11 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
           <Eyebrow>Otras vías</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
             Datos de contacto
@@ -279,7 +281,7 @@ export default function ContactoPage() {
               Cobertura: España · Francia · Alemania · Bélgica
             </InfoLine>
           </div>
-          <div className="mt-[18px] aspect-[16/10] rounded-[10px] bg-[#E7E4DC]" />
+          <div className="mt-[18px] aspect-[16/10] rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[900px]" />
         </section>
       </main>
 
