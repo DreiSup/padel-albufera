@@ -43,7 +43,10 @@ export function SiteFooter() {
           <Link href="/padel" className="text-[#A9ADB0]">
             Pistas de pádel
           </Link>{" "}
-          · Pistas de pickleball
+          ·{" "}
+          <Link href="/pickleball" className="text-[#A9ADB0]">
+            Pistas de pickleball
+          </Link>
           <br />
           Proyectos · Proceso · Sobre nosotros ·{" "}
           <Link href="/contacto" className="text-[#A9ADB0]">
