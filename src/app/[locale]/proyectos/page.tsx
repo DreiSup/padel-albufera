@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Star, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
@@ -34,20 +35,12 @@ const PROJECTS: Project[] = [
   { id: "pr8", t: "Complejo municipal", tipo: "Pádel + cubierta", tags: ["padel", "cub", "fr"], loc: "Burdeos, Francia", year: "2024", aspect: "3/4", plazo: "10 semanas", alcance: "2 pistas cubiertas llave en mano", quote: "«Un seul interlocuteur du début à la fin.»" },
 ];
 
-const FILTERS = [
-  { k: "all", label: "Todos" },
-  { k: "padel", label: "Pádel" },
-  { k: "pano", label: "Panorámica" },
-  { k: "pkb", label: "Pickleball" },
-  { k: "cub", label: "Cubiertas" },
-  { k: "es", label: "España" },
-  { k: "fr", label: "Francia" },
-];
-
 export default function ProyectosPage() {
+  const t = useTranslations("projects");
   const [filter, setFilter] = useState("all");
   const [openId, setOpenId] = useState<string | null>(null);
 
+  const filters = ["all", "padel", "pano", "pkb", "cub", "es", "fr"] as const;
   const visible = PROJECTS.filter((p) => filter === "all" || p.tags.includes(filter));
   const open = openId ? PROJECTS.find((p) => p.id === openId) ?? null : null;
 
@@ -72,30 +65,30 @@ export default function ProyectosPage() {
           />
           <div className="relative mt-auto flex w-full flex-col gap-3 px-5 pb-6 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
             <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--acc)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
-              Portfolio · 4 países
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-display text-[38px] leading-[0.95] font-bold uppercase text-white min-[900px]:text-[58px]">
-              Proyectos construidos
+              {t("hero.h1")}
             </h1>
             <p className="m-0 text-[15px] leading-[1.5] text-[#D9D7D1]">
-              Pádel, pickleball y cubiertas entregados por nuestro equipo. Todo lo que ves aquí existe.
+              {t("hero.sub")}
             </p>
           </div>
         </section>
 
         {/* Filtros */}
         <div className="sticky top-16 z-30 flex gap-2 overflow-x-auto border-b border-[#E2DFD6] bg-[#F4F2EE] px-5 py-3.5 min-[900px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
-          {FILTERS.map((f) => (
+          {filters.map((f) => (
             <button
-              key={f.k}
-              onClick={() => setFilter(f.k)}
+              key={f}
+              onClick={() => setFilter(f)}
               className={`h-[38px] shrink-0 rounded-full border-[1.5px] px-[15px] text-[13.5px] font-semibold ${
-                filter === f.k
+                filter === f
                   ? "border-[#17191B] bg-[#17191B] text-white"
                   : "border-[#D8D4C9] bg-white text-[#565A5E]"
               }`}
             >
-              {f.label}
+              {t(`filters.${f}`)}
             </button>
           ))}
         </div>
@@ -125,13 +118,13 @@ export default function ProyectosPage() {
         <section className="bg-[#17191B] text-white">
           <div className="flex flex-col items-start gap-3.5 px-5 py-14 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
             <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--acc)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
-              El siguiente puede ser el tuyo
+              {t("cta.eyebrow")}
             </span>
             <h2 className="font-display text-[34px] font-bold uppercase leading-[0.95] text-white">
-              ¿Quieres algo así en tu instalación?
+              {t("cta.title")}
             </h2>
             <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">
-              Cuéntanos qué proyecto tienes en mente y te enviamos presupuesto cerrado en 48 h.
+              {t("cta.sub")}
             </p>
             <Button variant="whatsapp" asChild>
               <a href={waHref("Hola, he visto vuestros proyectos y quiero un presupuesto.")}>
@@ -142,7 +135,7 @@ export default function ProyectosPage() {
             <Button variant="outline" asChild>
               <a href={`tel:${TEL}`}>
                 <Phone className="size-5" />
-                Llamar · {TEL_LABEL}
+                {TEL_LABEL}
               </a>
             </Button>
           </div>
@@ -185,11 +178,11 @@ export default function ProyectosPage() {
 
             <div className="mt-4">
               {[
-                { k: "Cliente", v: open.t },
-                { k: "Ubicación", v: open.loc },
-                { k: "Tipo", v: open.tipo },
-                { k: "Plazo", v: open.plazo },
-                { k: "Alcance", v: open.alcance },
+                { k: t("detail.cliente"), v: open.t },
+                { k: t("detail.ubicacion"), v: open.loc },
+                { k: t("detail.tipo"), v: open.tipo },
+                { k: t("detail.plazo"), v: open.plazo },
+                { k: t("detail.alcance"), v: open.alcance },
               ].map((r) => (
                 <div key={r.k} className="flex justify-between gap-3.5 border-b border-[#E5E2D9] py-[11px] text-sm">
                   <span className="shrink-0 text-[#7A7E82]">{r.k}</span>
@@ -211,7 +204,7 @@ export default function ProyectosPage() {
             <Button asChild className="mt-4 w-full">
               <a href={waHref(`Hola, quiero un proyecto como el de ${open.loc} (${open.tipo}).`)}>
                 <WhatsappIcon className="size-5" />
-                Quiero algo así
+                {t("detail.cta")}
               </a>
             </Button>
           </div>

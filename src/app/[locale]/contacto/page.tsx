@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Mail, MapPin, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
@@ -10,22 +11,23 @@ import { StickyCta } from "@/components/sticky-cta";
 import { CoverIcon, GridIcon, PadelIcon, RenoIcon, WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 
-const PROJECT_OPTIONS = [
-  { key: "padel", icon: PadelIcon, t: "Pista de pádel", d: "Estándar, panorámica o competición" },
-  { key: "pickleball", icon: GridIcon, t: "Pista de pickleball", d: "Estándar, recinto o multipista" },
-  { key: "cubierta", icon: CoverIcon, t: "Cubierta / cerramiento", d: "Sobre pista nueva o existente" },
-  { key: "reforma", icon: RenoIcon, t: "Reforma / reconversión", d: "Césped, vidrio, o de tenis a pádel" },
-  { key: "otro", icon: ArrowRight, t: "Otro / no lo tengo claro", d: "Te asesoramos en la visita" },
-] as const;
+const OPTION_ICONS = [PadelIcon, GridIcon, CoverIcon, RenoIcon, ArrowRight];
 
-type ProjectKey = (typeof PROJECT_OPTIONS)[number]["key"];
+interface FormOption {
+  t: string;
+  d: string;
+}
 
 export default function ContactoPage() {
+  const t = useTranslations("contact");
+  const tc = useTranslations();
   const [step, setStep] = useState(1);
-  const [proj, setProj] = useState<ProjectKey>("padel");
+  const [proj, setProj] = useState(0);
   const [done, setDone] = useState(false);
 
-  const picked = PROJECT_OPTIONS.find((o) => o.key === proj) ?? PROJECT_OPTIONS[0];
+  const options = t.raw("form.options") as FormOption[];
+  const whenOptions = t.raw("form.whenOptions") as string[];
+  const picked = options[proj] ?? options[0];
 
   const next = () => {
     setStep((s) => Math.min(3, s + 1));
@@ -52,22 +54,22 @@ export default function ContactoPage() {
         {/* Cabecera contacto */}
         <section className="bg-[#17191B] text-[#EDEBE5]">
           <div className="px-5 pt-[34px] pb-[30px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
-            <Eyebrow>Contacto</Eyebrow>
+            <Eyebrow>{t("header.eyebrow")}</Eyebrow>
             <h1 className="font-display mt-2 text-[36px] font-bold uppercase leading-[0.95] text-white">
-              Pide tu presupuesto gratis
+              {t("header.title")}
             </h1>
             <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#C9CDD0]">
-              Respondemos en menos de 24 h laborables — normalmente mucho antes.
+              {t("header.sub")}
             </p>
             <div className="mt-[18px] grid grid-cols-2 gap-2.5 min-[900px]:max-w-[560px]">
               <a
-                href={waHref()}
+                href={waHref(tc("common.waMessage"))}
                 className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]"
               >
                 <WhatsappIcon className="size-5" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-75">
-                    Escríbenos
+                    {t("header.quickWrite")}
                   </div>
                   <div className="font-display text-[19px] font-bold uppercase leading-none">
                     WhatsApp
@@ -81,10 +83,10 @@ export default function ContactoPage() {
                 <Phone className="size-5 text-[var(--acc)]" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-70">
-                    Llámanos
+                    {t("header.quickCall")}
                   </div>
                   <div className="font-display text-[19px] font-bold uppercase leading-none">
-                    Teléfono
+                    {tc("common.call")}
                   </div>
                 </div>
               </a>
@@ -106,23 +108,24 @@ export default function ContactoPage() {
                   />
                 ))}
               </div>
-              <p className="m-0 mb-1.5 text-xs font-semibold text-[#7A7E82]">Paso {step} de 3</p>
+              <p className="m-0 mb-1.5 text-xs font-semibold text-[#7A7E82]">
+                {t("form.stepOf", { n: step })}
+              </p>
 
               {step === 1 && (
                 <div>
                   <h2 className="font-display m-0 mb-1 text-[26px] font-bold uppercase leading-none">
-                    ¿Qué proyecto tienes en mente?
+                    {t("form.step1Title")}
                   </h2>
-                  <p className="m-0 mb-5 text-sm text-[#565A5E]">
-                    Elige lo que mejor encaje. Podemos afinarlo luego.
-                  </p>
+                  <p className="m-0 mb-5 text-sm text-[#565A5E]">{t("form.step1Sub")}</p>
                   <div className="flex flex-col gap-2.5">
-                    {PROJECT_OPTIONS.map((o) => {
-                      const on = proj === o.key;
+                    {options.map((o, i) => {
+                      const on = proj === i;
+                      const Icon = OPTION_ICONS[i];
                       return (
                         <button
-                          key={o.key}
-                          onClick={() => setProj(o.key)}
+                          key={o.t}
+                          onClick={() => setProj(i)}
                           className={`flex w-full items-center gap-3 rounded-[10px] border-[1.5px] bg-white p-4 text-left ${
                             on ? "border-[var(--acc)] bg-[var(--acc)]/[.07]" : "border-[#D8D4C9]"
                           }`}
@@ -132,7 +135,7 @@ export default function ContactoPage() {
                               on ? "bg-[var(--acc)] text-[#07130C]" : "bg-[#F0EEE7] text-[#33363A]"
                             }`}
                           >
-                            <o.icon className="size-5" />
+                            <Icon className="size-5" />
                           </span>
                           <div>
                             <p className="m-0 text-[15.5px] font-semibold">{o.t}</p>
@@ -151,7 +154,7 @@ export default function ContactoPage() {
                   </div>
                   <div className="mt-6 flex gap-2.5">
                     <Button className="flex-1" onClick={next}>
-                      Continuar <ArrowRight className="size-5" />
+                      {t("form.continue")} <ArrowRight className="size-5" />
                     </Button>
                   </div>
                 </div>
@@ -160,27 +163,24 @@ export default function ContactoPage() {
               {step === 2 && (
                 <div>
                   <h2 className="font-display m-0 mb-1 text-[26px] font-bold uppercase leading-none">
-                    ¿Dónde y para cuándo?
+                    {t("form.step2Title")}
                   </h2>
-                  <p className="m-0 mb-5 text-sm text-[#565A5E]">
-                    Nos ayuda a estimar desplazamiento y plazos.
-                  </p>
-                  <FormField id="c-loc" label="Localidad y país">
-                    <input id="c-loc" className={inputCls} placeholder="Ej. Valencia, España" />
+                  <p className="m-0 mb-5 text-sm text-[#565A5E]">{t("form.step2Sub")}</p>
+                  <FormField id="c-loc" label={t("form.locLabel")}>
+                    <input id="c-loc" className={inputCls} placeholder={t("form.locPh")} />
                   </FormField>
-                  <FormField id="c-when" label="¿Para cuándo?">
+                  <FormField id="c-when" label={t("form.whenLabel")}>
                     <select id="c-when" className={inputCls}>
-                      <option>Lo antes posible</option>
-                      <option>En 1–3 meses</option>
-                      <option>En 3–6 meses</option>
-                      <option>Solo estoy informándome</option>
+                      {whenOptions.map((opt) => (
+                        <option key={opt}>{opt}</option>
+                      ))}
                     </select>
                   </FormField>
-                  <FormField id="c-msg" label="Cuéntanos más (opcional)">
+                  <FormField id="c-msg" label={t("form.msgLabel")}>
                     <textarea
                       id="c-msg"
                       className={`${inputCls} h-auto min-h-[90px] resize-y py-3`}
-                      placeholder="Superficie disponible, nº de pistas, si ya tienes solera…"
+                      placeholder={t("form.msgPh")}
                     />
                   </FormField>
                   <div className="mt-6 flex gap-2.5">
@@ -188,7 +188,7 @@ export default function ContactoPage() {
                       <ArrowLeft className="size-5" />
                     </Button>
                     <Button className="flex-1" onClick={next}>
-                      Continuar <ArrowRight className="size-5" />
+                      {t("form.continue")} <ArrowRight className="size-5" />
                     </Button>
                   </div>
                 </div>
@@ -197,39 +197,37 @@ export default function ContactoPage() {
               {step === 3 && (
                 <div>
                   <h2 className="font-display m-0 mb-1 text-[26px] font-bold uppercase leading-none">
-                    ¿Cómo te contactamos?
+                    {t("form.step3Title")}
                   </h2>
-                  <p className="m-0 mb-5 text-sm text-[#565A5E]">
-                    Solo lo justo para enviarte el presupuesto.
-                  </p>
-                  <FormField id="c-nom" label="Nombre">
-                    <input id="c-nom" className={inputCls} placeholder="Tu nombre" />
+                  <p className="m-0 mb-5 text-sm text-[#565A5E]">{t("form.step3Sub")}</p>
+                  <FormField id="c-nom" label={t("form.nameLabel")}>
+                    <input id="c-nom" className={inputCls} placeholder={t("form.namePh")} />
                   </FormField>
-                  <FormField id="c-tel" label="Teléfono / WhatsApp">
+                  <FormField id="c-tel" label={t("form.phoneLabel")}>
                     <input id="c-tel" type="tel" className={inputCls} placeholder="+34 600 000 000" />
                   </FormField>
-                  <FormField id="c-email" label="Email (opcional)">
+                  <FormField id="c-email" label={t("form.emailLabel")}>
                     <input id="c-email" type="email" className={inputCls} placeholder="tucorreo@ejemplo.com" />
                   </FormField>
                   <div className="rounded-[10px] bg-[#F0EEE7] p-4">
                     <div className="flex justify-between gap-3 py-1.5 text-[13.5px]">
-                      <span className="text-[#7A7E82]">Proyecto</span>
+                      <span className="text-[#7A7E82]">{t("form.summaryProject")}</span>
                       <span className="text-right font-semibold">{picked.t}</span>
                     </div>
                     <div className="flex justify-between gap-3 py-1.5 text-[13.5px]">
-                      <span className="text-[#7A7E82]">Respuesta</span>
-                      <span className="text-right font-semibold">&lt; 24 h laborables</span>
+                      <span className="text-[#7A7E82]">{t("form.summaryResponse")}</span>
+                      <span className="text-right font-semibold">{t("form.responseValue")}</span>
                     </div>
                   </div>
                   <p className="m-0 mt-3.5 text-[11.5px] leading-[1.5] text-[#7A7E82]">
-                    Al enviar aceptas la política de privacidad.
+                    {t("form.privacy")}
                   </p>
                   <div className="mt-6 flex gap-2.5">
                     <Button variant="ghost" onClick={back} aria-label="Atrás">
                       <ArrowLeft className="size-5" />
                     </Button>
                     <Button className="flex-1" onClick={submit}>
-                      Enviar solicitud
+                      {t("form.submit")}
                     </Button>
                   </div>
                 </div>
@@ -241,19 +239,19 @@ export default function ContactoPage() {
                 <Check className="size-[34px]" />
               </span>
               <h2 className="font-display m-0 text-[26px] font-bold uppercase leading-none">
-                ¡Solicitud enviada!
+                {t("form.successTitle")}
               </h2>
               <p className="m-0 text-sm text-[#565A5E]">
-                Te contactamos en menos de 24 h laborables para tu <strong>{picked.t}</strong>.
+                {t("form.successSub", { project: picked.t })}
               </p>
               <Button variant="whatsapp" className="w-full" asChild>
-                <a href={waHref()}>
+                <a href={waHref(tc("common.waMessage"))}>
                   <WhatsappIcon className="size-5" />
-                  ¿Prisa? Escríbenos por WhatsApp
+                  {t("form.successWa")}
                 </a>
               </Button>
               <Button variant="ghost" className="w-full" onClick={reset}>
-                Enviar otra solicitud
+                {t("form.again")}
               </Button>
             </div>
           )}
@@ -261,24 +259,24 @@ export default function ContactoPage() {
 
         {/* Datos de contacto */}
         <section className="px-5 py-11 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
-          <Eyebrow>Otras vías</Eyebrow>
+          <Eyebrow>{t("info.eyebrow")}</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Datos de contacto
+            {t("info.title")}
           </h2>
           <div className="mt-2">
-            <InfoLine icon={Phone} title="Teléfono">
-              <a href={`tel:${TEL}`}>{TEL_LABEL}</a> · L–V 8:00–18:00
+            <InfoLine icon={Phone} title={t("info.phone")}>
+              <a href={`tel:${TEL}`}>{TEL_LABEL}</a> · {t("info.phoneNote")}
             </InfoLine>
-            <InfoLine icon={WhatsappIcon} title="WhatsApp">
-              <a href={waHref()}>Chat directo</a> · respuesta &lt; 1 h laborable
+            <InfoLine icon={WhatsappIcon} title={t("info.whatsapp")}>
+              <a href={waHref(tc("common.waMessage"))}>{tc("common.whatsappDirect")}</a> · {t("info.whatsappNote")}
             </InfoLine>
-            <InfoLine icon={Mail} title="Email">
+            <InfoLine icon={Mail} title={t("info.email")}>
               info@padelalbufera.com
             </InfoLine>
-            <InfoLine icon={MapPin} title="Dónde estamos" last>
+            <InfoLine icon={MapPin} title={t("info.where")} last>
               C/ Dirección física, 00 · 46000 Valencia
               <br />
-              Cobertura: España · Francia · Alemania · Bélgica
+              {t("info.coverageNote")}
             </InfoLine>
           </div>
           <div className="mt-[18px] aspect-[16/10] rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[900px]" />

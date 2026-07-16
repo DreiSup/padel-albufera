@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Heart, MapPin, Phone, ShieldCheck, Users, Wrench } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
@@ -10,31 +11,26 @@ import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 
-const MILESTONES = [
-  { y: "2009", t: "Arrancamos pavimentando pistas deportivas en la Comunitat Valenciana." },
-  { y: "2014", t: "Damos el salto a la construcción llave en mano de pistas de pádel." },
-  { y: "2018", t: "Primeros proyectos fuera de España: empezamos a construir en Francia." },
-  { y: "2022", t: "Incorporamos el pickleball y las cubiertas a nuestro catálogo." },
-  { y: "2025", t: "Superamos los 120 proyectos y ampliamos a Alemania y Bélgica." },
-];
+const VALUE_ICONS = [Wrench, ShieldCheck, Heart, Users];
 
-const VALUES = [
-  { icon: Wrench, t: "Equipo propio", d: "Pisamos cada obra nosotros. Sin cadenas de subcontratas que diluyen la responsabilidad." },
-  { icon: ShieldCheck, t: "La palabra por delante", d: "Presupuesto y plazo cerrados por escrito. Lo que decimos, lo firmamos." },
-  { icon: Heart, t: "Trato de tú a tú", d: "Un único interlocutor de principio a fin, hables el idioma que hables." },
-  { icon: Users, t: "Relación a largo plazo", d: "La mayoría de clientes repiten o nos recomiendan. Ese es nuestro mejor comercial." },
+const TEAM_ROLES = [
+  "Fundador · Dirección de obra",
+  "Jefe de obra",
+  "Proyectos y presupuestos",
+  "Atención al cliente",
 ];
-
-const TEAM = [
-  { n: "Nombre Apellido", r: "Fundador · Dirección de obra" },
-  { n: "Nombre Apellido", r: "Jefe de obra" },
-  { n: "Nombre Apellido", r: "Proyectos y presupuestos" },
-  { n: "Nombre Apellido", r: "Atención al cliente" },
-];
-
-const ZONES = ["Comunitat Valenciana", "Resto de España", "Francia", "Alemania", "Bélgica"];
 
 const CERTS = ["CERT 01", "CERT 02", "CERT 03", "SEGURO RC", "HOMOLOG.", "ISO ····"];
+
+interface Milestone {
+  y: string;
+  t: string;
+}
+
+interface Value {
+  t: string;
+  d: string;
+}
 
 function useCountUp(active: boolean, targets: number[]) {
   const [vals, setVals] = useState(targets.map(() => 0));
@@ -61,9 +57,16 @@ function useCountUp(active: boolean, targets: number[]) {
 }
 
 export default function SobreNosotrosPage() {
+  const t = useTranslations("about");
+  const tf = useTranslations("footer");
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const [c0, c1, c2, c3] = useCountUp(statsInView, [17, 120, 4, 12]);
+
+  const milestones = t.raw("milestones.items") as Milestone[];
+  const values = t.raw("values.items") as Value[];
+  const statLabels = t.raw("story.stats") as string[];
+  const zones = tf.raw("zones") as string[];
 
   useEffect(() => {
     const el = statsRef.current;
@@ -97,46 +100,42 @@ export default function SobreNosotrosPage() {
           />
           <div className="relative mt-auto flex w-full flex-col gap-3 px-5 pb-6 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
             <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--acc)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
-              Quiénes somos
+              {t("hero.eyebrow")}
             </span>
             <h1 className="font-display text-[38px] leading-[0.95] font-bold uppercase text-white min-[900px]:text-[58px]">
-              17 años construyendo donde se juega
+              {t("hero.h1")}
             </h1>
             <p className="m-0 text-[15px] leading-[1.5] text-[#D9D7D1]">
-              Un equipo propio de obra deportiva. Sin intermediarios, sin subcontratas encadenadas.
+              {t("hero.sub")}
             </p>
           </div>
         </section>
 
         {/* Historia */}
         <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
-          <Eyebrow>Nuestra historia</Eyebrow>
+          <Eyebrow>{t("story.eyebrow")}</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            De un taller local a 4 países
+            {t("story.title")}
           </h2>
-          <p className="m-0 mt-3 text-[17px] leading-[1.6] text-[#33363A]">
-            Empezamos pavimentando pistas en la Comunitat Valenciana. Hoy construimos pádel, pickleball y
-            cubiertas por toda España y en Francia, Alemania y Bélgica, con el mismo equipo y la misma forma
-            de trabajar: <strong>de tú a tú y con la palabra por delante.</strong>
-          </p>
+          <p className="m-0 mt-3 text-[17px] leading-[1.6] text-[#33363A]">{t("story.lead")}</p>
           <div className="mt-4 aspect-4/3 rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[1000px]" />
           <div ref={statsRef} className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 min-[900px]:max-w-[1000px] min-[900px]:grid-cols-4">
-            <Stat value={`${c0}+`} label="años de experiencia" />
-            <Stat value={`+${c1}`} label="proyectos entregados" />
-            <Stat value={`${c2}`} label="países en Europa" />
-            <Stat value={`${c3}`} label="personas en el equipo" />
+            <Stat value={`${c0}+`} label={statLabels[0]} />
+            <Stat value={`+${c1}`} label={statLabels[1]} />
+            <Stat value={`${c2}`} label={statLabels[2]} />
+            <Stat value={`${c3}`} label={statLabels[3]} />
           </div>
         </section>
 
         {/* Hitos */}
         <section className="bg-[#17191B] text-white">
           <div className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
-            <Eyebrow>Nuestra trayectoria</Eyebrow>
+            <Eyebrow>{t("milestones.eyebrow")}</Eyebrow>
             <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95] text-white">
-              Los hitos que nos trajeron aquí
+              {t("milestones.title")}
             </h2>
             <div className="relative mt-4 pl-[46px] before:absolute before:top-1.5 before:bottom-1.5 before:left-2 before:w-0.5 before:bg-[#2B3034] min-[900px]:max-w-[760px]">
-              {MILESTONES.map((m) => (
+              {milestones.map((m) => (
                 <div key={m.y} className="relative pb-[22px] before:absolute before:-left-[42px] before:top-1 before:size-3.5 before:rounded-full before:bg-[var(--acc)] before:shadow-[0_0_0_4px_#17191B]">
                   <div className="font-display text-[22px] font-bold leading-none text-[var(--acc)]">{m.y}</div>
                   <p className="m-0 mt-1 text-[14.5px] leading-[1.5] text-[#C9CDD0]">{m.t}</p>
@@ -148,41 +147,42 @@ export default function SobreNosotrosPage() {
 
         {/* Valores */}
         <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
-          <Eyebrow>Cómo trabajamos</Eyebrow>
+          <Eyebrow>{t("values.eyebrow")}</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Cuatro cosas que no negociamos
+            {t("values.title")}
           </h2>
           <div className="mt-4 flex flex-col gap-3">
-            {VALUES.map((v) => (
-              <div key={v.t} className="flex items-start gap-3.5 rounded-[10px] border border-[#E5E2D9] bg-white p-[18px]">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-[var(--acc)]/[.14] text-[var(--accd)]">
-                  <v.icon className="size-5" />
-                </span>
-                <div>
-                  <h3 className="font-display m-0 mb-1 text-lg font-bold uppercase leading-none">{v.t}</h3>
-                  <p className="m-0 text-[13.5px] leading-[1.5] text-[#565A5E]">{v.d}</p>
+            {values.map((v, i) => {
+              const Icon = VALUE_ICONS[i];
+              return (
+                <div key={v.t} className="flex items-start gap-3.5 rounded-[10px] border border-[#E5E2D9] bg-white p-[18px]">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-[10px] bg-[var(--acc)]/[.14] text-[var(--accd)]">
+                    <Icon className="size-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-display m-0 mb-1 text-lg font-bold uppercase leading-none">{v.t}</h3>
+                    <p className="m-0 text-[13.5px] leading-[1.5] text-[#565A5E]">{v.d}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
         {/* Equipo */}
         <section className="px-5 pt-0 pb-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:pb-[88px]">
-          <Eyebrow>El equipo</Eyebrow>
+          <Eyebrow>{t("team.eyebrow")}</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Las personas que pisan tu obra
+            {t("team.title")}
           </h2>
-          <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#565A5E]">
-            Nombres, cargos y fotos reales — pendientes de facilitar.
-          </p>
+          <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#565A5E]">{t("team.note")}</p>
           <div className="mt-4 grid grid-cols-2 gap-3.5 min-[900px]:grid-cols-4">
-            {TEAM.map((t) => (
-              <div key={t.r} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
+            {TEAM_ROLES.map((r) => (
+              <div key={r} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
                 <div className="aspect-square bg-[#E7E4DC]" />
                 <div className="px-[13px] pt-3 pb-3.5">
-                  <h3 className="font-display m-0 text-[17px] font-bold uppercase leading-none">{t.n}</h3>
-                  <p className="m-0 mt-0.5 text-xs text-[#7A7E82]">{t.r}</p>
+                  <h3 className="font-display m-0 text-[17px] font-bold uppercase leading-none">Nombre Apellido</h3>
+                  <p className="m-0 mt-0.5 text-xs text-[#7A7E82]">{r}</p>
                 </div>
               </div>
             ))}
@@ -192,13 +192,13 @@ export default function SobreNosotrosPage() {
         {/* Cobertura */}
         <section className="bg-[#17191B] text-white">
           <div className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
-            <Eyebrow>Dónde trabajamos</Eyebrow>
+            <Eyebrow>{t("coverage.eyebrow")}</Eyebrow>
             <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95] text-white">
-              España, Francia, Alemania y Bélgica
+              {t("coverage.title")}
             </h2>
             <div className="mt-4 aspect-[16/10] rounded-[10px] bg-[#26292D] min-[900px]:max-w-[1000px]" />
             <div className="mt-3.5 flex flex-wrap gap-2">
-              {ZONES.map((z) => (
+              {zones.map((z) => (
                 <span key={z} className="flex items-center gap-1.5 rounded-md border border-[#2B3034] bg-[#212428] px-2.5 py-1.5 text-[12.5px] font-semibold text-[#E4E2DC]">
                   <MapPin className="size-3.5 text-[var(--acc)]" />
                   {z}
@@ -210,13 +210,11 @@ export default function SobreNosotrosPage() {
 
         {/* Certificaciones */}
         <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
-          <Eyebrow>Garantías y certificaciones</Eyebrow>
+          <Eyebrow>{t("certs.eyebrow")}</Eyebrow>
           <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
-            Respaldo que puedes comprobar
+            {t("certs.title")}
           </h2>
-          <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#565A5E]">
-            Logos de certificaciones, seguros y homologaciones — pendientes de facilitar.
-          </p>
+          <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#565A5E]">{t("certs.note")}</p>
           <div className="mt-4 grid grid-cols-3 gap-2.5 min-[900px]:grid-cols-6">
             {CERTS.map((c) => (
               <span
@@ -232,13 +230,11 @@ export default function SobreNosotrosPage() {
         {/* CTA final */}
         <section className="bg-[#17191B] text-white">
           <div className="flex flex-col items-start gap-3.5 px-5 py-14 min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
-            <Eyebrow>Hablamos de tú a tú</Eyebrow>
+            <Eyebrow>{t("cta.eyebrow")}</Eyebrow>
             <h2 className="font-display text-[34px] font-bold uppercase leading-[0.95] text-white">
-              Conócenos con una visita
+              {t("cta.title")}
             </h2>
-            <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">
-              Ven a ver una obra terminada o te visitamos a ti. Gratis y sin compromiso.
-            </p>
+            <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">{t("cta.sub")}</p>
             <Button variant="whatsapp" asChild>
               <a href={waHref("Hola, quiero conocer vuestro trabajo y pedir una visita.")}>
                 <WhatsappIcon className="size-5" />
@@ -248,7 +244,7 @@ export default function SobreNosotrosPage() {
             <Button variant="outline" asChild>
               <a href={`tel:${TEL}`}>
                 <Phone className="size-5" />
-                Llamar · {TEL_LABEL}
+                {TEL_LABEL}
               </a>
             </Button>
           </div>

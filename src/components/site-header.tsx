@@ -1,19 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { WhatsappIcon } from "@/components/icons";
-import { LANGS, NAV_LINKS, TEL, waHref } from "@/lib/site";
+import { Link, usePathname } from "@/i18n/navigation";
+import { LANGS, NAV_ROUTES, TEL, waHref } from "@/lib/site";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [compact, setCompact] = useState(false);
-  const [lang, setLang] = useState("ES");
+  const t = useTranslations();
+  const locale = useLocale();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setCompact(window.scrollY > 24);
@@ -40,32 +43,43 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-5 min-[900px]:flex">
-          {NAV_LINKS.map((link) =>
-            link.href ? (
-              <Link key={link.label} href={link.href} className="text-sm font-semibold text-[#1A1C1E] hover:text-[var(--accd)]">
-                {link.shortLabel}
+          {NAV_ROUTES.map((link) => (
+            <Link
+              key={link.key}
+              href={link.href}
+              className="text-sm font-semibold text-[#1A1C1E] hover:text-[var(--accd)]"
+            >
+              {t(`nav.${link.key}`)}
+            </Link>
+          ))}
+          <span className="ml-1.5 flex gap-1">
+            {LANGS.map((l) => (
+              <Link
+                key={l.code}
+                href={pathname}
+                locale={l.code}
+                className={`rounded-md border px-[9px] py-[5px] text-xs font-bold ${
+                  locale === l.code
+                    ? "border-[#17191B] bg-[#17191B] text-white"
+                    : "border-[#D8D4C9] text-[#7A7E82]"
+                }`}
+              >
+                {l.label}
               </Link>
-            ) : (
-              <span key={link.label} className="text-sm font-semibold text-[#A7A399]">
-                {link.shortLabel}
-              </span>
-            )
-          )}
-          <span className="ml-1.5 rounded-md border border-[#D8D4C9] px-[9px] py-[5px] text-xs font-bold text-[#7A7E82]">
-            ES
+            ))}
           </span>
           <a
-            href={waHref()}
+            href={waHref(t("common.waMessage"))}
             className="rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold text-[#07130C] hover:brightness-95"
           >
-            Presupuesto gratis
+            {t("common.requestQuote")}
           </a>
         </nav>
 
         <div className="flex items-center gap-2 min-[900px]:hidden">
           <a
             href={`tel:${TEL}`}
-            aria-label="Llamar"
+            aria-label={t("common.call")}
             className="flex size-11 items-center justify-center rounded-lg border-[1.5px] border-[#E0DDD3] bg-white text-[#1A1C1E]"
           >
             <Phone className="size-5" />
@@ -92,52 +106,44 @@ export function SiteHeader() {
                 </SheetClose>
               </div>
               <nav className="flex flex-col">
-                {NAV_LINKS.map((link) =>
-                  link.href ? (
-                    <SheetClose asChild key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="font-display border-b border-[#E2DFD6] py-3 text-[19px] font-semibold uppercase tracking-wide text-[#1A1C1E]"
-                      >
-                        {link.label}
-                      </Link>
-                    </SheetClose>
-                  ) : (
-                    <span
-                      key={link.label}
-                      className="font-display border-b border-[#E2DFD6] py-3 text-[19px] font-semibold uppercase tracking-wide text-[#A7A399]"
+                {NAV_ROUTES.map((link) => (
+                  <SheetClose asChild key={link.key}>
+                    <Link
+                      href={link.href}
+                      className="font-display border-b border-[#E2DFD6] py-3 text-[19px] font-semibold uppercase tracking-wide text-[#1A1C1E]"
                     >
-                      {link.label}
-                    </span>
-                  )
-                )}
+                      {t(`nav.${link.key}`)}
+                    </Link>
+                  </SheetClose>
+                ))}
               </nav>
               <div className="mt-4 flex gap-2">
                 {LANGS.map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => setLang(l)}
+                  <Link
+                    key={l.code}
+                    href={pathname}
+                    locale={l.code}
                     className={`rounded-md border-[1.5px] px-[13px] py-[7px] text-[12.5px] font-semibold ${
-                      lang === l
+                      locale === l.code
                         ? "border-[#17191B] bg-[#17191B] text-white"
                         : "border-[#D8D4C9] bg-white text-[#565A5E]"
                     }`}
                   >
-                    {l}
-                  </button>
+                    {l.label}
+                  </Link>
                 ))}
               </div>
               <div className="mt-4 flex flex-col gap-2.5">
                 <Button variant="whatsapp" asChild>
-                  <a href={waHref()}>
+                  <a href={waHref(t("common.waMessage"))}>
                     <WhatsappIcon className="size-5" />
-                    WhatsApp directo
+                    {t("common.whatsappDirect")}
                   </a>
                 </Button>
                 <Button asChild>
                   <a href={`tel:${TEL}`}>
                     <Phone className="size-5" />
-                    Llamar ahora
+                    {t("common.callNow")}
                   </a>
                 </Button>
               </div>

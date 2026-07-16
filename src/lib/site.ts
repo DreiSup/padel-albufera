@@ -8,14 +8,20 @@ export function waHref(message: string = WA_MESSAGE_DEFAULT) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-export const NAV_LINKS: { label: string; shortLabel: string; href: string | null }[] = [
-  { label: "Inicio", shortLabel: "Inicio", href: "/" },
-  { label: "Pistas de pádel", shortLabel: "Pádel", href: "/padel" },
-  { label: "Pistas de pickleball", shortLabel: "Pickleball", href: "/pickleball" },
-  { label: "Proyectos", shortLabel: "Proyectos", href: "/proyectos" },
-  { label: "Proceso", shortLabel: "Proceso", href: "/proceso" },
-  { label: "Sobre nosotros", shortLabel: "Nosotros", href: "/sobre-nosotros" },
-  { label: "Contacto", shortLabel: "Contacto", href: "/contacto" },
+export const NAV_ROUTES: { key: "home" | "padel" | "pickleball" | "projects" | "process" | "about" | "contact"; href: string }[] = [
+  { key: "home", href: "/" },
+  { key: "padel", href: "/padel" },
+  { key: "pickleball", href: "/pickleball" },
+  { key: "projects", href: "/proyectos" },
+  { key: "process", href: "/proceso" },
+  { key: "about", href: "/sobre-nosotros" },
+  { key: "contact", href: "/contacto" },
 ];
 
-export const LANGS = ["ES", "FR", "EN", "DE", "NL"];
+export const LANGS: { code: "es" | "fr" | "en" | "de" | "nl"; label: string }[] = [
+  { code: "es", label: "ES" },
+  { code: "fr", label: "FR" },
+  { code: "en", label: "EN" },
+  { code: "de", label: "DE" },
+  { code: "nl", label: "NL" },
+];

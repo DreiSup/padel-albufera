@@ -1,0 +1,382 @@
+{
+  "_locale": "en",
+  "nav": {
+    "home": "Home",
+    "padel": "Padel courts",
+    "pickleball": "Pickleball courts",
+    "projects": "Projects",
+    "process": "Process",
+    "about": "About us",
+    "contact": "Contact"
+  },
+  "common": {
+    "whatsapp": "WhatsApp",
+    "whatsappDirect": "Direct WhatsApp",
+    "call": "Call",
+    "callNow": "Call now",
+    "requestQuote": "Get a free quote",
+    "seeDetails": "See details",
+    "waMessage": "Hi, I'd like a quote for building a court.",
+    "languages": "ES · FR · EN · DE · NL"
+  },
+  "hero": {
+    "eyebrow": "Court builders · ES · FR · DE · BE",
+    "h1": "We build your padel or pickleball court, turnkey",
+    "sub": "From concrete to the final finish. 17 years of sports construction. 10-year warranty.",
+    "badges": ["17+ years", "+120 projects", "10-year warranty", "ES · FR · DE · BE"]
+  },
+  "proof": { "title": "They trust us" },
+  "build": {
+    "eyebrow": "What we build",
+    "title": "A court for every project",
+    "from": "from",
+    "onRequest": "price on request",
+    "custom": "custom project",
+    "cards": [
+      { "title": "Standard padel court", "desc": "The configuration most requested by clubs and residential communities." },
+      { "title": "Panoramic padel court", "desc": "Glass with no intermediate posts: maximum visibility, premium finish." },
+      { "title": "Pickleball court", "desc": "Europe's fastest-growing sport, in half the space." },
+      { "title": "Custom court / canopies", "desc": "Canopies, enclosures and singular projects, built to measure." }
+    ]
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Portfolio · 4 countries",
+      "h1": "Completed projects",
+      "sub": "Padel, pickleball and canopies delivered by our team. Everything you see here is real."
+    },
+    "filters": { "all": "All", "padel": "Padel", "pano": "Panoramic", "pkb": "Pickleball", "cub": "Canopies", "es": "Spain", "fr": "France" },
+    "detail": { "cliente": "Client", "ubicacion": "Location", "tipo": "Type", "plazo": "Timeline", "alcance": "Scope", "cta": "I want one like this" },
+    "cta": {
+      "eyebrow": "The next one could be yours",
+      "title": "Want something like this at your facility?",
+      "sub": "Tell us the project you have in mind and we'll send a fixed quote within 48 h."
+    }
+  },
+  "process": {
+    "hero": {
+      "eyebrow": "How we work",
+      "h1": "From visit to delivery, no surprises",
+      "sub": "A single point of contact, fixed price in writing and a deadline committed by contract."
+    },
+    "timeline": {
+      "eyebrow": "The process",
+      "title": "4 phases, one person responsible",
+      "phaseLabel": "Phase",
+      "steps": [
+        {
+          "t": "Free visit and study",
+          "dur": "48–72 h",
+          "tag": "No cost, no obligation",
+          "d": "We come to your site, measure, assess access, ground and local regulations, and answer your questions in person.",
+          "deliv": ["Setting-out and measurements", "Feasibility study", "Model recommendation"]
+        },
+        {
+          "t": "Project and fixed quote",
+          "dur": "3–5 days",
+          "tag": "Final price in writing",
+          "d": "We draft the technical brief, drawings and detailed quote. The price you sign is the price you pay.",
+          "deliv": ["Technical brief and drawings", "Fixed quote with no open items", "Permit documentation"]
+        },
+        {
+          "t": "Construction with a committed deadline",
+          "dur": "4–8 weeks",
+          "tag": "In-house team",
+          "d": "We build with our own team, no chained subcontractors, and send progress photos every week.",
+          "deliv": ["Foundations and civil works", "Structure and glass assembly", "Weekly progress photos"]
+        },
+        {
+          "t": "Delivered ready to play",
+          "dur": "1 day + after-sales",
+          "tag": "10-year warranty",
+          "d": "Final review with you, documented warranty handover and maintenance plan. And we stay available afterwards.",
+          "deliv": ["Joint test and review", "10-year warranty in writing", "After-sales maintenance plan"]
+        }
+      ]
+    },
+    "pledges": {
+      "eyebrow": "Our commitments",
+      "title": "What we sign, we deliver",
+      "items": [
+        { "t": "Fixed quote", "d": "No open items or last-minute overruns. What you sign is what you pay." },
+        { "t": "Committed deadline", "d": "The delivery date is set in the contract, not an optimistic estimate." },
+        { "t": "Full transparency", "d": "Progress photos every week and a single point of contact throughout the build." },
+        { "t": "Real warranty", "d": "10 years in writing and after-sales maintenance service in all 4 countries." }
+      ],
+      "sealYears": "10",
+      "sealWord": "year warranty",
+      "sealNote": "In writing on structure and civil works, in all 4 countries."
+    },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Questions about the process",
+      "items": [
+        { "q": "Are the visit and quote free?", "a": "Yes. Phase 1 — visit, measurement and feasibility study — is completely free and with no obligation." },
+        { "q": "Can the price change during the build?", "a": "No, unless you request scope changes. The quote is fixed with no open items." },
+        { "q": "Do you subcontract the build?", "a": "We build with our own team. If a specific trade relies on a specialist, we remain your single point of contact and responsible for the result." },
+        { "q": "How do I follow progress from afar?", "a": "We send progress photos every week by WhatsApp or email. Especially useful for projects in France, Germany and Belgium." },
+        { "q": "What happens after delivery?", "a": "You receive the 10-year warranty in writing and a maintenance plan. We stay available for after-sales." }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Start with the free visit",
+      "title": "Phase 1 costs you nothing",
+      "sub": "Book the technical visit and feasibility study. No cost, no obligation."
+    }
+  },
+  "stats": { "labels": ["years of experience", "projects delivered", "years of warranty", "countries in Europe"] },
+  "testimonials": { "eyebrow": "Testimonials", "title": "What our clients say", "googleNote": "Average rating on Google Reviews" },
+  "why": {
+    "eyebrow": "Why us",
+    "title": "Serious construction, no fine print",
+    "items": [
+      { "title": "Fixed quote", "desc": "Final price in writing before we start. What you sign is what you pay." },
+      { "title": "First-rate materials", "desc": "Competition-grade turf, 12 mm tempered glass and galvanized structure." },
+      { "title": "10-year warranty", "desc": "In writing, with after-sales maintenance service in all 4 countries." }
+    ]
+  },
+  "video": { "eyebrow": "The build, in motion", "title": "How a court gets built", "caption": "Real construction footage" },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Your questions, answered",
+    "items": [
+      { "q": "How much does it cost to build a padel court?", "a": "A standard turnkey court starts at €18,900 and a panoramic one at €24,900 (indicative figures). The final price depends on the site, access and finishes: we fix it in writing after the free visit." },
+      { "q": "How long does the build take?", "a": "Between 4 and 8 weeks from the start of works, depending on foundations and model. The deadline is committed by contract." },
+      { "q": "What does turnkey include?", "a": "Everything: earthworks, slab, structure, tempered glass, turf, LED lighting and permits. We deliver the court ready to play." },
+      { "q": "Do you work outside Spain?", "a": "Yes. We build in France, Germany and Belgium with the same in-house team and the same warranty as in Spain." },
+      { "q": "What warranty do you offer?", "a": "10 years in writing on structure and civil works, plus after-sales maintenance service." },
+      { "q": "Do you renovate existing courts?", "a": "Yes: turf, glass, net and lighting replacement, and conversion of tennis courts into padel or pickleball." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Free quote",
+    "title": "Shall we talk about your project?",
+    "sub": "Free, no-obligation quote within 48 h. No fine print.",
+    "or": "or leave us your details",
+    "nameLabel": "Name",
+    "namePh": "Your name",
+    "phoneLabel": "Phone",
+    "typeLabel": "Project type",
+    "typeOptions": ["Padel court", "Panoramic padel", "Pickleball", "Canopy / enclosure", "Renovation", "Other"],
+    "submit": "Get my free quote",
+    "privacy": "By submitting you accept the privacy policy. Reply within 24 working hours.",
+    "successTitle": "Received. We'll contact you within 24 working hours.",
+    "successSub": "In a hurry? Message us on WhatsApp now:",
+    "openWhatsApp": "Open WhatsApp"
+  },
+  "footer": {
+    "tagline": "Padel and pickleball court construction in Spain, France, Germany and Belgium",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "responseNote": "WhatsApp · reply < 1 h on working days",
+    "hours": "Mon–Fri · 8:00–18:00",
+    "zonesTitle": "Service areas",
+    "zones": ["Valencian Community", "Rest of Spain", "France", "Germany", "Belgium"],
+    "badgeWarranty": "10-year warranty",
+    "badgeYears": "17+ years of experience",
+    "legal": "© 2026 Pavimentos Albufera · Privacy policy · Legal notice · Cookies"
+  },
+  "bar": { "whatsapp": "WhatsApp", "call": "Call" },
+  "padel": {
+    "hero": { "eyebrow": "Turnkey · ES · FR · DE · BE", "h1": "Padel court construction", "sub": "Standard, panoramic or competition. Fixed quote and 10-year warranty." },
+    "models": {
+      "eyebrow": "Models",
+      "title": "Choose your court",
+      "idealFor": "Ideal for",
+      "tabs": ["Standard", "Panoramic", "Competition"],
+      "items": [
+        {
+          "name": "Standard court",
+          "cta": "Standard court quote",
+          "desc": "The benchmark regulation court: robust, cost-effective and built for intensive use in clubs and communities.",
+          "price": "from €18,900",
+          "specs": { "dimensions": "20 × 10 m (regulation)", "structure": "Lacquered galvanized steel", "glass": "10 mm tempered", "turf": "12 mm monofilament", "lighting": "8 × 200 W LED floodlights" },
+          "ideal": ["Club", "Community"]
+        },
+        {
+          "name": "Panoramic court",
+          "cta": "Panoramic court quote",
+          "desc": "Self-supporting glass with no intermediate posts: full visibility and the look of a premium facility.",
+          "price": "from €24,900",
+          "specs": { "dimensions": "20 × 10 m (regulation)", "structure": "Reinforced corner posts", "glass": "12 mm self-supporting tempered", "turf": "12 mm monofilament", "lighting": "8 × 200 W LED floodlights" },
+          "ideal": ["Premium club", "Developer", "Private"]
+        },
+        {
+          "name": "Competition court",
+          "cta": "Competition court quote",
+          "desc": "Tournament-ready: federation-level lighting, competition turf and room for stands and broadcast.",
+          "price": "from €29,900",
+          "specs": { "dimensions": "20 × 10 m + technical perimeter", "structure": "Reinforced panoramic", "glass": "12 mm self-supporting tempered", "turf": "Approved competition fibre", "lighting": "LED ≥ 500 lx uniform" },
+          "ideal": ["Club", "Federation", "Municipality"]
+        }
+      ]
+    },
+    "compare": { "eyebrow": "Comparison", "title": "The 3 models, side by side" },
+    "materials": {
+      "eyebrow": "Materials and quality",
+      "title": "What makes it last 20 years",
+      "items": [
+        { "t": "Turf", "d": "Competition fibre with draining base and calibrated silica sand." },
+        { "t": "Tempered glass", "d": "10–12 mm certified, safety anchors and polished edges." },
+        { "t": "Structure", "d": "Hot-dip galvanized and oven-lacquered steel. No rust, no maintenance." },
+        { "t": "LED lighting", "d": "Low-consumption floodlights with anti-glare optics." }
+      ]
+    },
+    "cover": { "eyebrow": "Canopies and enclosures", "title": "Play 365 days a year", "desc": "We cover new or existing courts with custom structures: tensioned membrane, panel or full enclosure. Including courts we didn't build.", "cta": "Canopy quote" },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Padel court questions",
+      "items": [
+        { "q": "Standard or panoramic: which suits me?", "a": "For profitability and heavy use, standard. If your facility competes on image, panoramic pays back. We quantify it at the free visit." },
+        { "q": "How much space do I need?", "a": "The court is 20 × 10 m; we recommend a minimum plot of 22 × 12 m for circulation and foundations." },
+        { "q": "Do I need a building permit?", "a": "Usually yes. We prepare the technical brief and paperwork for your council as part of turnkey." },
+        { "q": "What maintenance does the turf need?", "a": "Brushing and sand redistribution 1–2 times a year. Offered as after-sales service with the warranty." },
+        { "q": "Can you cover an existing court?", "a": "Yes. We install canopies and enclosures on already-built courts, even ones we didn't build." }
+      ]
+    },
+    "cta": { "eyebrow": "Free quote", "title": "Which court fits your project?", "sub": "We'll tell you free after a technical visit. Fixed quote within 48 h." }
+  },
+  "pickleball": {
+    "hero": { "eyebrow": "Turnkey · ES · FR · DE · BE", "h1": "Pickleball court construction", "sub": "Standard, full enclosure or multi-court. Fixed quote and 10-year warranty." },
+    "models": {
+      "eyebrow": "Models",
+      "title": "Choose your court",
+      "idealFor": "Ideal for",
+      "tabs": ["Standard", "Enclosure", "Multi-court"],
+      "items": [
+        {
+          "name": "Standard court",
+          "cta": "Standard court quote",
+          "desc": "The regulation pickleball court: high-grip acrylic surface over a reinforced concrete slab.",
+          "price": "from €15,900",
+          "specs": { "dimensions": "13.4 × 6.1 m (regulation)", "surface": "Multilayer anti-slip acrylic", "base": "Reinforced concrete slab", "net": "Aluminium with tensioner", "lighting": "4 × 200 W LED floodlights" },
+          "ideal": ["Club", "Community"]
+        },
+        {
+          "name": "Full enclosure",
+          "cta": "Full enclosure quote",
+          "desc": "Court with a 3 m perimeter fence: the ball always in play and the surroundings protected.",
+          "price": "from €19,900",
+          "specs": { "dimensions": "Min. plot 15.2 × 9.1 m", "surface": "Multilayer anti-slip acrylic", "fence": "3 m galvanized mesh", "access": "Gate + rest area", "lighting": "4 × 200 W LED floodlights" },
+          "ideal": ["Community", "Hotel / resort"]
+        },
+        {
+          "name": "Multi-court complex",
+          "cta": "Multi-court complex quote",
+          "desc": "Two or more courts sharing foundations, lighting and access: lower cost per court and simpler operation.",
+          "price": "custom project",
+          "specs": { "dimensions": "Modular · 2+ courts", "surface": "Multilayer anti-slip acrylic", "fence": "Shared perimeter", "extras": "Optional stands and common area", "lighting": "Custom lighting design" },
+          "ideal": ["Club", "Municipality", "Developer"]
+        }
+      ]
+    },
+    "compare": { "eyebrow": "Comparison", "title": "The 3 models, side by side" },
+    "materials": {
+      "eyebrow": "Materials and quality",
+      "title": "What makes it last 20 years",
+      "items": [
+        { "t": "Acrylic pavement", "d": "Cushioned multilayer system on concrete: grip and joint comfort." },
+        { "t": "Play lines", "d": "High-visibility polyurethane paint, regulation dimensions." },
+        { "t": "Fencing", "d": "3 m plastic-coated galvanized mesh with integrated gates." },
+        { "t": "LED lighting", "d": "Low-consumption floodlights with anti-glare optics." }
+      ]
+    },
+    "cover": { "eyebrow": "Canopies and enclosures", "title": "Play 365 days a year", "desc": "We cover new or existing courts with custom structures: tensioned membrane, panel or full enclosure.", "cta": "Canopy quote" },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Pickleball court questions",
+      "items": [
+        { "q": "How much space does a pickleball court need?", "a": "The court is 13.4 × 6.1 m; with safety zones we recommend 15.2 × 9.1 m. It fits in half the space of a padel court." },
+        { "q": "Can I convert a tennis court?", "a": "Yes: a tennis court fits up to 4 pickleball courts. Conversion is faster and cheaper than new build." },
+        { "q": "Which surface is best?", "a": "Multilayer acrylic on concrete: the international standard, drains well and keeps a uniform bounce for years." },
+        { "q": "Can you play at night?", "a": "Yes. With 4 LED floodlights per court you reach night-play level without dazzling the surroundings." },
+        { "q": "Can you cover the court?", "a": "Yes. We install canopies and enclosures on new or existing courts." }
+      ]
+    },
+    "cta": { "eyebrow": "Free quote", "title": "Which court fits your project?", "sub": "We'll tell you free after a technical visit. Fixed quote within 48 h." }
+  },
+  "about": {
+    "hero": { "eyebrow": "Who we are", "h1": "17 years building where people play", "sub": "An in-house sports-construction team. No middlemen, no chained subcontractors." },
+    "story": {
+      "eyebrow": "Our story",
+      "title": "From a local workshop to 4 countries",
+      "lead": "We started paving courts in the Valencian Community. Today we build padel, pickleball and canopies across Spain and in France, Germany and Belgium, with the same team and the same way of working: face to face and true to our word.",
+      "stats": ["years of experience", "projects delivered", "countries in Europe", "people on the team"]
+    },
+    "milestones": {
+      "eyebrow": "Our track record",
+      "title": "The milestones that brought us here",
+      "items": [
+        { "y": "2009", "t": "We start out paving sports courts in the Valencian Community." },
+        { "y": "2014", "t": "We move into turnkey padel court construction." },
+        { "y": "2018", "t": "First projects outside Spain: we begin building in France." },
+        { "y": "2022", "t": "We add pickleball and canopies to our catalogue." },
+        { "y": "2025", "t": "We pass 120 projects and expand into Germany and Belgium." }
+      ]
+    },
+    "values": {
+      "eyebrow": "How we work",
+      "title": "Four things we won't compromise on",
+      "items": [
+        { "t": "In-house team", "d": "We're on every site ourselves. No subcontractor chains that dilute responsibility." },
+        { "t": "True to our word", "d": "Fixed quote and deadline in writing. What we say, we sign." },
+        { "t": "Face-to-face", "d": "A single point of contact from start to finish, whatever language you speak." },
+        { "t": "Long-term relationship", "d": "Most clients come back or refer us. That's our best salesperson." }
+      ]
+    },
+    "team": { "eyebrow": "The team", "title": "The people who walk your site", "note": "Real names, roles and photos — to be provided." },
+    "coverage": { "eyebrow": "Where we work", "title": "Spain, France, Germany and Belgium" },
+    "certs": { "eyebrow": "Warranties and certifications", "title": "Backing you can verify", "note": "Certification, insurance and approval logos — to be provided." },
+    "cta": { "eyebrow": "We talk face to face", "title": "Get to know us with a visit", "sub": "Come see a finished build or we'll visit you. Free and with no obligation." }
+  },
+  "contact": {
+    "header": { "eyebrow": "Contact", "title": "Request your free quote", "sub": "We reply within 24 working hours — usually much sooner.", "quickWrite": "Message us", "quickCall": "Call us" },
+    "form": {
+      "stepOf": "Step {n} of 3",
+      "step1Title": "What project do you have in mind?",
+      "step1Sub": "Pick what fits best. We can refine it later.",
+      "step2Title": "Where and when?",
+      "step2Sub": "It helps us estimate travel and timelines.",
+      "step3Title": "How do we contact you?",
+      "step3Sub": "Just enough to send you the quote.",
+      "options": [
+        { "t": "Padel court", "d": "Standard, panoramic or competition" },
+        { "t": "Pickleball court", "d": "Standard, enclosure or multi-court" },
+        { "t": "Canopy / enclosure", "d": "On a new or existing court" },
+        { "t": "Renovation / conversion", "d": "Turf, glass, or tennis to padel" },
+        { "t": "Other / not sure yet", "d": "We'll advise you at the visit" }
+      ],
+      "locLabel": "City and country",
+      "locPh": "E.g. Valencia, Spain",
+      "whenLabel": "When for?",
+      "whenOptions": ["As soon as possible", "In 1–3 months", "In 3–6 months", "Just gathering info"],
+      "msgLabel": "Tell us more (optional)",
+      "msgPh": "Available surface, number of courts, whether you already have a slab…",
+      "nameLabel": "Name",
+      "namePh": "Your name",
+      "phoneLabel": "Phone / WhatsApp",
+      "emailLabel": "Email (optional)",
+      "summaryProject": "Project",
+      "summaryResponse": "Response",
+      "responseValue": "< 24 working hours",
+      "privacy": "By submitting you accept the privacy policy.",
+      "continue": "Continue",
+      "submit": "Send request",
+      "successTitle": "Request sent!",
+      "successSub": "We'll contact you within 24 working hours for your {project}.",
+      "successWa": "In a hurry? Message us on WhatsApp",
+      "again": "Send another request"
+    },
+    "info": {
+      "eyebrow": "Other ways",
+      "title": "Contact details",
+      "phone": "Phone",
+      "phoneNote": "Mon–Fri 8:00–18:00",
+      "whatsapp": "WhatsApp",
+      "whatsappNote": "Direct chat · reply < 1 working hour",
+      "email": "Email",
+      "where": "Where we are",
+      "coverageNote": "Coverage: Spain · France · Germany · Belgium"
+    }
+  }
+}

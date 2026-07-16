@@ -1,0 +1,382 @@
+{
+  "_locale": "es",
+  "nav": {
+    "home": "Inicio",
+    "padel": "Pistas de pádel",
+    "pickleball": "Pistas de pickleball",
+    "projects": "Proyectos",
+    "process": "Proceso",
+    "about": "Sobre nosotros",
+    "contact": "Contacto"
+  },
+  "common": {
+    "whatsapp": "WhatsApp",
+    "whatsappDirect": "WhatsApp directo",
+    "call": "Llamar",
+    "callNow": "Llamar ahora",
+    "requestQuote": "Pide presupuesto gratis",
+    "seeDetails": "Ver detalles",
+    "waMessage": "Hola, quiero un presupuesto para construir una pista.",
+    "languages": "ES · FR · EN · DE · NL"
+  },
+  "hero": {
+    "eyebrow": "Constructora de pistas · ES · FR · DE · BE",
+    "h1": "Construimos tu pista de pádel o pickleball llave en mano",
+    "sub": "Del hormigón al último acabado. 17 años de obra deportiva. Garantía de 10 años.",
+    "badges": ["17+ años", "+120 proyectos", "Garantía 10 años", "ES · FR · DE · BE"]
+  },
+  "proof": { "title": "Confían en nosotros" },
+  "build": {
+    "eyebrow": "Qué construimos",
+    "title": "Una pista para cada proyecto",
+    "from": "desde",
+    "onRequest": "consultar precio",
+    "custom": "proyecto a medida",
+    "cards": [
+      { "title": "Pista de pádel estándar", "desc": "La configuración más demandada por clubes y comunidades." },
+      { "title": "Pista de pádel panorámica", "desc": "Vidrio sin postes intermedios: máxima visibilidad, acabado premium." },
+      { "title": "Pista de pickleball", "desc": "El deporte que más crece en Europa, en la mitad de espacio." },
+      { "title": "Pista a medida / cubiertas", "desc": "Cubiertas, cerramientos y proyectos singulares a tu medida." }
+    ]
+  },
+  "projects": {
+    "hero": {
+      "eyebrow": "Portfolio · 4 países",
+      "h1": "Proyectos construidos",
+      "sub": "Pádel, pickleball y cubiertas entregados por nuestro equipo. Todo lo que ves aquí existe."
+    },
+    "filters": { "all": "Todos", "padel": "Pádel", "pano": "Panorámica", "pkb": "Pickleball", "cub": "Cubiertas", "es": "España", "fr": "Francia" },
+    "detail": { "cliente": "Cliente", "ubicacion": "Ubicación", "tipo": "Tipo", "plazo": "Plazo", "alcance": "Alcance", "cta": "Quiero algo así" },
+    "cta": {
+      "eyebrow": "El siguiente puede ser el tuyo",
+      "title": "¿Quieres algo así en tu instalación?",
+      "sub": "Cuéntanos qué proyecto tienes en mente y te enviamos presupuesto cerrado en 48 h."
+    }
+  },
+  "process": {
+    "hero": {
+      "eyebrow": "Cómo trabajamos",
+      "h1": "De la visita a la entrega, sin sorpresas",
+      "sub": "Un solo interlocutor, precio cerrado por escrito y plazo comprometido en contrato."
+    },
+    "timeline": {
+      "eyebrow": "El proceso",
+      "title": "4 fases, un único responsable",
+      "phaseLabel": "Fase",
+      "steps": [
+        {
+          "t": "Visita y estudio gratuito",
+          "dur": "48–72 h",
+          "tag": "Sin coste ni compromiso",
+          "d": "Vamos a tu parcela, medimos, analizamos accesos, terreno y normativa municipal, y resolvemos tus dudas en persona.",
+          "deliv": ["Replanteo y toma de medidas", "Estudio de viabilidad", "Recomendación de modelo"]
+        },
+        {
+          "t": "Proyecto y presupuesto cerrado",
+          "dur": "3–5 días",
+          "tag": "Precio final por escrito",
+          "d": "Redactamos la memoria técnica, los planos y el presupuesto detallado. El precio que firmas es el que pagas.",
+          "deliv": ["Memoria técnica y planos", "Presupuesto cerrado sin partidas abiertas", "Documentación para licencia"]
+        },
+        {
+          "t": "Construcción con plazo comprometido",
+          "dur": "4–8 semanas",
+          "tag": "Equipo propio",
+          "d": "Ejecutamos con nuestro equipo, sin subcontratas encadenadas, y te enviamos fotos de seguimiento cada semana.",
+          "deliv": ["Cimentación y obra civil", "Montaje de estructura y vidrio", "Fotos de avance semanales"]
+        },
+        {
+          "t": "Entrega lista para jugar",
+          "dur": "1 día + postventa",
+          "tag": "Garantía 10 años",
+          "d": "Revisión final contigo, entrega de garantía documentada y plan de mantenimiento. Y seguimos disponibles después.",
+          "deliv": ["Prueba y revisión conjunta", "Garantía de 10 años por escrito", "Plan de mantenimiento postventa"]
+        }
+      ]
+    },
+    "pledges": {
+      "eyebrow": "Nuestros compromisos",
+      "title": "Lo que firmamos, lo cumplimos",
+      "items": [
+        { "t": "Presupuesto cerrado", "d": "Sin partidas abiertas ni sobrecostes de última hora. Lo que firmas es lo que pagas." },
+        { "t": "Plazo comprometido", "d": "La fecha de entrega queda fijada en contrato, no es una estimación optimista." },
+        { "t": "Transparencia total", "d": "Fotos de seguimiento cada semana y un único interlocutor durante toda la obra." },
+        { "t": "Garantía real", "d": "10 años por escrito y servicio postventa de mantenimiento en los 4 países." }
+      ],
+      "sealYears": "10",
+      "sealWord": "años de garantía",
+      "sealNote": "Por escrito sobre estructura y obra civil, en los 4 países."
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Dudas sobre el proceso",
+      "items": [
+        { "q": "¿La visita y el presupuesto tienen coste?", "a": "No. La fase 1 —visita, medición y estudio de viabilidad— es totalmente gratuita y sin compromiso." },
+        { "q": "¿El precio puede cambiar durante la obra?", "a": "No, salvo que tú pidas cambios de alcance. El presupuesto es cerrado y sin partidas abiertas." },
+        { "q": "¿Subcontratáis la obra?", "a": "Ejecutamos con equipo propio. Si algún oficio puntual se apoya en un especialista, seguimos siendo tu único interlocutor y responsables del resultado." },
+        { "q": "¿Cómo sigo el avance si estoy lejos?", "a": "Te enviamos fotos de seguimiento cada semana por WhatsApp o email. Útil sobre todo para proyectos en Francia, Alemania y Bélgica." },
+        { "q": "¿Qué pasa tras la entrega?", "a": "Recibes la garantía de 10 años por escrito y un plan de mantenimiento. Seguimos disponibles para postventa." }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Empieza por la visita gratuita",
+      "title": "La fase 1 no te cuesta nada",
+      "sub": "Reserva la visita técnica y el estudio de viabilidad. Sin coste ni compromiso."
+    }
+  },
+  "stats": { "labels": ["años de experiencia", "proyectos entregados", "años de garantía", "países en Europa"] },
+  "testimonials": { "eyebrow": "Testimonios", "title": "Lo que dicen nuestros clientes", "googleNote": "Nota media en Google Reviews" },
+  "why": {
+    "eyebrow": "Por qué nosotros",
+    "title": "Construcción seria, sin letra pequeña",
+    "items": [
+      { "title": "Presupuesto cerrado", "desc": "Precio final por escrito antes de empezar. Lo que firmas es lo que pagas." },
+      { "title": "Materiales de primera", "desc": "Césped de competición, vidrio templado de 12 mm y estructura galvanizada." },
+      { "title": "Garantía 10 años", "desc": "Por escrito, con servicio postventa de mantenimiento en los 4 países." }
+    ]
+  },
+  "video": { "eyebrow": "La obra, en movimiento", "title": "Así se construye una pista", "caption": "Vídeo real de obra" },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Resolvemos tus dudas",
+    "items": [
+      { "q": "¿Cuánto cuesta construir una pista de pádel?", "a": "Una pista estándar llave en mano parte de 18.900 € y una panorámica de 24.900 € (cifras orientativas). El precio final depende de terreno, accesos y acabados: lo cerramos por escrito tras la visita gratuita." },
+      { "q": "¿Cuánto tarda la obra?", "a": "Entre 4 y 8 semanas desde el inicio de obra, según cimentación y modelo. El plazo queda comprometido en contrato." },
+      { "q": "¿Qué incluye llave en mano?", "a": "Todo: movimiento de tierras, solera, estructura, vidrio templado, césped, iluminación LED y legalización. Entregamos la pista lista para jugar." },
+      { "q": "¿Trabajáis fuera de España?", "a": "Sí. Ejecutamos obra en Francia, Alemania y Bélgica con el mismo equipo propio y la misma garantía que en España." },
+      { "q": "¿Qué garantía ofrecéis?", "a": "10 años por escrito sobre estructura y obra civil, más servicio postventa de mantenimiento." },
+      { "q": "¿Hacéis reformas de pistas existentes?", "a": "Sí: sustitución de césped, vidrio, redes e iluminación, y reconversión de pistas de tenis en pádel o pickleball." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Presupuesto gratis",
+    "title": "¿Hablamos de tu proyecto?",
+    "sub": "Presupuesto gratis y sin compromiso en 48 h. Sin letra pequeña.",
+    "or": "o déjanos tus datos",
+    "nameLabel": "Nombre",
+    "namePh": "Tu nombre",
+    "phoneLabel": "Teléfono",
+    "typeLabel": "Tipo de proyecto",
+    "typeOptions": ["Pista de pádel", "Pádel panorámica", "Pickleball", "Cubierta / cerramiento", "Reforma", "Otro"],
+    "submit": "Recibir presupuesto gratis",
+    "privacy": "Al enviar aceptas la política de privacidad. Respuesta en menos de 24 h laborables.",
+    "successTitle": "Recibido. Te contactamos en menos de 24 h laborables.",
+    "successSub": "¿Prisa? Escríbenos ahora por WhatsApp:",
+    "openWhatsApp": "Abrir WhatsApp"
+  },
+  "footer": {
+    "tagline": "Construcción de pistas de pádel y pickleball en España, Francia, Alemania y Bélgica",
+    "navTitle": "Navegación",
+    "contactTitle": "Contacto",
+    "responseNote": "WhatsApp · respuesta < 1 h laborable",
+    "hours": "L–V · 8:00–18:00",
+    "zonesTitle": "Zonas de servicio",
+    "zones": ["Comunitat Valenciana", "Resto de España", "Francia", "Alemania", "Bélgica"],
+    "badgeWarranty": "Garantía 10 años",
+    "badgeYears": "17+ años de experiencia",
+    "legal": "© 2026 Pavimentos Albufera · Política de privacidad · Aviso legal · Cookies"
+  },
+  "bar": { "whatsapp": "WhatsApp", "call": "Llamar" },
+  "padel": {
+    "hero": { "eyebrow": "Llave en mano · ES · FR · DE · BE", "h1": "Construcción de pistas de pádel", "sub": "Estándar, panorámica o competición. Presupuesto cerrado y garantía de 10 años." },
+    "models": {
+      "eyebrow": "Modelos",
+      "title": "Elige tu pista",
+      "idealFor": "Ideal para",
+      "tabs": ["Estándar", "Panorámica", "Competición"],
+      "items": [
+        {
+          "name": "Pista estándar",
+          "cta": "Presupuesto pista estándar",
+          "desc": "La pista reglamentaria de referencia: robusta, rentable y pensada para uso intensivo en clubes y comunidades.",
+          "price": "desde 18.900 €",
+          "specs": { "dimensiones": "20 × 10 m (reglamentaria)", "estructura": "Acero galvanizado lacado", "vidrio": "Templado 10 mm", "cesped": "Monofilamento 12 mm", "iluminacion": "8 proyectores LED 200 W" },
+          "ideal": ["Club", "Comunidad"]
+        },
+        {
+          "name": "Pista panorámica",
+          "cta": "Presupuesto pista panorámica",
+          "desc": "Vidrio autoportante sin postes intermedios: visibilidad total y la estética que diferencia una instalación premium.",
+          "price": "desde 24.900 €",
+          "specs": { "dimensiones": "20 × 10 m (reglamentaria)", "estructura": "Pilares esquineros reforzados", "vidrio": "Templado 12 mm autoportante", "cesped": "Monofilamento 12 mm", "iluminacion": "8 proyectores LED 200 W" },
+          "ideal": ["Club premium", "Promotor", "Particular"]
+        },
+        {
+          "name": "Pista de competición",
+          "cta": "Presupuesto pista de competición",
+          "desc": "Preparada para torneos: iluminación de nivel federativo, césped de competición y espacio para grada y realización.",
+          "price": "desde 29.900 €",
+          "specs": { "dimensiones": "20 × 10 m + perímetro técnico", "estructura": "Panorámica reforzada", "vidrio": "Templado 12 mm autoportante", "cesped": "Fibra de competición homologada", "iluminacion": "LED ≥ 500 lx uniformes" },
+          "ideal": ["Club", "Federación", "Municipio"]
+        }
+      ]
+    },
+    "compare": { "eyebrow": "Comparativa", "title": "Los 3 modelos, frente a frente" },
+    "materials": {
+      "eyebrow": "Materiales y calidades",
+      "title": "Lo que hace que dure 20 años",
+      "items": [
+        { "t": "Césped", "d": "Fibra de competición con base drenante y arena de sílice calibrada." },
+        { "t": "Vidrio templado", "d": "10–12 mm certificado, anclajes de seguridad y cantos pulidos." },
+        { "t": "Estructura", "d": "Acero galvanizado en caliente y lacado al horno. Sin óxido, sin mantenimiento." },
+        { "t": "Iluminación LED", "d": "Proyectores de bajo consumo con óptica antideslumbramiento." }
+      ]
+    },
+    "cover": { "eyebrow": "Cubiertas y cerramientos", "title": "Juega los 365 días del año", "desc": "Cubrimos pistas nuevas o existentes con estructuras a medida: lona tensada, panel o cerramiento completo. También sobre pistas que no construimos nosotros.", "cta": "Presupuesto de cubierta" },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Dudas sobre pistas de pádel",
+      "items": [
+        { "q": "¿Estándar o panorámica: cuál me conviene?", "a": "Si buscas rentabilidad y uso intensivo, estándar. Si tu instalación compite por socios o vendes exclusividad, la panorámica se amortiza en imagen. Te lo cuantificamos en la visita gratuita." },
+        { "q": "¿Cuánto espacio necesito?", "a": "La pista mide 20 × 10 m; recomendamos una parcela mínima de 22 × 12 m para circulación y cimentación. Hacemos replanteo en la visita." },
+        { "q": "¿Necesito licencia de obra?", "a": "Normalmente sí. Preparamos la memoria técnica y la documentación para tu ayuntamiento como parte del llave en mano." },
+        { "q": "¿Qué mantenimiento requiere el césped?", "a": "Cepillado y redistribución de arena 1–2 veces al año. Lo ofrecemos como servicio postventa con la garantía." },
+        { "q": "¿Podéis cubrir una pista ya existente?", "a": "Sí. Instalamos cubiertas y cerramientos sobre pistas ya construidas, aunque no las hayamos hecho nosotros." }
+      ]
+    },
+    "cta": { "eyebrow": "Presupuesto gratis", "title": "¿Qué pista encaja en tu proyecto?", "sub": "Te lo decimos gratis tras una visita técnica. Presupuesto cerrado en 48 h." }
+  },
+  "pickleball": {
+    "hero": { "eyebrow": "Llave en mano · ES · FR · DE · BE", "h1": "Construcción de pistas de pickleball", "sub": "Estándar, recinto completo o multipista. Presupuesto cerrado y garantía de 10 años." },
+    "models": {
+      "eyebrow": "Modelos",
+      "title": "Elige tu pista",
+      "idealFor": "Ideal para",
+      "tabs": ["Estándar", "Recinto", "Multipista"],
+      "items": [
+        {
+          "name": "Pista estándar",
+          "cta": "Presupuesto pista estándar",
+          "desc": "La pista reglamentaria de pickleball: superficie acrílica de alto agarre sobre solera de hormigón armado.",
+          "price": "desde 15.900 €",
+          "specs": { "dimensiones": "13,4 × 6,1 m (reglamentaria)", "superficie": "Acrílico multicapa antideslizante", "base": "Solera de hormigón armado", "red": "Aluminio con tensor", "iluminacion": "4 proyectores LED 200 W" },
+          "ideal": ["Club", "Comunidad"]
+        },
+        {
+          "name": "Recinto completo",
+          "cta": "Presupuesto recinto completo",
+          "desc": "Pista con cerramiento perimetral de 3 m: la pelota siempre en juego y el entorno protegido.",
+          "price": "desde 19.900 €",
+          "specs": { "dimensiones": "Parcela mín. 15,2 × 9,1 m", "superficie": "Acrílico multicapa antideslizante", "cerramiento": "Malla galvanizada de 3 m", "accesos": "Puerta + zona de descanso", "iluminacion": "4 proyectores LED 200 W" },
+          "ideal": ["Comunidad", "Hotel / resort"]
+        },
+        {
+          "name": "Complejo multipista",
+          "cta": "Presupuesto complejo multipista",
+          "desc": "Dos o más pistas compartiendo cimentación, iluminación y accesos: baja el coste por pista y se simplifica la operación.",
+          "price": "proyecto a medida",
+          "specs": { "dimensiones": "Modular · 2+ pistas", "superficie": "Acrílico multicapa antideslizante", "cerramiento": "Perimetral compartido", "extras": "Grada y zona común opcionales", "iluminacion": "Proyecto lumínico a medida" },
+          "ideal": ["Club", "Municipio", "Promotor"]
+        }
+      ]
+    },
+    "compare": { "eyebrow": "Comparativa", "title": "Los 3 modelos, frente a frente" },
+    "materials": {
+      "eyebrow": "Materiales y calidades",
+      "title": "Lo que hace que dure 20 años",
+      "items": [
+        { "t": "Pavimento acrílico", "d": "Sistema multicapa con amortiguación sobre hormigón: agarre y confort articular." },
+        { "t": "Líneas de juego", "d": "Pintura de poliuretano de alta visibilidad, medidas reglamentarias." },
+        { "t": "Cerramiento", "d": "Malla galvanizada plastificada de 3 m con puertas integradas." },
+        { "t": "Iluminación LED", "d": "Proyectores de bajo consumo con óptica antideslumbramiento." }
+      ]
+    },
+    "cover": { "eyebrow": "Cubiertas y cerramientos", "title": "Juega los 365 días del año", "desc": "Cubrimos pistas nuevas o existentes con estructuras a medida: lona tensada, panel o cerramiento completo.", "cta": "Presupuesto de cubierta" },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Dudas sobre pistas de pickleball",
+      "items": [
+        { "q": "¿Cuánto espacio necesita una pista de pickleball?", "a": "La pista mide 13,4 × 6,1 m; con zonas de seguridad recomendamos 15,2 × 9,1 m. Cabe en la mitad del espacio de una de pádel." },
+        { "q": "¿Puedo convertir una pista de tenis o un frontón?", "a": "Sí: en una pista de tenis caben hasta 4 de pickleball. La reconversión es más rápida y económica que la obra nueva." },
+        { "q": "¿Qué superficie es mejor?", "a": "Acrílico multicapa sobre hormigón: es el estándar internacional, drena bien y mantiene el bote uniforme durante años." },
+        { "q": "¿Se puede jugar de noche?", "a": "Sí. Con 4 proyectores LED por pista se alcanza nivel de juego nocturno sin deslumbrar al entorno." },
+        { "q": "¿Podéis cubrir la pista?", "a": "Sí. Instalamos cubiertas y cerramientos sobre pistas nuevas o existentes." }
+      ]
+    },
+    "cta": { "eyebrow": "Presupuesto gratis", "title": "¿Qué pista encaja en tu proyecto?", "sub": "Te lo decimos gratis tras una visita técnica. Presupuesto cerrado en 48 h." }
+  },
+  "about": {
+    "hero": { "eyebrow": "Quiénes somos", "h1": "17 años construyendo donde se juega", "sub": "Un equipo propio de obra deportiva. Sin intermediarios, sin subcontratas encadenadas." },
+    "story": {
+      "eyebrow": "Nuestra historia",
+      "title": "De un taller local a 4 países",
+      "lead": "Empezamos pavimentando pistas en la Comunitat Valenciana. Hoy construimos pádel, pickleball y cubiertas por toda España y en Francia, Alemania y Bélgica, con el mismo equipo y la misma forma de trabajar: de tú a tú y con la palabra por delante.",
+      "stats": ["años de experiencia", "proyectos entregados", "países en Europa", "personas en el equipo"]
+    },
+    "milestones": {
+      "eyebrow": "Nuestra trayectoria",
+      "title": "Los hitos que nos trajeron aquí",
+      "items": [
+        { "y": "2009", "t": "Arrancamos pavimentando pistas deportivas en la Comunitat Valenciana." },
+        { "y": "2014", "t": "Damos el salto a la construcción llave en mano de pistas de pádel." },
+        { "y": "2018", "t": "Primeros proyectos fuera de España: empezamos a construir en Francia." },
+        { "y": "2022", "t": "Incorporamos el pickleball y las cubiertas a nuestro catálogo." },
+        { "y": "2025", "t": "Superamos los 120 proyectos y ampliamos a Alemania y Bélgica." }
+      ]
+    },
+    "values": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Cuatro cosas que no negociamos",
+      "items": [
+        { "t": "Equipo propio", "d": "Pisamos cada obra nosotros. Sin cadenas de subcontratas que diluyen la responsabilidad." },
+        { "t": "La palabra por delante", "d": "Presupuesto y plazo cerrados por escrito. Lo que decimos, lo firmamos." },
+        { "t": "Trato de tú a tú", "d": "Un único interlocutor de principio a fin, hables el idioma que hables." },
+        { "t": "Relación a largo plazo", "d": "La mayoría de clientes repiten o nos recomiendan. Ese es nuestro mejor comercial." }
+      ]
+    },
+    "team": { "eyebrow": "El equipo", "title": "Las personas que pisan tu obra", "note": "Nombres, cargos y fotos reales — pendientes de facilitar." },
+    "coverage": { "eyebrow": "Dónde trabajamos", "title": "España, Francia, Alemania y Bélgica" },
+    "certs": { "eyebrow": "Garantías y certificaciones", "title": "Respaldo que puedes comprobar", "note": "Logos de certificaciones, seguros y homologaciones — pendientes de facilitar." },
+    "cta": { "eyebrow": "Hablamos de tú a tú", "title": "Conócenos con una visita", "sub": "Ven a ver una obra terminada o te visitamos a ti. Gratis y sin compromiso." }
+  },
+  "contact": {
+    "header": { "eyebrow": "Contacto", "title": "Pide tu presupuesto gratis", "sub": "Respondemos en menos de 24 h laborables — normalmente mucho antes.", "quickWrite": "Escríbenos", "quickCall": "Llámanos" },
+    "form": {
+      "stepOf": "Paso {n} de 3",
+      "step1Title": "¿Qué proyecto tienes en mente?",
+      "step1Sub": "Elige lo que mejor encaje. Podemos afinarlo luego.",
+      "step2Title": "¿Dónde y para cuándo?",
+      "step2Sub": "Nos ayuda a estimar desplazamiento y plazos.",
+      "step3Title": "¿Cómo te contactamos?",
+      "step3Sub": "Solo lo justo para enviarte el presupuesto.",
+      "options": [
+        { "t": "Pista de pádel", "d": "Estándar, panorámica o competición" },
+        { "t": "Pista de pickleball", "d": "Estándar, recinto o multipista" },
+        { "t": "Cubierta / cerramiento", "d": "Sobre pista nueva o existente" },
+        { "t": "Reforma / reconversión", "d": "Césped, vidrio, o de tenis a pádel" },
+        { "t": "Otro / no lo tengo claro", "d": "Te asesoramos en la visita" }
+      ],
+      "locLabel": "Localidad y país",
+      "locPh": "Ej. Valencia, España",
+      "whenLabel": "¿Para cuándo?",
+      "whenOptions": ["Lo antes posible", "En 1–3 meses", "En 3–6 meses", "Solo estoy informándome"],
+      "msgLabel": "Cuéntanos más (opcional)",
+      "msgPh": "Superficie disponible, nº de pistas, si ya tienes solera…",
+      "nameLabel": "Nombre",
+      "namePh": "Tu nombre",
+      "phoneLabel": "Teléfono / WhatsApp",
+      "emailLabel": "Email (opcional)",
+      "summaryProject": "Proyecto",
+      "summaryResponse": "Respuesta",
+      "responseValue": "< 24 h laborables",
+      "privacy": "Al enviar aceptas la política de privacidad.",
+      "continue": "Continuar",
+      "submit": "Enviar solicitud",
+      "successTitle": "¡Solicitud enviada!",
+      "successSub": "Te contactamos en menos de 24 h laborables para tu {project}.",
+      "successWa": "¿Prisa? Escríbenos por WhatsApp",
+      "again": "Enviar otra solicitud"
+    },
+    "info": {
+      "eyebrow": "Otras vías",
+      "title": "Datos de contacto",
+      "phone": "Teléfono",
+      "phoneNote": "L–V 8:00–18:00",
+      "whatsapp": "WhatsApp",
+      "whatsappNote": "Chat directo · respuesta < 1 h laborable",
+      "email": "Email",
+      "where": "Dónde estamos",
+      "coverageNote": "Cobertura: España · Francia · Alemania · Bélgica"
+    }
+  }
+}
