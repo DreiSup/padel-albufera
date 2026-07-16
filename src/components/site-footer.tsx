@@ -48,7 +48,18 @@ export function SiteFooter() {
             Pistas de pickleball
           </Link>
           <br />
-          Proyectos · Proceso · Sobre nosotros ·{" "}
+          <Link href="/proyectos" className="text-[#A9ADB0]">
+            Proyectos
+          </Link>{" "}
+          ·{" "}
+          <Link href="/proceso" className="text-[#A9ADB0]">
+            Proceso
+          </Link>{" "}
+          ·{" "}
+          <Link href="/sobre-nosotros" className="text-[#A9ADB0]">
+            Sobre nosotros
+          </Link>{" "}
+          ·{" "}
           <Link href="/contacto" className="text-[#A9ADB0]">
             Contacto
           </Link>
