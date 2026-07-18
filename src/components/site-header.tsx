@@ -3,20 +3,19 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { WhatsappIcon } from "@/components/icons";
-import { Link, usePathname } from "@/i18n/navigation";
-import { LANGS, NAV_ROUTES, TEL, waHref } from "@/lib/site";
+import { Link } from "@/i18n/navigation";
+import { NAV_ROUTES, TEL, waHref } from "@/lib/site";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   const t = useTranslations();
-  const locale = useLocale();
-  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setCompact(window.scrollY > 24);
@@ -27,10 +26,10 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 border-b border-[#E2DFD6] bg-[#F6F4EF]/95 backdrop-blur transition-[height] ${
-        compact ? "h-[54px] min-[900px]:h-16" : "h-16 min-[900px]:h-[74px]"
+        compact ? "h-[54px] min-[1100px]:h-16" : "h-16 min-[1100px]:h-[74px]"
       }`}
     >
-      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 min-[900px]:px-10">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-4 min-[1100px]:px-10">
         <Link href="/">
           <Image
             src="/logo.webp"
@@ -42,41 +41,26 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-5 min-[900px]:flex">
+        <nav className="hidden items-center gap-4 min-[1100px]:flex">
           {NAV_ROUTES.map((link) => (
             <Link
               key={link.key}
               href={link.href}
-              className="text-sm font-semibold text-[#1A1C1E] hover:text-[var(--accd)]"
+              className="shrink-0 text-sm font-semibold whitespace-nowrap text-[#1A1C1E] hover:text-[var(--accd)]"
             >
               {t(`nav.${link.key}`)}
             </Link>
           ))}
-          <span className="ml-1.5 flex gap-1">
-            {LANGS.map((l) => (
-              <Link
-                key={l.code}
-                href={pathname}
-                locale={l.code}
-                className={`rounded-md border px-[9px] py-[5px] text-xs font-bold ${
-                  locale === l.code
-                    ? "border-[#17191B] bg-[#17191B] text-white"
-                    : "border-[#D8D4C9] text-[#7A7E82]"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </span>
+          <LanguageSwitcher className="ml-1.5 shrink-0" />
           <a
             href={waHref(t("common.waMessage"))}
-            className="rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold text-[#07130C] hover:brightness-95"
+            className="shrink-0 rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold whitespace-nowrap text-[#07130C] hover:brightness-95"
           >
             {t("common.requestQuote")}
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 min-[900px]:hidden">
+        <div className="flex items-center gap-2 min-[1100px]:hidden">
           <a
             href={`tel:${TEL}`}
             aria-label={t("common.call")}
@@ -117,21 +101,8 @@ export function SiteHeader() {
                   </SheetClose>
                 ))}
               </nav>
-              <div className="mt-4 flex gap-2">
-                {LANGS.map((l) => (
-                  <Link
-                    key={l.code}
-                    href={pathname}
-                    locale={l.code}
-                    className={`rounded-md border-[1.5px] px-[13px] py-[7px] text-[12.5px] font-semibold ${
-                      locale === l.code
-                        ? "border-[#17191B] bg-[#17191B] text-white"
-                        : "border-[#D8D4C9] bg-white text-[#565A5E]"
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
+              <div className="mt-4">
+                <LanguageSwitcher />
               </div>
               <div className="mt-4 flex flex-col gap-2.5">
                 <Button variant="whatsapp" asChild>

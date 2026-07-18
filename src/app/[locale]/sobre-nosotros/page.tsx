@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Heart, MapPin, Phone, ShieldCheck, Users, Wrench } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -10,6 +11,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { BLUR } from "@/lib/image-blur";
+
+const HERO_IMG = { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario del equipo pintando las líneas de una pista de pádel" };
+const STORY_IMG = { src: "/instalacion-cesped-pista-padel-atardecer.jpg", alt: "Equipo instalando el césped artificial de una pista de pádel al atardecer" };
 
 const VALUE_ICONS = [Wrench, ShieldCheck, Heart, Users];
 
@@ -83,13 +88,20 @@ export default function SobreNosotrosPage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[380px] bg-[#17191B] min-[900px]:min-h-[460px]">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
-            <span className="font-mono text-[11px] tracking-wide text-[#8A8E92]">
-              FOTO REAL — equipo / obra
-            </span>
+          <div className="absolute inset-0">
+            <Image
+              src={HERO_IMG.src}
+              alt={HERO_IMG.alt}
+              fill
+              sizes="100vw"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[HERO_IMG.src]}
+              className="object-cover"
+            />
           </div>
           <div
             className="absolute inset-0"
@@ -118,7 +130,18 @@ export default function SobreNosotrosPage() {
             {t("story.title")}
           </h2>
           <p className="m-0 mt-3 text-[17px] leading-[1.6] text-[#33363A]">{t("story.lead")}</p>
-          <div className="mt-4 aspect-4/3 rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[1000px]" />
+          <div className="relative mt-4 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[1000px]">
+            <Image
+              src={STORY_IMG.src}
+              alt={STORY_IMG.alt}
+              fill
+              sizes="(max-width: 900px) 100vw, 1000px"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[STORY_IMG.src]}
+              className="object-cover"
+            />
+          </div>
           <div ref={statsRef} className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 min-[900px]:max-w-[1000px] min-[900px]:grid-cols-4">
             <Stat value={`${c0}+`} label={statLabels[0]} />
             <Stat value={`+${c1}`} label={statLabels[1]} />

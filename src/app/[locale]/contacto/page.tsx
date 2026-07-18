@@ -50,7 +50,7 @@ export default function ContactoPage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Cabecera contacto */}
         <section className="bg-[#17191B] text-[#EDEBE5]">
           <div className="px-5 pt-[34px] pb-[30px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">

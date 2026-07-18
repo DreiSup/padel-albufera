@@ -18,10 +18,10 @@ export const NAV_ROUTES: { key: "home" | "padel" | "pickleball" | "projects" | "
   { key: "contact", href: "/contacto" },
 ];
 
-export const LANGS: { code: "es" | "fr" | "en" | "de" | "nl"; label: string }[] = [
-  { code: "es", label: "ES" },
-  { code: "fr", label: "FR" },
-  { code: "en", label: "EN" },
-  { code: "de", label: "DE" },
-  { code: "nl", label: "NL" },
+export const LANGS: { code: "es" | "fr" | "en" | "de" | "nl"; label: string; flag: string }[] = [
+  { code: "es", label: "ES", flag: "🇪🇸" },
+  { code: "fr", label: "FR", flag: "🇫🇷" },
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "de", label: "DE", flag: "🇩🇪" },
+  { code: "nl", label: "NL", flag: "🇳🇱" },
 ];

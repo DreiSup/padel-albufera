@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Camera, Check, Clock, Euro, FileText, Key, MapPin, Phone, ShieldCheck, Wrench } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -15,9 +16,16 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { BLUR } from "@/lib/image-blur";
 
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const PLEDGE_ICONS = [Euro, Clock, Camera, ShieldCheck];
+const STEP_IMAGES: ({ src: string; alt: string } | null)[] = [
+  null,
+  null,
+  { src: "/pista-padel-obra-nocturna-grua.jpg", alt: "Obra de pista de pádel con grúa e iluminación al atardecer" },
+  { src: "/dos-pistas-padel-azules-vista-aerea.jpg", alt: "Dos pistas de pádel terminadas y listas para jugar, vista aérea" },
+];
 
 interface Step {
   t: string;
@@ -48,7 +56,7 @@ export default function ProcesoPage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[360px] bg-[#17191B] min-[900px]:min-h-[440px]">
           <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
@@ -99,7 +107,20 @@ export default function ProcesoPage() {
                     <Icon className="size-[15px]" />
                     {s.tag}
                   </span>
-                  <div className="mt-3.5 aspect-[16/10] rounded-[10px] bg-[#E7E4DC]" />
+                  <div className="relative mt-3.5 aspect-[16/10] overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+                    {STEP_IMAGES[i] && (
+                      <Image
+                        src={STEP_IMAGES[i]!.src}
+                        alt={STEP_IMAGES[i]!.alt}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 760px"
+                        quality={70}
+                        placeholder="blur"
+                        blurDataURL={BLUR[STEP_IMAGES[i]!.src]}
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
                   <ul className="m-0 mt-3 flex list-none flex-col gap-2 p-0">
                     {s.deliv.map((d) => (
                       <li key={d} className="flex items-start gap-2.5 text-sm leading-[1.4] text-[#3A3D40]">

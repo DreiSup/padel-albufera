@@ -31,16 +31,24 @@ import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 import { formatPrice } from "@/lib/format-price";
+import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
 
 const CARD_AMOUNTS = [18900, 24900, 15900, null];
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const WHY_ICONS = [FileText, Layers, ShieldCheck];
 
+const CARD_IMAGES = [
+  { src: "/pista-padel-completa-cristales-exterior.jpg", alt: "Pista de pádel estándar con cerramiento de cristal terminada" },
+  { src: "/pista-padel-cristal-panoramica-rural.jpg", alt: "Pista de pádel panorámica con vidrio sin postes intermedios" },
+  { src: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Vista aérea de varias pistas de pickleball" },
+  { src: "/pista-padel-azul-jardin-arbolado.jpg", alt: "Pista de pádel a medida en jardín arbolado" },
+];
+
 const PROYECTOS = [
-  { tipo: "Panorámica", t: "Club deportivo — nombre", loc: "Valencia, España", dato: "Entregada en 6 semanas" },
-  { tipo: "Pádel ×3", t: "Polideportivo municipal", loc: "Alicante, España", dato: "3 pistas · plazo cumplido" },
-  { tipo: "Pickleball", t: "Résidence privada", loc: "Toulouse, Francia", dato: "Pádel + pickleball" },
+  { tipo: "Panorámica", t: "Club deportivo — nombre", loc: "Valencia, España", dato: "Entregada en 6 semanas", img: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano" },
+  { tipo: "Pádel ×3", t: "Polideportivo municipal", loc: "Alicante, España", dato: "3 pistas · plazo cumplido", img: "/tres-pistas-padel-azules-vista-aerea.jpg", alt: "Vista aérea de tres pistas de pádel de césped azul" },
+  { tipo: "Pickleball", t: "Résidence privada", loc: "Toulouse, Francia", dato: "Pádel + pickleball", img: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Vista aérea de varias pistas de pickleball" },
 ];
 
 const TESTIS = [
@@ -122,7 +130,7 @@ export default function HomePage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[648px] bg-[#17191B] min-[900px]:min-h-[680px]">
           <div className="absolute inset-0">
@@ -204,9 +212,21 @@ export default function HomePage() {
               const price = amount
                 ? formatPrice(locale, amount, t("build.from"))
                 : t("build.custom");
+              const img = CARD_IMAGES[i];
               return (
                 <div key={c.title} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
-                  <div className="relative aspect-4/3 bg-[#E7E4DC] min-[900px]:aspect-[16/10]" />
+                  <div className="relative aspect-4/3 bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      sizes="(max-width: 900px) 50vw, (max-width: 1100px) 50vw, 25vw"
+                      quality={70}
+                      placeholder="blur"
+                      blurDataURL={BLUR[img.src]}
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex flex-col gap-2.5 p-4 pb-[18px]">
                     <h3 className="font-display m-0 text-[23px] font-bold uppercase leading-none min-[1100px]:text-xl">
                       {c.title}
@@ -238,7 +258,18 @@ export default function HomePage() {
                   key={p.t}
                   className="w-[295px] shrink-0 snap-start overflow-hidden rounded-[10px] border border-[#2B2F33] bg-[#1E2124]"
                 >
-                  <div className="aspect-4/3 bg-[#26292D]" />
+                  <div className="relative aspect-4/3 bg-[#26292D]">
+                    <Image
+                      src={p.img}
+                      alt={p.alt}
+                      fill
+                      sizes="295px"
+                      quality={70}
+                      placeholder="blur"
+                      blurDataURL={BLUR[p.img]}
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex flex-col gap-1.5 p-4">
                     <span className="inline-flex self-start rounded-md bg-[var(--acc)] px-2 py-1 text-[10.5px] font-bold uppercase tracking-wide text-[#07130C]">
                       {p.tipo}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Phone } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -17,6 +18,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 import { specLabel } from "@/lib/spec-labels";
+import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
 
 interface ServiceModel {
@@ -38,6 +40,45 @@ interface ServiceFaqItem {
   a: string;
 }
 
+const SERVICE_IMAGES: Record<
+  "padel" | "pickleball",
+  {
+    hero: { src: string; alt: string };
+    gallery: [{ src: string; alt: string }, { src: string; alt: string }, { src: string; alt: string }];
+    materials: { src: string; alt: string }[];
+  }
+> = {
+  padel: {
+    hero: {
+      src: "/pista-padel-obra-vista-aerea-cristales.jpg",
+      alt: "Obra de pista de pádel en construcción, vista aérea con paneles de cristal templado listos para montar",
+    },
+    gallery: [
+      { src: "/dos-pistas-padel-azules-vista-aerea.jpg", alt: "Dos pistas de pádel de césped azul terminadas, vista aérea" },
+      { src: "/pista-padel-cristal-zona-industrial.jpg", alt: "Pista de pádel con paredes de cristal en zona industrial" },
+      { src: "/pista-padel-azul-cristal-jardin.jpg", alt: "Pista de pádel de césped azul con cerramiento de cristal en jardín arbolado" },
+    ],
+    materials: [
+      { src: "/junta-cesped-artificial-pista-padel.jpg", alt: "Instalación de la junta entre rollos de césped artificial de una pista de pádel" },
+      { src: "/pista-padel-completa-cristales-exterior.jpg", alt: "Detalle del cerramiento de cristal templado de una pista de pádel" },
+      { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario pintando las líneas sobre la estructura de una pista de pádel azul" },
+      { src: "/pista-padel-obra-nocturna-grua.jpg", alt: "Iluminación LED de una pista de pádel encendida al atardecer" },
+    ],
+  },
+  pickleball: {
+    hero: {
+      src: "/pistas-pickleball-multiples-vista-aerea.jpg",
+      alt: "Vista aérea de varias pistas de pickleball recién pintadas",
+    },
+    gallery: [
+      { src: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una arboleda" },
+      { src: "/pista-padel-cesped-verde-campo-construccion.jpg", alt: "Pista de césped verde en construcción rodeada de campo" },
+      { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una nave industrial" },
+    ],
+    materials: [],
+  },
+};
+
 export function ServicePage({
   ns,
   idPrefix,
@@ -58,19 +99,27 @@ export function ServicePage({
   const materials = t.raw("materials.items") as ServiceMaterial[];
   const faqs = t.raw("faq.items") as ServiceFaqItem[];
   const m = items[model];
+  const images = SERVICE_IMAGES[ns];
   const ctaProjectOptions = [...items.map((i) => i.name), t("cover.cta")];
 
   return (
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[400px] bg-[#17191B] min-[900px]:min-h-[540px]">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
-            <span className="font-mono text-[11px] tracking-wide text-[#8A8E92]">
-              FOTO REAL OBRA — hero servicio
-            </span>
+          <div className="absolute inset-0">
+            <Image
+              src={images.hero.src}
+              alt={images.hero.alt}
+              fill
+              sizes="100vw"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[images.hero.src]}
+              className="object-cover"
+            />
           </div>
           <div
             className="absolute inset-0"
@@ -102,7 +151,7 @@ export function ServicePage({
             {t("models.title")}
           </h2>
 
-          <div className="sticky top-16 z-30 mt-2 flex gap-2 bg-[#F4F2EE] py-3 min-[900px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1120px]">
+          <div className="sticky top-16 z-30 mt-2 flex gap-2 bg-[#F4F2EE] py-3 min-[1100px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1120px]">
             {tabs.map((tab, i) => (
               <button
                 key={tab}
@@ -119,9 +168,42 @@ export function ServicePage({
           </div>
 
           <div className="mt-2 grid grid-cols-2 gap-2.5 min-[900px]:mx-auto min-[900px]:max-w-[820px]">
-            <div className="col-span-2 aspect-4/3 rounded-[10px] bg-[#E7E4DC] min-[900px]:aspect-[16/10]" />
-            <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
-            <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
+            <div className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
+              <Image
+                src={images.gallery[0].src}
+                alt={images.gallery[0].alt}
+                fill
+                sizes="(max-width: 900px) 100vw, 820px"
+                quality={70}
+                placeholder="blur"
+                blurDataURL={BLUR[images.gallery[0].src]}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+              <Image
+                src={images.gallery[1].src}
+                alt={images.gallery[1].alt}
+                fill
+                sizes="(max-width: 900px) 50vw, 400px"
+                quality={70}
+                placeholder="blur"
+                blurDataURL={BLUR[images.gallery[1].src]}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+              <Image
+                src={images.gallery[2].src}
+                alt={images.gallery[2].alt}
+                fill
+                sizes="(max-width: 900px) 50vw, 400px"
+                quality={70}
+                placeholder="blur"
+                blurDataURL={BLUR[images.gallery[2].src]}
+                className="object-cover"
+              />
+            </div>
           </div>
 
           <p className="mut m-0 mt-3 text-[15px] leading-[1.55] text-[#565A5E]">{m.desc}</p>
@@ -199,15 +281,31 @@ export function ServicePage({
             {t("materials.title")}
           </h2>
           <div className="mt-4 grid grid-cols-2 gap-3 min-[900px]:grid-cols-4">
-            {materials.map((mt) => (
-              <div key={mt.t} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
-                <div className="aspect-square bg-[#E7E4DC]" />
-                <div className="px-[13px] pt-3 pb-3.5">
-                  <h3 className="font-display m-0 mb-0.5 text-lg font-bold uppercase leading-none">{mt.t}</h3>
-                  <p className="m-0 text-[12.5px] leading-[1.45] text-[#565A5E]">{mt.d}</p>
+            {materials.map((mt, i) => {
+              const img = images.materials[i];
+              return (
+                <div key={mt.t} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
+                  <div className="relative aspect-square bg-[#E7E4DC]">
+                    {img && (
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 900px) 50vw, 280px"
+                        quality={70}
+                        placeholder="blur"
+                        blurDataURL={BLUR[img.src]}
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
+                  <div className="px-[13px] pt-3 pb-3.5">
+                    <h3 className="font-display m-0 mb-0.5 text-lg font-bold uppercase leading-none">{mt.t}</h3>
+                    <p className="m-0 text-[12.5px] leading-[1.45] text-[#565A5E]">{mt.d}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 

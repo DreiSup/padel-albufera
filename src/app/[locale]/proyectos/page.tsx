@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Phone, Star, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -10,6 +11,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { BLUR } from "@/lib/image-blur";
 
 interface Project {
   id: string;
@@ -22,15 +24,17 @@ interface Project {
   plazo: string;
   alcance: string;
   quote: string;
+  img?: string;
+  alt?: string;
 }
 
 const PROJECTS: Project[] = [
-  { id: "pr1", t: "Club deportivo — nombre", tipo: "Panorámica", tags: ["padel", "pano", "es"], loc: "Valencia, España", year: "2025", aspect: "3/4", plazo: "6 semanas", alcance: "Pista llave en mano + iluminación", quote: "«Cumplieron plazo y presupuesto al céntimo.»" },
-  { id: "pr2", t: "Polideportivo municipal", tipo: "Pádel ×3", tags: ["padel", "es"], loc: "Alicante, España", year: "2024", aspect: "4/3", plazo: "9 semanas", alcance: "3 pistas + obra civil completa", quote: "«Licitación exigente y ejecución impecable.»" },
-  { id: "pr3", t: "Résidence privada", tipo: "Pickleball", tags: ["pkb", "fr"], loc: "Toulouse, Francia", year: "2025", aspect: "4/3", plazo: "4 semanas", alcance: "Pista + cerramiento perimetral", quote: "«Équipe sérieuse, chantier propre.»" },
-  { id: "pr4", t: "Comunidad de propietarios", tipo: "Pádel", tags: ["padel", "es"], loc: "Castellón, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "Pista estándar + drenaje", quote: "«La comunidad votó repetir para una segunda pista.»" },
-  { id: "pr5", t: "Club — nombre", tipo: "Panorámica", tags: ["padel", "pano", "fr"], loc: "Lyon, Francia", year: "2025", aspect: "4/3", plazo: "6 semanas", alcance: "2 pistas panorámicas", quote: "«Résultat premium, délai tenu.»" },
-  { id: "pr6", t: "Hotel resort", tipo: "Pickleball", tags: ["pkb", "es"], loc: "Mallorca, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "2 pistas + zona de sombra", quote: "«Nuestros huéspedes las usan a diario.»" },
+  { id: "pr1", t: "Club deportivo — nombre", tipo: "Panorámica", tags: ["padel", "pano", "es"], loc: "Valencia, España", year: "2025", aspect: "3/4", plazo: "6 semanas", alcance: "Pista llave en mano + iluminación", quote: "«Cumplieron plazo y presupuesto al céntimo.»", img: "/pista-padel-cristal-panoramica-rural.jpg", alt: "Pista de pádel panorámica de cristal terminada" },
+  { id: "pr2", t: "Polideportivo municipal", tipo: "Pádel ×3", tags: ["padel", "es"], loc: "Alicante, España", year: "2024", aspect: "4/3", plazo: "9 semanas", alcance: "3 pistas + obra civil completa", quote: "«Licitación exigente y ejecución impecable.»", img: "/tres-pistas-padel-azules-vista-aerea.jpg", alt: "Vista aérea de tres pistas de pádel de césped azul" },
+  { id: "pr3", t: "Résidence privada", tipo: "Pickleball", tags: ["pkb", "fr"], loc: "Toulouse, Francia", year: "2025", aspect: "4/3", plazo: "4 semanas", alcance: "Pista + cerramiento perimetral", quote: "«Équipe sérieuse, chantier propre.»", img: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Vista aérea de varias pistas de pickleball" },
+  { id: "pr4", t: "Comunidad de propietarios", tipo: "Pádel", tags: ["padel", "es"], loc: "Castellón, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "Pista estándar + drenaje", quote: "«La comunidad votó repetir para una segunda pista.»", img: "/pista-padel-completa-cristales-exterior.jpg", alt: "Pista de pádel estándar con cerramiento de cristal" },
+  { id: "pr5", t: "Club — nombre", tipo: "Panorámica", tags: ["padel", "pano", "fr"], loc: "Lyon, Francia", year: "2025", aspect: "4/3", plazo: "6 semanas", alcance: "2 pistas panorámicas", quote: "«Résultat premium, délai tenu.»", img: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano" },
+  { id: "pr6", t: "Hotel resort", tipo: "Pickleball", tags: ["pkb", "es"], loc: "Mallorca, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "2 pistas + zona de sombra", quote: "«Nuestros huéspedes las usan a diario.»", img: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una arboleda" },
   { id: "pr7", t: "Club deportivo — nombre", tipo: "Cubierta", tags: ["cub", "es"], loc: "Valencia, España", year: "2023", aspect: "4/3", plazo: "3 semanas", alcance: "Cubierta sobre pista existente", quote: "«Ahora jugamos también en enero.»" },
   { id: "pr8", t: "Complejo municipal", tipo: "Pádel + cubierta", tags: ["padel", "cub", "fr"], loc: "Burdeos, Francia", year: "2024", aspect: "3/4", plazo: "10 semanas", alcance: "2 pistas cubiertas llave en mano", quote: "«Un seul interlocuteur du début à la fin.»" },
 ];
@@ -48,7 +52,7 @@ export default function ProyectosPage() {
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
       <SiteHeader />
 
-      <main className="pt-16 pb-[58px] min-[900px]:pt-[74px] min-[900px]:pb-0">
+      <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[340px] bg-[#17191B] min-[900px]:min-h-[420px]">
           <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
@@ -77,7 +81,7 @@ export default function ProyectosPage() {
         </section>
 
         {/* Filtros */}
-        <div className="sticky top-16 z-30 flex gap-2 overflow-x-auto border-b border-[#E2DFD6] bg-[#F4F2EE] px-5 py-3.5 min-[900px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
+        <div className="sticky top-16 z-30 flex gap-2 overflow-x-auto border-b border-[#E2DFD6] bg-[#F4F2EE] px-5 py-3.5 min-[1100px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
           {filters.map((f) => (
             <button
               key={f}
@@ -98,9 +102,22 @@ export default function ProyectosPage() {
           {visible.map((p) => (
             <div key={p.id} className="mb-3 break-inside-avoid overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
               <div
-                className="bg-[#E7E4DC]"
+                className="relative bg-[#E7E4DC]"
                 style={{ aspectRatio: p.aspect }}
-              />
+              >
+                {p.img && (
+                  <Image
+                    src={p.img}
+                    alt={p.alt ?? p.t}
+                    fill
+                    sizes="(max-width: 900px) 50vw, 25vw"
+                    quality={70}
+                    placeholder="blur"
+                    blurDataURL={BLUR[p.img]}
+                    className="object-cover"
+                  />
+                )}
+              </div>
               <button onClick={() => setOpenId(p.id)} className="block w-full cursor-pointer bg-white px-3 pt-2.5 pb-3 text-left">
                 <span className="mb-1.5 inline-flex rounded bg-[var(--acc)]/[.14] px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wide text-[var(--accd)]">
                   {p.tipo}
@@ -171,7 +188,20 @@ export default function ProyectosPage() {
             </div>
 
             <div className="grid grid-cols-2 gap-2.5">
-              <div className="col-span-2 aspect-4/3 rounded-[10px] bg-[#E7E4DC]" />
+              <div className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+                {open.img && (
+                  <Image
+                    src={open.img}
+                    alt={open.alt ?? open.t}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 640px"
+                    quality={70}
+                    placeholder="blur"
+                    blurDataURL={BLUR[open.img]}
+                    className="object-cover"
+                  />
+                )}
+              </div>
               <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
               <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
             </div>
