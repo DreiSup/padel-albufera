@@ -94,6 +94,10 @@
         }
       ]
     },
+    "midCta": {
+      "title": "Passt dieser Ablauf für Sie?",
+      "sub": "Fordern Sie Ihren kostenlosen Vor-Ort-Termin an, wir starten mit Phase 1."
+    },
     "pledges": {
       "eyebrow": "Unsere Zusagen",
       "title": "Was wir unterschreiben, halten wir",
@@ -156,6 +160,8 @@
     "nameLabel": "Name",
     "namePh": "Ihr Name",
     "phoneLabel": "Telefon",
+    "emailLabel": "E-Mail",
+    "emailPh": "ihre@email.com",
     "typeLabel": "Projektart",
     "typeOptions": ["Padel-Court", "Panorama-Padel", "Pickleball", "Überdachung / Einhausung", "Sanierung", "Sonstiges"],
     "submit": "Kostenloses Angebot erhalten",

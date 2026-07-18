@@ -29,12 +29,14 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
+import { Link } from "@/i18n/navigation";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 import { formatPrice } from "@/lib/format-price";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
 
 const CARD_AMOUNTS = [18900, 24900, 15900, null];
+const CARD_HREFS = ["/padel", "/padel", "/pickleball", "/padel#cubiertas"];
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const WHY_ICONS = [FileText, Layers, ShieldCheck];
 
@@ -100,6 +102,9 @@ export default function HomePage() {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const canSubmit = email.trim() !== "" && /\S+@\S+\.\S+/.test(email) && phone.trim() !== "";
   const [statsInView, setStatsInView] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
   const [c0, c1, c2, c3] = useCountUp(statsInView);
@@ -214,7 +219,11 @@ export default function HomePage() {
                 : t("build.custom");
               const img = CARD_IMAGES[i];
               return (
-                <div key={c.title} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
+                <Link
+                  key={c.title}
+                  href={CARD_HREFS[i]}
+                  className="block overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white transition-shadow hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+                >
                   <div className="relative aspect-4/3 bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
                     <Image
                       src={img.src}
@@ -239,7 +248,7 @@ export default function HomePage() {
                       </span>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -287,8 +296,10 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <Button variant="outline" className="mt-4 w-full border-white/30 min-[900px]:mx-auto min-[900px]:max-w-[460px]">
-              {t("nav.projects")} <ChevronRight className="size-[17px]" />
+            <Button variant="outline" className="mt-4 w-full border-white/30 min-[900px]:mx-auto min-[900px]:max-w-[460px]" asChild>
+              <Link href="/proyectos">
+                {t("nav.projects")} <ChevronRight className="size-[17px]" />
+              </Link>
             </Button>
           </div>
         </section>
@@ -463,7 +474,24 @@ export default function HomePage() {
                 }}
               >
                 <Field id="f-nom" label={t("cta.nameLabel")} placeholder={t("cta.namePh")} />
-                <Field id="f-tel" label={t("cta.phoneLabel")} placeholder="+34 600 000 000" type="tel" />
+                <Field
+                  id="f-tel"
+                  label={t("cta.phoneLabel")}
+                  placeholder="+34 600 000 000"
+                  type="tel"
+                  value={phone}
+                  onChange={setPhone}
+                  required
+                />
+                <Field
+                  id="f-email"
+                  label={t("cta.emailLabel")}
+                  placeholder={t("cta.emailPh")}
+                  type="email"
+                  value={email}
+                  onChange={setEmail}
+                  required
+                />
                 <div>
                   <label htmlFor="f-tipo" className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
                     {t("cta.typeLabel")}
@@ -477,7 +505,7 @@ export default function HomePage() {
                     ))}
                   </select>
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={!canSubmit}>
                   {t("cta.submit")}
                 </Button>
                 <p className="m-0 text-[11.5px] leading-[1.5] text-[#7A7E82]">
@@ -536,21 +564,31 @@ function Field({
   label,
   placeholder,
   type = "text",
+  value,
+  onChange,
+  required,
 }: {
   id: string;
   label: string;
   placeholder: string;
   type?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  required?: boolean;
 }) {
   return (
     <div>
       <label htmlFor={id} className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
         {label}
+        {required && <span className="text-[var(--acc)]"> *</span>}
       </label>
       <input
         id={id}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+        required={required}
         className="h-[50px] w-full rounded-lg border-[1.5px] border-[#3A3F44] bg-[#212428] px-3.5 text-[15px] font-medium text-white placeholder:text-[#565A5E]"
       />
     </div>
@@ -559,6 +597,16 @@ function Field({
 
 function VideoThumb() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <div className="relative mt-4 aspect-video overflow-hidden rounded-[10px] bg-[#0F1113]">
       <div className="absolute inset-0 bg-black/35" />
@@ -574,11 +622,14 @@ function VideoThumb() {
           className="fixed inset-0 z-70 flex items-center justify-center bg-[#0A0C0E]/85 p-5"
           onClick={() => setOpen(false)}
         >
-          <div className="relative flex aspect-video w-full items-center justify-center rounded-[10px] bg-black">
+          <div
+            className="relative flex aspect-video max-h-full w-full items-center justify-center rounded-[10px] bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setOpen(false)}
-              aria-label="Cerrar"
-              className="absolute -top-[46px] right-0 flex size-10 items-center justify-center rounded-lg border-[1.5px] border-white/35 text-white"
+              aria-label="Cerrar vídeo"
+              className="absolute top-3 right-3 z-10 flex size-10 items-center justify-center rounded-lg border-[1.5px] border-white/35 bg-black/50 text-white hover:bg-black/70"
             >
               <X className="size-5" />
             </button>

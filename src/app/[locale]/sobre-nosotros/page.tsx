@@ -15,6 +15,7 @@ import { BLUR } from "@/lib/image-blur";
 
 const HERO_IMG = { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario del equipo pintando las líneas de una pista de pádel" };
 const STORY_IMG = { src: "/instalacion-cesped-pista-padel-atardecer.jpg", alt: "Equipo instalando el césped artificial de una pista de pádel al atardecer" };
+const TEAM_IMG = { src: "/equipo-pavimentos-albufera-furgoneta.jpg", alt: "Equipo de Pavimentos Albufera junto a la furgoneta de la empresa" };
 
 const VALUE_ICONS = [Wrench, ShieldCheck, Heart, Users];
 
@@ -199,6 +200,18 @@ export default function SobreNosotrosPage() {
             {t("team.title")}
           </h2>
           <p className="m-0 mt-2 text-[15px] leading-[1.55] text-[#565A5E]">{t("team.note")}</p>
+          <div className="relative mt-4 aspect-[16/10] overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[1000px]">
+            <Image
+              src={TEAM_IMG.src}
+              alt={TEAM_IMG.alt}
+              fill
+              sizes="(max-width: 900px) 100vw, 1000px"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[TEAM_IMG.src]}
+              className="object-cover"
+            />
+          </div>
           <div className="mt-4 grid grid-cols-2 gap-3.5 min-[900px]:grid-cols-4">
             {TEAM_ROLES.map((r) => (
               <div key={r} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">

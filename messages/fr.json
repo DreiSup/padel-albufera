@@ -94,6 +94,10 @@
         }
       ]
     },
+    "midCta": {
+      "title": "Ce processus vous convient ?",
+      "sub": "Demandez votre visite technique gratuite et on démarre par la phase 1."
+    },
     "pledges": {
       "eyebrow": "Nos engagements",
       "title": "Ce que nous signons, nous le tenons",
@@ -156,6 +160,8 @@
     "nameLabel": "Nom",
     "namePh": "Votre nom",
     "phoneLabel": "Téléphone",
+    "emailLabel": "E-mail",
+    "emailPh": "votre@email.com",
     "typeLabel": "Type de projet",
     "typeOptions": ["Terrain de padel", "Padel panoramique", "Pickleball", "Couverture / fermeture", "Rénovation", "Autre"],
     "submit": "Recevoir mon devis gratuit",

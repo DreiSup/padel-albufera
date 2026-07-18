@@ -40,11 +40,13 @@ interface ServiceFaqItem {
   a: string;
 }
 
+type Gallery = [{ src: string; alt: string }, { src: string; alt: string }, { src: string; alt: string }];
+
 const SERVICE_IMAGES: Record<
   "padel" | "pickleball",
   {
     hero: { src: string; alt: string };
-    gallery: [{ src: string; alt: string }, { src: string; alt: string }, { src: string; alt: string }];
+    gallery: [Gallery, Gallery, Gallery];
     materials: { src: string; alt: string }[];
   }
 > = {
@@ -54,9 +56,21 @@ const SERVICE_IMAGES: Record<
       alt: "Obra de pista de pádel en construcción, vista aérea con paneles de cristal templado listos para montar",
     },
     gallery: [
-      { src: "/dos-pistas-padel-azules-vista-aerea.jpg", alt: "Dos pistas de pádel de césped azul terminadas, vista aérea" },
-      { src: "/pista-padel-cristal-zona-industrial.jpg", alt: "Pista de pádel con paredes de cristal en zona industrial" },
-      { src: "/pista-padel-azul-cristal-jardin.jpg", alt: "Pista de pádel de césped azul con cerramiento de cristal en jardín arbolado" },
+      [
+        { src: "/pista-padel-completa-cristales-exterior.jpg", alt: "Pista de pádel estándar con cerramiento de cristal terminada" },
+        { src: "/junta-cesped-artificial-pista-padel.jpg", alt: "Instalación de la junta entre rollos de césped artificial de una pista de pádel estándar" },
+        { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario pintando las líneas de una pista de pádel estándar" },
+      ],
+      [
+        { src: "/pista-padel-cristal-panoramica-rural.jpg", alt: "Pista de pádel panorámica con vidrio sin postes intermedios" },
+        { src: "/pista-padel-cristal-zona-industrial.jpg", alt: "Pista de pádel panorámica con paredes de cristal en zona industrial" },
+        { src: "/pista-padel-azul-cristal-jardin.jpg", alt: "Pista de pádel panorámica de césped azul con cerramiento de cristal en jardín" },
+      ],
+      [
+        { src: "/pista-padel-obra-vista-aerea-cristales.jpg", alt: "Obra de pista de pádel de competición, vista aérea con cristal templado" },
+        { src: "/instalacion-linea-central-pista-padel-noche.jpg", alt: "Instalación de la línea central de una pista de pádel de competición de noche" },
+        { src: "/pista-padel-cesped-artificial-lastres-noche.jpg", alt: "Césped artificial de competición instalado con iluminación nocturna" },
+      ],
     ],
     materials: [
       { src: "/junta-cesped-artificial-pista-padel.jpg", alt: "Instalación de la junta entre rollos de césped artificial de una pista de pádel" },
@@ -71,11 +85,28 @@ const SERVICE_IMAGES: Record<
       alt: "Vista aérea de varias pistas de pickleball recién pintadas",
     },
     gallery: [
-      { src: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una arboleda" },
-      { src: "/pista-padel-cesped-verde-campo-construccion.jpg", alt: "Pista de césped verde en construcción rodeada de campo" },
-      { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una nave industrial" },
+      [
+        { src: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Pista de pickleball estándar recién pintada, vista aérea" },
+        { src: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Pista de pickleball estándar con cerramiento de malla junto a una arboleda" },
+        { src: "/pista-padel-cesped-verde-campo-construccion.jpg", alt: "Base de pista de pickleball estándar en construcción" },
+      ],
+      [
+        { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Pista de pickleball con recinto completo junto a una nave industrial" },
+        { src: "/dos-pistas-padel-azules-vista-aerea.jpg", alt: "Recinto de pistas de pickleball terminado, vista aérea" },
+        { src: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Detalle del cerramiento perimetral de un recinto de pickleball" },
+      ],
+      [
+        { src: "/pista-padel-azul-jardin-arbolado.jpg", alt: "Complejo multipista de pickleball en jardín arbolado" },
+        { src: "/pista-padel-cesped-verde-campo-construccion.jpg", alt: "Obra de un complejo multipista de pickleball en construcción" },
+        { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Varias pistas de pickleball compartiendo cimentación e iluminación" },
+      ],
     ],
-    materials: [],
+    materials: [
+      { src: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Pavimento acrílico multicapa de una pista de pickleball, vista aérea" },
+      { src: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Líneas de juego pintadas sobre la superficie de una pista de pickleball" },
+      { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Cerramiento perimetral galvanizado de una pista de pickleball" },
+      { src: "/pista-padel-obra-nocturna-grua.jpg", alt: "Iluminación LED de una pista de pickleball encendida al atardecer" },
+    ],
   },
 };
 
@@ -100,6 +131,7 @@ export function ServicePage({
   const faqs = t.raw("faq.items") as ServiceFaqItem[];
   const m = items[model];
   const images = SERVICE_IMAGES[ns];
+  const gallery = images.gallery[model];
   const ctaProjectOptions = [...items.map((i) => i.name), t("cover.cta")];
 
   return (
@@ -168,39 +200,39 @@ export function ServicePage({
           </div>
 
           <div className="mt-2 grid grid-cols-2 gap-2.5 min-[900px]:mx-auto min-[900px]:max-w-[820px]">
-            <div className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
+            <div key={`${model}-0`} className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
               <Image
-                src={images.gallery[0].src}
-                alt={images.gallery[0].alt}
+                src={gallery[0].src}
+                alt={gallery[0].alt}
                 fill
                 sizes="(max-width: 900px) 100vw, 820px"
                 quality={70}
                 placeholder="blur"
-                blurDataURL={BLUR[images.gallery[0].src]}
+                blurDataURL={BLUR[gallery[0].src]}
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+            <div key={`${model}-1`} className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
               <Image
-                src={images.gallery[1].src}
-                alt={images.gallery[1].alt}
+                src={gallery[1].src}
+                alt={gallery[1].alt}
                 fill
                 sizes="(max-width: 900px) 50vw, 400px"
                 quality={70}
                 placeholder="blur"
-                blurDataURL={BLUR[images.gallery[1].src]}
+                blurDataURL={BLUR[gallery[1].src]}
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
+            <div key={`${model}-2`} className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
               <Image
-                src={images.gallery[2].src}
-                alt={images.gallery[2].alt}
+                src={gallery[2].src}
+                alt={gallery[2].alt}
                 fill
                 sizes="(max-width: 900px) 50vw, 400px"
                 quality={70}
                 placeholder="blur"
-                blurDataURL={BLUR[images.gallery[2].src]}
+                blurDataURL={BLUR[gallery[2].src]}
                 className="object-cover"
               />
             </div>
@@ -310,7 +342,7 @@ export function ServicePage({
         </section>
 
         {/* Cubiertas */}
-        <section className="bg-[#17191B] text-white">
+        <section id="cubiertas" className="scroll-mt-24 bg-[#17191B] text-white">
           <div className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
             <Eyebrow>{t("cover.eyebrow")}</Eyebrow>
             <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95] text-white">

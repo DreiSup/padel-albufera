@@ -20,9 +20,10 @@ import { BLUR } from "@/lib/image-blur";
 
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const PLEDGE_ICONS = [Euro, Clock, Camera, ShieldCheck];
+const HERO_IMG = { src: "/pista-padel-cesped-verde-nave-industrial.jpg", alt: "Equipo trabajando en la construcción de una pista de pádel junto a una nave industrial" };
 const STEP_IMAGES: ({ src: string; alt: string } | null)[] = [
-  null,
-  null,
+  { src: "/pista-padel-cristal-panoramica-rural.jpg", alt: "Visita técnica y estudio de viabilidad en la parcela de una futura pista de pádel" },
+  { src: "/pista-padel-cesped-verde-campo-construccion.jpg", alt: "Redacción del proyecto técnico y presupuesto cerrado antes de iniciar la obra" },
   { src: "/pista-padel-obra-nocturna-grua.jpg", alt: "Obra de pista de pádel con grúa e iluminación al atardecer" },
   { src: "/dos-pistas-padel-azules-vista-aerea.jpg", alt: "Dos pistas de pádel terminadas y listas para jugar, vista aérea" },
 ];
@@ -59,10 +60,17 @@ export default function ProcesoPage() {
       <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[360px] bg-[#17191B] min-[900px]:min-h-[440px]">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
-            <span className="font-mono text-[11px] tracking-wide text-[#8A8E92]">
-              FOTO REAL OBRA — equipo trabajando
-            </span>
+          <div className="absolute inset-0">
+            <Image
+              src={HERO_IMG.src}
+              alt={HERO_IMG.alt}
+              fill
+              sizes="100vw"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[HERO_IMG.src]}
+              className="object-cover"
+            />
           </div>
           <div
             className="absolute inset-0"
@@ -132,6 +140,32 @@ export default function ProcesoPage() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* CTA intermedio */}
+        <section className="px-5 pb-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:pb-[88px]">
+          <div className="flex flex-col items-start gap-3 rounded-2xl border border-[#E5E2D9] bg-white p-6 min-[900px]:max-w-[760px] min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-6">
+            <div>
+              <h3 className="font-display m-0 text-xl font-bold uppercase leading-none">
+                {t("midCta.title")}
+              </h3>
+              <p className="m-0 mt-1.5 text-sm leading-[1.5] text-[#565A5E]">{t("midCta.sub")}</p>
+            </div>
+            <div className="flex w-full flex-col gap-2 min-[900px]:w-auto min-[900px]:shrink-0 min-[900px]:flex-row">
+              <Button variant="whatsapp" asChild>
+                <a href={waHref("Hola, quiero reservar la visita técnica gratuita.")}>
+                  <WhatsappIcon className="size-5" />
+                  {tc("common.whatsappDirect")}
+                </a>
+              </Button>
+              <Button variant="ghost" asChild>
+                <a href={`tel:${TEL}`}>
+                  <Phone className="size-5" />
+                  {tc("common.call")}
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 

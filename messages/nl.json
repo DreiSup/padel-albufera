@@ -94,6 +94,10 @@
         }
       ]
     },
+    "midCta": {
+      "title": "Past dit proces bij u?",
+      "sub": "Vraag uw gratis technisch bezoek aan en we starten met fase 1."
+    },
     "pledges": {
       "eyebrow": "Onze toezeggingen",
       "title": "Wat we tekenen, leveren we",
@@ -156,6 +160,8 @@
     "nameLabel": "Naam",
     "namePh": "Uw naam",
     "phoneLabel": "Telefoon",
+    "emailLabel": "E-mail",
+    "emailPh": "uw@email.com",
     "typeLabel": "Type project",
     "typeOptions": ["Padelbaan", "Panoramische padelbaan", "Pickleball", "Overkapping / omheining", "Renovatie", "Anders"],
     "submit": "Ontvang gratis offerte",

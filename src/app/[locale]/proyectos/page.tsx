@@ -13,6 +13,8 @@ import { WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
 
+const HERO_IMG = { src: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano, uno de nuestros proyectos entregados" };
+
 interface Project {
   id: string;
   t: string;
@@ -55,10 +57,17 @@ export default function ProyectosPage() {
       <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
         <section className="relative flex min-h-[340px] bg-[#17191B] min-[900px]:min-h-[420px]">
-          <div className="absolute inset-0 flex items-center justify-center bg-[#26292D]">
-            <span className="font-mono text-[11px] tracking-wide text-[#8A8E92]">
-              FOTO REAL OBRA — hero proyectos
-            </span>
+          <div className="absolute inset-0">
+            <Image
+              src={HERO_IMG.src}
+              alt={HERO_IMG.alt}
+              fill
+              sizes="100vw"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[HERO_IMG.src]}
+              className="object-cover"
+            />
           </div>
           <div
             className="absolute inset-0"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, Mail, MapPin, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -10,8 +11,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { CoverIcon, GridIcon, PadelIcon, RenoIcon, WhatsappIcon } from "@/components/icons";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { BLUR } from "@/lib/image-blur";
 
 const OPTION_ICONS = [PadelIcon, GridIcon, CoverIcon, RenoIcon, ArrowRight];
+const TEAM_IMG = { src: "/equipo-pavimentos-albufera-furgoneta.jpg", alt: "Equipo de Pavimentos Albufera junto a la furgoneta de la empresa" };
 
 interface FormOption {
   t: string;
@@ -279,7 +282,18 @@ export default function ContactoPage() {
               {t("info.coverageNote")}
             </InfoLine>
           </div>
-          <div className="mt-[18px] aspect-[16/10] rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[900px]" />
+          <div className="relative mt-[18px] aspect-[16/10] overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:max-w-[900px]">
+            <Image
+              src={TEAM_IMG.src}
+              alt={TEAM_IMG.alt}
+              fill
+              sizes="(max-width: 900px) 100vw, 900px"
+              quality={70}
+              placeholder="blur"
+              blurDataURL={BLUR[TEAM_IMG.src]}
+              className="object-cover"
+            />
+          </div>
         </section>
       </main>
 

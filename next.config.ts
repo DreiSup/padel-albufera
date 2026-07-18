@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
+    qualities: [70, 75],
   },
 };
 

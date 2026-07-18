@@ -94,6 +94,10 @@
         }
       ]
     },
+    "midCta": {
+      "title": "¿Te encaja el proceso?",
+      "sub": "Pide tu visita técnica gratuita y arrancamos por la fase 1."
+    },
     "pledges": {
       "eyebrow": "Nuestros compromisos",
       "title": "Lo que firmamos, lo cumplimos",
@@ -156,6 +160,8 @@
     "nameLabel": "Nombre",
     "namePh": "Tu nombre",
     "phoneLabel": "Teléfono",
+    "emailLabel": "Email",
+    "emailPh": "tucorreo@ejemplo.com",
     "typeLabel": "Tipo de proyecto",
     "typeOptions": ["Pista de pádel", "Pádel panorámica", "Pickleball", "Cubierta / cerramiento", "Reforma", "Otro"],
     "submit": "Recibir presupuesto gratis",

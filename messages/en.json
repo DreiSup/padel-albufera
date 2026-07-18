@@ -94,6 +94,10 @@
         }
       ]
     },
+    "midCta": {
+      "title": "Does this process work for you?",
+      "sub": "Request your free technical visit and we start with phase 1."
+    },
     "pledges": {
       "eyebrow": "Our commitments",
       "title": "What we sign, we deliver",
@@ -156,6 +160,8 @@
     "nameLabel": "Name",
     "namePh": "Your name",
     "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "emailPh": "your@email.com",
     "typeLabel": "Project type",
     "typeOptions": ["Padel court", "Panoramic padel", "Pickleball", "Canopy / enclosure", "Renovation", "Other"],
     "submit": "Get my free quote",
