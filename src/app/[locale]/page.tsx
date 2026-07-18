@@ -1,10 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import {
-  Phone,
-  X,
   ChevronRight,
   Star,
   MapPin,
@@ -14,11 +9,9 @@ import {
   Key,
   Layers,
   ShieldCheck,
-  Play,
 } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -28,9 +21,13 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
+import { HomeStatsSection } from "@/components/home/stats-section";
+import { HomeCtaForm } from "@/components/home/cta-form";
+import { VideoThumb } from "@/components/home/video-thumb";
+import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL, waHref } from "@/lib/site";
 import { formatPrice } from "@/lib/format-price";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
@@ -74,62 +71,21 @@ interface FaqItem {
   a: string;
 }
 
-function useCountUp(active: boolean) {
-  const [vals, setVals] = useState([0, 0, 0, 0]);
-  const ran = useRef(false);
-
-  useEffect(() => {
-    if (!active || ran.current) return;
-    ran.current = true;
-    const targets = [17, 120, 10, 4];
-    const duration = 1400;
-    const t0 = performance.now();
-    let raf: number;
-    const step = (t: number) => {
-      const p = Math.min(1, (t - t0) / duration);
-      const e = 1 - Math.pow(1 - p, 3);
-      setVals(targets.map((tg) => Math.round(tg * e)));
-      if (p < 1) raf = requestAnimationFrame(step);
-    };
-    raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [active]);
-
-  return vals;
-}
-
-export default function HomePage() {
-  const t = useTranslations();
-  const locale = useLocale() as Locale;
-  const [sent, setSent] = useState(false);
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const canSubmit = email.trim() !== "" && /\S+@\S+\.\S+/.test(email) && phone.trim() !== "";
-  const [statsInView, setStatsInView] = useState(false);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const [c0, c1, c2, c3] = useCountUp(statsInView);
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: localeParam } = await params;
+  setRequestLocale(localeParam);
+  const locale = localeParam as Locale;
+  const t = await getTranslations();
 
   const cards = t.raw("build.cards") as BuildCard[];
-  const stepsShort = (t.raw("process.timeline.steps") as { t: string; d: string }[]).slice(0, 4);
   const whys = t.raw("why.items") as WhyItem[];
   const faqs = t.raw("faq.items") as FaqItem[];
   const statsLabels = t.raw("stats.labels") as string[];
   const badges = t.raw("hero.badges") as string[];
-
-  useEffect(() => {
-    const el = statsRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setStatsInView(true);
-        });
-      },
-      { threshold: 0.35 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
 
   return (
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
@@ -137,14 +93,16 @@ export default function HomePage() {
 
       <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
         {/* Hero */}
-        <section className="relative flex min-h-[648px] bg-[#17191B] min-[900px]:min-h-[680px]">
+        <section className="relative flex min-h-[calc(100dvh-64px)] overflow-hidden bg-[#17191B] min-[1100px]:min-h-[calc(100dvh-74px)]">
           <div className="absolute inset-0">
             <Image
               src="/hero.webp"
               alt="Pista de pádel en construcción"
               fill
               priority
-              className="object-cover"
+              sizes="100vw"
+              quality={70}
+              className="animate-hero-zoom object-cover"
             />
           </div>
           <div
@@ -311,35 +269,30 @@ export default function HomePage() {
             {t("process.timeline.title")}
           </h2>
           <div className="mt-2">
-            {stepsShort.map((s, i) => {
-              const Icon = STEP_ICONS[i];
-              return (
-                <div key={s.t} className="flex gap-4 border-b border-[#E2DFD6] py-5">
-                  <span className="font-display w-[50px] shrink-0 text-[40px] font-bold leading-[0.9] text-[var(--accd)]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <Icon className="mt-[3px] size-5 shrink-0 text-[var(--accd)]" />
-                  <div>
-                    <h3 className="font-display m-0 mb-1 text-xl font-bold uppercase leading-none">
-                      {s.t}
-                    </h3>
-                    <p className="m-0 text-sm leading-[1.5] text-[#565A5E]">{s.d}</p>
+            {(t.raw("process.timeline.steps") as { t: string; d: string }[])
+              .slice(0, 4)
+              .map((s, i) => {
+                const Icon = STEP_ICONS[i];
+                return (
+                  <div key={s.t} className="flex gap-4 border-b border-[#E2DFD6] py-5">
+                    <span className="font-display w-[50px] shrink-0 text-[40px] font-bold leading-[0.9] text-[var(--accd)]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <Icon className="mt-[3px] size-5 shrink-0 text-[var(--accd)]" />
+                    <div>
+                      <h3 className="font-display m-0 mb-1 text-xl font-bold uppercase leading-none">
+                        {s.t}
+                      </h3>
+                      <p className="m-0 text-sm leading-[1.5] text-[#565A5E]">{s.d}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </section>
 
         {/* Cifras */}
-        <section ref={statsRef} className="bg-[#17191B] px-5 py-[52px] text-white min-[900px]:py-[88px]">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-7 min-[900px]:mx-auto min-[900px]:max-w-[1000px] min-[900px]:grid-cols-4">
-            <Stat value={`${c0}+`} label={statsLabels[0]} />
-            <Stat value={`+${c1}`} label={statsLabels[1]} />
-            <Stat value={`${c2}`} label={statsLabels[2]} />
-            <Stat value={`${c3}`} label={statsLabels[3]} />
-          </div>
-        </section>
+        <HomeStatsSection labels={statsLabels} />
 
         {/* Testimonios */}
         <section className="px-5 py-[52px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10 min-[900px]:py-[88px]">
@@ -440,96 +393,7 @@ export default function HomePage() {
         </section>
 
         {/* CTA final */}
-        <section className="relative overflow-hidden bg-[#17191B]">
-          <div className="absolute inset-0 bg-[#0F1113]/88" />
-          <div className="relative flex flex-col gap-3.5 px-5 py-14 text-white min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:items-start min-[900px]:px-10">
-            <Eyebrow>{t("cta.eyebrow")}</Eyebrow>
-            <h2 className="font-display text-[34px] font-bold uppercase leading-[0.95] text-white">
-              {t("cta.title")}
-            </h2>
-            <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">
-              {t("cta.sub")}
-            </p>
-            <Button variant="whatsapp" asChild>
-              <a href={waHref(t("common.waMessage"))}>
-                <WhatsappIcon className="size-5" />
-                {t("common.whatsappDirect")}
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href={`tel:${TEL}`}>
-                <Phone className="size-5" />
-                {t("common.call")} · {TEL_LABEL}
-              </a>
-            </Button>
-            <div className="my-1 flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-[#7A7E82] before:h-px before:flex-1 before:bg-[#2B3034] after:h-px after:flex-1 after:bg-[#2B3034]">
-              {t("cta.or")}
-            </div>
-            {!sent ? (
-              <form
-                className="flex flex-col gap-3"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-              >
-                <Field id="f-nom" label={t("cta.nameLabel")} placeholder={t("cta.namePh")} />
-                <Field
-                  id="f-tel"
-                  label={t("cta.phoneLabel")}
-                  placeholder="+34 600 000 000"
-                  type="tel"
-                  value={phone}
-                  onChange={setPhone}
-                  required
-                />
-                <Field
-                  id="f-email"
-                  label={t("cta.emailLabel")}
-                  placeholder={t("cta.emailPh")}
-                  type="email"
-                  value={email}
-                  onChange={setEmail}
-                  required
-                />
-                <div>
-                  <label htmlFor="f-tipo" className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
-                    {t("cta.typeLabel")}
-                  </label>
-                  <select
-                    id="f-tipo"
-                    className="h-[50px] w-full rounded-lg border-[1.5px] border-[#3A3F44] bg-[#212428] px-3.5 text-[15px] font-medium text-white"
-                  >
-                    {(t.raw("cta.typeOptions") as string[]).map((opt) => (
-                      <option key={opt}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-                <Button type="submit" className="w-full" disabled={!canSubmit}>
-                  {t("cta.submit")}
-                </Button>
-                <p className="m-0 text-[11.5px] leading-[1.5] text-[#7A7E82]">
-                  {t("cta.privacy")}
-                </p>
-              </form>
-            ) : (
-              <div className="flex flex-col gap-3 rounded-[10px] border-[1.5px] border-[var(--acc)]/40 bg-[var(--acc)]/[.12] p-5">
-                <h3 className="font-display m-0 text-xl font-bold uppercase leading-none text-white">
-                  {t("cta.successTitle")}
-                </h3>
-                <p className="m-0 text-[15px] text-[#C9CDD0]">
-                  {t("cta.successSub")}
-                </p>
-                <Button variant="whatsapp" asChild>
-                  <a href={waHref(t("common.waMessage"))}>
-                    <WhatsappIcon className="size-5" />
-                    {t("cta.openWhatsApp")}
-                  </a>
-                </Button>
-              </div>
-            )}
-          </div>
-        </section>
+        <HomeCtaForm />
       </main>
 
       <SiteFooter />
@@ -543,100 +407,5 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
     <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--accd)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
       {children}
     </span>
-  );
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div>
-      <div className="font-display text-[62px] font-bold leading-[0.9] text-[var(--acc)] min-[900px]:text-[78px]">
-        {value}
-      </div>
-      <div className="mt-1.5 text-[12.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
-        {label}
-      </div>
-    </div>
-  );
-}
-
-function Field({
-  id,
-  label,
-  placeholder,
-  type = "text",
-  value,
-  onChange,
-  required,
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-  type?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
-        {label}
-        {required && <span className="text-[var(--acc)]"> *</span>}
-      </label>
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange ? (e) => onChange(e.target.value) : undefined}
-        required={required}
-        className="h-[50px] w-full rounded-lg border-[1.5px] border-[#3A3F44] bg-[#212428] px-3.5 text-[15px] font-medium text-white placeholder:text-[#565A5E]"
-      />
-    </div>
-  );
-}
-
-function VideoThumb() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (!open) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [open]);
-
-  return (
-    <div className="relative mt-4 aspect-video overflow-hidden rounded-[10px] bg-[#0F1113]">
-      <div className="absolute inset-0 bg-black/35" />
-      <button
-        onClick={() => setOpen(true)}
-        aria-label="Ver vídeo"
-        className="absolute inset-0 m-auto flex size-[66px] items-center justify-center rounded-full bg-[var(--acc)] text-[#07130C] shadow-[0_10px_34px_rgba(0,0,0,0.45)]"
-      >
-        <Play className="ml-[3px] size-[26px] fill-current" />
-      </button>
-      {open && (
-        <div
-          className="fixed inset-0 z-70 flex items-center justify-center bg-[#0A0C0E]/85 p-5"
-          onClick={() => setOpen(false)}
-        >
-          <div
-            className="relative flex aspect-video max-h-full w-full items-center justify-center rounded-[10px] bg-black"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Cerrar vídeo"
-              className="absolute top-3 right-3 z-10 flex size-10 items-center justify-center rounded-lg border-[1.5px] border-white/35 bg-black/50 text-white hover:bg-black/70"
-            >
-              <X className="size-5" />
-            </button>
-            <span className="font-mono text-xs text-[#9FA4A8]">VÍDEO OBRA</span>
-          </div>
-        </div>
-      )}
-    </div>
   );
 }

@@ -8,9 +8,10 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { NavMoreMenu } from "@/components/nav-more-menu";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { NAV_ROUTES, TEL, waHref } from "@/lib/site";
+import { NAV_ROUTES, PRIMARY_NAV_ROUTES, TEL, waHref } from "@/lib/site";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,12 +38,11 @@ export function SiteHeader() {
             width={140}
             height={34}
             className={`block w-auto transition-[height] ${compact ? "h-[29px]" : "h-[34px]"}`}
-            priority
           />
         </Link>
 
         <nav className="hidden items-center gap-4 min-[1100px]:flex">
-          {NAV_ROUTES.map((link) => (
+          {PRIMARY_NAV_ROUTES.map((link) => (
             <Link
               key={link.key}
               href={link.href}
@@ -51,6 +51,7 @@ export function SiteHeader() {
               {t(`nav.${link.key}`)}
             </Link>
           ))}
+          <NavMoreMenu className="shrink-0" />
           <LanguageSwitcher className="ml-1.5 shrink-0" />
           <a
             href={waHref(t("common.waMessage"))}
@@ -79,7 +80,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent>
               <div className="mb-4 flex items-center justify-between">
-                <Image src="/logo.webp" alt="" width={120} height={30} style={{ height: 30, width: "auto" }} />
+                <Image src="/logo.webp" alt="Pádel & Pickleball Albufera" width={120} height={30} style={{ height: 30, width: "auto" }} />
                 <SheetClose asChild>
                   <button
                     aria-label="Cerrar menú"

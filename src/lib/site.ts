@@ -8,7 +8,9 @@ export function waHref(message: string = WA_MESSAGE_DEFAULT) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-export const NAV_ROUTES: { key: "home" | "padel" | "pickleball" | "projects" | "process" | "about" | "contact"; href: string }[] = [
+export type NavKey = "home" | "padel" | "pickleball" | "projects" | "process" | "about" | "contact";
+
+export const NAV_ROUTES: { key: NavKey; href: string }[] = [
   { key: "home", href: "/" },
   { key: "padel", href: "/padel" },
   { key: "pickleball", href: "/pickleball" },
@@ -17,6 +19,15 @@ export const NAV_ROUTES: { key: "home" | "padel" | "pickleball" | "projects" | "
   { key: "about", href: "/sobre-nosotros" },
   { key: "contact", href: "/contacto" },
 ];
+
+// Desktop navbar: only the routes that drive conversion are shown directly.
+// The rest live under the "more" dropdown (see NavMoreMenu).
+export const PRIMARY_NAV_ROUTES = NAV_ROUTES.filter((r) =>
+  (["home", "padel", "pickleball", "contact"] as NavKey[]).includes(r.key)
+);
+export const MORE_NAV_ROUTES = NAV_ROUTES.filter((r) =>
+  (["projects", "process", "about"] as NavKey[]).includes(r.key)
+);
 
 export const LANGS: { code: "es" | "fr" | "en" | "de" | "nl"; label: string; flag: string }[] = [
   { code: "es", label: "ES", flag: "🇪🇸" },

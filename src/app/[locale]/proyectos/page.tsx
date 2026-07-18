@@ -1,54 +1,26 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { Phone, Star, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Phone } from "lucide-react";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
+import { ProjectsGallery } from "@/components/proyectos/gallery";
 import { TEL, TEL_LABEL, waHref } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
 
 const HERO_IMG = { src: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano, uno de nuestros proyectos entregados" };
 
-interface Project {
-  id: string;
-  t: string;
-  tipo: string;
-  tags: string[];
-  loc: string;
-  year: string;
-  aspect: "4/3" | "3/4";
-  plazo: string;
-  alcance: string;
-  quote: string;
-  img?: string;
-  alt?: string;
-}
-
-const PROJECTS: Project[] = [
-  { id: "pr1", t: "Club deportivo — nombre", tipo: "Panorámica", tags: ["padel", "pano", "es"], loc: "Valencia, España", year: "2025", aspect: "3/4", plazo: "6 semanas", alcance: "Pista llave en mano + iluminación", quote: "«Cumplieron plazo y presupuesto al céntimo.»", img: "/pista-padel-cristal-panoramica-rural.jpg", alt: "Pista de pádel panorámica de cristal terminada" },
-  { id: "pr2", t: "Polideportivo municipal", tipo: "Pádel ×3", tags: ["padel", "es"], loc: "Alicante, España", year: "2024", aspect: "4/3", plazo: "9 semanas", alcance: "3 pistas + obra civil completa", quote: "«Licitación exigente y ejecución impecable.»", img: "/tres-pistas-padel-azules-vista-aerea.jpg", alt: "Vista aérea de tres pistas de pádel de césped azul" },
-  { id: "pr3", t: "Résidence privada", tipo: "Pickleball", tags: ["pkb", "fr"], loc: "Toulouse, Francia", year: "2025", aspect: "4/3", plazo: "4 semanas", alcance: "Pista + cerramiento perimetral", quote: "«Équipe sérieuse, chantier propre.»", img: "/pistas-pickleball-multiples-vista-aerea.jpg", alt: "Vista aérea de varias pistas de pickleball" },
-  { id: "pr4", t: "Comunidad de propietarios", tipo: "Pádel", tags: ["padel", "es"], loc: "Castellón, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "Pista estándar + drenaje", quote: "«La comunidad votó repetir para una segunda pista.»", img: "/pista-padel-completa-cristales-exterior.jpg", alt: "Pista de pádel estándar con cerramiento de cristal" },
-  { id: "pr5", t: "Club — nombre", tipo: "Panorámica", tags: ["padel", "pano", "fr"], loc: "Lyon, Francia", year: "2025", aspect: "4/3", plazo: "6 semanas", alcance: "2 pistas panorámicas", quote: "«Résultat premium, délai tenu.»", img: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano" },
-  { id: "pr6", t: "Hotel resort", tipo: "Pickleball", tags: ["pkb", "es"], loc: "Mallorca, España", year: "2024", aspect: "3/4", plazo: "5 semanas", alcance: "2 pistas + zona de sombra", quote: "«Nuestros huéspedes las usan a diario.»", img: "/pista-padel-cesped-verde-arboleda-nublado.jpg", alt: "Pista de césped verde con cerramiento de malla junto a una arboleda" },
-  { id: "pr7", t: "Club deportivo — nombre", tipo: "Cubierta", tags: ["cub", "es"], loc: "Valencia, España", year: "2023", aspect: "4/3", plazo: "3 semanas", alcance: "Cubierta sobre pista existente", quote: "«Ahora jugamos también en enero.»" },
-  { id: "pr8", t: "Complejo municipal", tipo: "Pádel + cubierta", tags: ["padel", "cub", "fr"], loc: "Burdeos, Francia", year: "2024", aspect: "3/4", plazo: "10 semanas", alcance: "2 pistas cubiertas llave en mano", quote: "«Un seul interlocuteur du début à la fin.»" },
-];
-
-export default function ProyectosPage() {
-  const t = useTranslations("projects");
-  const [filter, setFilter] = useState("all");
-  const [openId, setOpenId] = useState<string | null>(null);
-
-  const filters = ["all", "padel", "pano", "pkb", "cub", "es", "fr"] as const;
-  const visible = PROJECTS.filter((p) => filter === "all" || p.tags.includes(filter));
-  const open = openId ? PROJECTS.find((p) => p.id === openId) ?? null : null;
+export default async function ProyectosPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("projects");
 
   return (
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
@@ -62,6 +34,7 @@ export default function ProyectosPage() {
               src={HERO_IMG.src}
               alt={HERO_IMG.alt}
               fill
+              priority
               sizes="100vw"
               quality={70}
               placeholder="blur"
@@ -89,56 +62,7 @@ export default function ProyectosPage() {
           </div>
         </section>
 
-        {/* Filtros */}
-        <div className="sticky top-16 z-30 flex gap-2 overflow-x-auto border-b border-[#E2DFD6] bg-[#F4F2EE] px-5 py-3.5 min-[1100px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`h-[38px] shrink-0 rounded-full border-[1.5px] px-[15px] text-[13.5px] font-semibold ${
-                filter === f
-                  ? "border-[#17191B] bg-[#17191B] text-white"
-                  : "border-[#D8D4C9] bg-white text-[#565A5E]"
-              }`}
-            >
-              {t(`filters.${f}`)}
-            </button>
-          ))}
-        </div>
-
-        {/* Masonry */}
-        <div className="columns-2 gap-3 p-5 min-[900px]:columns-4 min-[900px]:gap-4 min-[900px]:px-10 min-[900px]:py-12 min-[900px]:mx-auto min-[900px]:max-w-[1200px]">
-          {visible.map((p) => (
-            <div key={p.id} className="mb-3 break-inside-avoid overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white">
-              <div
-                className="relative bg-[#E7E4DC]"
-                style={{ aspectRatio: p.aspect }}
-              >
-                {p.img && (
-                  <Image
-                    src={p.img}
-                    alt={p.alt ?? p.t}
-                    fill
-                    sizes="(max-width: 900px) 50vw, 25vw"
-                    quality={70}
-                    placeholder="blur"
-                    blurDataURL={BLUR[p.img]}
-                    className="object-cover"
-                  />
-                )}
-              </div>
-              <button onClick={() => setOpenId(p.id)} className="block w-full cursor-pointer bg-white px-3 pt-2.5 pb-3 text-left">
-                <span className="mb-1.5 inline-flex rounded bg-[var(--acc)]/[.14] px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wide text-[var(--accd)]">
-                  {p.tipo}
-                </span>
-                <h3 className="font-display m-0 text-[17px] font-bold uppercase leading-[1.05]">{p.t}</h3>
-                <p className="m-0 mt-1 text-[11.5px] text-[#7A7E82]">
-                  {p.loc} · {p.year}
-                </p>
-              </button>
-            </div>
-          ))}
-        </div>
+        <ProjectsGallery />
 
         {/* CTA final */}
         <section className="bg-[#17191B] text-white">
@@ -170,85 +94,6 @@ export default function ProyectosPage() {
 
       <SiteFooter />
       <StickyCta />
-
-      {open && (
-        <div className="fixed inset-0 z-70 bg-[#0A0C0E]/60" onClick={() => setOpenId(null)}>
-          <div
-            className="absolute top-14 right-0 bottom-0 left-0 overflow-auto rounded-t-2xl bg-[#F4F2EE] p-5 pb-24"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="mb-3.5 flex items-start justify-between gap-3">
-              <div>
-                <span className="mb-1.5 inline-flex rounded bg-[var(--acc)]/[.14] px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wide text-[var(--accd)]">
-                  {open.tipo}
-                </span>
-                <h2 className="font-display m-0 text-[28px] font-bold uppercase leading-none">{open.t}</h2>
-                <p className="m-0 mt-1 text-[11.5px] text-[#7A7E82]">
-                  {open.loc} · {open.year}
-                </p>
-              </div>
-              <button
-                onClick={() => setOpenId(null)}
-                aria-label="Cerrar"
-                className="flex size-11 shrink-0 items-center justify-center rounded-lg border-[1.5px] border-[#E0DDD3] bg-white text-[#1A1C1E]"
-              >
-                <X className="size-5" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2.5">
-              <div className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
-                {open.img && (
-                  <Image
-                    src={open.img}
-                    alt={open.alt ?? open.t}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 640px"
-                    quality={70}
-                    placeholder="blur"
-                    blurDataURL={BLUR[open.img]}
-                    className="object-cover"
-                  />
-                )}
-              </div>
-              <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
-              <div className="aspect-3/4 rounded-[10px] bg-[#E7E4DC]" />
-            </div>
-
-            <div className="mt-4">
-              {[
-                { k: t("detail.cliente"), v: open.t },
-                { k: t("detail.ubicacion"), v: open.loc },
-                { k: t("detail.tipo"), v: open.tipo },
-                { k: t("detail.plazo"), v: open.plazo },
-                { k: t("detail.alcance"), v: open.alcance },
-              ].map((r) => (
-                <div key={r.k} className="flex justify-between gap-3.5 border-b border-[#E5E2D9] py-[11px] text-sm">
-                  <span className="shrink-0 text-[#7A7E82]">{r.k}</span>
-                  <span className="text-right font-semibold">{r.v}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 flex flex-col gap-2.5 rounded-[10px] border border-[#E5E2D9] bg-white p-[18px]">
-              <div className="flex gap-[3px] text-[#EFB810]">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-4 fill-current stroke-none" />
-                ))}
-              </div>
-              <p className="m-0 text-[14.5px] leading-[1.55] text-[#2A2D30]">{open.quote}</p>
-              <p className="m-0 text-[11.5px] text-[#7A7E82]">Nombre Apellido · cargo, entidad</p>
-            </div>
-
-            <Button asChild className="mt-4 w-full">
-              <a href={waHref(`Hola, quiero un proyecto como el de ${open.loc} (${open.tipo}).`)}>
-                <WhatsappIcon className="size-5" />
-                {t("detail.cta")}
-              </a>
-            </Button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,11 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { Phone } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -15,8 +10,11 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
+import { ModelSelector } from "@/components/service/model-selector";
+import { ServiceCtaForm } from "@/components/service/cta-form";
+import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL, waHref } from "@/lib/site";
 import { specLabel } from "@/lib/spec-labels";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
@@ -110,7 +108,7 @@ const SERVICE_IMAGES: Record<
   },
 };
 
-export function ServicePage({
+export async function ServicePage({
   ns,
   idPrefix,
   waBaseMessage,
@@ -119,19 +117,14 @@ export function ServicePage({
   idPrefix: string;
   waBaseMessage: string;
 }) {
-  const t = useTranslations(ns);
-  const tc = useTranslations();
-  const locale = useLocale() as Locale;
-  const [model, setModel] = useState(0);
-  const [sent, setSent] = useState(false);
+  const t = await getTranslations(ns);
+  const tc = await getTranslations();
+  const locale = (await getLocale()) as Locale;
 
-  const tabs = t.raw("models.tabs") as string[];
   const items = t.raw("models.items") as ServiceModel[];
   const materials = t.raw("materials.items") as ServiceMaterial[];
   const faqs = t.raw("faq.items") as ServiceFaqItem[];
-  const m = items[model];
   const images = SERVICE_IMAGES[ns];
-  const gallery = images.gallery[model];
   const ctaProjectOptions = [...items.map((i) => i.name), t("cover.cta")];
 
   return (
@@ -146,6 +139,7 @@ export function ServicePage({
               src={images.hero.src}
               alt={images.hero.alt}
               fill
+              priority
               sizes="100vw"
               quality={70}
               placeholder="blur"
@@ -183,93 +177,13 @@ export function ServicePage({
             {t("models.title")}
           </h2>
 
-          <div className="sticky top-16 z-30 mt-2 flex gap-2 bg-[#F4F2EE] py-3 min-[1100px]:top-[74px] min-[900px]:mx-auto min-[900px]:max-w-[1120px]">
-            {tabs.map((tab, i) => (
-              <button
-                key={tab}
-                onClick={() => setModel(i)}
-                className={`font-display h-11 flex-1 rounded-lg border-[1.5px] text-[17px] font-semibold uppercase tracking-wide ${
-                  model === i
-                    ? "border-[#17191B] bg-[#17191B] text-white"
-                    : "border-[#D8D4C9] bg-white text-[#565A5E]"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-2 grid grid-cols-2 gap-2.5 min-[900px]:mx-auto min-[900px]:max-w-[820px]">
-            <div key={`${model}-0`} className="relative col-span-2 aspect-4/3 overflow-hidden rounded-[10px] bg-[#E7E4DC] min-[900px]:aspect-[16/10]">
-              <Image
-                src={gallery[0].src}
-                alt={gallery[0].alt}
-                fill
-                sizes="(max-width: 900px) 100vw, 820px"
-                quality={70}
-                placeholder="blur"
-                blurDataURL={BLUR[gallery[0].src]}
-                className="object-cover"
-              />
-            </div>
-            <div key={`${model}-1`} className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
-              <Image
-                src={gallery[1].src}
-                alt={gallery[1].alt}
-                fill
-                sizes="(max-width: 900px) 50vw, 400px"
-                quality={70}
-                placeholder="blur"
-                blurDataURL={BLUR[gallery[1].src]}
-                className="object-cover"
-              />
-            </div>
-            <div key={`${model}-2`} className="relative aspect-3/4 overflow-hidden rounded-[10px] bg-[#E7E4DC]">
-              <Image
-                src={gallery[2].src}
-                alt={gallery[2].alt}
-                fill
-                sizes="(max-width: 900px) 50vw, 400px"
-                quality={70}
-                placeholder="blur"
-                blurDataURL={BLUR[gallery[2].src]}
-                className="object-cover"
-              />
-            </div>
-          </div>
-
-          <p className="mut m-0 mt-3 text-[15px] leading-[1.55] text-[#565A5E]">{m.desc}</p>
-
-          <div className="mt-3">
-            {Object.entries(m.specs).map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-3.5 border-b border-[#E5E2D9] py-[11px] text-sm">
-                <span className="shrink-0 text-[#7A7E82]">{specLabel(locale, k)}</span>
-                <span className="text-right font-semibold">{v}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="self-center text-xs font-semibold uppercase tracking-wide text-[#565A5E]">
-              {t("models.idealFor")}
-            </span>
-            {m.ideal.map((ic) => (
-              <span key={ic} className="rounded-md border-[1.5px] border-[#D8D4C9] bg-white px-2.5 py-1.5 text-xs font-semibold text-[#2A2D30]">
-                {ic}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-1 flex items-baseline justify-between gap-2">
-            <span className="text-lg font-bold">{m.price}</span>
-          </div>
-
-          <Button asChild className="mt-3 w-full">
-            <a href={waHref(`${waBaseMessage} (${m.name}).`)}>
-              <WhatsappIcon className="size-5" />
-              {m.cta}
-            </a>
-          </Button>
+          <ModelSelector
+            ns={ns}
+            items={items}
+            gallery={images.gallery}
+            locale={locale}
+            waBaseMessage={waBaseMessage}
+          />
         </section>
 
         {/* Comparativa */}
@@ -378,79 +292,12 @@ export function ServicePage({
         </section>
 
         {/* CTA final */}
-        <section className="relative overflow-hidden bg-[#17191B]">
-          <div className="absolute inset-0 bg-[#0F1113]/90" />
-          <div className="relative flex flex-col gap-3.5 px-5 py-14 text-white min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:items-start min-[900px]:px-10">
-            <Eyebrow>{tc("common.requestQuote")}</Eyebrow>
-            <h2 className="font-display text-[34px] font-bold uppercase leading-[0.95] text-white">
-              {t("cta.title")}
-            </h2>
-            <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">
-              {t("cta.sub")}
-            </p>
-            <Button variant="whatsapp" asChild>
-              <a href={waHref(waBaseMessage)}>
-                <WhatsappIcon className="size-5" />
-                {tc("common.whatsappDirect")}
-              </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href={`tel:${TEL}`}>
-                <Phone className="size-5" />
-                {tc("common.call")} · {TEL_LABEL}
-              </a>
-            </Button>
-            <div className="my-1 flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-[#7A7E82] before:h-px before:flex-1 before:bg-[#2B3034] after:h-px after:flex-1 after:bg-[#2B3034]">
-              {tc("cta.or")}
-            </div>
-            {!sent ? (
-              <form
-                className="flex flex-col gap-3"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-              >
-                <Field id={`${idPrefix}-nom`} label={tc("cta.nameLabel")} placeholder={tc("cta.namePh")} />
-                <Field id={`${idPrefix}-tel`} label={tc("cta.phoneLabel")} placeholder="+34 600 000 000" type="tel" />
-                <div>
-                  <label htmlFor={`${idPrefix}-tipo`} className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
-                    {t("models.title")}
-                  </label>
-                  <select
-                    id={`${idPrefix}-tipo`}
-                    className="h-[50px] w-full rounded-lg border-[1.5px] border-[#3A3F44] bg-[#212428] px-3.5 text-[15px] font-medium text-white"
-                  >
-                    {ctaProjectOptions.map((opt) => (
-                      <option key={opt}>{opt}</option>
-                    ))}
-                  </select>
-                </div>
-                <Button type="submit" className="w-full">
-                  {tc("cta.submit")}
-                </Button>
-                <p className="m-0 text-[11.5px] leading-[1.5] text-[#7A7E82]">
-                  {tc("cta.privacy")}
-                </p>
-              </form>
-            ) : (
-              <div className="flex flex-col gap-3 rounded-[10px] border-[1.5px] border-[var(--acc)]/40 bg-[var(--acc)]/[.12] p-5">
-                <h3 className="font-display m-0 text-xl font-bold uppercase leading-none text-white">
-                  {tc("cta.successTitle")}
-                </h3>
-                <p className="m-0 text-[15px] text-[#C9CDD0]">
-                  {tc("cta.successSub")}
-                </p>
-                <Button variant="whatsapp" asChild>
-                  <a href={waHref(tc("common.waMessage"))}>
-                    <WhatsappIcon className="size-5" />
-                    {tc("cta.openWhatsApp")}
-                  </a>
-                </Button>
-              </div>
-            )}
-          </div>
-        </section>
+        <ServiceCtaForm
+          ns={ns}
+          idPrefix={idPrefix}
+          waBaseMessage={waBaseMessage}
+          ctaProjectOptions={ctaProjectOptions}
+        />
       </main>
 
       <SiteFooter />
@@ -464,31 +311,5 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
     <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--accd)] before:h-[3px] before:w-4 before:bg-[var(--acc)]">
       {children}
     </span>
-  );
-}
-
-function Field({
-  id,
-  label,
-  placeholder,
-  type = "text",
-}: {
-  id: string;
-  label: string;
-  placeholder: string;
-  type?: string;
-}) {
-  return (
-    <div>
-      <label htmlFor={id} className="mb-1.5 block text-[11.5px] font-semibold uppercase tracking-wide text-[#9FA4A8]">
-        {label}
-      </label>
-      <input
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        className="h-[50px] w-full rounded-lg border-[1.5px] border-[#3A3F44] bg-[#212428] px-3.5 text-[15px] font-medium text-white placeholder:text-[#565A5E]"
-      />
-    </div>
   );
 }

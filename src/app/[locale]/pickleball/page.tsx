@@ -1,6 +1,15 @@
+import { setRequestLocale } from "next-intl/server";
+
 import { ServicePage } from "@/components/service-page";
 
-export default function PickleballPage() {
+export default async function PickleballPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <ServicePage
       ns="pickleball"

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Clock, ShieldCheck } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { TEL, TEL_LABEL, NAV_ROUTES, waHref } from "@/lib/site";
@@ -17,8 +17,8 @@ function FootHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function SiteFooter() {
-  const t = useTranslations();
+export async function SiteFooter() {
+  const t = await getTranslations();
 
   return (
     <footer className="bg-[#0F1113] text-[#A9ADB0]">

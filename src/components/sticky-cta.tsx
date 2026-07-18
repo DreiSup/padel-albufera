@@ -1,11 +1,11 @@
 import { Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 import { WhatsappIcon } from "@/components/icons";
 import { TEL, waHref } from "@/lib/site";
 
-export function StickyCta() {
-  const t = useTranslations();
+export async function StickyCta() {
+  const t = await getTranslations();
   return (
     <div className="fixed bottom-0 left-0 right-0 z-45 flex shadow-[0_-4px_18px_rgba(0,0,0,0.16)] min-[1100px]:hidden">
       <a

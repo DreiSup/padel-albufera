@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { Camera, Check, Clock, Euro, FileText, Key, MapPin, Phone, ShieldCheck, Wrench } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -46,9 +44,15 @@ interface FaqItem {
   a: string;
 }
 
-export default function ProcesoPage() {
-  const t = useTranslations("process");
-  const tc = useTranslations();
+export default async function ProcesoPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("process");
+  const tc = await getTranslations();
   const steps = t.raw("timeline.steps") as Step[];
   const pledges = t.raw("pledges.items") as Pledge[];
   const faqs = t.raw("faq.items") as FaqItem[];
@@ -65,6 +69,7 @@ export default function ProcesoPage() {
               src={HERO_IMG.src}
               alt={HERO_IMG.alt}
               fill
+              priority
               sizes="100vw"
               quality={70}
               placeholder="blur"
