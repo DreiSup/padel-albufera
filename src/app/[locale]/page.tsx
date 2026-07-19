@@ -219,42 +219,55 @@ export default async function HomePage({
             <h2 className="font-display mt-2 text-[31px] font-bold uppercase leading-[0.95]">
               {t("projects.hero.h1")}
             </h2>
-            <div className="mt-4 -mx-5 flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-5 pb-2 min-[900px]:mx-0 min-[900px]:px-0">
-              {PROYECTOS.map((p) => (
-                <div
+            <div className="mt-6 min-[900px]:mx-auto min-[900px]:max-w-[900px]">
+              {PROYECTOS.map((p, i) => (
+                <Link
                   key={p.t}
-                  className="w-[295px] shrink-0 snap-start overflow-hidden rounded-[10px] border border-[#2B2F33] bg-[#1E2124]"
+                  href="/proyectos"
+                  className="group grid grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-4 border-t border-white/10 py-5 transition-colors hover:bg-white/[0.03] min-[900px]:grid-cols-[44px_minmax(0,1fr)_auto] min-[900px]:gap-6 min-[900px]:py-6"
                 >
-                  <div className="relative aspect-4/3 bg-[#26292D]">
-                    <Image
-                      src={p.img}
-                      alt={p.alt}
-                      fill
-                      sizes="295px"
-                      quality={70}
-                      placeholder="blur"
-                      blurDataURL={BLUR[p.img]}
-                      className="object-cover"
-                    />
+                  <span className="font-display text-[15px] text-white/30 min-[900px]:text-lg">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex min-w-0 items-center gap-3.5 min-[900px]:gap-4">
+                    <div className="relative aspect-square size-14 shrink-0 overflow-hidden rounded-md bg-[#26292D] transition-transform duration-300 group-hover:scale-105 min-[900px]:size-16">
+                      <Image
+                        src={p.img}
+                        alt={p.alt}
+                        fill
+                        sizes="64px"
+                        quality={70}
+                        placeholder="blur"
+                        blurDataURL={BLUR[p.img]}
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="flex items-baseline gap-2.5">
+                        <h3 className="font-display m-0 truncate text-[18px] font-semibold uppercase leading-tight text-white min-[900px]:text-[21px]">
+                          {p.t}
+                        </h3>
+                        <span className="hidden shrink-0 -translate-x-2 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 min-[900px]:inline-block">
+                          →
+                        </span>
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5">
+                        <p className="m-0 flex items-center gap-1.5 text-[12.5px] text-[#9FA4A8]">
+                          <MapPin className="size-[13px]" /> {p.loc}
+                        </p>
+                        <p className="m-0 flex items-center gap-1.5 text-[12.5px] text-[#D8D6CF]">
+                          <Clock className="size-[13px]" /> {p.dato}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-1.5 p-4">
-                    <span className="inline-flex self-start rounded-md bg-[var(--acc)] px-2 py-1 text-[10.5px] font-bold uppercase tracking-wide text-[#07130C]">
-                      {p.tipo}
-                    </span>
-                    <h3 className="font-display m-0 text-[19px] font-semibold uppercase leading-tight text-white">
-                      {p.t}
-                    </h3>
-                    <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#9FA4A8]">
-                      <MapPin className="size-[15px]" /> {p.loc}
-                    </p>
-                    <p className="m-0 flex items-center gap-1.5 text-[13px] text-[#D8D6CF]">
-                      <Clock className="size-[15px]" /> {p.dato}
-                    </p>
-                  </div>
-                </div>
+                  <span className="inline-flex shrink-0 self-start rounded-md bg-[var(--acc)] px-2 py-1 text-[10.5px] font-bold uppercase tracking-wide text-[#07130C] min-[900px]:self-center">
+                    {p.tipo}
+                  </span>
+                </Link>
               ))}
             </div>
-            <Button variant="outline" className="mt-4 w-full border-white/30 min-[900px]:mx-auto min-[900px]:max-w-[460px]" asChild>
+            <Button variant="outline" className="mt-6 w-full border-white/30 min-[900px]:mx-auto min-[900px]:max-w-[460px]" asChild>
               <Link href="/proyectos">
                 {t("nav.projects")} <ChevronRight className="size-[17px]" />
               </Link>
