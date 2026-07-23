@@ -8,6 +8,7 @@
     "process": "Méthode",
     "about": "À propos",
     "contact": "Contact",
+    "configurator": "Configurateur 3D",
     "more": "Plus"
   },
   "common": {
@@ -379,5 +380,13 @@
       "where": "Où nous sommes",
       "coverageNote": "Couverture : Espagne · France · Allemagne · Belgique"
     }
+  },
+  "configurator": {
+    "hero": {
+      "eyebrow": "Nouveauté",
+      "h1": "Configurez votre terrain en 3D",
+      "sub": "Choisissez modèle, couleurs et finitions et visualisez votre terrain avant de le construire."
+    },
+    "comingSoon": "Nous préparons cet outil. Vous pourrez bientôt concevoir votre terrain en 3D directement ici."
   }
 }

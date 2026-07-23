@@ -8,6 +8,7 @@
     "process": "Werkwijze",
     "about": "Over ons",
     "contact": "Contact",
+    "configurator": "3D-configurator",
     "more": "Meer"
   },
   "common": {
@@ -379,5 +380,13 @@
       "where": "Waar we zijn",
       "coverageNote": "Dekking: Spanje · Frankrijk · Duitsland · België"
     }
+  },
+  "configurator": {
+    "hero": {
+      "eyebrow": "Nieuw",
+      "h1": "Configureer uw baan in 3D",
+      "sub": "Kies model, kleuren en afwerkingen en bekijk uw baan voordat u hem laat bouwen."
+    },
+    "comingSoon": "We werken aan deze tool. Binnenkort kunt u hier uw baan direct in 3D ontwerpen."
   }
 }

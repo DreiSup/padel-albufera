@@ -8,6 +8,7 @@
     "process": "Ablauf",
     "about": "Über uns",
     "contact": "Kontakt",
+    "configurator": "3D-Konfigurator",
     "more": "Mehr"
   },
   "common": {
@@ -379,5 +380,13 @@
       "where": "Wo wir sind",
       "coverageNote": "Abdeckung: Spanien · Frankreich · Deutschland · Belgien"
     }
+  },
+  "configurator": {
+    "hero": {
+      "eyebrow": "Neu",
+      "h1": "Konfigurieren Sie Ihren Court in 3D",
+      "sub": "Wählen Sie Modell, Farben und Ausstattung und sehen Sie Ihren Court, bevor Sie ihn bauen."
+    },
+    "comingSoon": "Wir arbeiten an diesem Tool. Bald können Sie Ihren Court direkt hier in 3D gestalten."
   }
 }

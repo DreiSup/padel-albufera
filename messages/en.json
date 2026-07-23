@@ -8,6 +8,7 @@
     "process": "Process",
     "about": "About us",
     "contact": "Contact",
+    "configurator": "3D Configurator",
     "more": "More"
   },
   "common": {
@@ -379,5 +380,13 @@
       "where": "Where we are",
       "coverageNote": "Coverage: Spain · France · Germany · Belgium"
     }
+  },
+  "configurator": {
+    "hero": {
+      "eyebrow": "New",
+      "h1": "Configure your court in 3D",
+      "sub": "Choose model, colours and finishes and see your court before you build it."
+    },
+    "comingSoon": "We're building this tool. Soon you'll be able to design your court in 3D right here."
   }
 }

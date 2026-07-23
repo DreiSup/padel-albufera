@@ -8,6 +8,7 @@
     "process": "Proceso",
     "about": "Sobre nosotros",
     "contact": "Contacto",
+    "configurator": "Configurador 3D",
     "more": "Más"
   },
   "common": {
@@ -379,5 +380,13 @@
       "where": "Dónde estamos",
       "coverageNote": "Cobertura: España · Francia · Alemania · Bélgica"
     }
+  },
+  "configurator": {
+    "hero": {
+      "eyebrow": "Novedad",
+      "h1": "Configura tu pista en 3D",
+      "sub": "Elige modelo, colores y acabados y visualiza tu pista antes de construirla."
+    },
+    "comingSoon": "Estamos preparando esta herramienta. Muy pronto podrás diseñar tu pista en 3D directamente aquí."
   }
 }
