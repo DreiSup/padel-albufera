@@ -145,7 +145,7 @@
     "eyebrow": "Questions fréquentes",
     "title": "Nous répondons à vos questions",
     "items": [
-      { "q": "Combien coûte la construction d'un terrain de padel ?", "a": "Un terrain standard clé en main démarre à 18 900 € et un panoramique à 24 900 € (chiffres indicatifs). Le prix final dépend du terrain, des accès et des finitions : nous le fixons par écrit après la visite gratuite." },
+      { "q": "Combien coûte la construction d'un terrain de padel ?", "a": "Le prix final dépend du modèle, du terrain, des accès et des finitions. Nous vous le donnons par écrit, sans engagement, après la visite technique gratuite." },
       { "q": "Combien de temps durent les travaux ?", "a": "Entre 4 et 8 semaines à partir du début du chantier, selon les fondations et le modèle. Le délai est garanti par contrat." },
       { "q": "Que comprend le clé en main ?", "a": "Tout : terrassement, dalle, structure, verre trempé, gazon, éclairage LED et démarches administratives. Nous livrons le terrain prêt à jouer." },
       { "q": "Travaillez-vous hors d'Espagne ?", "a": "Oui. Nous réalisons des chantiers en France, en Allemagne et en Belgique avec la même équipe interne et la même garantie qu'en Espagne." },
@@ -196,7 +196,6 @@
           "name": "Terrain standard",
           "cta": "Devis terrain standard",
           "desc": "Le terrain réglementaire de référence : robuste, rentable et pensé pour un usage intensif en clubs et copropriétés.",
-          "price": "à partir de 18 900 €",
           "specs": { "dimensions": "20 × 10 m (réglementaire)", "structure": "Acier galvanisé laqué", "verre": "Trempé 10 mm", "gazon": "Monofilament 12 mm", "eclairage": "8 projecteurs LED 200 W" },
           "ideal": ["Club", "Copropriété"]
         },
@@ -204,7 +203,6 @@
           "name": "Terrain panoramique",
           "cta": "Devis terrain panoramique",
           "desc": "Verre autoportant sans poteaux intermédiaires : visibilité totale et l'esthétique d'une installation premium.",
-          "price": "à partir de 24 900 €",
           "specs": { "dimensions": "20 × 10 m (réglementaire)", "structure": "Poteaux d'angle renforcés", "verre": "Trempé 12 mm autoportant", "gazon": "Monofilament 12 mm", "eclairage": "8 projecteurs LED 200 W" },
           "ideal": ["Club premium", "Promoteur", "Particulier"]
         },
@@ -212,7 +210,6 @@
           "name": "Terrain de compétition",
           "cta": "Devis terrain de compétition",
           "desc": "Prêt pour les tournois : éclairage de niveau fédéral, gazon de compétition et espace pour tribune et réalisation.",
-          "price": "à partir de 29 900 €",
           "specs": { "dimensions": "20 × 10 m + périmètre technique", "structure": "Panoramique renforcée", "verre": "Trempé 12 mm autoportant", "gazon": "Fibre de compétition homologuée", "eclairage": "LED ≥ 500 lx uniformes" },
           "ideal": ["Club", "Fédération", "Commune"]
         }
@@ -255,7 +252,6 @@
           "name": "Terrain standard",
           "cta": "Devis terrain standard",
           "desc": "Le terrain réglementaire de pickleball : surface acrylique à forte adhérence sur dalle de béton armé.",
-          "price": "à partir de 15 900 €",
           "specs": { "dimensions": "13,4 × 6,1 m (réglementaire)", "surface": "Acrylique multicouche antidérapant", "base": "Dalle de béton armé", "filet": "Aluminium avec tendeur", "eclairage": "4 projecteurs LED 200 W" },
           "ideal": ["Club", "Copropriété"]
         },
@@ -263,7 +259,6 @@
           "name": "Enceinte complète",
           "cta": "Devis enceinte complète",
           "desc": "Terrain avec clôture périmétrique de 3 m : la balle toujours en jeu et l'environnement protégé.",
-          "price": "à partir de 19 900 €",
           "specs": { "dimensions": "Parcelle min. 15,2 × 9,1 m", "surface": "Acrylique multicouche antidérapant", "cloture": "Grillage galvanisé de 3 m", "acces": "Porte + zone de repos", "eclairage": "4 projecteurs LED 200 W" },
           "ideal": ["Copropriété", "Hôtel / resort"]
         },
@@ -271,7 +266,6 @@
           "name": "Complexe multi-terrain",
           "cta": "Devis complexe multi-terrain",
           "desc": "Deux terrains ou plus partageant fondations, éclairage et accès : coût par terrain réduit et exploitation simplifiée.",
-          "price": "projet sur mesure",
           "specs": { "dimensions": "Modulaire · 2+ terrains", "surface": "Acrylique multicouche antidérapant", "cloture": "Périmétrique partagée", "extras": "Tribune et espace commun en option", "eclairage": "Projet lumineux sur mesure" },
           "ideal": ["Club", "Commune", "Promoteur"]
         }

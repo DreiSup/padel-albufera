@@ -145,7 +145,7 @@
     "eyebrow": "Häufige Fragen",
     "title": "Wir beantworten Ihre Fragen",
     "items": [
-      { "q": "Was kostet der Bau eines Padel-Courts?", "a": "Ein schlüsselfertiger Standard-Court beginnt bei 18.900 €, ein Panorama-Court bei 24.900 € (Richtwerte). Der Endpreis hängt von Gelände, Zufahrt und Ausstattung ab: Wir legen ihn nach dem kostenlosen Ortstermin schriftlich fest." },
+      { "q": "Was kostet der Bau eines Padel-Courts?", "a": "Der Endpreis hängt vom Modell, dem Gelände, der Zufahrt und der Ausstattung ab. Wir nennen ihn Ihnen schriftlich und unverbindlich nach dem kostenlosen technischen Termin." },
       { "q": "Wie lange dauert der Bau?", "a": "Zwischen 4 und 8 Wochen ab Baubeginn, je nach Fundament und Modell. Der Termin wird vertraglich zugesichert." },
       { "q": "Was umfasst schlüsselfertig?", "a": "Alles: Erdarbeiten, Bodenplatte, Konstruktion, Sicherheitsglas, Rasen, LED-Beleuchtung und Genehmigungen. Wir übergeben den Court spielfertig." },
       { "q": "Arbeiten Sie außerhalb Spaniens?", "a": "Ja. Wir bauen in Frankreich, Deutschland und Belgien mit demselben eigenen Team und derselben Garantie wie in Spanien." },
@@ -196,7 +196,6 @@
           "name": "Standard-Court",
           "cta": "Angebot Standard-Court",
           "desc": "Der maßgebliche Regel-Court: robust, wirtschaftlich und für den intensiven Einsatz in Vereinen und Wohnanlagen gebaut.",
-          "price": "ab 18.900 €",
           "specs": { "abmessungen": "20 × 10 m (regelkonform)", "struktur": "Verzinkter, lackierter Stahl", "glas": "10 mm Sicherheitsglas", "rasen": "Monofilament 12 mm", "beleuchtung": "8 × 200 W LED-Strahler" },
           "ideal": ["Verein", "Wohnanlage"]
         },
@@ -204,7 +203,6 @@
           "name": "Panorama-Court",
           "cta": "Angebot Panorama-Court",
           "desc": "Selbsttragendes Glas ohne Zwischenpfosten: volle Sicht und die Optik einer Premium-Anlage.",
-          "price": "ab 24.900 €",
           "specs": { "abmessungen": "20 × 10 m (regelkonform)", "struktur": "Verstärkte Eckpfosten", "glas": "12 mm selbsttragend gehärtet", "rasen": "Monofilament 12 mm", "beleuchtung": "8 × 200 W LED-Strahler" },
           "ideal": ["Premium-Verein", "Bauträger", "Privat"]
         },
@@ -212,7 +210,6 @@
           "name": "Wettkampf-Court",
           "cta": "Angebot Wettkampf-Court",
           "desc": "Turnierbereit: Beleuchtung auf Verbandsniveau, Wettkampfrasen und Platz für Tribüne und Übertragung.",
-          "price": "ab 29.900 €",
           "specs": { "abmessungen": "20 × 10 m + technischer Rand", "struktur": "Verstärktes Panorama", "glas": "12 mm selbsttragend gehärtet", "rasen": "Zugelassene Wettkampffaser", "beleuchtung": "LED ≥ 500 lx gleichmäßig" },
           "ideal": ["Verein", "Verband", "Kommune"]
         }
@@ -255,7 +252,6 @@
           "name": "Standard-Court",
           "cta": "Angebot Standard-Court",
           "desc": "Der regelkonforme Pickleball-Court: griffige Acryloberfläche auf einer Stahlbetonplatte.",
-          "price": "ab 15.900 €",
           "specs": { "abmessungen": "13,4 × 6,1 m (regelkonform)", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "basis": "Stahlbetonplatte", "netz": "Aluminium mit Spanner", "beleuchtung": "4 × 200 W LED-Strahler" },
           "ideal": ["Verein", "Wohnanlage"]
         },
@@ -263,7 +259,6 @@
           "name": "Volleinhausung",
           "cta": "Angebot Volleinhausung",
           "desc": "Court mit 3 m Umzäunung: der Ball immer im Spiel und die Umgebung geschützt.",
-          "price": "ab 19.900 €",
           "specs": { "abmessungen": "Grundstück min. 15,2 × 9,1 m", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "zaun": "3 m verzinktes Gitter", "zugang": "Tür + Ruhezone", "beleuchtung": "4 × 200 W LED-Strahler" },
           "ideal": ["Wohnanlage", "Hotel / Resort"]
         },
@@ -271,7 +266,6 @@
           "name": "Multi-Court-Komplex",
           "cta": "Angebot Multi-Court-Komplex",
           "desc": "Zwei oder mehr Courts teilen Fundament, Beleuchtung und Zugänge: geringere Kosten pro Court und einfacherer Betrieb.",
-          "price": "individuelles Projekt",
           "specs": { "abmessungen": "Modular · 2+ Courts", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "zaun": "Gemeinsame Umzäunung", "extras": "Tribüne und Gemeinschaftsbereich optional", "beleuchtung": "Maßgeschneidertes Lichtkonzept" },
           "ideal": ["Verein", "Kommune", "Bauträger"]
         }

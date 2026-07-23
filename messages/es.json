@@ -145,7 +145,7 @@
     "eyebrow": "Preguntas frecuentes",
     "title": "Resolvemos tus dudas",
     "items": [
-      { "q": "¿Cuánto cuesta construir una pista de pádel?", "a": "Una pista estándar llave en mano parte de 18.900 € y una panorámica de 24.900 € (cifras orientativas). El precio final depende de terreno, accesos y acabados: lo cerramos por escrito tras la visita gratuita." },
+      { "q": "¿Cuánto cuesta construir una pista de pádel?", "a": "El precio final depende del modelo, el terreno, los accesos y los acabados. Te lo damos por escrito y sin compromiso tras la visita técnica gratuita." },
       { "q": "¿Cuánto tarda la obra?", "a": "Entre 4 y 8 semanas desde el inicio de obra, según cimentación y modelo. El plazo queda comprometido en contrato." },
       { "q": "¿Qué incluye llave en mano?", "a": "Todo: movimiento de tierras, solera, estructura, vidrio templado, césped, iluminación LED y legalización. Entregamos la pista lista para jugar." },
       { "q": "¿Trabajáis fuera de España?", "a": "Sí. Ejecutamos obra en Francia, Alemania y Bélgica con el mismo equipo propio y la misma garantía que en España." },
@@ -196,7 +196,6 @@
           "name": "Pista estándar",
           "cta": "Presupuesto pista estándar",
           "desc": "La pista reglamentaria de referencia: robusta, rentable y pensada para uso intensivo en clubes y comunidades.",
-          "price": "desde 18.900 €",
           "specs": { "dimensiones": "20 × 10 m (reglamentaria)", "estructura": "Acero galvanizado lacado", "vidrio": "Templado 10 mm", "cesped": "Monofilamento 12 mm", "iluminacion": "8 proyectores LED 200 W" },
           "ideal": ["Club", "Comunidad"]
         },
@@ -204,7 +203,6 @@
           "name": "Pista panorámica",
           "cta": "Presupuesto pista panorámica",
           "desc": "Vidrio autoportante sin postes intermedios: visibilidad total y la estética que diferencia una instalación premium.",
-          "price": "desde 24.900 €",
           "specs": { "dimensiones": "20 × 10 m (reglamentaria)", "estructura": "Pilares esquineros reforzados", "vidrio": "Templado 12 mm autoportante", "cesped": "Monofilamento 12 mm", "iluminacion": "8 proyectores LED 200 W" },
           "ideal": ["Club premium", "Promotor", "Particular"]
         },
@@ -212,7 +210,6 @@
           "name": "Pista de competición",
           "cta": "Presupuesto pista de competición",
           "desc": "Preparada para torneos: iluminación de nivel federativo, césped de competición y espacio para grada y realización.",
-          "price": "desde 29.900 €",
           "specs": { "dimensiones": "20 × 10 m + perímetro técnico", "estructura": "Panorámica reforzada", "vidrio": "Templado 12 mm autoportante", "cesped": "Fibra de competición homologada", "iluminacion": "LED ≥ 500 lx uniformes" },
           "ideal": ["Club", "Federación", "Municipio"]
         }
@@ -255,7 +252,6 @@
           "name": "Pista estándar",
           "cta": "Presupuesto pista estándar",
           "desc": "La pista reglamentaria de pickleball: superficie acrílica de alto agarre sobre solera de hormigón armado.",
-          "price": "desde 15.900 €",
           "specs": { "dimensiones": "13,4 × 6,1 m (reglamentaria)", "superficie": "Acrílico multicapa antideslizante", "base": "Solera de hormigón armado", "red": "Aluminio con tensor", "iluminacion": "4 proyectores LED 200 W" },
           "ideal": ["Club", "Comunidad"]
         },
@@ -263,7 +259,6 @@
           "name": "Recinto completo",
           "cta": "Presupuesto recinto completo",
           "desc": "Pista con cerramiento perimetral de 3 m: la pelota siempre en juego y el entorno protegido.",
-          "price": "desde 19.900 €",
           "specs": { "dimensiones": "Parcela mín. 15,2 × 9,1 m", "superficie": "Acrílico multicapa antideslizante", "cerramiento": "Malla galvanizada de 3 m", "accesos": "Puerta + zona de descanso", "iluminacion": "4 proyectores LED 200 W" },
           "ideal": ["Comunidad", "Hotel / resort"]
         },
@@ -271,7 +266,6 @@
           "name": "Complejo multipista",
           "cta": "Presupuesto complejo multipista",
           "desc": "Dos o más pistas compartiendo cimentación, iluminación y accesos: baja el coste por pista y se simplifica la operación.",
-          "price": "proyecto a medida",
           "specs": { "dimensiones": "Modular · 2+ pistas", "superficie": "Acrílico multicapa antideslizante", "cerramiento": "Perimetral compartido", "extras": "Grada y zona común opcionales", "iluminacion": "Proyecto lumínico a medida" },
           "ideal": ["Club", "Municipio", "Promotor"]
         }

@@ -28,11 +28,8 @@ import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import { TEL, waHref } from "@/lib/site";
-import { formatPrice } from "@/lib/format-price";
 import { BLUR } from "@/lib/image-blur";
-import type { Locale } from "@/i18n/routing";
 
-const CARD_AMOUNTS = [18900, 24900, 15900, null];
 const CARD_HREFS = ["/padel", "/padel", "/pickleball", "/padel#cubiertas"];
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const WHY_ICONS = [FileText, Layers, ShieldCheck];
@@ -76,9 +73,8 @@ export default async function HomePage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale: localeParam } = await params;
-  setRequestLocale(localeParam);
-  const locale = localeParam as Locale;
+  const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations();
 
   const cards = t.raw("build.cards") as BuildCard[];
@@ -171,10 +167,6 @@ export default async function HomePage({
           </h2>
           <div className="mt-4 flex flex-col gap-4 min-[900px]:grid min-[900px]:grid-cols-2 min-[900px]:gap-[22px] min-[1100px]:grid-cols-4">
             {cards.map((c, i) => {
-              const amount = CARD_AMOUNTS[i];
-              const price = amount
-                ? formatPrice(locale, amount, t("build.from"))
-                : t("build.custom");
               const img = CARD_IMAGES[i];
               return (
                 <Link
@@ -199,8 +191,7 @@ export default async function HomePage({
                       {c.title}
                     </h3>
                     <p className="m-0 text-sm leading-[1.5] text-[#565A5E]">{c.desc}</p>
-                    <div className="flex items-baseline justify-between gap-2 border-t border-[#EEEBE3] pt-[11px]">
-                      <span className="font-bold text-base">{price}</span>
+                    <div className="flex items-baseline justify-end gap-2 border-t border-[#EEEBE3] pt-[11px]">
                       <span className="flex items-center gap-1.5 text-sm font-semibold text-[var(--accd)]">
                         {t("common.seeDetails")} <ChevronRight className="size-4" />
                       </span>

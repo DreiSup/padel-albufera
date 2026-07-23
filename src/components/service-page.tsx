@@ -23,7 +23,6 @@ interface ServiceModel {
   name: string;
   cta: string;
   desc: string;
-  price: string;
   specs: Record<string, string>;
   ideal: string[];
 }
@@ -201,7 +200,6 @@ export async function ServicePage({
                   <div key={mo.name} className="overflow-hidden rounded-[10px] border border-[#E5E2D9] bg-white text-[#1A1C1E]">
                     <div className="flex items-center justify-between bg-[#17191B] px-4 py-3 text-white">
                       <h3 className="font-display m-0 text-xl font-bold uppercase">{mo.name}</h3>
-                      <span className="text-[15px] font-bold">{mo.price}</span>
                     </div>
                     <div className="px-4 pt-1.5 pb-3.5">
                       {[...rows, [t("models.idealFor"), mo.ideal.join(" · ")] as [string, string]].map(

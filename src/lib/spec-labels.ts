@@ -1,6 +1,8 @@
 import type { Locale } from "@/i18n/routing";
 
-export const SPEC_LABELS: Record<Locale, Record<string, string>> = {
+// Keyed by string (not Locale) so the de/nl maps stay ready for when those
+// locales are re-enabled in src/i18n/routing.ts without causing a type error.
+export const SPEC_LABELS: Record<string, Record<string, string>> = {
   es: {
     dimensiones: "Dimensiones",
     estructura: "Estructura",

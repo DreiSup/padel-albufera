@@ -145,7 +145,7 @@
     "eyebrow": "Veelgestelde vragen",
     "title": "Wij beantwoorden uw vragen",
     "items": [
-      { "q": "Wat kost de bouw van een padelbaan?", "a": "Een sleutelklare standaardbaan begint bij € 18.900 en een panoramische bij € 24.900 (richtprijzen). De definitieve prijs hangt af van terrein, toegang en afwerking: wij leggen die schriftelijk vast na het gratis bezoek." },
+      { "q": "Wat kost de bouw van een padelbaan?", "a": "De definitieve prijs hangt af van het model, het terrein, de toegang en de afwerking. Wij geven die u schriftelijk en vrijblijvend na het gratis technische bezoek." },
       { "q": "Hoe lang duurt de bouw?", "a": "Tussen 4 en 8 weken vanaf de start, afhankelijk van fundering en model. De termijn wordt contractueel vastgelegd." },
       { "q": "Wat omvat sleutelklaar?", "a": "Alles: grondwerk, vloerplaat, structuur, gehard glas, gras, LED-verlichting en vergunningen. Wij leveren de baan speelklaar op." },
       { "q": "Werken jullie buiten Spanje?", "a": "Ja. Wij bouwen in Frankrijk, Duitsland en België met hetzelfde eigen team en dezelfde garantie als in Spanje." },
@@ -196,7 +196,6 @@
           "name": "Standaardbaan",
           "cta": "Offerte standaardbaan",
           "desc": "De referentie-reglementaire baan: robuust, rendabel en gebouwd voor intensief gebruik in clubs en VvE's.",
-          "price": "vanaf € 18.900",
           "specs": { "afmetingen": "20 × 10 m (reglementair)", "structuur": "Gegalvaniseerd gelakt staal", "glas": "Gehard 10 mm", "gras": "Monofilament 12 mm", "verlichting": "8 × 200 W LED-schijnwerpers" },
           "ideal": ["Club", "VvE"]
         },
@@ -204,7 +203,6 @@
           "name": "Panoramische baan",
           "cta": "Offerte panoramische baan",
           "desc": "Zelfdragend glas zonder tussenpalen: volledig zicht en de uitstraling van een premium-installatie.",
-          "price": "vanaf € 24.900",
           "specs": { "afmetingen": "20 × 10 m (reglementair)", "structuur": "Versterkte hoekpalen", "glas": "12 mm zelfdragend gehard", "gras": "Monofilament 12 mm", "verlichting": "8 × 200 W LED-schijnwerpers" },
           "ideal": ["Premium-club", "Ontwikkelaar", "Particulier"]
         },
@@ -212,7 +210,6 @@
           "name": "Wedstrijdbaan",
           "cta": "Offerte wedstrijdbaan",
           "desc": "Toernooiklaar: verlichting op bondsniveau, wedstrijdgras en ruimte voor tribune en verslaggeving.",
-          "price": "vanaf € 29.900",
           "specs": { "afmetingen": "20 × 10 m + technische rand", "structuur": "Versterkt panoramisch", "glas": "12 mm zelfdragend gehard", "gras": "Goedgekeurde wedstrijdvezel", "verlichting": "LED ≥ 500 lx gelijkmatig" },
           "ideal": ["Club", "Bond", "Gemeente"]
         }
@@ -255,7 +252,6 @@
           "name": "Standaardbaan",
           "cta": "Offerte standaardbaan",
           "desc": "De reglementaire pickleballbaan: acryloppervlak met hoge grip op een gewapend betonplaat.",
-          "price": "vanaf € 15.900",
           "specs": { "afmetingen": "13,4 × 6,1 m (reglementair)", "oppervlak": "Meerlaags antislip-acryl", "basis": "Gewapende betonplaat", "net": "Aluminium met spanner", "verlichting": "4 × 200 W LED-schijnwerpers" },
           "ideal": ["Club", "VvE"]
         },
@@ -263,7 +259,6 @@
           "name": "Volledige omheining",
           "cta": "Offerte volledige omheining",
           "desc": "Baan met omheining van 3 m: de bal altijd in het spel en de omgeving beschermd.",
-          "price": "vanaf € 19.900",
           "specs": { "afmetingen": "Kavel min. 15,2 × 9,1 m", "oppervlak": "Meerlaags antislip-acryl", "omheining": "Gegalvaniseerd gaas van 3 m", "toegang": "Poort + rustzone", "verlichting": "4 × 200 W LED-schijnwerpers" },
           "ideal": ["VvE", "Hotel / resort"]
         },
@@ -271,7 +266,6 @@
           "name": "Multibaan-complex",
           "cta": "Offerte multibaan-complex",
           "desc": "Twee of meer banen die fundering, verlichting en toegang delen: lagere kosten per baan en eenvoudiger beheer.",
-          "price": "project op maat",
           "specs": { "afmetingen": "Modulair · 2+ banen", "oppervlak": "Meerlaags antislip-acryl", "omheining": "Gedeelde omheining", "extras": "Tribune en gemeenschappelijke zone optioneel", "verlichting": "Lichtplan op maat" },
           "ideal": ["Club", "Gemeente", "Ontwikkelaar"]
         }

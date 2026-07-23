@@ -29,10 +29,9 @@ export const MORE_NAV_ROUTES = NAV_ROUTES.filter((r) =>
   (["projects", "process", "about"] as NavKey[]).includes(r.key)
 );
 
-export const LANGS: { code: "es" | "fr" | "en" | "de" | "nl"; label: string; flag: string }[] = [
+// "de" and "nl" are temporarily disabled — re-add here (and in src/i18n/routing.ts) to bring them back.
+export const LANGS: { code: "es" | "fr" | "en"; label: string; flag: string }[] = [
   { code: "es", label: "ES", flag: "🇪🇸" },
   { code: "fr", label: "FR", flag: "🇫🇷" },
   { code: "en", label: "EN", flag: "🇬🇧" },
-  { code: "de", label: "DE", flag: "🇩🇪" },
-  { code: "nl", label: "NL", flag: "🇳🇱" },
 ];

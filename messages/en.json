@@ -145,7 +145,7 @@
     "eyebrow": "Frequently asked questions",
     "title": "Your questions, answered",
     "items": [
-      { "q": "How much does it cost to build a padel court?", "a": "A standard turnkey court starts at €18,900 and a panoramic one at €24,900 (indicative figures). The final price depends on the site, access and finishes: we fix it in writing after the free visit." },
+      { "q": "How much does it cost to build a padel court?", "a": "The final price depends on the model, the site, access and finishes. We give it to you in writing, with no obligation, after the free technical visit." },
       { "q": "How long does the build take?", "a": "Between 4 and 8 weeks from the start of works, depending on foundations and model. The deadline is committed by contract." },
       { "q": "What does turnkey include?", "a": "Everything: earthworks, slab, structure, tempered glass, turf, LED lighting and permits. We deliver the court ready to play." },
       { "q": "Do you work outside Spain?", "a": "Yes. We build in France, Germany and Belgium with the same in-house team and the same warranty as in Spain." },
@@ -196,7 +196,6 @@
           "name": "Standard court",
           "cta": "Standard court quote",
           "desc": "The benchmark regulation court: robust, cost-effective and built for intensive use in clubs and communities.",
-          "price": "from €18,900",
           "specs": { "dimensions": "20 × 10 m (regulation)", "structure": "Lacquered galvanized steel", "glass": "10 mm tempered", "turf": "12 mm monofilament", "lighting": "8 × 200 W LED floodlights" },
           "ideal": ["Club", "Community"]
         },
@@ -204,7 +203,6 @@
           "name": "Panoramic court",
           "cta": "Panoramic court quote",
           "desc": "Self-supporting glass with no intermediate posts: full visibility and the look of a premium facility.",
-          "price": "from €24,900",
           "specs": { "dimensions": "20 × 10 m (regulation)", "structure": "Reinforced corner posts", "glass": "12 mm self-supporting tempered", "turf": "12 mm monofilament", "lighting": "8 × 200 W LED floodlights" },
           "ideal": ["Premium club", "Developer", "Private"]
         },
@@ -212,7 +210,6 @@
           "name": "Competition court",
           "cta": "Competition court quote",
           "desc": "Tournament-ready: federation-level lighting, competition turf and room for stands and broadcast.",
-          "price": "from €29,900",
           "specs": { "dimensions": "20 × 10 m + technical perimeter", "structure": "Reinforced panoramic", "glass": "12 mm self-supporting tempered", "turf": "Approved competition fibre", "lighting": "LED ≥ 500 lx uniform" },
           "ideal": ["Club", "Federation", "Municipality"]
         }
@@ -255,7 +252,6 @@
           "name": "Standard court",
           "cta": "Standard court quote",
           "desc": "The regulation pickleball court: high-grip acrylic surface over a reinforced concrete slab.",
-          "price": "from €15,900",
           "specs": { "dimensions": "13.4 × 6.1 m (regulation)", "surface": "Multilayer anti-slip acrylic", "base": "Reinforced concrete slab", "net": "Aluminium with tensioner", "lighting": "4 × 200 W LED floodlights" },
           "ideal": ["Club", "Community"]
         },
@@ -263,7 +259,6 @@
           "name": "Full enclosure",
           "cta": "Full enclosure quote",
           "desc": "Court with a 3 m perimeter fence: the ball always in play and the surroundings protected.",
-          "price": "from €19,900",
           "specs": { "dimensions": "Min. plot 15.2 × 9.1 m", "surface": "Multilayer anti-slip acrylic", "fence": "3 m galvanized mesh", "access": "Gate + rest area", "lighting": "4 × 200 W LED floodlights" },
           "ideal": ["Community", "Hotel / resort"]
         },
@@ -271,7 +266,6 @@
           "name": "Multi-court complex",
           "cta": "Multi-court complex quote",
           "desc": "Two or more courts sharing foundations, lighting and access: lower cost per court and simpler operation.",
-          "price": "custom project",
           "specs": { "dimensions": "Modular · 2+ courts", "surface": "Multilayer anti-slip acrylic", "fence": "Shared perimeter", "extras": "Optional stands and common area", "lighting": "Custom lighting design" },
           "ideal": ["Club", "Municipality", "Developer"]
         }

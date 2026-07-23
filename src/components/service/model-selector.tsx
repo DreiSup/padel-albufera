@@ -15,7 +15,6 @@ interface ServiceModel {
   name: string;
   cta: string;
   desc: string;
-  price: string;
   specs: Record<string, string>;
   ideal: string[];
 }
@@ -119,10 +118,6 @@ export function ModelSelector({
             {ic}
           </span>
         ))}
-      </div>
-
-      <div className="mt-1 flex items-baseline justify-between gap-2">
-        <span className="text-lg font-bold">{m.price}</span>
       </div>
 
       <Button asChild className="mt-3 w-full">
