@@ -9,6 +9,7 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "configurator": "3D-Konfigurator",
+    "construction": "Wie gebaut wird",
     "more": "Mehr"
   },
   "common": {
@@ -388,5 +389,13 @@
       "sub": "Wählen Sie Modell, Farben und Ausstattung und sehen Sie Ihren Court, bevor Sie ihn bauen."
     },
     "comingSoon": "Wir arbeiten an diesem Tool. Bald können Sie Ihren Court direkt hier in 3D gestalten."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Neu",
+      "h1": "So wird Ihr Court gebaut",
+      "sub": "Vom Rohboden bis zum spielfertigen Court, Schritt für Schritt."
+    },
+    "comingSoon": "Wir arbeiten an diesem Erlebnis. Bald sehen Sie hier den gesamten Bauprozess animiert."
   }
 }

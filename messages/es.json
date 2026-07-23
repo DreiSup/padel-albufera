@@ -9,6 +9,7 @@
     "about": "Sobre nosotros",
     "contact": "Contacto",
     "configurator": "Configurador 3D",
+    "construction": "Cómo se construye",
     "more": "Más"
   },
   "common": {
@@ -388,5 +389,13 @@
       "sub": "Elige modelo, colores y acabados y visualiza tu pista antes de construirla."
     },
     "comingSoon": "Estamos preparando esta herramienta. Muy pronto podrás diseñar tu pista en 3D directamente aquí."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Novedad",
+      "h1": "Así se construye tu pista",
+      "sub": "Del terreno a la pista lista para jugar, paso a paso."
+    },
+    "comingSoon": "Estamos preparando esta experiencia. Muy pronto verás aquí todo el proceso de construcción, animado."
   }
 }

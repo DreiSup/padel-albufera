@@ -45,7 +45,7 @@ export async function SiteFooter() {
                 {t(`nav.${link.key}`)}
               </Link>
               {i < NAV_ROUTES.length - 1 ? " · " : ""}
-              {i === 3 ? <br /> : null}
+              {i === 4 ? <br /> : null}
             </span>
           ))}
         </p>

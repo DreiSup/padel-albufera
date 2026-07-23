@@ -9,6 +9,7 @@
     "about": "About us",
     "contact": "Contact",
     "configurator": "3D Configurator",
+    "construction": "How it's built",
     "more": "More"
   },
   "common": {
@@ -388,5 +389,13 @@
       "sub": "Choose model, colours and finishes and see your court before you build it."
     },
     "comingSoon": "We're building this tool. Soon you'll be able to design your court in 3D right here."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "New",
+      "h1": "How your court gets built",
+      "sub": "From bare ground to a court ready to play, step by step."
+    },
+    "comingSoon": "We're building this experience. Soon you'll see the whole construction process here, animated."
   }
 }

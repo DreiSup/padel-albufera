@@ -9,6 +9,7 @@
     "about": "À propos",
     "contact": "Contact",
     "configurator": "Configurateur 3D",
+    "construction": "Comment on construit",
     "more": "Plus"
   },
   "common": {
@@ -388,5 +389,13 @@
       "sub": "Choisissez modèle, couleurs et finitions et visualisez votre terrain avant de le construire."
     },
     "comingSoon": "Nous préparons cet outil. Vous pourrez bientôt concevoir votre terrain en 3D directement ici."
+  },
+  "construction": {
+    "hero": {
+      "eyebrow": "Nouveauté",
+      "h1": "Comment votre terrain est construit",
+      "sub": "Du terrain nu au terrain prêt à jouer, étape par étape."
+    },
+    "comingSoon": "Nous préparons cette expérience. Vous verrez bientôt ici tout le processus de construction, animé."
   }
 }

@@ -8,13 +8,14 @@ export function waHref(message: string = WA_MESSAGE_DEFAULT) {
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
-export type NavKey = "home" | "padel" | "pickleball" | "configurator" | "projects" | "process" | "about" | "contact";
+export type NavKey = "home" | "padel" | "pickleball" | "configurator" | "construction" | "projects" | "process" | "about" | "contact";
 
 export const NAV_ROUTES: { key: NavKey; href: string }[] = [
   { key: "home", href: "/" },
   { key: "padel", href: "/padel" },
   { key: "pickleball", href: "/pickleball" },
   { key: "configurator", href: "/configurador" },
+  { key: "construction", href: "/como-se-construye" },
   { key: "projects", href: "/proyectos" },
   { key: "process", href: "/proceso" },
   { key: "about", href: "/sobre-nosotros" },
@@ -27,7 +28,7 @@ export const PRIMARY_NAV_ROUTES = NAV_ROUTES.filter((r) =>
   (["home", "padel", "pickleball", "contact"] as NavKey[]).includes(r.key)
 );
 export const MORE_NAV_ROUTES = NAV_ROUTES.filter((r) =>
-  (["configurator", "projects", "process", "about"] as NavKey[]).includes(r.key)
+  (["configurator", "construction", "projects", "process", "about"] as NavKey[]).includes(r.key)
 );
 
 // "de" and "nl" are temporarily disabled — re-add here (and in src/i18n/routing.ts) to bring them back.
