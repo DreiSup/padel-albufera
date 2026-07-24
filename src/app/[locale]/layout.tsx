@@ -65,6 +65,18 @@ export default async function RootLayout({
       <ConsentInit />
       {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
       <body>
+        {/* @next/third-parties solo inyecta el script; el iframe de respaldo
+            para JS deshabilitado no lo incluye, así que se añade a mano. */}
+        {GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        ) : null}
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
