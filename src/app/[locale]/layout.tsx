@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Instrument_Sans } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { ConsentInit } from "@/components/analytics/consent-init";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+
+// El contenedor GTM lo rellenas tú vía NEXT_PUBLIC_GTM_ID (ver .env.example).
+// Sin él, Consent Mode se inicializa igual pero no se carga GTM.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -55,6 +61,9 @@ export default async function RootLayout({
       lang={locale}
       className={`${barlowCondensed.variable} ${instrumentSans.variable}`}
     >
+      {/* Consent Mode v2 SIEMPRE antes de GTM. */}
+      <ConsentInit />
+      {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>

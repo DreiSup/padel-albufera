@@ -26,9 +26,16 @@
     "eyebrow": "Baanbouwers · ES · FR · DE · BE",
     "h1": "Wij bouwen uw padel- of pickleballbaan sleutelklaar",
     "sub": "Van beton tot de laatste afwerking. 17 jaar sportbouw. 10 jaar garantie.",
-    "badges": ["17+ jaar", "+120 projecten", "10 jaar garantie", "ES · FR · DE · BE"]
+    "badges": [
+      "17+ jaar",
+      "+120 projecten",
+      "10 jaar garantie",
+      "ES · FR · DE · BE"
+    ]
   },
-  "proof": { "title": "Zij vertrouwen op ons" },
+  "proof": {
+    "title": "Zij vertrouwen op ons"
+  },
   "build": {
     "eyebrow": "Wat wij bouwen",
     "title": "Een baan voor elk project",
@@ -36,10 +43,22 @@
     "onRequest": "prijs op aanvraag",
     "custom": "project op maat",
     "cards": [
-      { "title": "Standaard padelbaan", "desc": "De meest gevraagde configuratie voor clubs en VvE's." },
-      { "title": "Panoramische padelbaan", "desc": "Glas zonder tussenpalen: maximale zichtbaarheid, premium afwerking." },
-      { "title": "Pickleballbaan", "desc": "De snelst groeiende sport van Europa, op de helft van de ruimte." },
-      { "title": "Baan op maat / overkappingen", "desc": "Overkappingen, omheiningen en bijzondere projecten op maat." }
+      {
+        "title": "Standaard padelbaan",
+        "desc": "De meest gevraagde configuratie voor clubs en VvE's."
+      },
+      {
+        "title": "Panoramische padelbaan",
+        "desc": "Glas zonder tussenpalen: maximale zichtbaarheid, premium afwerking."
+      },
+      {
+        "title": "Pickleballbaan",
+        "desc": "De snelst groeiende sport van Europa, op de helft van de ruimte."
+      },
+      {
+        "title": "Baan op maat / overkappingen",
+        "desc": "Overkappingen, omheiningen en bijzondere projecten op maat."
+      }
     ]
   },
   "projects": {
@@ -48,8 +67,23 @@
       "h1": "Gerealiseerde projecten",
       "sub": "Padel, pickleball en overkappingen opgeleverd door ons team. Alles wat u hier ziet bestaat."
     },
-    "filters": { "all": "Alle", "padel": "Padel", "pano": "Panoramisch", "pkb": "Pickleball", "cub": "Overkappingen", "es": "Spanje", "fr": "Frankrijk" },
-    "detail": { "cliente": "Klant", "ubicacion": "Locatie", "tipo": "Type", "plazo": "Doorlooptijd", "alcance": "Omvang", "cta": "Ik wil zoiets" },
+    "filters": {
+      "all": "Alle",
+      "padel": "Padel",
+      "pano": "Panoramisch",
+      "pkb": "Pickleball",
+      "cub": "Overkappingen",
+      "es": "Spanje",
+      "fr": "Frankrijk"
+    },
+    "detail": {
+      "cliente": "Klant",
+      "ubicacion": "Locatie",
+      "tipo": "Type",
+      "plazo": "Doorlooptijd",
+      "alcance": "Omvang",
+      "cta": "Ik wil zoiets"
+    },
     "cta": {
       "eyebrow": "De volgende kan de uwe zijn",
       "title": "Wilt u zoiets bij uw installatie?",
@@ -72,28 +106,44 @@
           "dur": "48–72 u",
           "tag": "Gratis en vrijblijvend",
           "d": "Wij komen naar uw kavel, meten, analyseren toegang, terrein en regelgeving, en beantwoorden uw vragen persoonlijk.",
-          "deliv": ["Uitzetten en opmeten", "Haalbaarheidsstudie", "Modeladvies"]
+          "deliv": [
+            "Uitzetten en opmeten",
+            "Haalbaarheidsstudie",
+            "Modeladvies"
+          ]
         },
         {
           "t": "Project en vaste offerte",
           "dur": "3–5 dagen",
           "tag": "Definitieve prijs op papier",
           "d": "Wij stellen het technisch dossier, de tekeningen en de gedetailleerde offerte op. De getekende prijs is de betaalde prijs.",
-          "deliv": ["Technisch dossier en tekeningen", "Vaste offerte zonder open posten", "Documentatie voor vergunning"]
+          "deliv": [
+            "Technisch dossier en tekeningen",
+            "Vaste offerte zonder open posten",
+            "Documentatie voor vergunning"
+          ]
         },
         {
           "t": "Bouw met gegarandeerde termijn",
           "dur": "4–8 weken",
           "tag": "Eigen team",
           "d": "Wij bouwen met eigen team, zonder geketende onderaannemers, en sturen wekelijks voortgangsfoto's.",
-          "deliv": ["Fundering en grondwerk", "Montage van structuur en glas", "Wekelijkse voortgangsfoto's"]
+          "deliv": [
+            "Fundering en grondwerk",
+            "Montage van structuur en glas",
+            "Wekelijkse voortgangsfoto's"
+          ]
         },
         {
           "t": "Oplevering speelklaar",
           "dur": "1 dag + nazorg",
           "tag": "10 jaar garantie",
           "d": "Eindcontrole met u, overdracht van gedocumenteerde garantie en onderhoudsplan. En we blijven daarna bereikbaar.",
-          "deliv": ["Gezamenlijke test en controle", "10 jaar garantie op papier", "Onderhoudsplan nazorg"]
+          "deliv": [
+            "Gezamenlijke test en controle",
+            "10 jaar garantie op papier",
+            "Onderhoudsplan nazorg"
+          ]
         }
       ]
     },
@@ -105,10 +155,22 @@
       "eyebrow": "Onze toezeggingen",
       "title": "Wat we tekenen, leveren we",
       "items": [
-        { "t": "Vaste offerte", "d": "Geen open posten of onverwachte meerkosten. Wat u tekent, betaalt u." },
-        { "t": "Gegarandeerde termijn", "d": "De opleverdatum staat in het contract, geen optimistische schatting." },
-        { "t": "Volledige transparantie", "d": "Wekelijkse voortgangsfoto's en één aanspreekpunt tijdens de hele bouw." },
-        { "t": "Echte garantie", "d": "10 jaar op papier en nazorgservice in alle 4 landen." }
+        {
+          "t": "Vaste offerte",
+          "d": "Geen open posten of onverwachte meerkosten. Wat u tekent, betaalt u."
+        },
+        {
+          "t": "Gegarandeerde termijn",
+          "d": "De opleverdatum staat in het contract, geen optimistische schatting."
+        },
+        {
+          "t": "Volledige transparantie",
+          "d": "Wekelijkse voortgangsfoto's en één aanspreekpunt tijdens de hele bouw."
+        },
+        {
+          "t": "Echte garantie",
+          "d": "10 jaar op papier en nazorgservice in alle 4 landen."
+        }
       ],
       "sealYears": "10",
       "sealWord": "jaar garantie",
@@ -118,11 +180,26 @@
       "eyebrow": "Veelgestelde vragen",
       "title": "Vragen over het proces",
       "items": [
-        { "q": "Zijn het bezoek en de offerte gratis?", "a": "Ja. Fase 1 — bezoek, opmeten en haalbaarheidsstudie — is volledig gratis en vrijblijvend." },
-        { "q": "Kan de prijs tijdens de bouw veranderen?", "a": "Nee, tenzij u wijzigingen in de omvang vraagt. De offerte is vast en zonder open posten." },
-        { "q": "Besteedt u de bouw uit?", "a": "Wij bouwen met eigen team. Als een specifiek vak op een specialist steunt, blijven wij uw enige aanspreekpunt en verantwoordelijk voor het resultaat." },
-        { "q": "Hoe volg ik de voortgang van veraf?", "a": "Wij sturen wekelijks voortgangsfoto's via WhatsApp of e-mail. Vooral handig voor projecten in Frankrijk, Duitsland en België." },
-        { "q": "Wat gebeurt er na oplevering?", "a": "U ontvangt de 10-jaar garantie op papier en een onderhoudsplan. Wij blijven bereikbaar voor nazorg." }
+        {
+          "q": "Zijn het bezoek en de offerte gratis?",
+          "a": "Ja. Fase 1 — bezoek, opmeten en haalbaarheidsstudie — is volledig gratis en vrijblijvend."
+        },
+        {
+          "q": "Kan de prijs tijdens de bouw veranderen?",
+          "a": "Nee, tenzij u wijzigingen in de omvang vraagt. De offerte is vast en zonder open posten."
+        },
+        {
+          "q": "Besteedt u de bouw uit?",
+          "a": "Wij bouwen met eigen team. Als een specifiek vak op een specialist steunt, blijven wij uw enige aanspreekpunt en verantwoordelijk voor het resultaat."
+        },
+        {
+          "q": "Hoe volg ik de voortgang van veraf?",
+          "a": "Wij sturen wekelijks voortgangsfoto's via WhatsApp of e-mail. Vooral handig voor projecten in Frankrijk, Duitsland en België."
+        },
+        {
+          "q": "Wat gebeurt er na oplevering?",
+          "a": "U ontvangt de 10-jaar garantie op papier en een onderhoudsplan. Wij blijven bereikbaar voor nazorg."
+        }
       ]
     },
     "cta": {
@@ -131,28 +208,70 @@
       "sub": "Boek het technisch bezoek en de haalbaarheidsstudie. Gratis en vrijblijvend."
     }
   },
-  "stats": { "labels": ["jaar ervaring", "opgeleverde projecten", "jaar garantie", "landen in Europa"] },
-  "testimonials": { "eyebrow": "Referenties", "title": "Wat onze klanten zeggen", "googleNote": "Gemiddelde score op Google Reviews" },
+  "stats": {
+    "labels": [
+      "jaar ervaring",
+      "opgeleverde projecten",
+      "jaar garantie",
+      "landen in Europa"
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Referenties",
+    "title": "Wat onze klanten zeggen",
+    "googleNote": "Gemiddelde score op Google Reviews"
+  },
   "why": {
     "eyebrow": "Waarom wij",
     "title": "Serieuze bouw, zonder kleine lettertjes",
     "items": [
-      { "title": "Vaste offerte", "desc": "Definitieve prijs op papier vóór de start. Wat u tekent, is wat u betaalt." },
-      { "title": "Eersteklas materialen", "desc": "Wedstrijdgras, gehard glas van 12 mm en gegalvaniseerde structuur." },
-      { "title": "10 jaar garantie", "desc": "Op papier, met onderhoudsservice in alle 4 landen." }
+      {
+        "title": "Vaste offerte",
+        "desc": "Definitieve prijs op papier vóór de start. Wat u tekent, is wat u betaalt."
+      },
+      {
+        "title": "Eersteklas materialen",
+        "desc": "Wedstrijdgras, gehard glas van 12 mm en gegalvaniseerde structuur."
+      },
+      {
+        "title": "10 jaar garantie",
+        "desc": "Op papier, met onderhoudsservice in alle 4 landen."
+      }
     ]
   },
-  "video": { "eyebrow": "De bouw in beweging", "title": "Zo bouwen we een baan", "caption": "Echte bouwvideo" },
+  "video": {
+    "eyebrow": "De bouw in beweging",
+    "title": "Zo bouwen we een baan",
+    "caption": "Echte bouwvideo"
+  },
   "faq": {
     "eyebrow": "Veelgestelde vragen",
     "title": "Wij beantwoorden uw vragen",
     "items": [
-      { "q": "Wat kost de bouw van een padelbaan?", "a": "De definitieve prijs hangt af van het model, het terrein, de toegang en de afwerking. Wij geven die u schriftelijk en vrijblijvend na het gratis technische bezoek." },
-      { "q": "Hoe lang duurt de bouw?", "a": "Tussen 4 en 8 weken vanaf de start, afhankelijk van fundering en model. De termijn wordt contractueel vastgelegd." },
-      { "q": "Wat omvat sleutelklaar?", "a": "Alles: grondwerk, vloerplaat, structuur, gehard glas, gras, LED-verlichting en vergunningen. Wij leveren de baan speelklaar op." },
-      { "q": "Werken jullie buiten Spanje?", "a": "Ja. Wij bouwen in Frankrijk, Duitsland en België met hetzelfde eigen team en dezelfde garantie als in Spanje." },
-      { "q": "Welke garantie bieden jullie?", "a": "10 jaar op papier op structuur en bouwwerk, plus onderhoudsservice na oplevering." },
-      { "q": "Renoveren jullie bestaande banen?", "a": "Ja: vervanging van gras, glas, netten en verlichting, en ombouw van tennisbanen naar padel of pickleball." }
+      {
+        "q": "Wat kost de bouw van een padelbaan?",
+        "a": "De definitieve prijs hangt af van het model, het terrein, de toegang en de afwerking. Wij geven die u schriftelijk en vrijblijvend na het gratis technische bezoek."
+      },
+      {
+        "q": "Hoe lang duurt de bouw?",
+        "a": "Tussen 4 en 8 weken vanaf de start, afhankelijk van fundering en model. De termijn wordt contractueel vastgelegd."
+      },
+      {
+        "q": "Wat omvat sleutelklaar?",
+        "a": "Alles: grondwerk, vloerplaat, structuur, gehard glas, gras, LED-verlichting en vergunningen. Wij leveren de baan speelklaar op."
+      },
+      {
+        "q": "Werken jullie buiten Spanje?",
+        "a": "Ja. Wij bouwen in Frankrijk, Duitsland en België met hetzelfde eigen team en dezelfde garantie als in Spanje."
+      },
+      {
+        "q": "Welke garantie bieden jullie?",
+        "a": "10 jaar op papier op structuur en bouwwerk, plus onderhoudsservice na oplevering."
+      },
+      {
+        "q": "Renoveren jullie bestaande banen?",
+        "a": "Ja: vervanging van gras, glas, netten en verlichting, en ombouw van tennisbanen naar padel of pickleball."
+      }
     ]
   },
   "cta": {
@@ -166,7 +285,14 @@
     "emailLabel": "E-mail",
     "emailPh": "uw@email.com",
     "typeLabel": "Type project",
-    "typeOptions": ["Padelbaan", "Panoramische padelbaan", "Pickleball", "Overkapping / omheining", "Renovatie", "Anders"],
+    "typeOptions": [
+      "Padelbaan",
+      "Panoramische padelbaan",
+      "Pickleball",
+      "Overkapping / omheining",
+      "Renovatie",
+      "Anders"
+    ],
     "submit": "Ontvang gratis offerte",
     "privacy": "Door te verzenden accepteert u het privacybeleid. Reactie binnen 24 werkuren.",
     "successTitle": "Ontvangen. We nemen binnen 24 werkuren contact op.",
@@ -180,160 +306,377 @@
     "responseNote": "WhatsApp · reactie < 1 u op werkdagen",
     "hours": "Ma–Vr · 8:00–18:00",
     "zonesTitle": "Servicegebieden",
-    "zones": ["Regio Valencia", "Rest van Spanje", "Frankrijk", "Duitsland", "België"],
+    "zones": [
+      "Regio Valencia",
+      "Rest van Spanje",
+      "Frankrijk",
+      "Duitsland",
+      "België"
+    ],
     "badgeWarranty": "10 jaar garantie",
     "badgeYears": "17+ jaar ervaring",
     "legal": "© 2026 Pavimentos Albufera · Privacybeleid · Juridische kennisgeving · Cookies"
   },
-  "bar": { "whatsapp": "WhatsApp", "call": "Bellen" },
+  "bar": {
+    "whatsapp": "WhatsApp",
+    "call": "Bellen"
+  },
   "padel": {
-    "hero": { "eyebrow": "Sleutelklaar · ES · FR · DE · BE", "h1": "Bouw van padelbanen", "sub": "Standaard, panoramisch of wedstrijd. Vaste offerte en 10 jaar garantie." },
+    "hero": {
+      "eyebrow": "Sleutelklaar · ES · FR · DE · BE",
+      "h1": "Bouw van padelbanen",
+      "sub": "Standaard, panoramisch of wedstrijd. Vaste offerte en 10 jaar garantie."
+    },
     "models": {
       "eyebrow": "Modellen",
       "title": "Kies uw baan",
       "idealFor": "Ideaal voor",
-      "tabs": ["Standaard", "Panoramisch", "Wedstrijd"],
+      "tabs": [
+        "Standaard",
+        "Panoramisch",
+        "Wedstrijd"
+      ],
       "items": [
         {
           "name": "Standaardbaan",
           "cta": "Offerte standaardbaan",
           "desc": "De referentie-reglementaire baan: robuust, rendabel en gebouwd voor intensief gebruik in clubs en VvE's.",
-          "specs": { "afmetingen": "20 × 10 m (reglementair)", "structuur": "Gegalvaniseerd gelakt staal", "glas": "Gehard 10 mm", "gras": "Monofilament 12 mm", "verlichting": "8 × 200 W LED-schijnwerpers" },
-          "ideal": ["Club", "VvE"]
+          "specs": {
+            "afmetingen": "20 × 10 m (reglementair)",
+            "structuur": "Gegalvaniseerd gelakt staal",
+            "glas": "Gehard 10 mm",
+            "gras": "Monofilament 12 mm",
+            "verlichting": "8 × 200 W LED-schijnwerpers"
+          },
+          "ideal": [
+            "Club",
+            "VvE"
+          ]
         },
         {
           "name": "Panoramische baan",
           "cta": "Offerte panoramische baan",
           "desc": "Zelfdragend glas zonder tussenpalen: volledig zicht en de uitstraling van een premium-installatie.",
-          "specs": { "afmetingen": "20 × 10 m (reglementair)", "structuur": "Versterkte hoekpalen", "glas": "12 mm zelfdragend gehard", "gras": "Monofilament 12 mm", "verlichting": "8 × 200 W LED-schijnwerpers" },
-          "ideal": ["Premium-club", "Ontwikkelaar", "Particulier"]
+          "specs": {
+            "afmetingen": "20 × 10 m (reglementair)",
+            "structuur": "Versterkte hoekpalen",
+            "glas": "12 mm zelfdragend gehard",
+            "gras": "Monofilament 12 mm",
+            "verlichting": "8 × 200 W LED-schijnwerpers"
+          },
+          "ideal": [
+            "Premium-club",
+            "Ontwikkelaar",
+            "Particulier"
+          ]
         },
         {
           "name": "Wedstrijdbaan",
           "cta": "Offerte wedstrijdbaan",
           "desc": "Toernooiklaar: verlichting op bondsniveau, wedstrijdgras en ruimte voor tribune en verslaggeving.",
-          "specs": { "afmetingen": "20 × 10 m + technische rand", "structuur": "Versterkt panoramisch", "glas": "12 mm zelfdragend gehard", "gras": "Goedgekeurde wedstrijdvezel", "verlichting": "LED ≥ 500 lx gelijkmatig" },
-          "ideal": ["Club", "Bond", "Gemeente"]
+          "specs": {
+            "afmetingen": "20 × 10 m + technische rand",
+            "structuur": "Versterkt panoramisch",
+            "glas": "12 mm zelfdragend gehard",
+            "gras": "Goedgekeurde wedstrijdvezel",
+            "verlichting": "LED ≥ 500 lx gelijkmatig"
+          },
+          "ideal": [
+            "Club",
+            "Bond",
+            "Gemeente"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Vergelijking", "title": "De 3 modellen naast elkaar" },
+    "compare": {
+      "eyebrow": "Vergelijking",
+      "title": "De 3 modellen naast elkaar"
+    },
     "materials": {
       "eyebrow": "Materialen en kwaliteit",
       "title": "Wat het 20 jaar laat meegaan",
       "items": [
-        { "t": "Gras", "d": "Wedstrijdvezel met drainerende basis en gekalibreerd silicazand." },
-        { "t": "Gehard glas", "d": "10–12 mm gecertificeerd, veiligheidsverankeringen en gepolijste randen." },
-        { "t": "Structuur", "d": "Thermisch verzinkt en ovengelakt staal. Geen roest, geen onderhoud." },
-        { "t": "LED-verlichting", "d": "Zuinige schijnwerpers met verblindingsvrije optiek." }
+        {
+          "t": "Gras",
+          "d": "Wedstrijdvezel met drainerende basis en gekalibreerd silicazand."
+        },
+        {
+          "t": "Gehard glas",
+          "d": "10–12 mm gecertificeerd, veiligheidsverankeringen en gepolijste randen."
+        },
+        {
+          "t": "Structuur",
+          "d": "Thermisch verzinkt en ovengelakt staal. Geen roest, geen onderhoud."
+        },
+        {
+          "t": "LED-verlichting",
+          "d": "Zuinige schijnwerpers met verblindingsvrije optiek."
+        }
       ]
     },
-    "cover": { "eyebrow": "Overkappingen en omheiningen", "title": "Speel 365 dagen per jaar", "desc": "Wij overkappen nieuwe of bestaande banen met maatwerkconstructies: spandoek, paneel of volledige omheining. Ook op banen die wij niet bouwden.", "cta": "Offerte overkapping" },
+    "cover": {
+      "eyebrow": "Overkappingen en omheiningen",
+      "title": "Speel 365 dagen per jaar",
+      "desc": "Wij overkappen nieuwe of bestaande banen met maatwerkconstructies: spandoek, paneel of volledige omheining. Ook op banen die wij niet bouwden.",
+      "cta": "Offerte overkapping"
+    },
     "faq": {
       "eyebrow": "Veelgestelde vragen",
       "title": "Vragen over padelbanen",
       "items": [
-        { "q": "Standaard of panoramisch: wat past bij mij?", "a": "Voor rendement en intensief gebruik standaard. Als uw installatie op uitstraling concurreert, verdient panoramisch zich terug. We berekenen het bij het gratis bezoek." },
-        { "q": "Hoeveel ruimte heb ik nodig?", "a": "De baan is 20 × 10 m; we adviseren een minimumkavel van 22 × 12 m voor circulatie en fundering." },
-        { "q": "Heb ik een vergunning nodig?", "a": "Meestal wel. We stellen het technisch dossier en de documenten voor uw gemeente op als onderdeel van sleutelklaar." },
-        { "q": "Welk onderhoud vraagt het gras?", "a": "Borstelen en herverdelen van zand 1–2 keer per jaar. Aangeboden als nazorgservice met de garantie." },
-        { "q": "Kunt u een bestaande baan overkappen?", "a": "Ja. We plaatsen overkappingen en omheiningen op reeds gebouwde banen, ook die van anderen." }
+        {
+          "q": "Standaard of panoramisch: wat past bij mij?",
+          "a": "Voor rendement en intensief gebruik standaard. Als uw installatie op uitstraling concurreert, verdient panoramisch zich terug. We berekenen het bij het gratis bezoek."
+        },
+        {
+          "q": "Hoeveel ruimte heb ik nodig?",
+          "a": "De baan is 20 × 10 m; we adviseren een minimumkavel van 22 × 12 m voor circulatie en fundering."
+        },
+        {
+          "q": "Heb ik een vergunning nodig?",
+          "a": "Meestal wel. We stellen het technisch dossier en de documenten voor uw gemeente op als onderdeel van sleutelklaar."
+        },
+        {
+          "q": "Welk onderhoud vraagt het gras?",
+          "a": "Borstelen en herverdelen van zand 1–2 keer per jaar. Aangeboden als nazorgservice met de garantie."
+        },
+        {
+          "q": "Kunt u een bestaande baan overkappen?",
+          "a": "Ja. We plaatsen overkappingen en omheiningen op reeds gebouwde banen, ook die van anderen."
+        }
       ]
     },
-    "cta": { "eyebrow": "Gratis offerte", "title": "Welke baan past bij uw project?", "sub": "We vertellen het u gratis na een technisch bezoek. Vaste offerte binnen 48 uur." }
+    "cta": {
+      "eyebrow": "Gratis offerte",
+      "title": "Welke baan past bij uw project?",
+      "sub": "We vertellen het u gratis na een technisch bezoek. Vaste offerte binnen 48 uur."
+    }
   },
   "pickleball": {
-    "hero": { "eyebrow": "Sleutelklaar · ES · FR · DE · BE", "h1": "Bouw van pickleballbanen", "sub": "Standaard, volledige omheining of multibaan. Vaste offerte en 10 jaar garantie." },
+    "hero": {
+      "eyebrow": "Sleutelklaar · ES · FR · DE · BE",
+      "h1": "Bouw van pickleballbanen",
+      "sub": "Standaard, volledige omheining of multibaan. Vaste offerte en 10 jaar garantie."
+    },
     "models": {
       "eyebrow": "Modellen",
       "title": "Kies uw baan",
       "idealFor": "Ideaal voor",
-      "tabs": ["Standaard", "Omheining", "Multibaan"],
+      "tabs": [
+        "Standaard",
+        "Omheining",
+        "Multibaan"
+      ],
       "items": [
         {
           "name": "Standaardbaan",
           "cta": "Offerte standaardbaan",
           "desc": "De reglementaire pickleballbaan: acryloppervlak met hoge grip op een gewapend betonplaat.",
-          "specs": { "afmetingen": "13,4 × 6,1 m (reglementair)", "oppervlak": "Meerlaags antislip-acryl", "basis": "Gewapende betonplaat", "net": "Aluminium met spanner", "verlichting": "4 × 200 W LED-schijnwerpers" },
-          "ideal": ["Club", "VvE"]
+          "specs": {
+            "afmetingen": "13,4 × 6,1 m (reglementair)",
+            "oppervlak": "Meerlaags antislip-acryl",
+            "basis": "Gewapende betonplaat",
+            "net": "Aluminium met spanner",
+            "verlichting": "4 × 200 W LED-schijnwerpers"
+          },
+          "ideal": [
+            "Club",
+            "VvE"
+          ]
         },
         {
           "name": "Volledige omheining",
           "cta": "Offerte volledige omheining",
           "desc": "Baan met omheining van 3 m: de bal altijd in het spel en de omgeving beschermd.",
-          "specs": { "afmetingen": "Kavel min. 15,2 × 9,1 m", "oppervlak": "Meerlaags antislip-acryl", "omheining": "Gegalvaniseerd gaas van 3 m", "toegang": "Poort + rustzone", "verlichting": "4 × 200 W LED-schijnwerpers" },
-          "ideal": ["VvE", "Hotel / resort"]
+          "specs": {
+            "afmetingen": "Kavel min. 15,2 × 9,1 m",
+            "oppervlak": "Meerlaags antislip-acryl",
+            "omheining": "Gegalvaniseerd gaas van 3 m",
+            "toegang": "Poort + rustzone",
+            "verlichting": "4 × 200 W LED-schijnwerpers"
+          },
+          "ideal": [
+            "VvE",
+            "Hotel / resort"
+          ]
         },
         {
           "name": "Multibaan-complex",
           "cta": "Offerte multibaan-complex",
           "desc": "Twee of meer banen die fundering, verlichting en toegang delen: lagere kosten per baan en eenvoudiger beheer.",
-          "specs": { "afmetingen": "Modulair · 2+ banen", "oppervlak": "Meerlaags antislip-acryl", "omheining": "Gedeelde omheining", "extras": "Tribune en gemeenschappelijke zone optioneel", "verlichting": "Lichtplan op maat" },
-          "ideal": ["Club", "Gemeente", "Ontwikkelaar"]
+          "specs": {
+            "afmetingen": "Modulair · 2+ banen",
+            "oppervlak": "Meerlaags antislip-acryl",
+            "omheining": "Gedeelde omheining",
+            "extras": "Tribune en gemeenschappelijke zone optioneel",
+            "verlichting": "Lichtplan op maat"
+          },
+          "ideal": [
+            "Club",
+            "Gemeente",
+            "Ontwikkelaar"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Vergelijking", "title": "De 3 modellen naast elkaar" },
+    "compare": {
+      "eyebrow": "Vergelijking",
+      "title": "De 3 modellen naast elkaar"
+    },
     "materials": {
       "eyebrow": "Materialen en kwaliteit",
       "title": "Wat het 20 jaar laat meegaan",
       "items": [
-        { "t": "Acrylverharding", "d": "Gedempt meerlaags systeem op beton: grip en gewrichtscomfort." },
-        { "t": "Speellijnen", "d": "Polyurethaanverf met hoge zichtbaarheid, reglementaire maten." },
-        { "t": "Omheining", "d": "Gegalvaniseerd gaas met kunststof coating van 3 m met geïntegreerde poorten." },
-        { "t": "LED-verlichting", "d": "Zuinige schijnwerpers met verblindingsvrije optiek." }
+        {
+          "t": "Acrylverharding",
+          "d": "Gedempt meerlaags systeem op beton: grip en gewrichtscomfort."
+        },
+        {
+          "t": "Speellijnen",
+          "d": "Polyurethaanverf met hoge zichtbaarheid, reglementaire maten."
+        },
+        {
+          "t": "Omheining",
+          "d": "Gegalvaniseerd gaas met kunststof coating van 3 m met geïntegreerde poorten."
+        },
+        {
+          "t": "LED-verlichting",
+          "d": "Zuinige schijnwerpers met verblindingsvrije optiek."
+        }
       ]
     },
-    "cover": { "eyebrow": "Overkappingen en omheiningen", "title": "Speel 365 dagen per jaar", "desc": "Wij overkappen nieuwe of bestaande banen met maatwerkconstructies: spandoek, paneel of volledige omheining.", "cta": "Offerte overkapping" },
+    "cover": {
+      "eyebrow": "Overkappingen en omheiningen",
+      "title": "Speel 365 dagen per jaar",
+      "desc": "Wij overkappen nieuwe of bestaande banen met maatwerkconstructies: spandoek, paneel of volledige omheining.",
+      "cta": "Offerte overkapping"
+    },
     "faq": {
       "eyebrow": "Veelgestelde vragen",
       "title": "Vragen over pickleballbanen",
       "items": [
-        { "q": "Hoeveel ruimte heeft een pickleballbaan nodig?", "a": "De baan is 13,4 × 6,1 m; met veiligheidszones adviseren we 15,2 × 9,1 m. Hij past in de helft van de ruimte van een padelbaan." },
-        { "q": "Kan ik een tennisbaan ombouwen?", "a": "Ja: op een tennisbaan passen tot 4 pickleballbanen. Ombouw is sneller en goedkoper dan nieuwbouw." },
-        { "q": "Welk oppervlak is het beste?", "a": "Meerlaags acryl op beton: de internationale standaard, draineert goed en houdt jarenlang een gelijkmatige stuit." },
-        { "q": "Kun je 's avonds spelen?", "a": "Ja. Met 4 LED-schijnwerpers per baan bereik je avondspeelniveau zonder de omgeving te verblinden." },
-        { "q": "Kunt u de baan overkappen?", "a": "Ja. Wij plaatsen overkappingen en omheiningen op nieuwe of bestaande banen." }
+        {
+          "q": "Hoeveel ruimte heeft een pickleballbaan nodig?",
+          "a": "De baan is 13,4 × 6,1 m; met veiligheidszones adviseren we 15,2 × 9,1 m. Hij past in de helft van de ruimte van een padelbaan."
+        },
+        {
+          "q": "Kan ik een tennisbaan ombouwen?",
+          "a": "Ja: op een tennisbaan passen tot 4 pickleballbanen. Ombouw is sneller en goedkoper dan nieuwbouw."
+        },
+        {
+          "q": "Welk oppervlak is het beste?",
+          "a": "Meerlaags acryl op beton: de internationale standaard, draineert goed en houdt jarenlang een gelijkmatige stuit."
+        },
+        {
+          "q": "Kun je 's avonds spelen?",
+          "a": "Ja. Met 4 LED-schijnwerpers per baan bereik je avondspeelniveau zonder de omgeving te verblinden."
+        },
+        {
+          "q": "Kunt u de baan overkappen?",
+          "a": "Ja. Wij plaatsen overkappingen en omheiningen op nieuwe of bestaande banen."
+        }
       ]
     },
-    "cta": { "eyebrow": "Gratis offerte", "title": "Welke baan past bij uw project?", "sub": "We vertellen het u gratis na een technisch bezoek. Vaste offerte binnen 48 uur." }
+    "cta": {
+      "eyebrow": "Gratis offerte",
+      "title": "Welke baan past bij uw project?",
+      "sub": "We vertellen het u gratis na een technisch bezoek. Vaste offerte binnen 48 uur."
+    }
   },
   "about": {
-    "hero": { "eyebrow": "Wie we zijn", "h1": "17 jaar bouwen waar gespeeld wordt", "sub": "Een eigen team voor sportbouw. Zonder tussenpersonen, zonder geketende onderaannemers." },
+    "hero": {
+      "eyebrow": "Wie we zijn",
+      "h1": "17 jaar bouwen waar gespeeld wordt",
+      "sub": "Een eigen team voor sportbouw. Zonder tussenpersonen, zonder geketende onderaannemers."
+    },
     "story": {
       "eyebrow": "Ons verhaal",
       "title": "Van een lokale werkplaats naar 4 landen",
       "lead": "We begonnen met het bekleden van banen in de regio Valencia. Vandaag bouwen we padel, pickleball en overkappingen in heel Spanje en in Frankrijk, Duitsland en België, met hetzelfde team en dezelfde werkwijze: direct en met het woord vooraan.",
-      "stats": ["jaar ervaring", "opgeleverde projecten", "landen in Europa", "mensen in het team"]
+      "stats": [
+        "jaar ervaring",
+        "opgeleverde projecten",
+        "landen in Europa",
+        "mensen in het team"
+      ]
     },
     "milestones": {
       "eyebrow": "Ons traject",
       "title": "De mijlpalen die ons hier brachten",
       "items": [
-        { "y": "2009", "t": "We starten met het bekleden van sportbanen in de regio Valencia." },
-        { "y": "2014", "t": "We stappen over naar sleutelklare bouw van padelbanen." },
-        { "y": "2018", "t": "Eerste projecten buiten Spanje: we beginnen in Frankrijk." },
-        { "y": "2022", "t": "We voegen pickleball en overkappingen toe aan ons aanbod." },
-        { "y": "2025", "t": "We passeren 120 projecten en breiden uit naar Duitsland en België." }
+        {
+          "y": "2009",
+          "t": "We starten met het bekleden van sportbanen in de regio Valencia."
+        },
+        {
+          "y": "2014",
+          "t": "We stappen over naar sleutelklare bouw van padelbanen."
+        },
+        {
+          "y": "2018",
+          "t": "Eerste projecten buiten Spanje: we beginnen in Frankrijk."
+        },
+        {
+          "y": "2022",
+          "t": "We voegen pickleball en overkappingen toe aan ons aanbod."
+        },
+        {
+          "y": "2025",
+          "t": "We passeren 120 projecten en breiden uit naar Duitsland en België."
+        }
       ]
     },
     "values": {
       "eyebrow": "Zo werken wij",
       "title": "Vier dingen waarover we niet onderhandelen",
       "items": [
-        { "t": "Eigen team", "d": "We staan zelf op elke werf. Geen onderaannemersketens die verantwoordelijkheid verdunnen." },
-        { "t": "Woord gehouden", "d": "Vaste offerte en termijn op papier. Wat we zeggen, tekenen we." },
-        { "t": "Direct contact", "d": "Eén aanspreekpunt van begin tot eind, welke taal u ook spreekt." },
-        { "t": "Langdurige relatie", "d": "De meeste klanten komen terug of bevelen ons aan. Dat is onze beste verkoper." }
+        {
+          "t": "Eigen team",
+          "d": "We staan zelf op elke werf. Geen onderaannemersketens die verantwoordelijkheid verdunnen."
+        },
+        {
+          "t": "Woord gehouden",
+          "d": "Vaste offerte en termijn op papier. Wat we zeggen, tekenen we."
+        },
+        {
+          "t": "Direct contact",
+          "d": "Eén aanspreekpunt van begin tot eind, welke taal u ook spreekt."
+        },
+        {
+          "t": "Langdurige relatie",
+          "d": "De meeste klanten komen terug of bevelen ons aan. Dat is onze beste verkoper."
+        }
       ]
     },
-    "team": { "eyebrow": "Het team", "title": "De mensen die uw werf betreden", "note": "Echte namen, functies en foto's — nog aan te leveren." },
-    "coverage": { "eyebrow": "Waar we werken", "title": "Spanje, Frankrijk, Duitsland en België" },
-    "certs": { "eyebrow": "Garanties en certificeringen", "title": "Onderbouwing die u kunt controleren", "note": "Logo's van certificeringen, verzekeringen en homologaties — nog aan te leveren." },
-    "cta": { "eyebrow": "We praten van mens tot mens", "title": "Leer ons kennen met een bezoek", "sub": "Kom een afgewerkte baan bekijken of wij bezoeken u. Gratis en vrijblijvend." }
+    "team": {
+      "eyebrow": "Het team",
+      "title": "De mensen die uw werf betreden",
+      "note": "Echte namen, functies en foto's — nog aan te leveren."
+    },
+    "coverage": {
+      "eyebrow": "Waar we werken",
+      "title": "Spanje, Frankrijk, Duitsland en België"
+    },
+    "certs": {
+      "eyebrow": "Garanties en certificeringen",
+      "title": "Onderbouwing die u kunt controleren",
+      "note": "Logo's van certificeringen, verzekeringen en homologaties — nog aan te leveren."
+    },
+    "cta": {
+      "eyebrow": "We praten van mens tot mens",
+      "title": "Leer ons kennen met een bezoek",
+      "sub": "Kom een afgewerkte baan bekijken of wij bezoeken u. Gratis en vrijblijvend."
+    }
   },
   "contact": {
-    "header": { "eyebrow": "Contact", "title": "Vraag uw gratis offerte aan", "sub": "We reageren binnen 24 werkuren — meestal veel sneller.", "quickWrite": "Schrijf ons", "quickCall": "Bel ons" },
+    "header": {
+      "eyebrow": "Contact",
+      "title": "Vraag uw gratis offerte aan",
+      "sub": "We reageren binnen 24 werkuren — meestal veel sneller.",
+      "quickWrite": "Schrijf ons",
+      "quickCall": "Bel ons"
+    },
     "form": {
       "stepOf": "Stap {n} van 3",
       "step1Title": "Welk project heeft u voor ogen?",
@@ -343,16 +686,36 @@
       "step3Title": "Hoe nemen we contact op?",
       "step3Sub": "Net genoeg om u de offerte te sturen.",
       "options": [
-        { "t": "Padelbaan", "d": "Standaard, panoramisch of wedstrijd" },
-        { "t": "Pickleballbaan", "d": "Standaard, omheining of multibaan" },
-        { "t": "Overkapping / omheining", "d": "Op een nieuwe of bestaande baan" },
-        { "t": "Renovatie / ombouw", "d": "Gras, glas, of tennis naar padel" },
-        { "t": "Anders / nog niet duidelijk", "d": "We adviseren u bij het bezoek" }
+        {
+          "t": "Padelbaan",
+          "d": "Standaard, panoramisch of wedstrijd"
+        },
+        {
+          "t": "Pickleballbaan",
+          "d": "Standaard, omheining of multibaan"
+        },
+        {
+          "t": "Overkapping / omheining",
+          "d": "Op een nieuwe of bestaande baan"
+        },
+        {
+          "t": "Renovatie / ombouw",
+          "d": "Gras, glas, of tennis naar padel"
+        },
+        {
+          "t": "Anders / nog niet duidelijk",
+          "d": "We adviseren u bij het bezoek"
+        }
       ],
       "locLabel": "Plaats en land",
       "locPh": "Bijv. Antwerpen, België",
       "whenLabel": "Voor wanneer?",
-      "whenOptions": ["Zo snel mogelijk", "Over 1–3 maanden", "Over 3–6 maanden", "Ik oriënteer me alleen"],
+      "whenOptions": [
+        "Zo snel mogelijk",
+        "Over 1–3 maanden",
+        "Over 3–6 maanden",
+        "Ik oriënteer me alleen"
+      ],
       "msgLabel": "Vertel ons meer (optioneel)",
       "msgPh": "Beschikbaar oppervlak, aantal banen, of u al een vloerplaat heeft…",
       "nameLabel": "Naam",
@@ -383,12 +746,304 @@
     }
   },
   "configurator": {
-    "hero": {
-      "eyebrow": "Nieuw",
-      "h1": "Configureer uw baan in 3D",
-      "sub": "Kies model, kleuren en afwerkingen en bekijk uw baan voordat u hem laat bouwen."
+    "meta": {
+      "title": "Configura tu pista de pádel en 3D | Pádel Albufera",
+      "description": "Diseña tu pista de pádel en 3D —versión, cristal, césped, color y luz— y recibe el presupuesto por WhatsApp. Obra completa con solera de hormigón armado, hecha en Valencia."
     },
-    "comingSoon": "We werken aan deze tool. Binnenkort kunt u hier uw baan direct in 3D ontwerpen."
+    "hero": {
+      "eyebrow": "Configurador 3D",
+      "h1": "Tu pista de pádel, <em>en tu jardín</em>",
+      "sub": "Móntala pieza a pieza, gírala en 3D y mándanos por WhatsApp exactamente la que quieres. Sin formularios.",
+      "solera": "Construimos la obra completa, empezando por la solera de hormigón armado sobre la que se monta la pista. Ahí se juega que no se descuadre."
+    },
+    "rotulo": "TU CLUB",
+    "visor": {
+      "posterAlt": "Pista de pádel de cristal construida en un jardín residencial",
+      "canvasAria": "Vista 3D de la pista. Flechas para girar, + y − para acercar.",
+      "cargando": "Preparando tu pista…",
+      "calidad": "Nitidez",
+      "calidadTitle": "Refracción real del cristal (equipos potentes)",
+      "noche": "Noche",
+      "dia": "Día",
+      "vistas": {
+        "hero": "General",
+        "esquina": "Esquina",
+        "lateral": "Lateral",
+        "cenital": "Cenital",
+        "pista": "A pie de pista"
+      }
+    },
+    "cat": {
+      "version": {
+        "title": "Versión de la pista",
+        "help": "Define cuánta estructura queda a la vista en los fondos. Es la decisión que más cambia el aspecto y el precio.",
+        "options": {
+          "estandar": {
+            "name": "Estándar",
+            "desc": "Pilares y marcos intermedios a la vista en los fondos. La más rígida: viento fuerte y uso intensivo."
+          },
+          "semipanoramica": {
+            "name": "Semipanorámica",
+            "desc": "Fondos sin pilares intermedios, con esquineros de acero. El equilibrio más vendido."
+          },
+          "fullpanoramica": {
+            "name": "Full panorámica",
+            "desc": "Fondos, esquinas y retornos diáfanos. Visión 360º, sin interrupciones."
+          }
+        }
+      },
+      "modalidad": {
+        "title": "Modalidad",
+        "help": "La de dobles es la estándar. La individual pide menos parcela.",
+        "options": {
+          "dobles": {
+            "name": "Dobles",
+            "sub": "20 × 10 m"
+          },
+          "individual": {
+            "name": "Individual",
+            "sub": "20 × 6 m"
+          }
+        }
+      },
+      "entorno": {
+        "title": "Dónde va",
+        "help": "En cubierta e interior hace falta 6 m de altura libre; con 7 m el globo no toca techo.",
+        "options": {
+          "exterior": {
+            "name": "Exterior",
+            "sub": "jardín o finca"
+          },
+          "cubierta": {
+            "name": "Cubierta",
+            "sub": "carpa o pabellón"
+          },
+          "interior": {
+            "name": "Interior",
+            "sub": "nave"
+          }
+        }
+      },
+      "cespedColor": {
+        "title": "Color del césped",
+        "help": "Azul, verde, naranja y púrpura son los colores oficiales FIP/FEP. El negro es una elección de diseño.",
+        "options": {
+          "verde": {
+            "name": "Verde"
+          },
+          "azul": {
+            "name": "Azul"
+          },
+          "teja": {
+            "name": "Teja"
+          },
+          "purpura": {
+            "name": "Púrpura"
+          },
+          "negro": {
+            "name": "Negro"
+          }
+        }
+      },
+      "cespedFibra": {
+        "title": "Fibra",
+        "options": {
+          "monofilamento": {
+            "name": "Monofilamento",
+            "sub": "bote uniforme · dura más"
+          },
+          "fibrilado": {
+            "name": "Fibrilado",
+            "sub": "más suave · más económico"
+          },
+          "hibrido": {
+            "name": "Híbrido",
+            "sub": "punto medio"
+          }
+        }
+      },
+      "cespedAltura": {
+        "title": "Altura de fibra",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "habitual"
+          },
+          "15": {
+            "name": "15 mm",
+            "sub": "habitual"
+          }
+        }
+      },
+      "cristal": {
+        "title": "Cristal templado",
+        "help": "Con cantos pulidos. En panorámicas el de 12 mm no es opcional en la práctica.",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "recomendado"
+          }
+        }
+      },
+      "ral": {
+        "title": "Color de la estructura",
+        "help": "Acero galvanizado con pintura epoxi. Cualquier color de la carta RAL es posible.",
+        "options": {
+          "5011": {
+            "name": "Azul"
+          },
+          "6005": {
+            "name": "Verde"
+          },
+          "7016": {
+            "name": "Antracita"
+          },
+          "9005": {
+            "name": "Negro"
+          },
+          "9010": {
+            "name": "Blanco"
+          },
+          "otro": {
+            "name": "Otro RAL"
+          }
+        }
+      },
+      "iluminacion": {
+        "title": "Iluminación LED",
+        "options": {
+          "si": {
+            "name": "Con luz",
+            "sub": "jugar de noche"
+          },
+          "no": {
+            "name": "Sin luz"
+          }
+        }
+      },
+      "tipoLuz": {
+        "title": "Montaje de los focos",
+        "help": "Los postes exteriores reparten mejor y dejan la pista limpia. Los focos en estructura ahorran obra civil.",
+        "options": {
+          "postes": {
+            "name": "4 postes de 6 m",
+            "sub": "brazo acodado exterior"
+          },
+          "integrada": {
+            "name": "Sobre estructura",
+            "sub": "proyectores en la viga"
+          }
+        }
+      },
+      "potencia": {
+        "title": "Potencia por proyector",
+        "options": {
+          "100": {
+            "name": "100 W"
+          },
+          "150": {
+            "name": "150 W",
+            "sub": "habitual"
+          },
+          "200": {
+            "name": "200 W"
+          }
+        }
+      },
+      "extras": {
+        "title": "Extras",
+        "help": "Puedes marcar varios.",
+        "options": {
+          "puertas": {
+            "name": "Puertas laterales",
+            "sub": "acceso por el centro"
+          },
+          "gradas": {
+            "name": "Gradas"
+          },
+          "rotulacion": {
+            "name": "Rotulación"
+          },
+          "marcador": {
+            "name": "Marcador"
+          }
+        }
+      }
+    },
+    "ficha": {
+      "titulo": "Ficha técnica",
+      "ref": "Ref. {ref}",
+      "labels": {
+        "version": "Versión",
+        "modalidad": "Modalidad",
+        "ubicacion": "Ubicación",
+        "cesped": "Césped",
+        "cristal": "Cristal",
+        "estructura": "Estructura",
+        "iluminacion": "Iluminación",
+        "extras": "Extras",
+        "base": "Base"
+      },
+      "val": {
+        "cristal": "Templado {mm} mm, cantos pulidos",
+        "estructura": "Acero epoxi · RAL {codigo} {color}",
+        "estructuraOtro": "Acero epoxi · color RAL a definir",
+        "sinLuz": "Sin iluminación",
+        "conLuz": "LED {w} W · {tipo}",
+        "sinExtras": "Ninguno",
+        "base": "Solera de hormigón armado ≥ 15 cm, mallazo y pendiente de drenaje",
+        "medidaDobles": "20 × 10 m",
+        "medidaIndividual": "20 × 6 m"
+      }
+    },
+    "wa": {
+      "intro": "Hola, he configurado una pista de pádel en vuestra web:",
+      "ref": "Referencia: {ref}",
+      "cierre": "¿Me podéis pasar presupuesto y fechas?"
+    },
+    "resumen": {
+      "eyebrow": "Tu configuración · {ref}",
+      "titulo": "Esta es tu pista",
+      "sub": "Te abrimos WhatsApp con toda la configuración escrita. Puedes editar el mensaje antes de enviarlo.",
+      "whatsapp": "Pedir presupuesto",
+      "telefono": "Llamar"
+    },
+    "barra": {
+      "whatsapp": "WhatsApp",
+      "telefono": "Llamar"
+    },
+    "social": {
+      "titulo": "Pistas que ya hemos construido",
+      "sub": "Una pista real en un jardín real vale más que cualquier render.",
+      "alt": {
+        "0": "Pista de pádel panorámica de cristal en entorno rural",
+        "1": "Pista de pádel con cerramiento completo de cristal en exterior",
+        "2": "Pista de césped verde junto a una arboleda"
+      }
+    },
+    "faq": {
+      "titulo": "Antes de decidir",
+      "q": {
+        "licencia": "¿Necesito licencia de obra?",
+        "ruido": "¿Cuánto ruido hace y qué distancia dejo al vecino?",
+        "espacio": "¿Cuánto espacio necesito de verdad?",
+        "plazo": "¿Cuánto se tarda desde que firmo?",
+        "mantenimiento": "¿Qué mantenimiento tiene al año?"
+      },
+      "a": {
+        "licencia": "En la mayoría de municipios una pista descubierta va con licencia de obra menor; una cubierta suele exigir obra mayor. Te decimos qué necesitas en tu ayuntamiento y preparamos la documentación técnica.",
+        "ruido": "El pádel hace ruido de pelota y voces, sobre todo de noche. Se recomienda dejar unos 3 m a los linderos y orientar los fondos hacia tu parcela; en casos sensibles montamos cerramientos y horarios que reducen molestias.",
+        "espacio": "La pista de dobles ocupa 20 × 10 m, pero hay que contar el perímetro de mantenimiento: en la práctica conviene reservar unos 21 × 11 m. La individual baja a 20 × 6 m.",
+        "plazo": "Desde la firma, una pista estándar suele estar lista en 4 a 6 semanas si el terreno no da sorpresas. La solera necesita su tiempo de curado: no se acelera sin comprometer la obra.",
+        "mantenimiento": "Poco: cepillado del césped y repaso de la arena de sílice un par de veces al año, y revisión de tornillería y cristales. El resurfacing del césped llega a los 8-10 años según el uso."
+      }
+    }
   },
   "construction": {
     "hero": {

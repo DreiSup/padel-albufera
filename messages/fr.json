@@ -26,9 +26,16 @@
     "eyebrow": "Constructeur de terrains · ES · FR · DE · BE",
     "h1": "Nous construisons votre terrain de padel ou de pickleball clé en main",
     "sub": "Du béton aux dernières finitions. 17 ans de chantiers sportifs. Garantie de 10 ans.",
-    "badges": ["17+ ans", "+120 projets", "Garantie 10 ans", "ES · FR · DE · BE"]
+    "badges": [
+      "17+ ans",
+      "+120 projets",
+      "Garantie 10 ans",
+      "ES · FR · DE · BE"
+    ]
   },
-  "proof": { "title": "Ils nous font confiance" },
+  "proof": {
+    "title": "Ils nous font confiance"
+  },
   "build": {
     "eyebrow": "Ce que nous construisons",
     "title": "Un terrain pour chaque projet",
@@ -36,10 +43,22 @@
     "onRequest": "prix sur demande",
     "custom": "projet sur mesure",
     "cards": [
-      { "title": "Terrain de padel standard", "desc": "La configuration la plus demandée par les clubs et copropriétés." },
-      { "title": "Terrain de padel panoramique", "desc": "Vitrage sans poteaux intermédiaires : visibilité maximale, finition premium." },
-      { "title": "Terrain de pickleball", "desc": "Le sport qui croît le plus vite en Europe, sur moitié moins d'espace." },
-      { "title": "Terrain sur mesure / couvertures", "desc": "Couvertures, fermetures et projets singuliers sur mesure." }
+      {
+        "title": "Terrain de padel standard",
+        "desc": "La configuration la plus demandée par les clubs et copropriétés."
+      },
+      {
+        "title": "Terrain de padel panoramique",
+        "desc": "Vitrage sans poteaux intermédiaires : visibilité maximale, finition premium."
+      },
+      {
+        "title": "Terrain de pickleball",
+        "desc": "Le sport qui croît le plus vite en Europe, sur moitié moins d'espace."
+      },
+      {
+        "title": "Terrain sur mesure / couvertures",
+        "desc": "Couvertures, fermetures et projets singuliers sur mesure."
+      }
     ]
   },
   "projects": {
@@ -48,8 +67,23 @@
       "h1": "Projets construits",
       "sub": "Padel, pickleball et couvertures livrés par notre équipe. Tout ce que vous voyez ici existe."
     },
-    "filters": { "all": "Tous", "padel": "Padel", "pano": "Panoramique", "pkb": "Pickleball", "cub": "Couvertures", "es": "Espagne", "fr": "France" },
-    "detail": { "cliente": "Client", "ubicacion": "Emplacement", "tipo": "Type", "plazo": "Délai", "alcance": "Périmètre", "cta": "J'en veux un comme ça" },
+    "filters": {
+      "all": "Tous",
+      "padel": "Padel",
+      "pano": "Panoramique",
+      "pkb": "Pickleball",
+      "cub": "Couvertures",
+      "es": "Espagne",
+      "fr": "France"
+    },
+    "detail": {
+      "cliente": "Client",
+      "ubicacion": "Emplacement",
+      "tipo": "Type",
+      "plazo": "Délai",
+      "alcance": "Périmètre",
+      "cta": "J'en veux un comme ça"
+    },
     "cta": {
       "eyebrow": "Le prochain sera le vôtre",
       "title": "Vous voulez ça dans votre installation ?",
@@ -72,28 +106,44 @@
           "dur": "48–72 h",
           "tag": "Sans frais ni engagement",
           "d": "Nous venons sur votre parcelle, mesurons, analysons accès, terrain et réglementation, et répondons à vos questions en personne.",
-          "deliv": ["Implantation et relevé", "Étude de faisabilité", "Recommandation de modèle"]
+          "deliv": [
+            "Implantation et relevé",
+            "Étude de faisabilité",
+            "Recommandation de modèle"
+          ]
         },
         {
           "t": "Projet et devis ferme",
           "dur": "3–5 jours",
           "tag": "Prix final par écrit",
           "d": "Nous rédigeons le mémoire technique, les plans et le devis détaillé. Le prix signé est celui payé.",
-          "deliv": ["Mémoire technique et plans", "Devis ferme sans postes ouverts", "Dossier pour le permis"]
+          "deliv": [
+            "Mémoire technique et plans",
+            "Devis ferme sans postes ouverts",
+            "Dossier pour le permis"
+          ]
         },
         {
           "t": "Construction avec délai garanti",
           "dur": "4–8 semaines",
           "tag": "Équipe interne",
           "d": "Nous exécutons avec notre équipe, sans chaîne de sous-traitants, et envoyons des photos de suivi chaque semaine.",
-          "deliv": ["Fondations et gros œuvre", "Montage structure et verre", "Photos d'avancement hebdomadaires"]
+          "deliv": [
+            "Fondations et gros œuvre",
+            "Montage structure et verre",
+            "Photos d'avancement hebdomadaires"
+          ]
         },
         {
           "t": "Livraison prête à jouer",
           "dur": "1 jour + SAV",
           "tag": "Garantie 10 ans",
           "d": "Réception avec vous, remise de la garantie documentée et plan de maintenance. Et nous restons disponibles après.",
-          "deliv": ["Test et réception conjointe", "Garantie de 10 ans par écrit", "Plan de maintenance SAV"]
+          "deliv": [
+            "Test et réception conjointe",
+            "Garantie de 10 ans par écrit",
+            "Plan de maintenance SAV"
+          ]
         }
       ]
     },
@@ -105,10 +155,22 @@
       "eyebrow": "Nos engagements",
       "title": "Ce que nous signons, nous le tenons",
       "items": [
-        { "t": "Devis ferme", "d": "Sans postes ouverts ni surcoûts de dernière minute. Ce que vous signez, vous le payez." },
-        { "t": "Délai garanti", "d": "La date de livraison est fixée au contrat, ce n'est pas une estimation optimiste." },
-        { "t": "Transparence totale", "d": "Photos de suivi chaque semaine et un seul interlocuteur pendant tout le chantier." },
-        { "t": "Garantie réelle", "d": "10 ans par écrit et service de maintenance dans les 4 pays." }
+        {
+          "t": "Devis ferme",
+          "d": "Sans postes ouverts ni surcoûts de dernière minute. Ce que vous signez, vous le payez."
+        },
+        {
+          "t": "Délai garanti",
+          "d": "La date de livraison est fixée au contrat, ce n'est pas une estimation optimiste."
+        },
+        {
+          "t": "Transparence totale",
+          "d": "Photos de suivi chaque semaine et un seul interlocuteur pendant tout le chantier."
+        },
+        {
+          "t": "Garantie réelle",
+          "d": "10 ans par écrit et service de maintenance dans les 4 pays."
+        }
       ],
       "sealYears": "10",
       "sealWord": "ans de garantie",
@@ -118,11 +180,26 @@
       "eyebrow": "Questions fréquentes",
       "title": "Questions sur le processus",
       "items": [
-        { "q": "La visite et le devis sont-ils payants ?", "a": "Non. L'étape 1 — visite, mesure et étude de faisabilité — est entièrement gratuite et sans engagement." },
-        { "q": "Le prix peut-il changer pendant le chantier ?", "a": "Non, sauf si vous demandez des changements de périmètre. Le devis est ferme et sans postes ouverts." },
-        { "q": "Sous-traitez-vous le chantier ?", "a": "Nous exécutons avec une équipe interne. Si un corps de métier ponctuel s'appuie sur un spécialiste, nous restons votre unique interlocuteur et responsables du résultat." },
-        { "q": "Comment suivre l'avancement à distance ?", "a": "Nous envoyons des photos de suivi chaque semaine par WhatsApp ou email. Utile surtout pour les projets en France, Allemagne et Belgique." },
-        { "q": "Que se passe-t-il après la livraison ?", "a": "Vous recevez la garantie de 10 ans par écrit et un plan de maintenance. Nous restons disponibles pour le SAV." }
+        {
+          "q": "La visite et le devis sont-ils payants ?",
+          "a": "Non. L'étape 1 — visite, mesure et étude de faisabilité — est entièrement gratuite et sans engagement."
+        },
+        {
+          "q": "Le prix peut-il changer pendant le chantier ?",
+          "a": "Non, sauf si vous demandez des changements de périmètre. Le devis est ferme et sans postes ouverts."
+        },
+        {
+          "q": "Sous-traitez-vous le chantier ?",
+          "a": "Nous exécutons avec une équipe interne. Si un corps de métier ponctuel s'appuie sur un spécialiste, nous restons votre unique interlocuteur et responsables du résultat."
+        },
+        {
+          "q": "Comment suivre l'avancement à distance ?",
+          "a": "Nous envoyons des photos de suivi chaque semaine par WhatsApp ou email. Utile surtout pour les projets en France, Allemagne et Belgique."
+        },
+        {
+          "q": "Que se passe-t-il après la livraison ?",
+          "a": "Vous recevez la garantie de 10 ans par écrit et un plan de maintenance. Nous restons disponibles pour le SAV."
+        }
       ]
     },
     "cta": {
@@ -131,28 +208,70 @@
       "sub": "Réservez la visite technique et l'étude de faisabilité. Sans frais ni engagement."
     }
   },
-  "stats": { "labels": ["ans d'expérience", "projets livrés", "ans de garantie", "pays en Europe"] },
-  "testimonials": { "eyebrow": "Témoignages", "title": "Ce que disent nos clients", "googleNote": "Note moyenne sur Google Reviews" },
+  "stats": {
+    "labels": [
+      "ans d'expérience",
+      "projets livrés",
+      "ans de garantie",
+      "pays en Europe"
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent nos clients",
+    "googleNote": "Note moyenne sur Google Reviews"
+  },
   "why": {
     "eyebrow": "Pourquoi nous",
     "title": "Une construction sérieuse, sans petites lignes",
     "items": [
-      { "title": "Devis ferme", "desc": "Prix final par écrit avant de commencer. Ce que vous signez est ce que vous payez." },
-      { "title": "Matériaux haut de gamme", "desc": "Gazon de compétition, verre trempé de 12 mm et structure galvanisée." },
-      { "title": "Garantie 10 ans", "desc": "Par écrit, avec service après-vente et maintenance dans les 4 pays." }
+      {
+        "title": "Devis ferme",
+        "desc": "Prix final par écrit avant de commencer. Ce que vous signez est ce que vous payez."
+      },
+      {
+        "title": "Matériaux haut de gamme",
+        "desc": "Gazon de compétition, verre trempé de 12 mm et structure galvanisée."
+      },
+      {
+        "title": "Garantie 10 ans",
+        "desc": "Par écrit, avec service après-vente et maintenance dans les 4 pays."
+      }
     ]
   },
-  "video": { "eyebrow": "Le chantier en mouvement", "title": "Voici comment naît un terrain", "caption": "Vidéo réelle de chantier" },
+  "video": {
+    "eyebrow": "Le chantier en mouvement",
+    "title": "Voici comment naît un terrain",
+    "caption": "Vidéo réelle de chantier"
+  },
   "faq": {
     "eyebrow": "Questions fréquentes",
     "title": "Nous répondons à vos questions",
     "items": [
-      { "q": "Combien coûte la construction d'un terrain de padel ?", "a": "Le prix final dépend du modèle, du terrain, des accès et des finitions. Nous vous le donnons par écrit, sans engagement, après la visite technique gratuite." },
-      { "q": "Combien de temps durent les travaux ?", "a": "Entre 4 et 8 semaines à partir du début du chantier, selon les fondations et le modèle. Le délai est garanti par contrat." },
-      { "q": "Que comprend le clé en main ?", "a": "Tout : terrassement, dalle, structure, verre trempé, gazon, éclairage LED et démarches administratives. Nous livrons le terrain prêt à jouer." },
-      { "q": "Travaillez-vous hors d'Espagne ?", "a": "Oui. Nous réalisons des chantiers en France, en Allemagne et en Belgique avec la même équipe interne et la même garantie qu'en Espagne." },
-      { "q": "Quelle garantie offrez-vous ?", "a": "10 ans par écrit sur la structure et le gros œuvre, plus un service après-vente de maintenance." },
-      { "q": "Rénovez-vous des terrains existants ?", "a": "Oui : remplacement de gazon, verre, filets et éclairage, et reconversion de courts de tennis en padel ou pickleball." }
+      {
+        "q": "Combien coûte la construction d'un terrain de padel ?",
+        "a": "Le prix final dépend du modèle, du terrain, des accès et des finitions. Nous vous le donnons par écrit, sans engagement, après la visite technique gratuite."
+      },
+      {
+        "q": "Combien de temps durent les travaux ?",
+        "a": "Entre 4 et 8 semaines à partir du début du chantier, selon les fondations et le modèle. Le délai est garanti par contrat."
+      },
+      {
+        "q": "Que comprend le clé en main ?",
+        "a": "Tout : terrassement, dalle, structure, verre trempé, gazon, éclairage LED et démarches administratives. Nous livrons le terrain prêt à jouer."
+      },
+      {
+        "q": "Travaillez-vous hors d'Espagne ?",
+        "a": "Oui. Nous réalisons des chantiers en France, en Allemagne et en Belgique avec la même équipe interne et la même garantie qu'en Espagne."
+      },
+      {
+        "q": "Quelle garantie offrez-vous ?",
+        "a": "10 ans par écrit sur la structure et le gros œuvre, plus un service après-vente de maintenance."
+      },
+      {
+        "q": "Rénovez-vous des terrains existants ?",
+        "a": "Oui : remplacement de gazon, verre, filets et éclairage, et reconversion de courts de tennis en padel ou pickleball."
+      }
     ]
   },
   "cta": {
@@ -166,7 +285,14 @@
     "emailLabel": "E-mail",
     "emailPh": "votre@email.com",
     "typeLabel": "Type de projet",
-    "typeOptions": ["Terrain de padel", "Padel panoramique", "Pickleball", "Couverture / fermeture", "Rénovation", "Autre"],
+    "typeOptions": [
+      "Terrain de padel",
+      "Padel panoramique",
+      "Pickleball",
+      "Couverture / fermeture",
+      "Rénovation",
+      "Autre"
+    ],
     "submit": "Recevoir mon devis gratuit",
     "privacy": "En envoyant, vous acceptez la politique de confidentialité. Réponse sous 24 h ouvrées.",
     "successTitle": "Bien reçu. Nous vous contactons sous 24 h ouvrées.",
@@ -180,160 +306,377 @@
     "responseNote": "WhatsApp · réponse < 1 h ouvrée",
     "hours": "Lun–Ven · 8h00–18h00",
     "zonesTitle": "Zones d'intervention",
-    "zones": ["Communauté valencienne", "Reste de l'Espagne", "France", "Allemagne", "Belgique"],
+    "zones": [
+      "Communauté valencienne",
+      "Reste de l'Espagne",
+      "France",
+      "Allemagne",
+      "Belgique"
+    ],
     "badgeWarranty": "Garantie 10 ans",
     "badgeYears": "17+ ans d'expérience",
     "legal": "© 2026 Pavimentos Albufera · Politique de confidentialité · Mentions légales · Cookies"
   },
-  "bar": { "whatsapp": "WhatsApp", "call": "Appeler" },
+  "bar": {
+    "whatsapp": "WhatsApp",
+    "call": "Appeler"
+  },
   "padel": {
-    "hero": { "eyebrow": "Clé en main · ES · FR · DE · BE", "h1": "Construction de terrains de padel", "sub": "Standard, panoramique ou compétition. Devis ferme et garantie de 10 ans." },
+    "hero": {
+      "eyebrow": "Clé en main · ES · FR · DE · BE",
+      "h1": "Construction de terrains de padel",
+      "sub": "Standard, panoramique ou compétition. Devis ferme et garantie de 10 ans."
+    },
     "models": {
       "eyebrow": "Modèles",
       "title": "Choisissez votre terrain",
       "idealFor": "Idéal pour",
-      "tabs": ["Standard", "Panoramique", "Compétition"],
+      "tabs": [
+        "Standard",
+        "Panoramique",
+        "Compétition"
+      ],
       "items": [
         {
           "name": "Terrain standard",
           "cta": "Devis terrain standard",
           "desc": "Le terrain réglementaire de référence : robuste, rentable et pensé pour un usage intensif en clubs et copropriétés.",
-          "specs": { "dimensions": "20 × 10 m (réglementaire)", "structure": "Acier galvanisé laqué", "verre": "Trempé 10 mm", "gazon": "Monofilament 12 mm", "eclairage": "8 projecteurs LED 200 W" },
-          "ideal": ["Club", "Copropriété"]
+          "specs": {
+            "dimensions": "20 × 10 m (réglementaire)",
+            "structure": "Acier galvanisé laqué",
+            "verre": "Trempé 10 mm",
+            "gazon": "Monofilament 12 mm",
+            "eclairage": "8 projecteurs LED 200 W"
+          },
+          "ideal": [
+            "Club",
+            "Copropriété"
+          ]
         },
         {
           "name": "Terrain panoramique",
           "cta": "Devis terrain panoramique",
           "desc": "Verre autoportant sans poteaux intermédiaires : visibilité totale et l'esthétique d'une installation premium.",
-          "specs": { "dimensions": "20 × 10 m (réglementaire)", "structure": "Poteaux d'angle renforcés", "verre": "Trempé 12 mm autoportant", "gazon": "Monofilament 12 mm", "eclairage": "8 projecteurs LED 200 W" },
-          "ideal": ["Club premium", "Promoteur", "Particulier"]
+          "specs": {
+            "dimensions": "20 × 10 m (réglementaire)",
+            "structure": "Poteaux d'angle renforcés",
+            "verre": "Trempé 12 mm autoportant",
+            "gazon": "Monofilament 12 mm",
+            "eclairage": "8 projecteurs LED 200 W"
+          },
+          "ideal": [
+            "Club premium",
+            "Promoteur",
+            "Particulier"
+          ]
         },
         {
           "name": "Terrain de compétition",
           "cta": "Devis terrain de compétition",
           "desc": "Prêt pour les tournois : éclairage de niveau fédéral, gazon de compétition et espace pour tribune et réalisation.",
-          "specs": { "dimensions": "20 × 10 m + périmètre technique", "structure": "Panoramique renforcée", "verre": "Trempé 12 mm autoportant", "gazon": "Fibre de compétition homologuée", "eclairage": "LED ≥ 500 lx uniformes" },
-          "ideal": ["Club", "Fédération", "Commune"]
+          "specs": {
+            "dimensions": "20 × 10 m + périmètre technique",
+            "structure": "Panoramique renforcée",
+            "verre": "Trempé 12 mm autoportant",
+            "gazon": "Fibre de compétition homologuée",
+            "eclairage": "LED ≥ 500 lx uniformes"
+          },
+          "ideal": [
+            "Club",
+            "Fédération",
+            "Commune"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Comparatif", "title": "Les 3 modèles, face à face" },
+    "compare": {
+      "eyebrow": "Comparatif",
+      "title": "Les 3 modèles, face à face"
+    },
     "materials": {
       "eyebrow": "Matériaux et qualités",
       "title": "Ce qui le fait durer 20 ans",
       "items": [
-        { "t": "Gazon", "d": "Fibre de compétition avec base drainante et sable de silice calibré." },
-        { "t": "Verre trempé", "d": "10–12 mm certifié, ancrages de sécurité et bords polis." },
-        { "t": "Structure", "d": "Acier galvanisé à chaud et laqué au four. Sans rouille, sans entretien." },
-        { "t": "Éclairage LED", "d": "Projecteurs basse consommation à optique anti-éblouissement." }
+        {
+          "t": "Gazon",
+          "d": "Fibre de compétition avec base drainante et sable de silice calibré."
+        },
+        {
+          "t": "Verre trempé",
+          "d": "10–12 mm certifié, ancrages de sécurité et bords polis."
+        },
+        {
+          "t": "Structure",
+          "d": "Acier galvanisé à chaud et laqué au four. Sans rouille, sans entretien."
+        },
+        {
+          "t": "Éclairage LED",
+          "d": "Projecteurs basse consommation à optique anti-éblouissement."
+        }
       ]
     },
-    "cover": { "eyebrow": "Couvertures et fermetures", "title": "Jouez 365 jours par an", "desc": "Nous couvrons des terrains neufs ou existants avec des structures sur mesure : toile tendue, panneau ou fermeture complète. Y compris sur des terrains que nous n'avons pas construits.", "cta": "Devis de couverture" },
+    "cover": {
+      "eyebrow": "Couvertures et fermetures",
+      "title": "Jouez 365 jours par an",
+      "desc": "Nous couvrons des terrains neufs ou existants avec des structures sur mesure : toile tendue, panneau ou fermeture complète. Y compris sur des terrains que nous n'avons pas construits.",
+      "cta": "Devis de couverture"
+    },
     "faq": {
       "eyebrow": "Questions fréquentes",
       "title": "Questions sur les terrains de padel",
       "items": [
-        { "q": "Standard ou panoramique : lequel choisir ?", "a": "Pour la rentabilité et l'usage intensif, standard. Si votre installation se différencie par l'image, le panoramique s'amortit. Nous le chiffrons lors de la visite gratuite." },
-        { "q": "De combien d'espace ai-je besoin ?", "a": "Le terrain mesure 20 × 10 m ; nous recommandons une parcelle minimale de 22 × 12 m pour la circulation et les fondations." },
-        { "q": "Ai-je besoin d'un permis ?", "a": "Généralement oui. Nous préparons le mémoire technique et le dossier pour votre mairie dans le cadre du clé en main." },
-        { "q": "Quel entretien pour le gazon ?", "a": "Brossage et redistribution du sable 1 à 2 fois par an. Proposé en service après-vente avec la garantie." },
-        { "q": "Pouvez-vous couvrir un terrain existant ?", "a": "Oui. Nous installons des couvertures et fermetures sur des terrains déjà construits, même par d'autres." }
+        {
+          "q": "Standard ou panoramique : lequel choisir ?",
+          "a": "Pour la rentabilité et l'usage intensif, standard. Si votre installation se différencie par l'image, le panoramique s'amortit. Nous le chiffrons lors de la visite gratuite."
+        },
+        {
+          "q": "De combien d'espace ai-je besoin ?",
+          "a": "Le terrain mesure 20 × 10 m ; nous recommandons une parcelle minimale de 22 × 12 m pour la circulation et les fondations."
+        },
+        {
+          "q": "Ai-je besoin d'un permis ?",
+          "a": "Généralement oui. Nous préparons le mémoire technique et le dossier pour votre mairie dans le cadre du clé en main."
+        },
+        {
+          "q": "Quel entretien pour le gazon ?",
+          "a": "Brossage et redistribution du sable 1 à 2 fois par an. Proposé en service après-vente avec la garantie."
+        },
+        {
+          "q": "Pouvez-vous couvrir un terrain existant ?",
+          "a": "Oui. Nous installons des couvertures et fermetures sur des terrains déjà construits, même par d'autres."
+        }
       ]
     },
-    "cta": { "eyebrow": "Devis gratuit", "title": "Quel terrain convient à votre projet ?", "sub": "Nous vous le disons gratuitement après une visite technique. Devis ferme sous 48 h." }
+    "cta": {
+      "eyebrow": "Devis gratuit",
+      "title": "Quel terrain convient à votre projet ?",
+      "sub": "Nous vous le disons gratuitement après une visite technique. Devis ferme sous 48 h."
+    }
   },
   "pickleball": {
-    "hero": { "eyebrow": "Clé en main · ES · FR · DE · BE", "h1": "Construction de terrains de pickleball", "sub": "Standard, enceinte complète ou multi-terrain. Devis ferme et garantie de 10 ans." },
+    "hero": {
+      "eyebrow": "Clé en main · ES · FR · DE · BE",
+      "h1": "Construction de terrains de pickleball",
+      "sub": "Standard, enceinte complète ou multi-terrain. Devis ferme et garantie de 10 ans."
+    },
     "models": {
       "eyebrow": "Modèles",
       "title": "Choisissez votre terrain",
       "idealFor": "Idéal pour",
-      "tabs": ["Standard", "Enceinte", "Multi-terrain"],
+      "tabs": [
+        "Standard",
+        "Enceinte",
+        "Multi-terrain"
+      ],
       "items": [
         {
           "name": "Terrain standard",
           "cta": "Devis terrain standard",
           "desc": "Le terrain réglementaire de pickleball : surface acrylique à forte adhérence sur dalle de béton armé.",
-          "specs": { "dimensions": "13,4 × 6,1 m (réglementaire)", "surface": "Acrylique multicouche antidérapant", "base": "Dalle de béton armé", "filet": "Aluminium avec tendeur", "eclairage": "4 projecteurs LED 200 W" },
-          "ideal": ["Club", "Copropriété"]
+          "specs": {
+            "dimensions": "13,4 × 6,1 m (réglementaire)",
+            "surface": "Acrylique multicouche antidérapant",
+            "base": "Dalle de béton armé",
+            "filet": "Aluminium avec tendeur",
+            "eclairage": "4 projecteurs LED 200 W"
+          },
+          "ideal": [
+            "Club",
+            "Copropriété"
+          ]
         },
         {
           "name": "Enceinte complète",
           "cta": "Devis enceinte complète",
           "desc": "Terrain avec clôture périmétrique de 3 m : la balle toujours en jeu et l'environnement protégé.",
-          "specs": { "dimensions": "Parcelle min. 15,2 × 9,1 m", "surface": "Acrylique multicouche antidérapant", "cloture": "Grillage galvanisé de 3 m", "acces": "Porte + zone de repos", "eclairage": "4 projecteurs LED 200 W" },
-          "ideal": ["Copropriété", "Hôtel / resort"]
+          "specs": {
+            "dimensions": "Parcelle min. 15,2 × 9,1 m",
+            "surface": "Acrylique multicouche antidérapant",
+            "cloture": "Grillage galvanisé de 3 m",
+            "acces": "Porte + zone de repos",
+            "eclairage": "4 projecteurs LED 200 W"
+          },
+          "ideal": [
+            "Copropriété",
+            "Hôtel / resort"
+          ]
         },
         {
           "name": "Complexe multi-terrain",
           "cta": "Devis complexe multi-terrain",
           "desc": "Deux terrains ou plus partageant fondations, éclairage et accès : coût par terrain réduit et exploitation simplifiée.",
-          "specs": { "dimensions": "Modulaire · 2+ terrains", "surface": "Acrylique multicouche antidérapant", "cloture": "Périmétrique partagée", "extras": "Tribune et espace commun en option", "eclairage": "Projet lumineux sur mesure" },
-          "ideal": ["Club", "Commune", "Promoteur"]
+          "specs": {
+            "dimensions": "Modulaire · 2+ terrains",
+            "surface": "Acrylique multicouche antidérapant",
+            "cloture": "Périmétrique partagée",
+            "extras": "Tribune et espace commun en option",
+            "eclairage": "Projet lumineux sur mesure"
+          },
+          "ideal": [
+            "Club",
+            "Commune",
+            "Promoteur"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Comparatif", "title": "Les 3 modèles, face à face" },
+    "compare": {
+      "eyebrow": "Comparatif",
+      "title": "Les 3 modèles, face à face"
+    },
     "materials": {
       "eyebrow": "Matériaux et qualités",
       "title": "Ce qui le fait durer 20 ans",
       "items": [
-        { "t": "Revêtement acrylique", "d": "Système multicouche avec amortissement sur béton : adhérence et confort articulaire." },
-        { "t": "Lignes de jeu", "d": "Peinture polyuréthane haute visibilité, dimensions réglementaires." },
-        { "t": "Clôture", "d": "Grillage galvanisé plastifié de 3 m avec portes intégrées." },
-        { "t": "Éclairage LED", "d": "Projecteurs basse consommation à optique anti-éblouissement." }
+        {
+          "t": "Revêtement acrylique",
+          "d": "Système multicouche avec amortissement sur béton : adhérence et confort articulaire."
+        },
+        {
+          "t": "Lignes de jeu",
+          "d": "Peinture polyuréthane haute visibilité, dimensions réglementaires."
+        },
+        {
+          "t": "Clôture",
+          "d": "Grillage galvanisé plastifié de 3 m avec portes intégrées."
+        },
+        {
+          "t": "Éclairage LED",
+          "d": "Projecteurs basse consommation à optique anti-éblouissement."
+        }
       ]
     },
-    "cover": { "eyebrow": "Couvertures et fermetures", "title": "Jouez 365 jours par an", "desc": "Nous couvrons des terrains neufs ou existants avec des structures sur mesure : toile tendue, panneau ou fermeture complète.", "cta": "Devis de couverture" },
+    "cover": {
+      "eyebrow": "Couvertures et fermetures",
+      "title": "Jouez 365 jours par an",
+      "desc": "Nous couvrons des terrains neufs ou existants avec des structures sur mesure : toile tendue, panneau ou fermeture complète.",
+      "cta": "Devis de couverture"
+    },
     "faq": {
       "eyebrow": "Questions fréquentes",
       "title": "Questions sur les terrains de pickleball",
       "items": [
-        { "q": "Combien d'espace pour un terrain de pickleball ?", "a": "Le terrain mesure 13,4 × 6,1 m ; avec zones de sécurité, comptez 15,2 × 9,1 m. Il tient dans la moitié de l'espace d'un padel." },
-        { "q": "Puis-je convertir un court de tennis ?", "a": "Oui : un court de tennis accueille jusqu'à 4 terrains de pickleball. La reconversion est plus rapide et économique que le neuf." },
-        { "q": "Quelle surface est la meilleure ?", "a": "Acrylique multicouche sur béton : le standard international, bon drainage et rebond uniforme dans le temps." },
-        { "q": "Peut-on jouer la nuit ?", "a": "Oui. Avec 4 projecteurs LED par terrain, le niveau de jeu nocturne est atteint sans éblouir l'entourage." },
-        { "q": "Pouvez-vous couvrir le terrain ?", "a": "Oui. Nous installons couvertures et fermetures sur terrains neufs ou existants." }
+        {
+          "q": "Combien d'espace pour un terrain de pickleball ?",
+          "a": "Le terrain mesure 13,4 × 6,1 m ; avec zones de sécurité, comptez 15,2 × 9,1 m. Il tient dans la moitié de l'espace d'un padel."
+        },
+        {
+          "q": "Puis-je convertir un court de tennis ?",
+          "a": "Oui : un court de tennis accueille jusqu'à 4 terrains de pickleball. La reconversion est plus rapide et économique que le neuf."
+        },
+        {
+          "q": "Quelle surface est la meilleure ?",
+          "a": "Acrylique multicouche sur béton : le standard international, bon drainage et rebond uniforme dans le temps."
+        },
+        {
+          "q": "Peut-on jouer la nuit ?",
+          "a": "Oui. Avec 4 projecteurs LED par terrain, le niveau de jeu nocturne est atteint sans éblouir l'entourage."
+        },
+        {
+          "q": "Pouvez-vous couvrir le terrain ?",
+          "a": "Oui. Nous installons couvertures et fermetures sur terrains neufs ou existants."
+        }
       ]
     },
-    "cta": { "eyebrow": "Devis gratuit", "title": "Quel terrain convient à votre projet ?", "sub": "Nous vous le disons gratuitement après une visite technique. Devis ferme sous 48 h." }
+    "cta": {
+      "eyebrow": "Devis gratuit",
+      "title": "Quel terrain convient à votre projet ?",
+      "sub": "Nous vous le disons gratuitement après une visite technique. Devis ferme sous 48 h."
+    }
   },
   "about": {
-    "hero": { "eyebrow": "Qui sommes-nous", "h1": "17 ans à construire là où l'on joue", "sub": "Une équipe interne de construction sportive. Sans intermédiaires, sans chaîne de sous-traitants." },
+    "hero": {
+      "eyebrow": "Qui sommes-nous",
+      "h1": "17 ans à construire là où l'on joue",
+      "sub": "Une équipe interne de construction sportive. Sans intermédiaires, sans chaîne de sous-traitants."
+    },
     "story": {
       "eyebrow": "Notre histoire",
       "title": "D'un atelier local à 4 pays",
       "lead": "Nous avons commencé par revêtir des terrains dans la Communauté valencienne. Aujourd'hui nous construisons padel, pickleball et couvertures dans toute l'Espagne et en France, Allemagne et Belgique, avec la même équipe et la même façon de travailler : en direct et parole tenue.",
-      "stats": ["ans d'expérience", "projets livrés", "pays en Europe", "personnes dans l'équipe"]
+      "stats": [
+        "ans d'expérience",
+        "projets livrés",
+        "pays en Europe",
+        "personnes dans l'équipe"
+      ]
     },
     "milestones": {
       "eyebrow": "Notre parcours",
       "title": "Les jalons qui nous ont menés ici",
       "items": [
-        { "y": "2009", "t": "Nous débutons en revêtant des terrains sportifs dans la Communauté valencienne." },
-        { "y": "2014", "t": "Nous passons à la construction clé en main de terrains de padel." },
-        { "y": "2018", "t": "Premiers projets hors d'Espagne : nous commençons en France." },
-        { "y": "2022", "t": "Nous ajoutons le pickleball et les couvertures à notre catalogue." },
-        { "y": "2025", "t": "Nous dépassons 120 projets et étendons à l'Allemagne et la Belgique." }
+        {
+          "y": "2009",
+          "t": "Nous débutons en revêtant des terrains sportifs dans la Communauté valencienne."
+        },
+        {
+          "y": "2014",
+          "t": "Nous passons à la construction clé en main de terrains de padel."
+        },
+        {
+          "y": "2018",
+          "t": "Premiers projets hors d'Espagne : nous commençons en France."
+        },
+        {
+          "y": "2022",
+          "t": "Nous ajoutons le pickleball et les couvertures à notre catalogue."
+        },
+        {
+          "y": "2025",
+          "t": "Nous dépassons 120 projets et étendons à l'Allemagne et la Belgique."
+        }
       ]
     },
     "values": {
       "eyebrow": "Notre façon de travailler",
       "title": "Quatre choses non négociables",
       "items": [
-        { "t": "Équipe interne", "d": "Nous sommes sur chaque chantier. Sans chaîne de sous-traitants qui dilue la responsabilité." },
-        { "t": "Parole tenue", "d": "Devis et délai fermes par écrit. Ce que nous disons, nous le signons." },
-        { "t": "Relation directe", "d": "Un seul interlocuteur du début à la fin, quelle que soit votre langue." },
-        { "t": "Relation durable", "d": "La plupart des clients reviennent ou nous recommandent. C'est notre meilleur commercial." }
+        {
+          "t": "Équipe interne",
+          "d": "Nous sommes sur chaque chantier. Sans chaîne de sous-traitants qui dilue la responsabilité."
+        },
+        {
+          "t": "Parole tenue",
+          "d": "Devis et délai fermes par écrit. Ce que nous disons, nous le signons."
+        },
+        {
+          "t": "Relation directe",
+          "d": "Un seul interlocuteur du début à la fin, quelle que soit votre langue."
+        },
+        {
+          "t": "Relation durable",
+          "d": "La plupart des clients reviennent ou nous recommandent. C'est notre meilleur commercial."
+        }
       ]
     },
-    "team": { "eyebrow": "L'équipe", "title": "Les personnes qui foulent votre chantier", "note": "Noms, fonctions et photos réelles — à fournir." },
-    "coverage": { "eyebrow": "Où nous travaillons", "title": "Espagne, France, Allemagne et Belgique" },
-    "certs": { "eyebrow": "Garanties et certifications", "title": "Un soutien vérifiable", "note": "Logos de certifications, assurances et homologations — à fournir." },
-    "cta": { "eyebrow": "En direct, d'humain à humain", "title": "Découvrez-nous lors d'une visite", "sub": "Venez voir un chantier terminé ou nous vous rendons visite. Gratuit et sans engagement." }
+    "team": {
+      "eyebrow": "L'équipe",
+      "title": "Les personnes qui foulent votre chantier",
+      "note": "Noms, fonctions et photos réelles — à fournir."
+    },
+    "coverage": {
+      "eyebrow": "Où nous travaillons",
+      "title": "Espagne, France, Allemagne et Belgique"
+    },
+    "certs": {
+      "eyebrow": "Garanties et certifications",
+      "title": "Un soutien vérifiable",
+      "note": "Logos de certifications, assurances et homologations — à fournir."
+    },
+    "cta": {
+      "eyebrow": "En direct, d'humain à humain",
+      "title": "Découvrez-nous lors d'une visite",
+      "sub": "Venez voir un chantier terminé ou nous vous rendons visite. Gratuit et sans engagement."
+    }
   },
   "contact": {
-    "header": { "eyebrow": "Contact", "title": "Demandez votre devis gratuit", "sub": "Nous répondons sous 24 h ouvrées — souvent bien avant.", "quickWrite": "Écrivez-nous", "quickCall": "Appelez-nous" },
+    "header": {
+      "eyebrow": "Contact",
+      "title": "Demandez votre devis gratuit",
+      "sub": "Nous répondons sous 24 h ouvrées — souvent bien avant.",
+      "quickWrite": "Écrivez-nous",
+      "quickCall": "Appelez-nous"
+    },
     "form": {
       "stepOf": "Étape {n} sur 3",
       "step1Title": "Quel projet avez-vous en tête ?",
@@ -343,16 +686,36 @@
       "step3Title": "Comment vous contacter ?",
       "step3Sub": "Juste l'essentiel pour vous envoyer le devis.",
       "options": [
-        { "t": "Terrain de padel", "d": "Standard, panoramique ou compétition" },
-        { "t": "Terrain de pickleball", "d": "Standard, enceinte ou multi-terrain" },
-        { "t": "Couverture / fermeture", "d": "Sur terrain neuf ou existant" },
-        { "t": "Rénovation / reconversion", "d": "Gazon, verre, ou tennis vers padel" },
-        { "t": "Autre / je ne sais pas encore", "d": "Nous vous conseillons lors de la visite" }
+        {
+          "t": "Terrain de padel",
+          "d": "Standard, panoramique ou compétition"
+        },
+        {
+          "t": "Terrain de pickleball",
+          "d": "Standard, enceinte ou multi-terrain"
+        },
+        {
+          "t": "Couverture / fermeture",
+          "d": "Sur terrain neuf ou existant"
+        },
+        {
+          "t": "Rénovation / reconversion",
+          "d": "Gazon, verre, ou tennis vers padel"
+        },
+        {
+          "t": "Autre / je ne sais pas encore",
+          "d": "Nous vous conseillons lors de la visite"
+        }
       ],
       "locLabel": "Ville et pays",
       "locPh": "Ex. Toulouse, France",
       "whenLabel": "Pour quand ?",
-      "whenOptions": ["Dès que possible", "Dans 1–3 mois", "Dans 3–6 mois", "Je me renseigne seulement"],
+      "whenOptions": [
+        "Dès que possible",
+        "Dans 1–3 mois",
+        "Dans 3–6 mois",
+        "Je me renseigne seulement"
+      ],
       "msgLabel": "Dites-nous en plus (facultatif)",
       "msgPh": "Surface disponible, nombre de terrains, si vous avez déjà une dalle…",
       "nameLabel": "Nom",
@@ -383,12 +746,304 @@
     }
   },
   "configurator": {
-    "hero": {
-      "eyebrow": "Nouveauté",
-      "h1": "Configurez votre terrain en 3D",
-      "sub": "Choisissez modèle, couleurs et finitions et visualisez votre terrain avant de le construire."
+    "meta": {
+      "title": "Configura tu pista de pádel en 3D | Pádel Albufera",
+      "description": "Diseña tu pista de pádel en 3D —versión, cristal, césped, color y luz— y recibe el presupuesto por WhatsApp. Obra completa con solera de hormigón armado, hecha en Valencia."
     },
-    "comingSoon": "Nous préparons cet outil. Vous pourrez bientôt concevoir votre terrain en 3D directement ici."
+    "hero": {
+      "eyebrow": "Configurador 3D",
+      "h1": "Tu pista de pádel, <em>en tu jardín</em>",
+      "sub": "Móntala pieza a pieza, gírala en 3D y mándanos por WhatsApp exactamente la que quieres. Sin formularios.",
+      "solera": "Construimos la obra completa, empezando por la solera de hormigón armado sobre la que se monta la pista. Ahí se juega que no se descuadre."
+    },
+    "rotulo": "TU CLUB",
+    "visor": {
+      "posterAlt": "Pista de pádel de cristal construida en un jardín residencial",
+      "canvasAria": "Vista 3D de la pista. Flechas para girar, + y − para acercar.",
+      "cargando": "Preparando tu pista…",
+      "calidad": "Nitidez",
+      "calidadTitle": "Refracción real del cristal (equipos potentes)",
+      "noche": "Noche",
+      "dia": "Día",
+      "vistas": {
+        "hero": "General",
+        "esquina": "Esquina",
+        "lateral": "Lateral",
+        "cenital": "Cenital",
+        "pista": "A pie de pista"
+      }
+    },
+    "cat": {
+      "version": {
+        "title": "Versión de la pista",
+        "help": "Define cuánta estructura queda a la vista en los fondos. Es la decisión que más cambia el aspecto y el precio.",
+        "options": {
+          "estandar": {
+            "name": "Estándar",
+            "desc": "Pilares y marcos intermedios a la vista en los fondos. La más rígida: viento fuerte y uso intensivo."
+          },
+          "semipanoramica": {
+            "name": "Semipanorámica",
+            "desc": "Fondos sin pilares intermedios, con esquineros de acero. El equilibrio más vendido."
+          },
+          "fullpanoramica": {
+            "name": "Full panorámica",
+            "desc": "Fondos, esquinas y retornos diáfanos. Visión 360º, sin interrupciones."
+          }
+        }
+      },
+      "modalidad": {
+        "title": "Modalidad",
+        "help": "La de dobles es la estándar. La individual pide menos parcela.",
+        "options": {
+          "dobles": {
+            "name": "Dobles",
+            "sub": "20 × 10 m"
+          },
+          "individual": {
+            "name": "Individual",
+            "sub": "20 × 6 m"
+          }
+        }
+      },
+      "entorno": {
+        "title": "Dónde va",
+        "help": "En cubierta e interior hace falta 6 m de altura libre; con 7 m el globo no toca techo.",
+        "options": {
+          "exterior": {
+            "name": "Exterior",
+            "sub": "jardín o finca"
+          },
+          "cubierta": {
+            "name": "Cubierta",
+            "sub": "carpa o pabellón"
+          },
+          "interior": {
+            "name": "Interior",
+            "sub": "nave"
+          }
+        }
+      },
+      "cespedColor": {
+        "title": "Color del césped",
+        "help": "Azul, verde, naranja y púrpura son los colores oficiales FIP/FEP. El negro es una elección de diseño.",
+        "options": {
+          "verde": {
+            "name": "Verde"
+          },
+          "azul": {
+            "name": "Azul"
+          },
+          "teja": {
+            "name": "Teja"
+          },
+          "purpura": {
+            "name": "Púrpura"
+          },
+          "negro": {
+            "name": "Negro"
+          }
+        }
+      },
+      "cespedFibra": {
+        "title": "Fibra",
+        "options": {
+          "monofilamento": {
+            "name": "Monofilamento",
+            "sub": "bote uniforme · dura más"
+          },
+          "fibrilado": {
+            "name": "Fibrilado",
+            "sub": "más suave · más económico"
+          },
+          "hibrido": {
+            "name": "Híbrido",
+            "sub": "punto medio"
+          }
+        }
+      },
+      "cespedAltura": {
+        "title": "Altura de fibra",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "habitual"
+          },
+          "15": {
+            "name": "15 mm",
+            "sub": "habitual"
+          }
+        }
+      },
+      "cristal": {
+        "title": "Cristal templado",
+        "help": "Con cantos pulidos. En panorámicas el de 12 mm no es opcional en la práctica.",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "recomendado"
+          }
+        }
+      },
+      "ral": {
+        "title": "Color de la estructura",
+        "help": "Acero galvanizado con pintura epoxi. Cualquier color de la carta RAL es posible.",
+        "options": {
+          "5011": {
+            "name": "Azul"
+          },
+          "6005": {
+            "name": "Verde"
+          },
+          "7016": {
+            "name": "Antracita"
+          },
+          "9005": {
+            "name": "Negro"
+          },
+          "9010": {
+            "name": "Blanco"
+          },
+          "otro": {
+            "name": "Otro RAL"
+          }
+        }
+      },
+      "iluminacion": {
+        "title": "Iluminación LED",
+        "options": {
+          "si": {
+            "name": "Con luz",
+            "sub": "jugar de noche"
+          },
+          "no": {
+            "name": "Sin luz"
+          }
+        }
+      },
+      "tipoLuz": {
+        "title": "Montaje de los focos",
+        "help": "Los postes exteriores reparten mejor y dejan la pista limpia. Los focos en estructura ahorran obra civil.",
+        "options": {
+          "postes": {
+            "name": "4 postes de 6 m",
+            "sub": "brazo acodado exterior"
+          },
+          "integrada": {
+            "name": "Sobre estructura",
+            "sub": "proyectores en la viga"
+          }
+        }
+      },
+      "potencia": {
+        "title": "Potencia por proyector",
+        "options": {
+          "100": {
+            "name": "100 W"
+          },
+          "150": {
+            "name": "150 W",
+            "sub": "habitual"
+          },
+          "200": {
+            "name": "200 W"
+          }
+        }
+      },
+      "extras": {
+        "title": "Extras",
+        "help": "Puedes marcar varios.",
+        "options": {
+          "puertas": {
+            "name": "Puertas laterales",
+            "sub": "acceso por el centro"
+          },
+          "gradas": {
+            "name": "Gradas"
+          },
+          "rotulacion": {
+            "name": "Rotulación"
+          },
+          "marcador": {
+            "name": "Marcador"
+          }
+        }
+      }
+    },
+    "ficha": {
+      "titulo": "Ficha técnica",
+      "ref": "Ref. {ref}",
+      "labels": {
+        "version": "Versión",
+        "modalidad": "Modalidad",
+        "ubicacion": "Ubicación",
+        "cesped": "Césped",
+        "cristal": "Cristal",
+        "estructura": "Estructura",
+        "iluminacion": "Iluminación",
+        "extras": "Extras",
+        "base": "Base"
+      },
+      "val": {
+        "cristal": "Templado {mm} mm, cantos pulidos",
+        "estructura": "Acero epoxi · RAL {codigo} {color}",
+        "estructuraOtro": "Acero epoxi · color RAL a definir",
+        "sinLuz": "Sin iluminación",
+        "conLuz": "LED {w} W · {tipo}",
+        "sinExtras": "Ninguno",
+        "base": "Solera de hormigón armado ≥ 15 cm, mallazo y pendiente de drenaje",
+        "medidaDobles": "20 × 10 m",
+        "medidaIndividual": "20 × 6 m"
+      }
+    },
+    "wa": {
+      "intro": "Hola, he configurado una pista de pádel en vuestra web:",
+      "ref": "Referencia: {ref}",
+      "cierre": "¿Me podéis pasar presupuesto y fechas?"
+    },
+    "resumen": {
+      "eyebrow": "Tu configuración · {ref}",
+      "titulo": "Esta es tu pista",
+      "sub": "Te abrimos WhatsApp con toda la configuración escrita. Puedes editar el mensaje antes de enviarlo.",
+      "whatsapp": "Pedir presupuesto",
+      "telefono": "Llamar"
+    },
+    "barra": {
+      "whatsapp": "WhatsApp",
+      "telefono": "Llamar"
+    },
+    "social": {
+      "titulo": "Pistas que ya hemos construido",
+      "sub": "Una pista real en un jardín real vale más que cualquier render.",
+      "alt": {
+        "0": "Pista de pádel panorámica de cristal en entorno rural",
+        "1": "Pista de pádel con cerramiento completo de cristal en exterior",
+        "2": "Pista de césped verde junto a una arboleda"
+      }
+    },
+    "faq": {
+      "titulo": "Antes de decidir",
+      "q": {
+        "licencia": "¿Necesito licencia de obra?",
+        "ruido": "¿Cuánto ruido hace y qué distancia dejo al vecino?",
+        "espacio": "¿Cuánto espacio necesito de verdad?",
+        "plazo": "¿Cuánto se tarda desde que firmo?",
+        "mantenimiento": "¿Qué mantenimiento tiene al año?"
+      },
+      "a": {
+        "licencia": "En la mayoría de municipios una pista descubierta va con licencia de obra menor; una cubierta suele exigir obra mayor. Te decimos qué necesitas en tu ayuntamiento y preparamos la documentación técnica.",
+        "ruido": "El pádel hace ruido de pelota y voces, sobre todo de noche. Se recomienda dejar unos 3 m a los linderos y orientar los fondos hacia tu parcela; en casos sensibles montamos cerramientos y horarios que reducen molestias.",
+        "espacio": "La pista de dobles ocupa 20 × 10 m, pero hay que contar el perímetro de mantenimiento: en la práctica conviene reservar unos 21 × 11 m. La individual baja a 20 × 6 m.",
+        "plazo": "Desde la firma, una pista estándar suele estar lista en 4 a 6 semanas si el terreno no da sorpresas. La solera necesita su tiempo de curado: no se acelera sin comprometer la obra.",
+        "mantenimiento": "Poco: cepillado del césped y repaso de la arena de sílice un par de veces al año, y revisión de tornillería y cristales. El resurfacing del césped llega a los 8-10 años según el uso."
+      }
+    }
   },
   "construction": {
     "hero": {

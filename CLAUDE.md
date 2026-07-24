@@ -28,6 +28,19 @@ Medido en campo (Vercel Speed Insights), móvil, no en Lighthouse de escritorio:
 
 Si un cambio empeora cualquiera de estos, no se hace sin avisarme antes.
 
+### Excepción documentada: `/configurador`
+
+La ruta `/configurador` (render 3D con Three.js) **no entra en los 150 KB**: Three.js
+solo ya ronda esa cifra. Es una **excepción acotada a esa única ruta**:
+
+- Three.js entra por npm (no CDN) y se carga **en diferido** (`import()` dinámico del
+  motor dentro de un `useEffect`), fuera del bundle inicial y del hilo del LCP.
+- El peso **no puede contaminar ninguna otra ruta**. Verificar con
+  `npm run analyze` (bundle analyzer) que solo `/configurador` lo arrastra.
+- El LCP de la ruta lo marca un **póster estático** (`next/image` + `priority`), no el canvas.
+- El motor 3D vive en `src/lib/configurador/` (aislado de React y del DOM de la interfaz,
+  sin español incrustado) y libera todo al desmontar (`dispose()`).
+
 ---
 
 ## Renderizado

@@ -26,9 +26,16 @@
     "eyebrow": "Sportplatzbau · ES · FR · DE · BE",
     "h1": "Wir bauen Ihren Padel- oder Pickleball-Court schlüsselfertig",
     "sub": "Vom Beton bis zum letzten Feinschliff. 17 Jahre Sportstättenbau. 10 Jahre Garantie.",
-    "badges": ["17+ Jahre", "+120 Projekte", "10 Jahre Garantie", "ES · FR · DE · BE"]
+    "badges": [
+      "17+ Jahre",
+      "+120 Projekte",
+      "10 Jahre Garantie",
+      "ES · FR · DE · BE"
+    ]
   },
-  "proof": { "title": "Sie vertrauen uns" },
+  "proof": {
+    "title": "Sie vertrauen uns"
+  },
   "build": {
     "eyebrow": "Was wir bauen",
     "title": "Ein Court für jedes Projekt",
@@ -36,10 +43,22 @@
     "onRequest": "Preis auf Anfrage",
     "custom": "individuelles Projekt",
     "cards": [
-      { "title": "Padel-Court Standard", "desc": "Die meistgefragte Konfiguration für Vereine und Wohnanlagen." },
-      { "title": "Panorama-Padel-Court", "desc": "Glas ohne Zwischenpfosten: maximale Sicht, Premium-Finish." },
-      { "title": "Pickleball-Court", "desc": "Die am schnellsten wachsende Sportart Europas – auf halbem Raum." },
-      { "title": "Court nach Maß / Überdachungen", "desc": "Überdachungen, Einhausungen und Sonderprojekte nach Maß." }
+      {
+        "title": "Padel-Court Standard",
+        "desc": "Die meistgefragte Konfiguration für Vereine und Wohnanlagen."
+      },
+      {
+        "title": "Panorama-Padel-Court",
+        "desc": "Glas ohne Zwischenpfosten: maximale Sicht, Premium-Finish."
+      },
+      {
+        "title": "Pickleball-Court",
+        "desc": "Die am schnellsten wachsende Sportart Europas – auf halbem Raum."
+      },
+      {
+        "title": "Court nach Maß / Überdachungen",
+        "desc": "Überdachungen, Einhausungen und Sonderprojekte nach Maß."
+      }
     ]
   },
   "projects": {
@@ -48,8 +67,23 @@
       "h1": "Realisierte Projekte",
       "sub": "Padel, Pickleball und Überdachungen, geliefert von unserem Team. Alles hier ist real."
     },
-    "filters": { "all": "Alle", "padel": "Padel", "pano": "Panorama", "pkb": "Pickleball", "cub": "Überdachungen", "es": "Spanien", "fr": "Frankreich" },
-    "detail": { "cliente": "Kunde", "ubicacion": "Standort", "tipo": "Typ", "plazo": "Zeitraum", "alcance": "Umfang", "cta": "So etwas will ich" },
+    "filters": {
+      "all": "Alle",
+      "padel": "Padel",
+      "pano": "Panorama",
+      "pkb": "Pickleball",
+      "cub": "Überdachungen",
+      "es": "Spanien",
+      "fr": "Frankreich"
+    },
+    "detail": {
+      "cliente": "Kunde",
+      "ubicacion": "Standort",
+      "tipo": "Typ",
+      "plazo": "Zeitraum",
+      "alcance": "Umfang",
+      "cta": "So etwas will ich"
+    },
     "cta": {
       "eyebrow": "Der nächste könnte Ihrer sein",
       "title": "So etwas für Ihre Anlage?",
@@ -72,28 +106,44 @@
           "dur": "48–72 h",
           "tag": "Kostenlos und unverbindlich",
           "d": "Wir kommen auf Ihr Grundstück, messen, prüfen Zufahrt, Boden und Vorschriften und klären Ihre Fragen persönlich.",
-          "deliv": ["Absteckung und Aufmaß", "Machbarkeitsstudie", "Modellempfehlung"]
+          "deliv": [
+            "Absteckung und Aufmaß",
+            "Machbarkeitsstudie",
+            "Modellempfehlung"
+          ]
         },
         {
           "t": "Projekt und Festpreisangebot",
           "dur": "3–5 Tage",
           "tag": "Endpreis schriftlich",
           "d": "Wir erstellen technisches Konzept, Pläne und detailliertes Angebot. Der unterschriebene Preis ist der Zahlpreis.",
-          "deliv": ["Technisches Konzept und Pläne", "Festpreis ohne offene Posten", "Unterlagen für die Genehmigung"]
+          "deliv": [
+            "Technisches Konzept und Pläne",
+            "Festpreis ohne offene Posten",
+            "Unterlagen für die Genehmigung"
+          ]
         },
         {
           "t": "Bau mit verbindlichem Termin",
           "dur": "4–8 Wochen",
           "tag": "Eigenes Team",
           "d": "Wir bauen mit eigenem Team, ohne verkettete Subunternehmer, und senden wöchentlich Fortschrittsfotos.",
-          "deliv": ["Fundament und Tiefbau", "Montage von Struktur und Glas", "Wöchentliche Fortschrittsfotos"]
+          "deliv": [
+            "Fundament und Tiefbau",
+            "Montage von Struktur und Glas",
+            "Wöchentliche Fortschrittsfotos"
+          ]
         },
         {
           "t": "Übergabe spielfertig",
           "dur": "1 Tag + Service",
           "tag": "10 Jahre Garantie",
           "d": "Endabnahme mit Ihnen, Übergabe der dokumentierten Garantie und Wartungsplan. Und wir bleiben danach erreichbar.",
-          "deliv": ["Gemeinsamer Test und Abnahme", "10 Jahre Garantie schriftlich", "Wartungsplan nach Übergabe"]
+          "deliv": [
+            "Gemeinsamer Test und Abnahme",
+            "10 Jahre Garantie schriftlich",
+            "Wartungsplan nach Übergabe"
+          ]
         }
       ]
     },
@@ -105,10 +155,22 @@
       "eyebrow": "Unsere Zusagen",
       "title": "Was wir unterschreiben, halten wir",
       "items": [
-        { "t": "Festpreis", "d": "Keine offenen Posten oder Mehrkosten in letzter Minute. Was Sie unterschreiben, zahlen Sie." },
-        { "t": "Verbindlicher Termin", "d": "Der Liefertermin steht im Vertrag, keine optimistische Schätzung." },
-        { "t": "Volle Transparenz", "d": "Wöchentliche Fortschrittsfotos und ein einziger Ansprechpartner während des gesamten Baus." },
-        { "t": "Echte Garantie", "d": "10 Jahre schriftlich und Wartungsservice in allen 4 Ländern." }
+        {
+          "t": "Festpreis",
+          "d": "Keine offenen Posten oder Mehrkosten in letzter Minute. Was Sie unterschreiben, zahlen Sie."
+        },
+        {
+          "t": "Verbindlicher Termin",
+          "d": "Der Liefertermin steht im Vertrag, keine optimistische Schätzung."
+        },
+        {
+          "t": "Volle Transparenz",
+          "d": "Wöchentliche Fortschrittsfotos und ein einziger Ansprechpartner während des gesamten Baus."
+        },
+        {
+          "t": "Echte Garantie",
+          "d": "10 Jahre schriftlich und Wartungsservice in allen 4 Ländern."
+        }
       ],
       "sealYears": "10",
       "sealWord": "Jahre Garantie",
@@ -118,11 +180,26 @@
       "eyebrow": "Häufige Fragen",
       "title": "Fragen zum Ablauf",
       "items": [
-        { "q": "Sind Termin und Angebot kostenlos?", "a": "Ja. Phase 1 — Termin, Aufmaß und Machbarkeitsstudie — ist völlig kostenlos und unverbindlich." },
-        { "q": "Kann sich der Preis während des Baus ändern?", "a": "Nein, außer Sie wünschen Umfangsänderungen. Das Angebot ist ein Festpreis ohne offene Posten." },
-        { "q": "Vergeben Sie den Bau an Subunternehmer?", "a": "Wir bauen mit eigenem Team. Wenn ein einzelnes Gewerk einen Spezialisten erfordert, bleiben wir Ihr einziger Ansprechpartner und für das Ergebnis verantwortlich." },
-        { "q": "Wie verfolge ich den Fortschritt aus der Ferne?", "a": "Wir senden wöchentlich Fortschrittsfotos per WhatsApp oder E-Mail. Besonders nützlich für Projekte in Frankreich, Deutschland und Belgien." },
-        { "q": "Was passiert nach der Übergabe?", "a": "Sie erhalten die 10-Jahres-Garantie schriftlich und einen Wartungsplan. Wir bleiben für den Service erreichbar." }
+        {
+          "q": "Sind Termin und Angebot kostenlos?",
+          "a": "Ja. Phase 1 — Termin, Aufmaß und Machbarkeitsstudie — ist völlig kostenlos und unverbindlich."
+        },
+        {
+          "q": "Kann sich der Preis während des Baus ändern?",
+          "a": "Nein, außer Sie wünschen Umfangsänderungen. Das Angebot ist ein Festpreis ohne offene Posten."
+        },
+        {
+          "q": "Vergeben Sie den Bau an Subunternehmer?",
+          "a": "Wir bauen mit eigenem Team. Wenn ein einzelnes Gewerk einen Spezialisten erfordert, bleiben wir Ihr einziger Ansprechpartner und für das Ergebnis verantwortlich."
+        },
+        {
+          "q": "Wie verfolge ich den Fortschritt aus der Ferne?",
+          "a": "Wir senden wöchentlich Fortschrittsfotos per WhatsApp oder E-Mail. Besonders nützlich für Projekte in Frankreich, Deutschland und Belgien."
+        },
+        {
+          "q": "Was passiert nach der Übergabe?",
+          "a": "Sie erhalten die 10-Jahres-Garantie schriftlich und einen Wartungsplan. Wir bleiben für den Service erreichbar."
+        }
       ]
     },
     "cta": {
@@ -131,28 +208,70 @@
       "sub": "Buchen Sie den technischen Termin und die Machbarkeitsstudie. Kostenlos und unverbindlich."
     }
   },
-  "stats": { "labels": ["Jahre Erfahrung", "gelieferte Projekte", "Jahre Garantie", "Länder in Europa"] },
-  "testimonials": { "eyebrow": "Referenzen", "title": "Das sagen unsere Kunden", "googleNote": "Durchschnittsbewertung bei Google Reviews" },
+  "stats": {
+    "labels": [
+      "Jahre Erfahrung",
+      "gelieferte Projekte",
+      "Jahre Garantie",
+      "Länder in Europa"
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Referenzen",
+    "title": "Das sagen unsere Kunden",
+    "googleNote": "Durchschnittsbewertung bei Google Reviews"
+  },
   "why": {
     "eyebrow": "Warum wir",
     "title": "Seriöser Bau, ohne Kleingedrucktes",
     "items": [
-      { "title": "Festpreisgarantie", "desc": "Endpreis schriftlich vor Baubeginn. Was Sie unterschreiben, zahlen Sie." },
-      { "title": "Erstklassige Materialien", "desc": "Wettkampfrasen, 12-mm-Sicherheitsglas und verzinkte Stahlkonstruktion." },
-      { "title": "10 Jahre Garantie", "desc": "Schriftlich, mit Wartungsservice in allen 4 Ländern." }
+      {
+        "title": "Festpreisgarantie",
+        "desc": "Endpreis schriftlich vor Baubeginn. Was Sie unterschreiben, zahlen Sie."
+      },
+      {
+        "title": "Erstklassige Materialien",
+        "desc": "Wettkampfrasen, 12-mm-Sicherheitsglas und verzinkte Stahlkonstruktion."
+      },
+      {
+        "title": "10 Jahre Garantie",
+        "desc": "Schriftlich, mit Wartungsservice in allen 4 Ländern."
+      }
     ]
   },
-  "video": { "eyebrow": "Die Baustelle in Bewegung", "title": "So entsteht ein Court", "caption": "Echtes Baustellenvideo" },
+  "video": {
+    "eyebrow": "Die Baustelle in Bewegung",
+    "title": "So entsteht ein Court",
+    "caption": "Echtes Baustellenvideo"
+  },
   "faq": {
     "eyebrow": "Häufige Fragen",
     "title": "Wir beantworten Ihre Fragen",
     "items": [
-      { "q": "Was kostet der Bau eines Padel-Courts?", "a": "Der Endpreis hängt vom Modell, dem Gelände, der Zufahrt und der Ausstattung ab. Wir nennen ihn Ihnen schriftlich und unverbindlich nach dem kostenlosen technischen Termin." },
-      { "q": "Wie lange dauert der Bau?", "a": "Zwischen 4 und 8 Wochen ab Baubeginn, je nach Fundament und Modell. Der Termin wird vertraglich zugesichert." },
-      { "q": "Was umfasst schlüsselfertig?", "a": "Alles: Erdarbeiten, Bodenplatte, Konstruktion, Sicherheitsglas, Rasen, LED-Beleuchtung und Genehmigungen. Wir übergeben den Court spielfertig." },
-      { "q": "Arbeiten Sie außerhalb Spaniens?", "a": "Ja. Wir bauen in Frankreich, Deutschland und Belgien mit demselben eigenen Team und derselben Garantie wie in Spanien." },
-      { "q": "Welche Garantie bieten Sie?", "a": "10 Jahre schriftlich auf Konstruktion und Bauarbeiten, plus Wartungsservice nach der Übergabe." },
-      { "q": "Sanieren Sie bestehende Courts?", "a": "Ja: Austausch von Rasen, Glas, Netzen und Beleuchtung sowie Umbau von Tennisplätzen in Padel- oder Pickleball-Courts." }
+      {
+        "q": "Was kostet der Bau eines Padel-Courts?",
+        "a": "Der Endpreis hängt vom Modell, dem Gelände, der Zufahrt und der Ausstattung ab. Wir nennen ihn Ihnen schriftlich und unverbindlich nach dem kostenlosen technischen Termin."
+      },
+      {
+        "q": "Wie lange dauert der Bau?",
+        "a": "Zwischen 4 und 8 Wochen ab Baubeginn, je nach Fundament und Modell. Der Termin wird vertraglich zugesichert."
+      },
+      {
+        "q": "Was umfasst schlüsselfertig?",
+        "a": "Alles: Erdarbeiten, Bodenplatte, Konstruktion, Sicherheitsglas, Rasen, LED-Beleuchtung und Genehmigungen. Wir übergeben den Court spielfertig."
+      },
+      {
+        "q": "Arbeiten Sie außerhalb Spaniens?",
+        "a": "Ja. Wir bauen in Frankreich, Deutschland und Belgien mit demselben eigenen Team und derselben Garantie wie in Spanien."
+      },
+      {
+        "q": "Welche Garantie bieten Sie?",
+        "a": "10 Jahre schriftlich auf Konstruktion und Bauarbeiten, plus Wartungsservice nach der Übergabe."
+      },
+      {
+        "q": "Sanieren Sie bestehende Courts?",
+        "a": "Ja: Austausch von Rasen, Glas, Netzen und Beleuchtung sowie Umbau von Tennisplätzen in Padel- oder Pickleball-Courts."
+      }
     ]
   },
   "cta": {
@@ -166,7 +285,14 @@
     "emailLabel": "E-Mail",
     "emailPh": "ihre@email.com",
     "typeLabel": "Projektart",
-    "typeOptions": ["Padel-Court", "Panorama-Padel", "Pickleball", "Überdachung / Einhausung", "Sanierung", "Sonstiges"],
+    "typeOptions": [
+      "Padel-Court",
+      "Panorama-Padel",
+      "Pickleball",
+      "Überdachung / Einhausung",
+      "Sanierung",
+      "Sonstiges"
+    ],
     "submit": "Kostenloses Angebot erhalten",
     "privacy": "Mit dem Absenden akzeptieren Sie die Datenschutzerklärung. Antwort innerhalb von 24 h an Werktagen.",
     "successTitle": "Erhalten. Wir melden uns innerhalb von 24 h an Werktagen.",
@@ -180,160 +306,377 @@
     "responseNote": "WhatsApp · Antwort < 1 h an Werktagen",
     "hours": "Mo–Fr · 8:00–18:00",
     "zonesTitle": "Servicegebiete",
-    "zones": ["Region Valencia", "Übriges Spanien", "Frankreich", "Deutschland", "Belgien"],
+    "zones": [
+      "Region Valencia",
+      "Übriges Spanien",
+      "Frankreich",
+      "Deutschland",
+      "Belgien"
+    ],
     "badgeWarranty": "10 Jahre Garantie",
     "badgeYears": "17+ Jahre Erfahrung",
     "legal": "© 2026 Pavimentos Albufera · Datenschutz · Impressum · Cookies"
   },
-  "bar": { "whatsapp": "WhatsApp", "call": "Anrufen" },
+  "bar": {
+    "whatsapp": "WhatsApp",
+    "call": "Anrufen"
+  },
   "padel": {
-    "hero": { "eyebrow": "Schlüsselfertig · ES · FR · DE · BE", "h1": "Bau von Padel-Courts", "sub": "Standard, Panorama oder Wettkampf. Festpreis und 10 Jahre Garantie." },
+    "hero": {
+      "eyebrow": "Schlüsselfertig · ES · FR · DE · BE",
+      "h1": "Bau von Padel-Courts",
+      "sub": "Standard, Panorama oder Wettkampf. Festpreis und 10 Jahre Garantie."
+    },
     "models": {
       "eyebrow": "Modelle",
       "title": "Wählen Sie Ihren Court",
       "idealFor": "Ideal für",
-      "tabs": ["Standard", "Panorama", "Wettkampf"],
+      "tabs": [
+        "Standard",
+        "Panorama",
+        "Wettkampf"
+      ],
       "items": [
         {
           "name": "Standard-Court",
           "cta": "Angebot Standard-Court",
           "desc": "Der maßgebliche Regel-Court: robust, wirtschaftlich und für den intensiven Einsatz in Vereinen und Wohnanlagen gebaut.",
-          "specs": { "abmessungen": "20 × 10 m (regelkonform)", "struktur": "Verzinkter, lackierter Stahl", "glas": "10 mm Sicherheitsglas", "rasen": "Monofilament 12 mm", "beleuchtung": "8 × 200 W LED-Strahler" },
-          "ideal": ["Verein", "Wohnanlage"]
+          "specs": {
+            "abmessungen": "20 × 10 m (regelkonform)",
+            "struktur": "Verzinkter, lackierter Stahl",
+            "glas": "10 mm Sicherheitsglas",
+            "rasen": "Monofilament 12 mm",
+            "beleuchtung": "8 × 200 W LED-Strahler"
+          },
+          "ideal": [
+            "Verein",
+            "Wohnanlage"
+          ]
         },
         {
           "name": "Panorama-Court",
           "cta": "Angebot Panorama-Court",
           "desc": "Selbsttragendes Glas ohne Zwischenpfosten: volle Sicht und die Optik einer Premium-Anlage.",
-          "specs": { "abmessungen": "20 × 10 m (regelkonform)", "struktur": "Verstärkte Eckpfosten", "glas": "12 mm selbsttragend gehärtet", "rasen": "Monofilament 12 mm", "beleuchtung": "8 × 200 W LED-Strahler" },
-          "ideal": ["Premium-Verein", "Bauträger", "Privat"]
+          "specs": {
+            "abmessungen": "20 × 10 m (regelkonform)",
+            "struktur": "Verstärkte Eckpfosten",
+            "glas": "12 mm selbsttragend gehärtet",
+            "rasen": "Monofilament 12 mm",
+            "beleuchtung": "8 × 200 W LED-Strahler"
+          },
+          "ideal": [
+            "Premium-Verein",
+            "Bauträger",
+            "Privat"
+          ]
         },
         {
           "name": "Wettkampf-Court",
           "cta": "Angebot Wettkampf-Court",
           "desc": "Turnierbereit: Beleuchtung auf Verbandsniveau, Wettkampfrasen und Platz für Tribüne und Übertragung.",
-          "specs": { "abmessungen": "20 × 10 m + technischer Rand", "struktur": "Verstärktes Panorama", "glas": "12 mm selbsttragend gehärtet", "rasen": "Zugelassene Wettkampffaser", "beleuchtung": "LED ≥ 500 lx gleichmäßig" },
-          "ideal": ["Verein", "Verband", "Kommune"]
+          "specs": {
+            "abmessungen": "20 × 10 m + technischer Rand",
+            "struktur": "Verstärktes Panorama",
+            "glas": "12 mm selbsttragend gehärtet",
+            "rasen": "Zugelassene Wettkampffaser",
+            "beleuchtung": "LED ≥ 500 lx gleichmäßig"
+          },
+          "ideal": [
+            "Verein",
+            "Verband",
+            "Kommune"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Vergleich", "title": "Die 3 Modelle im direkten Vergleich" },
+    "compare": {
+      "eyebrow": "Vergleich",
+      "title": "Die 3 Modelle im direkten Vergleich"
+    },
     "materials": {
       "eyebrow": "Materialien und Qualität",
       "title": "Was ihn 20 Jahre halten lässt",
       "items": [
-        { "t": "Rasen", "d": "Wettkampffaser mit drainierender Basis und kalibriertem Silikatsand." },
-        { "t": "Sicherheitsglas", "d": "10–12 mm zertifiziert, Sicherheitsverankerungen und polierte Kanten." },
-        { "t": "Struktur", "d": "Feuerverzinkter und ofenlackierter Stahl. Kein Rost, keine Wartung." },
-        { "t": "LED-Beleuchtung", "d": "Stromsparende Strahler mit blendfreier Optik." }
+        {
+          "t": "Rasen",
+          "d": "Wettkampffaser mit drainierender Basis und kalibriertem Silikatsand."
+        },
+        {
+          "t": "Sicherheitsglas",
+          "d": "10–12 mm zertifiziert, Sicherheitsverankerungen und polierte Kanten."
+        },
+        {
+          "t": "Struktur",
+          "d": "Feuerverzinkter und ofenlackierter Stahl. Kein Rost, keine Wartung."
+        },
+        {
+          "t": "LED-Beleuchtung",
+          "d": "Stromsparende Strahler mit blendfreier Optik."
+        }
       ]
     },
-    "cover": { "eyebrow": "Überdachungen und Einhausungen", "title": "Spielen Sie 365 Tage im Jahr", "desc": "Wir überdachen neue oder bestehende Courts mit Sonderkonstruktionen: Spanntuch, Paneel oder Vollverkleidung. Auch auf Courts, die wir nicht gebaut haben.", "cta": "Angebot Überdachung" },
+    "cover": {
+      "eyebrow": "Überdachungen und Einhausungen",
+      "title": "Spielen Sie 365 Tage im Jahr",
+      "desc": "Wir überdachen neue oder bestehende Courts mit Sonderkonstruktionen: Spanntuch, Paneel oder Vollverkleidung. Auch auf Courts, die wir nicht gebaut haben.",
+      "cta": "Angebot Überdachung"
+    },
     "faq": {
       "eyebrow": "Häufige Fragen",
       "title": "Fragen zu Padel-Courts",
       "items": [
-        { "q": "Standard oder Panorama: was passt?", "a": "Für Wirtschaftlichkeit und Intensivnutzung Standard. Wenn Ihre Anlage über das Image punktet, amortisiert sich Panorama. Wir beziffern es beim kostenlosen Termin." },
-        { "q": "Wie viel Platz brauche ich?", "a": "Der Court misst 20 × 10 m; wir empfehlen ein Mindestgrundstück von 22 × 12 m für Umlauf und Fundament." },
-        { "q": "Brauche ich eine Baugenehmigung?", "a": "In der Regel ja. Wir erstellen das technische Konzept und die Unterlagen für Ihre Gemeinde im Rahmen des schlüsselfertigen Baus." },
-        { "q": "Welche Wartung braucht der Rasen?", "a": "Bürsten und Sandverteilung 1–2 Mal im Jahr. Als Wartungsservice mit der Garantie angeboten." },
-        { "q": "Können Sie einen bestehenden Court überdachen?", "a": "Ja. Wir installieren Überdachungen und Einhausungen auf bereits gebauten Courts, auch fremden." }
+        {
+          "q": "Standard oder Panorama: was passt?",
+          "a": "Für Wirtschaftlichkeit und Intensivnutzung Standard. Wenn Ihre Anlage über das Image punktet, amortisiert sich Panorama. Wir beziffern es beim kostenlosen Termin."
+        },
+        {
+          "q": "Wie viel Platz brauche ich?",
+          "a": "Der Court misst 20 × 10 m; wir empfehlen ein Mindestgrundstück von 22 × 12 m für Umlauf und Fundament."
+        },
+        {
+          "q": "Brauche ich eine Baugenehmigung?",
+          "a": "In der Regel ja. Wir erstellen das technische Konzept und die Unterlagen für Ihre Gemeinde im Rahmen des schlüsselfertigen Baus."
+        },
+        {
+          "q": "Welche Wartung braucht der Rasen?",
+          "a": "Bürsten und Sandverteilung 1–2 Mal im Jahr. Als Wartungsservice mit der Garantie angeboten."
+        },
+        {
+          "q": "Können Sie einen bestehenden Court überdachen?",
+          "a": "Ja. Wir installieren Überdachungen und Einhausungen auf bereits gebauten Courts, auch fremden."
+        }
       ]
     },
-    "cta": { "eyebrow": "Kostenloses Angebot", "title": "Welcher Court passt zu Ihrem Projekt?", "sub": "Wir sagen es Ihnen kostenlos nach einem technischen Termin. Festpreis innerhalb von 48 h." }
+    "cta": {
+      "eyebrow": "Kostenloses Angebot",
+      "title": "Welcher Court passt zu Ihrem Projekt?",
+      "sub": "Wir sagen es Ihnen kostenlos nach einem technischen Termin. Festpreis innerhalb von 48 h."
+    }
   },
   "pickleball": {
-    "hero": { "eyebrow": "Schlüsselfertig · ES · FR · DE · BE", "h1": "Bau von Pickleball-Courts", "sub": "Standard, Volleinhausung oder Multi-Court. Festpreis und 10 Jahre Garantie." },
+    "hero": {
+      "eyebrow": "Schlüsselfertig · ES · FR · DE · BE",
+      "h1": "Bau von Pickleball-Courts",
+      "sub": "Standard, Volleinhausung oder Multi-Court. Festpreis und 10 Jahre Garantie."
+    },
     "models": {
       "eyebrow": "Modelle",
       "title": "Wählen Sie Ihren Court",
       "idealFor": "Ideal für",
-      "tabs": ["Standard", "Einhausung", "Multi-Court"],
+      "tabs": [
+        "Standard",
+        "Einhausung",
+        "Multi-Court"
+      ],
       "items": [
         {
           "name": "Standard-Court",
           "cta": "Angebot Standard-Court",
           "desc": "Der regelkonforme Pickleball-Court: griffige Acryloberfläche auf einer Stahlbetonplatte.",
-          "specs": { "abmessungen": "13,4 × 6,1 m (regelkonform)", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "basis": "Stahlbetonplatte", "netz": "Aluminium mit Spanner", "beleuchtung": "4 × 200 W LED-Strahler" },
-          "ideal": ["Verein", "Wohnanlage"]
+          "specs": {
+            "abmessungen": "13,4 × 6,1 m (regelkonform)",
+            "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl",
+            "basis": "Stahlbetonplatte",
+            "netz": "Aluminium mit Spanner",
+            "beleuchtung": "4 × 200 W LED-Strahler"
+          },
+          "ideal": [
+            "Verein",
+            "Wohnanlage"
+          ]
         },
         {
           "name": "Volleinhausung",
           "cta": "Angebot Volleinhausung",
           "desc": "Court mit 3 m Umzäunung: der Ball immer im Spiel und die Umgebung geschützt.",
-          "specs": { "abmessungen": "Grundstück min. 15,2 × 9,1 m", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "zaun": "3 m verzinktes Gitter", "zugang": "Tür + Ruhezone", "beleuchtung": "4 × 200 W LED-Strahler" },
-          "ideal": ["Wohnanlage", "Hotel / Resort"]
+          "specs": {
+            "abmessungen": "Grundstück min. 15,2 × 9,1 m",
+            "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl",
+            "zaun": "3 m verzinktes Gitter",
+            "zugang": "Tür + Ruhezone",
+            "beleuchtung": "4 × 200 W LED-Strahler"
+          },
+          "ideal": [
+            "Wohnanlage",
+            "Hotel / Resort"
+          ]
         },
         {
           "name": "Multi-Court-Komplex",
           "cta": "Angebot Multi-Court-Komplex",
           "desc": "Zwei oder mehr Courts teilen Fundament, Beleuchtung und Zugänge: geringere Kosten pro Court und einfacherer Betrieb.",
-          "specs": { "abmessungen": "Modular · 2+ Courts", "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl", "zaun": "Gemeinsame Umzäunung", "extras": "Tribüne und Gemeinschaftsbereich optional", "beleuchtung": "Maßgeschneidertes Lichtkonzept" },
-          "ideal": ["Verein", "Kommune", "Bauträger"]
+          "specs": {
+            "abmessungen": "Modular · 2+ Courts",
+            "oberflaeche": "Mehrschichtiges Anti-Rutsch-Acryl",
+            "zaun": "Gemeinsame Umzäunung",
+            "extras": "Tribüne und Gemeinschaftsbereich optional",
+            "beleuchtung": "Maßgeschneidertes Lichtkonzept"
+          },
+          "ideal": [
+            "Verein",
+            "Kommune",
+            "Bauträger"
+          ]
         }
       ]
     },
-    "compare": { "eyebrow": "Vergleich", "title": "Die 3 Modelle im direkten Vergleich" },
+    "compare": {
+      "eyebrow": "Vergleich",
+      "title": "Die 3 Modelle im direkten Vergleich"
+    },
     "materials": {
       "eyebrow": "Materialien und Qualität",
       "title": "Was ihn 20 Jahre halten lässt",
       "items": [
-        { "t": "Acrylbelag", "d": "Gedämpftes Mehrschichtsystem auf Beton: Griff und Gelenkkomfort." },
-        { "t": "Spiellinien", "d": "Hochsichtbarer Polyurethanlack, regelkonforme Maße." },
-        { "t": "Umzäunung", "d": "3 m kunststoffbeschichtetes verzinktes Gitter mit integrierten Toren." },
-        { "t": "LED-Beleuchtung", "d": "Stromsparende Strahler mit blendfreier Optik." }
+        {
+          "t": "Acrylbelag",
+          "d": "Gedämpftes Mehrschichtsystem auf Beton: Griff und Gelenkkomfort."
+        },
+        {
+          "t": "Spiellinien",
+          "d": "Hochsichtbarer Polyurethanlack, regelkonforme Maße."
+        },
+        {
+          "t": "Umzäunung",
+          "d": "3 m kunststoffbeschichtetes verzinktes Gitter mit integrierten Toren."
+        },
+        {
+          "t": "LED-Beleuchtung",
+          "d": "Stromsparende Strahler mit blendfreier Optik."
+        }
       ]
     },
-    "cover": { "eyebrow": "Überdachungen und Einhausungen", "title": "Spielen Sie 365 Tage im Jahr", "desc": "Wir überdachen neue oder bestehende Courts mit Sonderkonstruktionen: Spanntuch, Paneel oder Vollverkleidung.", "cta": "Angebot Überdachung" },
+    "cover": {
+      "eyebrow": "Überdachungen und Einhausungen",
+      "title": "Spielen Sie 365 Tage im Jahr",
+      "desc": "Wir überdachen neue oder bestehende Courts mit Sonderkonstruktionen: Spanntuch, Paneel oder Vollverkleidung.",
+      "cta": "Angebot Überdachung"
+    },
     "faq": {
       "eyebrow": "Häufige Fragen",
       "title": "Fragen zu Pickleball-Courts",
       "items": [
-        { "q": "Wie viel Platz braucht ein Pickleball-Court?", "a": "Der Court misst 13,4 × 6,1 m; mit Sicherheitszonen empfehlen wir 15,2 × 9,1 m. Er passt in den halben Platz eines Padel-Courts." },
-        { "q": "Kann ich einen Tennisplatz umbauen?", "a": "Ja: Auf einen Tennisplatz passen bis zu 4 Pickleball-Courts. Der Umbau ist schneller und günstiger als ein Neubau." },
-        { "q": "Welche Oberfläche ist am besten?", "a": "Mehrschichtiges Acryl auf Beton: der internationale Standard, gute Drainage und jahrelang gleichmäßiger Absprung." },
-        { "q": "Kann man nachts spielen?", "a": "Ja. Mit 4 LED-Strahlern pro Court erreicht man Nachtspielniveau ohne die Umgebung zu blenden." },
-        { "q": "Können Sie den Court überdachen?", "a": "Ja. Wir installieren Überdachungen und Einhausungen auf neuen oder bestehenden Courts." }
+        {
+          "q": "Wie viel Platz braucht ein Pickleball-Court?",
+          "a": "Der Court misst 13,4 × 6,1 m; mit Sicherheitszonen empfehlen wir 15,2 × 9,1 m. Er passt in den halben Platz eines Padel-Courts."
+        },
+        {
+          "q": "Kann ich einen Tennisplatz umbauen?",
+          "a": "Ja: Auf einen Tennisplatz passen bis zu 4 Pickleball-Courts. Der Umbau ist schneller und günstiger als ein Neubau."
+        },
+        {
+          "q": "Welche Oberfläche ist am besten?",
+          "a": "Mehrschichtiges Acryl auf Beton: der internationale Standard, gute Drainage und jahrelang gleichmäßiger Absprung."
+        },
+        {
+          "q": "Kann man nachts spielen?",
+          "a": "Ja. Mit 4 LED-Strahlern pro Court erreicht man Nachtspielniveau ohne die Umgebung zu blenden."
+        },
+        {
+          "q": "Können Sie den Court überdachen?",
+          "a": "Ja. Wir installieren Überdachungen und Einhausungen auf neuen oder bestehenden Courts."
+        }
       ]
     },
-    "cta": { "eyebrow": "Kostenloses Angebot", "title": "Welcher Court passt zu Ihrem Projekt?", "sub": "Wir sagen es Ihnen kostenlos nach einem technischen Termin. Festpreis innerhalb von 48 h." }
+    "cta": {
+      "eyebrow": "Kostenloses Angebot",
+      "title": "Welcher Court passt zu Ihrem Projekt?",
+      "sub": "Wir sagen es Ihnen kostenlos nach einem technischen Termin. Festpreis innerhalb von 48 h."
+    }
   },
   "about": {
-    "hero": { "eyebrow": "Wer wir sind", "h1": "17 Jahre bauen, wo gespielt wird", "sub": "Ein eigenes Team für den Sportstättenbau. Ohne Zwischenhändler, ohne verkettete Subunternehmer." },
+    "hero": {
+      "eyebrow": "Wer wir sind",
+      "h1": "17 Jahre bauen, wo gespielt wird",
+      "sub": "Ein eigenes Team für den Sportstättenbau. Ohne Zwischenhändler, ohne verkettete Subunternehmer."
+    },
     "story": {
       "eyebrow": "Unsere Geschichte",
       "title": "Von einer lokalen Werkstatt zu 4 Ländern",
       "lead": "Wir begannen mit dem Belegen von Courts in der Region Valencia. Heute bauen wir Padel, Pickleball und Überdachungen in ganz Spanien sowie in Frankreich, Deutschland und Belgien, mit demselben Team und derselben Arbeitsweise: direkt und mit gehaltenem Wort.",
-      "stats": ["Jahre Erfahrung", "gelieferte Projekte", "Länder in Europa", "Personen im Team"]
+      "stats": [
+        "Jahre Erfahrung",
+        "gelieferte Projekte",
+        "Länder in Europa",
+        "Personen im Team"
+      ]
     },
     "milestones": {
       "eyebrow": "Unser Werdegang",
       "title": "Die Meilensteine, die uns hierher brachten",
       "items": [
-        { "y": "2009", "t": "Wir starten mit dem Belegen von Sportcourts in der Region Valencia." },
-        { "y": "2014", "t": "Wir steigen in den schlüsselfertigen Bau von Padel-Courts ein." },
-        { "y": "2018", "t": "Erste Projekte außerhalb Spaniens: wir beginnen in Frankreich." },
-        { "y": "2022", "t": "Wir nehmen Pickleball und Überdachungen in unser Angebot auf." },
-        { "y": "2025", "t": "Wir überschreiten 120 Projekte und expandieren nach Deutschland und Belgien." }
+        {
+          "y": "2009",
+          "t": "Wir starten mit dem Belegen von Sportcourts in der Region Valencia."
+        },
+        {
+          "y": "2014",
+          "t": "Wir steigen in den schlüsselfertigen Bau von Padel-Courts ein."
+        },
+        {
+          "y": "2018",
+          "t": "Erste Projekte außerhalb Spaniens: wir beginnen in Frankreich."
+        },
+        {
+          "y": "2022",
+          "t": "Wir nehmen Pickleball und Überdachungen in unser Angebot auf."
+        },
+        {
+          "y": "2025",
+          "t": "Wir überschreiten 120 Projekte und expandieren nach Deutschland und Belgien."
+        }
       ]
     },
     "values": {
       "eyebrow": "So arbeiten wir",
       "title": "Vier Dinge, bei denen wir keine Kompromisse machen",
       "items": [
-        { "t": "Eigenes Team", "d": "Wir sind selbst auf jeder Baustelle. Keine Subunternehmerketten, die Verantwortung verwässern." },
-        { "t": "Gehaltenes Wort", "d": "Festpreis und Termin schriftlich. Was wir sagen, unterschreiben wir." },
-        { "t": "Direkter Kontakt", "d": "Ein einziger Ansprechpartner von Anfang bis Ende, egal welche Sprache Sie sprechen." },
-        { "t": "Langfristige Beziehung", "d": "Die meisten Kunden kommen wieder oder empfehlen uns. Das ist unser bester Vertriebler." }
+        {
+          "t": "Eigenes Team",
+          "d": "Wir sind selbst auf jeder Baustelle. Keine Subunternehmerketten, die Verantwortung verwässern."
+        },
+        {
+          "t": "Gehaltenes Wort",
+          "d": "Festpreis und Termin schriftlich. Was wir sagen, unterschreiben wir."
+        },
+        {
+          "t": "Direkter Kontakt",
+          "d": "Ein einziger Ansprechpartner von Anfang bis Ende, egal welche Sprache Sie sprechen."
+        },
+        {
+          "t": "Langfristige Beziehung",
+          "d": "Die meisten Kunden kommen wieder oder empfehlen uns. Das ist unser bester Vertriebler."
+        }
       ]
     },
-    "team": { "eyebrow": "Das Team", "title": "Die Menschen, die Ihre Baustelle betreten", "note": "Echte Namen, Funktionen und Fotos — werden nachgereicht." },
-    "coverage": { "eyebrow": "Wo wir arbeiten", "title": "Spanien, Frankreich, Deutschland und Belgien" },
-    "certs": { "eyebrow": "Garantien und Zertifizierungen", "title": "Nachweisbare Absicherung", "note": "Logos für Zertifizierungen, Versicherungen und Zulassungen — werden nachgereicht." },
-    "cta": { "eyebrow": "Wir reden auf Augenhöhe", "title": "Lernen Sie uns bei einem Termin kennen", "sub": "Besichtigen Sie einen fertigen Bau oder wir besuchen Sie. Kostenlos und unverbindlich." }
+    "team": {
+      "eyebrow": "Das Team",
+      "title": "Die Menschen, die Ihre Baustelle betreten",
+      "note": "Echte Namen, Funktionen und Fotos — werden nachgereicht."
+    },
+    "coverage": {
+      "eyebrow": "Wo wir arbeiten",
+      "title": "Spanien, Frankreich, Deutschland und Belgien"
+    },
+    "certs": {
+      "eyebrow": "Garantien und Zertifizierungen",
+      "title": "Nachweisbare Absicherung",
+      "note": "Logos für Zertifizierungen, Versicherungen und Zulassungen — werden nachgereicht."
+    },
+    "cta": {
+      "eyebrow": "Wir reden auf Augenhöhe",
+      "title": "Lernen Sie uns bei einem Termin kennen",
+      "sub": "Besichtigen Sie einen fertigen Bau oder wir besuchen Sie. Kostenlos und unverbindlich."
+    }
   },
   "contact": {
-    "header": { "eyebrow": "Kontakt", "title": "Fordern Sie Ihr kostenloses Angebot an", "sub": "Wir antworten innerhalb von 24 Werkstunden — meist deutlich früher.", "quickWrite": "Schreiben Sie uns", "quickCall": "Rufen Sie an" },
+    "header": {
+      "eyebrow": "Kontakt",
+      "title": "Fordern Sie Ihr kostenloses Angebot an",
+      "sub": "Wir antworten innerhalb von 24 Werkstunden — meist deutlich früher.",
+      "quickWrite": "Schreiben Sie uns",
+      "quickCall": "Rufen Sie an"
+    },
     "form": {
       "stepOf": "Schritt {n} von 3",
       "step1Title": "Welches Projekt haben Sie im Sinn?",
@@ -343,16 +686,36 @@
       "step3Title": "Wie erreichen wir Sie?",
       "step3Sub": "Nur das Nötigste, um Ihnen das Angebot zu senden.",
       "options": [
-        { "t": "Padel-Court", "d": "Standard, Panorama oder Wettkampf" },
-        { "t": "Pickleball-Court", "d": "Standard, Einhausung oder Multi-Court" },
-        { "t": "Überdachung / Einhausung", "d": "Auf neuem oder bestehendem Court" },
-        { "t": "Sanierung / Umbau", "d": "Rasen, Glas, oder Tennis zu Padel" },
-        { "t": "Anderes / noch unklar", "d": "Wir beraten Sie beim Termin" }
+        {
+          "t": "Padel-Court",
+          "d": "Standard, Panorama oder Wettkampf"
+        },
+        {
+          "t": "Pickleball-Court",
+          "d": "Standard, Einhausung oder Multi-Court"
+        },
+        {
+          "t": "Überdachung / Einhausung",
+          "d": "Auf neuem oder bestehendem Court"
+        },
+        {
+          "t": "Sanierung / Umbau",
+          "d": "Rasen, Glas, oder Tennis zu Padel"
+        },
+        {
+          "t": "Anderes / noch unklar",
+          "d": "Wir beraten Sie beim Termin"
+        }
       ],
       "locLabel": "Ort und Land",
       "locPh": "z. B. Berlin, Deutschland",
       "whenLabel": "Für wann?",
-      "whenOptions": ["So bald wie möglich", "In 1–3 Monaten", "In 3–6 Monaten", "Ich informiere mich nur"],
+      "whenOptions": [
+        "So bald wie möglich",
+        "In 1–3 Monaten",
+        "In 3–6 Monaten",
+        "Ich informiere mich nur"
+      ],
       "msgLabel": "Erzählen Sie uns mehr (optional)",
       "msgPh": "Verfügbare Fläche, Anzahl Courts, ob bereits eine Bodenplatte vorhanden ist…",
       "nameLabel": "Name",
@@ -383,12 +746,304 @@
     }
   },
   "configurator": {
-    "hero": {
-      "eyebrow": "Neu",
-      "h1": "Konfigurieren Sie Ihren Court in 3D",
-      "sub": "Wählen Sie Modell, Farben und Ausstattung und sehen Sie Ihren Court, bevor Sie ihn bauen."
+    "meta": {
+      "title": "Configura tu pista de pádel en 3D | Pádel Albufera",
+      "description": "Diseña tu pista de pádel en 3D —versión, cristal, césped, color y luz— y recibe el presupuesto por WhatsApp. Obra completa con solera de hormigón armado, hecha en Valencia."
     },
-    "comingSoon": "Wir arbeiten an diesem Tool. Bald können Sie Ihren Court direkt hier in 3D gestalten."
+    "hero": {
+      "eyebrow": "Configurador 3D",
+      "h1": "Tu pista de pádel, <em>en tu jardín</em>",
+      "sub": "Móntala pieza a pieza, gírala en 3D y mándanos por WhatsApp exactamente la que quieres. Sin formularios.",
+      "solera": "Construimos la obra completa, empezando por la solera de hormigón armado sobre la que se monta la pista. Ahí se juega que no se descuadre."
+    },
+    "rotulo": "TU CLUB",
+    "visor": {
+      "posterAlt": "Pista de pádel de cristal construida en un jardín residencial",
+      "canvasAria": "Vista 3D de la pista. Flechas para girar, + y − para acercar.",
+      "cargando": "Preparando tu pista…",
+      "calidad": "Nitidez",
+      "calidadTitle": "Refracción real del cristal (equipos potentes)",
+      "noche": "Noche",
+      "dia": "Día",
+      "vistas": {
+        "hero": "General",
+        "esquina": "Esquina",
+        "lateral": "Lateral",
+        "cenital": "Cenital",
+        "pista": "A pie de pista"
+      }
+    },
+    "cat": {
+      "version": {
+        "title": "Versión de la pista",
+        "help": "Define cuánta estructura queda a la vista en los fondos. Es la decisión que más cambia el aspecto y el precio.",
+        "options": {
+          "estandar": {
+            "name": "Estándar",
+            "desc": "Pilares y marcos intermedios a la vista en los fondos. La más rígida: viento fuerte y uso intensivo."
+          },
+          "semipanoramica": {
+            "name": "Semipanorámica",
+            "desc": "Fondos sin pilares intermedios, con esquineros de acero. El equilibrio más vendido."
+          },
+          "fullpanoramica": {
+            "name": "Full panorámica",
+            "desc": "Fondos, esquinas y retornos diáfanos. Visión 360º, sin interrupciones."
+          }
+        }
+      },
+      "modalidad": {
+        "title": "Modalidad",
+        "help": "La de dobles es la estándar. La individual pide menos parcela.",
+        "options": {
+          "dobles": {
+            "name": "Dobles",
+            "sub": "20 × 10 m"
+          },
+          "individual": {
+            "name": "Individual",
+            "sub": "20 × 6 m"
+          }
+        }
+      },
+      "entorno": {
+        "title": "Dónde va",
+        "help": "En cubierta e interior hace falta 6 m de altura libre; con 7 m el globo no toca techo.",
+        "options": {
+          "exterior": {
+            "name": "Exterior",
+            "sub": "jardín o finca"
+          },
+          "cubierta": {
+            "name": "Cubierta",
+            "sub": "carpa o pabellón"
+          },
+          "interior": {
+            "name": "Interior",
+            "sub": "nave"
+          }
+        }
+      },
+      "cespedColor": {
+        "title": "Color del césped",
+        "help": "Azul, verde, naranja y púrpura son los colores oficiales FIP/FEP. El negro es una elección de diseño.",
+        "options": {
+          "verde": {
+            "name": "Verde"
+          },
+          "azul": {
+            "name": "Azul"
+          },
+          "teja": {
+            "name": "Teja"
+          },
+          "purpura": {
+            "name": "Púrpura"
+          },
+          "negro": {
+            "name": "Negro"
+          }
+        }
+      },
+      "cespedFibra": {
+        "title": "Fibra",
+        "options": {
+          "monofilamento": {
+            "name": "Monofilamento",
+            "sub": "bote uniforme · dura más"
+          },
+          "fibrilado": {
+            "name": "Fibrilado",
+            "sub": "más suave · más económico"
+          },
+          "hibrido": {
+            "name": "Híbrido",
+            "sub": "punto medio"
+          }
+        }
+      },
+      "cespedAltura": {
+        "title": "Altura de fibra",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "habitual"
+          },
+          "15": {
+            "name": "15 mm",
+            "sub": "habitual"
+          }
+        }
+      },
+      "cristal": {
+        "title": "Cristal templado",
+        "help": "Con cantos pulidos. En panorámicas el de 12 mm no es opcional en la práctica.",
+        "options": {
+          "10": {
+            "name": "10 mm"
+          },
+          "12": {
+            "name": "12 mm",
+            "sub": "recomendado"
+          }
+        }
+      },
+      "ral": {
+        "title": "Color de la estructura",
+        "help": "Acero galvanizado con pintura epoxi. Cualquier color de la carta RAL es posible.",
+        "options": {
+          "5011": {
+            "name": "Azul"
+          },
+          "6005": {
+            "name": "Verde"
+          },
+          "7016": {
+            "name": "Antracita"
+          },
+          "9005": {
+            "name": "Negro"
+          },
+          "9010": {
+            "name": "Blanco"
+          },
+          "otro": {
+            "name": "Otro RAL"
+          }
+        }
+      },
+      "iluminacion": {
+        "title": "Iluminación LED",
+        "options": {
+          "si": {
+            "name": "Con luz",
+            "sub": "jugar de noche"
+          },
+          "no": {
+            "name": "Sin luz"
+          }
+        }
+      },
+      "tipoLuz": {
+        "title": "Montaje de los focos",
+        "help": "Los postes exteriores reparten mejor y dejan la pista limpia. Los focos en estructura ahorran obra civil.",
+        "options": {
+          "postes": {
+            "name": "4 postes de 6 m",
+            "sub": "brazo acodado exterior"
+          },
+          "integrada": {
+            "name": "Sobre estructura",
+            "sub": "proyectores en la viga"
+          }
+        }
+      },
+      "potencia": {
+        "title": "Potencia por proyector",
+        "options": {
+          "100": {
+            "name": "100 W"
+          },
+          "150": {
+            "name": "150 W",
+            "sub": "habitual"
+          },
+          "200": {
+            "name": "200 W"
+          }
+        }
+      },
+      "extras": {
+        "title": "Extras",
+        "help": "Puedes marcar varios.",
+        "options": {
+          "puertas": {
+            "name": "Puertas laterales",
+            "sub": "acceso por el centro"
+          },
+          "gradas": {
+            "name": "Gradas"
+          },
+          "rotulacion": {
+            "name": "Rotulación"
+          },
+          "marcador": {
+            "name": "Marcador"
+          }
+        }
+      }
+    },
+    "ficha": {
+      "titulo": "Ficha técnica",
+      "ref": "Ref. {ref}",
+      "labels": {
+        "version": "Versión",
+        "modalidad": "Modalidad",
+        "ubicacion": "Ubicación",
+        "cesped": "Césped",
+        "cristal": "Cristal",
+        "estructura": "Estructura",
+        "iluminacion": "Iluminación",
+        "extras": "Extras",
+        "base": "Base"
+      },
+      "val": {
+        "cristal": "Templado {mm} mm, cantos pulidos",
+        "estructura": "Acero epoxi · RAL {codigo} {color}",
+        "estructuraOtro": "Acero epoxi · color RAL a definir",
+        "sinLuz": "Sin iluminación",
+        "conLuz": "LED {w} W · {tipo}",
+        "sinExtras": "Ninguno",
+        "base": "Solera de hormigón armado ≥ 15 cm, mallazo y pendiente de drenaje",
+        "medidaDobles": "20 × 10 m",
+        "medidaIndividual": "20 × 6 m"
+      }
+    },
+    "wa": {
+      "intro": "Hola, he configurado una pista de pádel en vuestra web:",
+      "ref": "Referencia: {ref}",
+      "cierre": "¿Me podéis pasar presupuesto y fechas?"
+    },
+    "resumen": {
+      "eyebrow": "Tu configuración · {ref}",
+      "titulo": "Esta es tu pista",
+      "sub": "Te abrimos WhatsApp con toda la configuración escrita. Puedes editar el mensaje antes de enviarlo.",
+      "whatsapp": "Pedir presupuesto",
+      "telefono": "Llamar"
+    },
+    "barra": {
+      "whatsapp": "WhatsApp",
+      "telefono": "Llamar"
+    },
+    "social": {
+      "titulo": "Pistas que ya hemos construido",
+      "sub": "Una pista real en un jardín real vale más que cualquier render.",
+      "alt": {
+        "0": "Pista de pádel panorámica de cristal en entorno rural",
+        "1": "Pista de pádel con cerramiento completo de cristal en exterior",
+        "2": "Pista de césped verde junto a una arboleda"
+      }
+    },
+    "faq": {
+      "titulo": "Antes de decidir",
+      "q": {
+        "licencia": "¿Necesito licencia de obra?",
+        "ruido": "¿Cuánto ruido hace y qué distancia dejo al vecino?",
+        "espacio": "¿Cuánto espacio necesito de verdad?",
+        "plazo": "¿Cuánto se tarda desde que firmo?",
+        "mantenimiento": "¿Qué mantenimiento tiene al año?"
+      },
+      "a": {
+        "licencia": "En la mayoría de municipios una pista descubierta va con licencia de obra menor; una cubierta suele exigir obra mayor. Te decimos qué necesitas en tu ayuntamiento y preparamos la documentación técnica.",
+        "ruido": "El pádel hace ruido de pelota y voces, sobre todo de noche. Se recomienda dejar unos 3 m a los linderos y orientar los fondos hacia tu parcela; en casos sensibles montamos cerramientos y horarios que reducen molestias.",
+        "espacio": "La pista de dobles ocupa 20 × 10 m, pero hay que contar el perímetro de mantenimiento: en la práctica conviene reservar unos 21 × 11 m. La individual baja a 20 × 6 m.",
+        "plazo": "Desde la firma, una pista estándar suele estar lista en 4 a 6 semanas si el terreno no da sorpresas. La solera necesita su tiempo de curado: no se acelera sin comprometer la obra.",
+        "mantenimiento": "Poco: cepillado del césped y repaso de la arena de sílice un par de veces al año, y revisión de tornillería y cristales. El resurfacing del césped llega a los 8-10 años según el uso."
+      }
+    }
   },
   "construction": {
     "hero": {

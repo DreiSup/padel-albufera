@@ -383,12 +383,218 @@
     }
   },
   "configurator": {
-    "hero": {
-      "eyebrow": "Novedad",
-      "h1": "Configura tu pista en 3D",
-      "sub": "Elige modelo, colores y acabados y visualiza tu pista antes de construirla."
+    "meta": {
+      "title": "Configura tu pista de pádel en 3D | Pádel Albufera",
+      "description": "Diseña tu pista de pádel en 3D —versión, cristal, césped, color y luz— y recibe el presupuesto por WhatsApp. Obra completa con solera de hormigón armado, hecha en Valencia."
     },
-    "comingSoon": "Estamos preparando esta herramienta. Muy pronto podrás diseñar tu pista en 3D directamente aquí."
+    "hero": {
+      "eyebrow": "Configurador 3D",
+      "h1": "Tu pista de pádel, <em>en tu jardín</em>",
+      "sub": "Móntala pieza a pieza, gírala en 3D y mándanos por WhatsApp exactamente la que quieres. Sin formularios.",
+      "solera": "Construimos la obra completa, empezando por la solera de hormigón armado sobre la que se monta la pista. Ahí se juega que no se descuadre."
+    },
+    "rotulo": "TU CLUB",
+    "visor": {
+      "posterAlt": "Pista de pádel de cristal construida en un jardín residencial",
+      "canvasAria": "Vista 3D de la pista. Flechas para girar, + y − para acercar.",
+      "cargando": "Preparando tu pista…",
+      "calidad": "Nitidez",
+      "calidadTitle": "Refracción real del cristal (equipos potentes)",
+      "noche": "Noche",
+      "dia": "Día",
+      "vistas": {
+        "hero": "General",
+        "esquina": "Esquina",
+        "lateral": "Lateral",
+        "cenital": "Cenital",
+        "pista": "A pie de pista"
+      }
+    },
+    "cat": {
+      "version": {
+        "title": "Versión de la pista",
+        "help": "Define cuánta estructura queda a la vista en los fondos. Es la decisión que más cambia el aspecto y el precio.",
+        "options": {
+          "estandar": {
+            "name": "Estándar",
+            "desc": "Pilares y marcos intermedios a la vista en los fondos. La más rígida: viento fuerte y uso intensivo."
+          },
+          "semipanoramica": {
+            "name": "Semipanorámica",
+            "desc": "Fondos sin pilares intermedios, con esquineros de acero. El equilibrio más vendido."
+          },
+          "fullpanoramica": {
+            "name": "Full panorámica",
+            "desc": "Fondos, esquinas y retornos diáfanos. Visión 360º, sin interrupciones."
+          }
+        }
+      },
+      "modalidad": {
+        "title": "Modalidad",
+        "help": "La de dobles es la estándar. La individual pide menos parcela.",
+        "options": {
+          "dobles": { "name": "Dobles", "sub": "20 × 10 m" },
+          "individual": { "name": "Individual", "sub": "20 × 6 m" }
+        }
+      },
+      "entorno": {
+        "title": "Dónde va",
+        "help": "En cubierta e interior hace falta 6 m de altura libre; con 7 m el globo no toca techo.",
+        "options": {
+          "exterior": { "name": "Exterior", "sub": "jardín o finca" },
+          "cubierta": { "name": "Cubierta", "sub": "carpa o pabellón" },
+          "interior": { "name": "Interior", "sub": "nave" }
+        }
+      },
+      "cespedColor": {
+        "title": "Color del césped",
+        "help": "Azul, verde, naranja y púrpura son los colores oficiales FIP/FEP. El negro es una elección de diseño.",
+        "options": {
+          "verde": { "name": "Verde" },
+          "azul": { "name": "Azul" },
+          "teja": { "name": "Teja" },
+          "purpura": { "name": "Púrpura" },
+          "negro": { "name": "Negro" }
+        }
+      },
+      "cespedFibra": {
+        "title": "Fibra",
+        "options": {
+          "monofilamento": { "name": "Monofilamento", "sub": "bote uniforme · dura más" },
+          "fibrilado": { "name": "Fibrilado", "sub": "más suave · más económico" },
+          "hibrido": { "name": "Híbrido", "sub": "punto medio" }
+        }
+      },
+      "cespedAltura": {
+        "title": "Altura de fibra",
+        "options": {
+          "10": { "name": "10 mm" },
+          "12": { "name": "12 mm", "sub": "habitual" },
+          "15": { "name": "15 mm", "sub": "habitual" }
+        }
+      },
+      "cristal": {
+        "title": "Cristal templado",
+        "help": "Con cantos pulidos. En panorámicas el de 12 mm no es opcional en la práctica.",
+        "options": {
+          "10": { "name": "10 mm" },
+          "12": { "name": "12 mm", "sub": "recomendado" }
+        }
+      },
+      "ral": {
+        "title": "Color de la estructura",
+        "help": "Acero galvanizado con pintura epoxi. Cualquier color de la carta RAL es posible.",
+        "options": {
+          "9005": { "name": "Negro" },
+          "7016": { "name": "Antracita" },
+          "9010": { "name": "Blanco" },
+          "6005": { "name": "Verde" },
+          "5011": { "name": "Azul" },
+          "otro": { "name": "Otro RAL" }
+        }
+      },
+      "iluminacion": {
+        "title": "Iluminación LED",
+        "options": {
+          "si": { "name": "Con luz", "sub": "jugar de noche" },
+          "no": { "name": "Sin luz" }
+        }
+      },
+      "tipoLuz": {
+        "title": "Montaje de los focos",
+        "help": "Los postes exteriores reparten mejor y dejan la pista limpia. Los focos en estructura ahorran obra civil.",
+        "options": {
+          "postes": { "name": "4 postes de 6 m", "sub": "brazo acodado exterior" },
+          "integrada": { "name": "Sobre estructura", "sub": "proyectores en la viga" }
+        }
+      },
+      "potencia": {
+        "title": "Potencia por proyector",
+        "options": {
+          "100": { "name": "100 W" },
+          "150": { "name": "150 W", "sub": "habitual" },
+          "200": { "name": "200 W" }
+        }
+      },
+      "extras": {
+        "title": "Extras",
+        "help": "Puedes marcar varios.",
+        "options": {
+          "puertas": { "name": "Puertas laterales", "sub": "acceso por el centro" },
+          "gradas": { "name": "Gradas" },
+          "rotulacion": { "name": "Rotulación" },
+          "marcador": { "name": "Marcador" }
+        }
+      }
+    },
+    "ficha": {
+      "titulo": "Ficha técnica",
+      "ref": "Ref. {ref}",
+      "labels": {
+        "version": "Versión",
+        "modalidad": "Modalidad",
+        "ubicacion": "Ubicación",
+        "cesped": "Césped",
+        "cristal": "Cristal",
+        "estructura": "Estructura",
+        "iluminacion": "Iluminación",
+        "extras": "Extras",
+        "base": "Base"
+      },
+      "val": {
+        "cristal": "Templado {mm} mm, cantos pulidos",
+        "estructura": "Acero epoxi · RAL {codigo} {color}",
+        "estructuraOtro": "Acero epoxi · color RAL a definir",
+        "sinLuz": "Sin iluminación",
+        "conLuz": "LED {w} W · {tipo}",
+        "sinExtras": "Ninguno",
+        "base": "Solera de hormigón armado ≥ 15 cm, mallazo y pendiente de drenaje",
+        "medidaDobles": "20 × 10 m",
+        "medidaIndividual": "20 × 6 m"
+      }
+    },
+    "wa": {
+      "intro": "Hola, he configurado una pista de pádel en vuestra web:",
+      "ref": "Referencia: {ref}",
+      "cierre": "¿Me podéis pasar presupuesto y fechas?"
+    },
+    "resumen": {
+      "eyebrow": "Tu configuración · {ref}",
+      "titulo": "Esta es tu pista",
+      "sub": "Te abrimos WhatsApp con toda la configuración escrita. Puedes editar el mensaje antes de enviarlo.",
+      "whatsapp": "Pedir presupuesto",
+      "telefono": "Llamar"
+    },
+    "barra": {
+      "whatsapp": "WhatsApp",
+      "telefono": "Llamar"
+    },
+    "social": {
+      "titulo": "Pistas que ya hemos construido",
+      "sub": "Una pista real en un jardín real vale más que cualquier render.",
+      "alt": {
+        "0": "Pista de pádel panorámica de cristal en entorno rural",
+        "1": "Pista de pádel con cerramiento completo de cristal en exterior",
+        "2": "Pista de césped verde junto a una arboleda"
+      }
+    },
+    "faq": {
+      "titulo": "Antes de decidir",
+      "q": {
+        "licencia": "¿Necesito licencia de obra?",
+        "ruido": "¿Cuánto ruido hace y qué distancia dejo al vecino?",
+        "espacio": "¿Cuánto espacio necesito de verdad?",
+        "plazo": "¿Cuánto se tarda desde que firmo?",
+        "mantenimiento": "¿Qué mantenimiento tiene al año?"
+      },
+      "a": {
+        "licencia": "En la mayoría de municipios una pista descubierta va con licencia de obra menor; una cubierta suele exigir obra mayor. Te decimos qué necesitas en tu ayuntamiento y preparamos la documentación técnica.",
+        "ruido": "El pádel hace ruido de pelota y voces, sobre todo de noche. Se recomienda dejar unos 3 m a los linderos y orientar los fondos hacia tu parcela; en casos sensibles montamos cerramientos y horarios que reducen molestias.",
+        "espacio": "La pista de dobles ocupa 20 × 10 m, pero hay que contar el perímetro de mantenimiento: en la práctica conviene reservar unos 21 × 11 m. La individual baja a 20 × 6 m.",
+        "plazo": "Desde la firma, una pista estándar suele estar lista en 4 a 6 semanas si el terreno no da sorpresas. La solera necesita su tiempo de curado: no se acelera sin comprometer la obra.",
+        "mantenimiento": "Poco: cepillado del césped y repaso de la arena de sílice un par de veces al año, y revisión de tornillería y cristales. El resurfacing del césped llega a los 8-10 años según el uso."
+      }
+    }
   },
   "construction": {
     "hero": {

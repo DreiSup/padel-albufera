@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const withNextIntl = createNextIntlPlugin();
+
+// `ANALYZE=true npm run build` abre el informe del bundle por ruta.
+// Sirve para verificar que el peso de Three.js queda acotado a /configurador
+// y no contamina el resto de rutas.
+const withAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.0.14"],
@@ -12,4 +20,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withNextIntl(nextConfig);
+export default withAnalyzer(withNextIntl(nextConfig));
