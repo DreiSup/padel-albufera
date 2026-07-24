@@ -315,7 +315,7 @@
     ],
     "badgeWarranty": "Garantie 10 ans",
     "badgeYears": "17+ ans d'expérience",
-    "legal": "© 2026 Pavimentos Albufera · Politique de confidentialité · Mentions légales · Cookies"
+    "legal": "© 2026 Pavimentos Albufera · Politique de confidentialité · Mentions légales · <cookies>Cookies</cookies>"
   },
   "bar": {
     "whatsapp": "WhatsApp",
@@ -1052,5 +1052,44 @@
       "sub": "Du terrain nu au terrain prêt à jouer, étape par étape."
     },
     "comingSoon": "Nous préparons cette expérience. Vous verrez bientôt ici tout le processus de construction, animé."
+  },
+  "consent": {
+    "titulo": "Uso de cookies",
+    "texto": "Usamos cookies y almacenamiento del navegador para medir visitas y anuncios. Solo se activan si lo aceptas.",
+    "masInfo": "Más información",
+    "aceptar": "Aceptar",
+    "rechazar": "Rechazar"
+  },
+  "cookiePolicy": {
+    "meta": {
+      "title": "Política de cookies | Pádel Albufera",
+      "description": "Qué cookies y almacenamiento usamos, para qué, y cómo cambiar o retirar tu consentimiento."
+    },
+    "titulo": "Política de cookies",
+    "intro": "Esta página explica qué guardamos en tu navegador cuando visitas la web, para qué lo usamos y cómo puedes cambiar de opinión en cualquier momento.",
+    "secciones": {
+      "que": {
+        "titulo": "Qué usamos",
+        "texto": "Usamos Google Tag Manager para gestionar las herramientas de medición (como Google Ads o Meta) sin tener que tocar el código cada vez. Ninguna de esas herramientas se activa hasta que aceptas: por defecto, todo el almacenamiento no esencial está denegado (Consent Mode v2)."
+      },
+      "guardamos": {
+        "titulo": "Qué guardamos",
+        "texto": "Solo tu decisión (aceptar o rechazar), en el almacenamiento local de tu navegador, durante unos 6 meses. Pasado ese plazo, te lo volvemos a preguntar. Si aceptas, las herramientas de medición pueden guardar además sus propias cookies, según su propia política."
+      },
+      "terceros": {
+        "titulo": "Terceros",
+        "texto": "Si aceptas, Google Tag Manager puede cargar herramientas de Google (Ads, Analytics) y, si están configuradas, de Meta. Cada una gestiona sus propios datos según su política de privacidad."
+      },
+      "derechos": {
+        "titulo": "Tus derechos",
+        "texto": "Puedes acceder, rectificar o pedir la supresión de tus datos, y retirar tu consentimiento cuando quieras (ver más abajo). Escríbenos a info@padelalbufera.com."
+      }
+    },
+    "cambiar": {
+      "titulo": "Cambiar tu decisión",
+      "texto": "Retirar el consentimiento es tan fácil como darlo. Al pulsar el botón, se borra tu decisión guardada y vuelves a ver el aviso de cookies.",
+      "boton": "Cambiar mi decisión"
+    },
+    "responsable": "Responsable: Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com"
   }
 }

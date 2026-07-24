@@ -7,10 +7,12 @@ import Script from "next/script";
 // cualquier código de Next y antes de que GTM cargue: cuando GTM arranca, el
 // consentimiento por defecto ya está fijado.
 //
-// Conceder consentimiento (pasar a 'granted') es trabajo del banner/CMP, que
-// NO se incluye aquí (es un tercero y requiere tu visto bueno). Mientras no
-// exista, el estado se queda en denegado: Consent Mode envía pings sin cookies
-// y no se recoge dato personal. Ese es el baseline conforme.
+// Si el visitante ya decidió en una visita anterior (localStorage, ~6 meses
+// de vigencia — ver src/lib/consent.ts, misma clave y formato), arranca
+// directamente en ese estado para no perder señal en cada recarga. Sin
+// decisión previa, el estado es denegado: Consent Mode envía pings sin
+// cookies y no se recoge dato personal. `window.gtag` queda expuesto para
+// que ConsentBanner pueda enviar `consent update` cuando el usuario decide.
 
 export function ConsentInit() {
   return (
@@ -21,13 +23,19 @@ export function ConsentInit() {
       {`
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+var estado = 'denied';
+try {
+  var g = JSON.parse(localStorage.getItem('consentimiento-cookies') || 'null');
+  if (g && g.v === 'granted' && (Date.now() - g.t) < 1000*60*60*24*180) estado = 'granted';
+} catch (e) {}
 gtag('consent','default',{
-  ad_storage:'denied',
-  ad_user_data:'denied',
-  ad_personalization:'denied',
-  analytics_storage:'denied',
-  functionality_storage:'denied',
-  personalization_storage:'denied',
+  ad_storage:estado,
+  ad_user_data:estado,
+  ad_personalization:estado,
+  analytics_storage:estado,
+  functionality_storage:estado,
+  personalization_storage:estado,
   security_storage:'granted',
   wait_for_update:500
 });

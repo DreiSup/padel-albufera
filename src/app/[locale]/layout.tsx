@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { ConsentBanner } from "@/components/analytics/consent-banner";
 import { ConsentInit } from "@/components/analytics/consent-init";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -77,7 +78,10 @@ export default async function RootLayout({
             />
           </noscript>
         ) : null}
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <ConsentBanner />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

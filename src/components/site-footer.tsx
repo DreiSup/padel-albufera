@@ -84,7 +84,15 @@ export async function SiteFooter() {
           </span>
         </div>
         <Divider />
-        <p className="text-xs leading-[2] text-[#6A6E72]">{t("footer.legal")}</p>
+        <p className="text-xs leading-[2] text-[#6A6E72]">
+          {t.rich("footer.legal", {
+            cookies: (chunks) => (
+              <Link href="/politica-cookies" className="underline underline-offset-2 hover:text-[#A9ADB0]">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
       </div>
     </footer>
   );
