@@ -1,6 +1,11 @@
 @AGENTS.md
+@ARQUITECTURA.md
 
 # CLAUDE.md — Reglas del proyecto
+
+> Este fichero contiene **las reglas** (qué se puede hacer y qué no).
+> `ARQUITECTURA.md` contiene **el mapa**: cómo está montado el proyecto de
+> verdad, dónde vive cada cosa y qué está roto. Los dos se cargan solos.
 
 ## Contexto
 
@@ -75,7 +80,7 @@ El `Skeleton` de shadcn **no acelera nada**: es percepción, y solo aplica a con
 Reglas de obligado cumplimiento en **cada** `<Image>`:
 
 1. **`sizes` siempre**, describiendo el ancho **en el layout**, no el de la pantalla. Sin `sizes`, `fill` asume `100vw` y el móvil se baja la imagen de 1920 px para pintarla a 380. Es el error nº1.
-2. **`priority` SOLO en la imagen del hero.** Una en toda la web. Nunca en galería.
+2. **`priority` SOLO en la imagen del hero.** Exactamente **una por página** (la que marca el LCP de esa ruta), nunca dos en la misma página y nunca en galería.
 3. **`placeholder="blur"`** en toda foto de galería o contenido.
 4. **`fill` exige contenedor con aspect-ratio reservado** (`relative aspect-[4/3]`). Sin excepción.
 5. **`alt` descriptivo y en español**, con intención SEO local. Nunca vacío ni genérico.
