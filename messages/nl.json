@@ -315,7 +315,7 @@
     ],
     "badgeWarranty": "10 jaar garantie",
     "badgeYears": "17+ jaar ervaring",
-    "legal": "© 2026 Pavimentos Albufera · Privacybeleid · Juridische kennisgeving · <cookies>Cookies</cookies>"
+    "legal": "© 2026 Pavimentos Albufera · <privacidad>Privacybeleid</privacidad> · Juridische kennisgeving · <cookies>Cookies</cookies>"
   },
   "bar": {
     "whatsapp": "WhatsApp",
@@ -1055,41 +1055,171 @@
   },
   "consent": {
     "titulo": "Uso de cookies",
-    "texto": "Usamos cookies y almacenamiento del navegador para medir visitas y anuncios. Solo se activan si lo aceptas.",
-    "masInfo": "Más información",
-    "aceptar": "Aceptar",
-    "rechazar": "Rechazar"
+    "texto": "Usamos cookies propias y de terceros para medir el uso de la web y la eficacia de nuestros anuncios. No se activa ninguna hasta que tú lo decidas.",
+    "verPolitica": "Ver política de cookies",
+    "aceptar": "Aceptar todo",
+    "rechazar": "Rechazar todo",
+    "configurar": "Configurar",
+    "preferencias": "Preferencias de cookies",
+    "retirar": "Retirar mi consentimiento",
+    "cat": {
+      "necesarias": {
+        "nombre": "Necesarias",
+        "desc": "Imprescindibles para que la web funcione y para recordar tu decisión sobre las cookies. No se pueden desactivar."
+      },
+      "analitica": {
+        "nombre": "Analítica",
+        "desc": "Nos dicen qué páginas se visitan y cómo se navega, para mejorar la web. Datos agregados, nunca para identificarte."
+      },
+      "marketing": {
+        "nombre": "Marketing",
+        "desc": "Permiten medir qué anuncios de Google y Meta traen clientes, y no mostrarte los mismos una y otra vez."
+      }
+    },
+    "panel": {
+      "titulo": "Preferencias de cookies",
+      "intro": "Elige qué quieres permitir. Puedes cambiarlo cuando quieras desde el pie de página.",
+      "siempreActiva": "Siempre activa",
+      "guardar": "Guardar preferencias"
+    }
   },
   "cookiePolicy": {
     "meta": {
       "title": "Política de cookies | Pádel Albufera",
-      "description": "Qué cookies y almacenamiento usamos, para qué, y cómo cambiar o retirar tu consentimiento."
+      "description": "Qué cookies usamos, para qué, cuánto duran y cómo cambiar o retirar tu consentimiento."
     },
     "titulo": "Política de cookies",
-    "intro": "Esta página explica qué guardamos en tu navegador cuando visitas la web, para qué lo usamos y cómo puedes cambiar de opinión en cualquier momento.",
+    "intro": "Esta página explica qué se guarda en tu navegador cuando visitas la web, para qué se usa y cómo puedes cambiar de opinión en cualquier momento. Sin tu consentimiento no se instala ninguna cookie que no sea estrictamente necesaria.",
+    "tabla": {
+      "titulo": "Cookies que puede instalar esta web",
+      "nombre": "Cookie",
+      "proveedor": "Proveedor",
+      "finalidad": "Finalidad",
+      "duracion": "Duración",
+      "categoria": "Categoría",
+      "transferencia": "Transferencia internacional"
+    },
+    "filas": [
+      {
+        "nombre": "cc_consent",
+        "proveedor": "Pádel Albufera (propia)",
+        "finalidad": "Guarda tu decisión sobre las cookies.",
+        "duracion": "6 meses",
+        "categoria": "Necesarias",
+        "transferencia": "No"
+      },
+      {
+        "nombre": "NEXT_LOCALE",
+        "proveedor": "Pádel Albufera (propia)",
+        "finalidad": "Recuerda el idioma elegido.",
+        "duracion": "1 año",
+        "categoria": "Necesarias",
+        "transferencia": "No"
+      },
+      {
+        "nombre": "_ga, _ga_*",
+        "proveedor": "Google (GA4)",
+        "finalidad": "Distinguir usuarios y sesiones para medir el uso de la web.",
+        "duracion": "2 años",
+        "categoria": "Analítica",
+        "transferencia": "Sí — EE. UU. (Marco de Privacidad de Datos UE-EE. UU.)"
+      },
+      {
+        "nombre": "_gid",
+        "proveedor": "Google (GA4)",
+        "finalidad": "Distinguir usuarios.",
+        "duracion": "24 horas",
+        "categoria": "Analítica",
+        "transferencia": "Sí — EE. UU."
+      },
+      {
+        "nombre": "_gcl_au",
+        "proveedor": "Google Ads",
+        "finalidad": "Atribuir conversiones a los anuncios.",
+        "duracion": "90 días",
+        "categoria": "Marketing",
+        "transferencia": "Sí — EE. UU."
+      },
+      {
+        "nombre": "_fbp",
+        "proveedor": "Meta",
+        "finalidad": "Identificar navegadores para medir y segmentar anuncios.",
+        "duracion": "90 días",
+        "categoria": "Marketing",
+        "transferencia": "Sí — EE. UU."
+      },
+      {
+        "nombre": "_fbc",
+        "proveedor": "Meta",
+        "finalidad": "Guardar el identificador del clic en un anuncio para atribuir la conversión.",
+        "duracion": "90 días",
+        "categoria": "Marketing",
+        "transferencia": "Sí — EE. UU."
+      }
+    ],
     "secciones": {
       "que": {
-        "titulo": "Qué usamos",
-        "texto": "Usamos Google Tag Manager para gestionar las herramientas de medición (como Google Ads o Meta) sin tener que tocar el código cada vez. Ninguna de esas herramientas se activa hasta que aceptas: por defecto, todo el almacenamiento no esencial está denegado (Consent Mode v2)."
+        "titulo": "Qué usamos y cuándo",
+        "texto": "Si aceptas analítica, cargamos Google Tag Manager con Google Analytics 4 para saber qué páginas se visitan. Si aceptas marketing, se cargan además las etiquetas de Google Ads y el píxel de Meta para medir qué anuncios funcionan. Si rechazas, no se carga ninguna de esas herramientas: no es que se carguen y no midan, es que no se descargan del servidor."
       },
-      "guardamos": {
-        "titulo": "Qué guardamos",
-        "texto": "Solo tu decisión (aceptar o rechazar), en el almacenamiento local de tu navegador, durante unos 6 meses. Pasado ese plazo, te lo volvemos a preguntar. Si aceptas, las herramientas de medición pueden guardar además sus propias cookies, según su propia política."
+      "servidor": {
+        "titulo": "Medición desde nuestro servidor",
+        "texto": "Cuando aceptas marketing y realizas una acción de contacto, enviamos ese mismo evento a Meta también desde nuestro servidor (Conversions API), con un identificador compartido para que no se cuente dos veces. Si nos has facilitado email o teléfono, viajan cifrados con SHA-256 y nunca en claro. Sin consentimiento de marketing, este envío no se produce."
       },
       "terceros": {
-        "titulo": "Terceros",
-        "texto": "Si aceptas, Google Tag Manager puede cargar herramientas de Google (Ads, Analytics) y, si están configuradas, de Meta. Cada una gestiona sus propios datos según su política de privacidad."
+        "titulo": "Terceros y transferencias",
+        "texto": "Google y Meta actúan como proveedores propios y tratan los datos según sus respectivas políticas de privacidad. Ambos pueden tratar datos en Estados Unidos, amparados en el Marco de Privacidad de Datos UE-EE. UU."
       },
       "derechos": {
         "titulo": "Tus derechos",
-        "texto": "Puedes acceder, rectificar o pedir la supresión de tus datos, y retirar tu consentimiento cuando quieras (ver más abajo). Escríbenos a info@padelalbufera.com."
+        "texto": "Puedes acceder, rectificar, suprimir, oponerte o limitar el tratamiento de tus datos, y retirar tu consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo. Escríbenos a info@padelalbufera.com. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es)."
       }
     },
     "cambiar": {
-      "titulo": "Cambiar tu decisión",
-      "texto": "Retirar el consentimiento es tan fácil como darlo. Al pulsar el botón, se borra tu decisión guardada y vuelves a ver el aviso de cookies.",
-      "boton": "Cambiar mi decisión"
+      "titulo": "Cambiar o retirar tu consentimiento",
+      "texto": "Retirar el consentimiento es tan fácil como darlo. Abre el panel para ajustar categoría a categoría, o retíralo del todo: borraremos las cookies que Google y Meta hubieran instalado y recargaremos la página.",
+      "abrirPanel": "Abrir preferencias"
     },
-    "responsable": "Responsable: Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com"
+    "responsable": "Responsable: Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com",
+    "aviso": "Documento orientativo generado como punto de partida. No es asesoramiento legal: la asesoría de la empresa debe revisarlo y completar los datos identificativos antes de publicar."
+  },
+  "privacyPolicy": {
+    "meta": {
+      "title": "Política de privacidad | Pádel Albufera",
+      "description": "Cómo tratamos tus datos personales, con qué base legal y qué derechos tienes."
+    },
+    "titulo": "Política de privacidad",
+    "intro": "Cómo tratamos los datos personales que nos facilitas al contactar con nosotros.",
+    "secciones": {
+      "responsable": {
+        "titulo": "Responsable del tratamiento",
+        "texto": "Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com"
+      },
+      "datos": {
+        "titulo": "Qué datos tratamos",
+        "texto": "Los que nos facilitas al escribirnos por WhatsApp, llamarnos o enviarnos un correo: nombre, teléfono, email y la información sobre el proyecto que quieras contarnos. También datos técnicos de navegación si has aceptado cookies de analítica o marketing."
+      },
+      "finalidad": {
+        "titulo": "Para qué los usamos",
+        "texto": "Para responder a tu consulta, preparar el presupuesto y hacer el seguimiento comercial del proyecto. Si aceptaste marketing, también para medir la eficacia de nuestros anuncios."
+      },
+      "base": {
+        "titulo": "Base legal",
+        "texto": "Tu consentimiento al contactarnos y, en la fase de presupuesto, la aplicación de medidas precontractuales a petición tuya. Para las cookies de analítica y marketing, exclusivamente tu consentimiento."
+      },
+      "conservacion": {
+        "titulo": "Cuánto los conservamos",
+        "texto": "Mientras dure la relación comercial y, después, durante los plazos legales de conservación fiscal y de responsabilidad de la obra."
+      },
+      "destinatarios": {
+        "titulo": "Quién más los ve",
+        "texto": "Nuestros proveedores tecnológicos (alojamiento y herramientas de medición), que actúan como encargados del tratamiento. No vendemos datos a nadie."
+      },
+      "derechos": {
+        "titulo": "Tus derechos",
+        "texto": "Acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a info@padelalbufera.com. Puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es)."
+      }
+    },
+    "aviso": "Documento orientativo generado como punto de partida. No es asesoramiento legal: la asesoría de la empresa debe revisarlo y completar los datos identificativos antes de publicar."
   }
 }

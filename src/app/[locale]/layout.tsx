@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Barlow_Condensed, Instrument_Sans } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
-import { ConsentBanner } from "@/components/analytics/consent-banner";
-import { ConsentInit } from "@/components/analytics/consent-init";
+import { ConsentProvider } from "@/components/consent/consent-provider";
+import { CookieBanner } from "@/components/consent/cookie-banner";
+import { GtmLoader } from "@/components/consent/gtm-loader";
+import { MetaPixel } from "@/components/consent/meta-pixel";
+import { RouteChangeTracker } from "@/components/consent/route-change-tracker";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
-
-// El contenedor GTM lo rellenas tú vía NEXT_PUBLIC_GTM_ID (ver .env.example).
-// Sin él, Consent Mode se inicializa igual pero no se carga GTM.
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -62,25 +61,20 @@ export default async function RootLayout({
       lang={locale}
       className={`${barlowCondensed.variable} ${instrumentSans.variable}`}
     >
-      {/* Consent Mode v2 SIEMPRE antes de GTM. */}
-      <ConsentInit />
-      {GTM_ID ? <GoogleTagManager gtmId={GTM_ID} /> : null}
+      {/* Consent Mode BÁSICO: ni GTM ni el píxel se inyectan aquí. Cada loader
+          decide si cargar según el consentimiento, ya dentro del provider. */}
       <body>
-        {/* @next/third-parties solo inyecta el script; el iframe de respaldo
-            para JS deshabilitado no lo incluye, así que se añade a mano. */}
-        {GTM_ID ? (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-        ) : null}
         <NextIntlClientProvider>
-          {children}
-          <ConsentBanner />
+          <ConsentProvider>
+            {children}
+            {/* useSearchParams exige Suspense o rompe el prerender estático. */}
+            <Suspense fallback={null}>
+              <RouteChangeTracker />
+            </Suspense>
+            <GtmLoader />
+            <MetaPixel />
+            <CookieBanner />
+          </ConsentProvider>
         </NextIntlClientProvider>
       </body>
     </html>

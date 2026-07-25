@@ -3,6 +3,7 @@ import { Clock, ShieldCheck } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
+import { PreferencesLink } from "@/components/consent/preferences-link";
 import { TEL, TEL_LABEL, NAV_ROUTES, waHref } from "@/lib/site";
 
 function Divider() {
@@ -86,12 +87,20 @@ export async function SiteFooter() {
         <Divider />
         <p className="text-xs leading-[2] text-[#6A6E72]">
           {t.rich("footer.legal", {
+            privacidad: (chunks) => (
+              <Link href="/politica-privacidad" className="underline underline-offset-2 hover:text-[#A9ADB0]">
+                {chunks}
+              </Link>
+            ),
             cookies: (chunks) => (
               <Link href="/politica-cookies" className="underline underline-offset-2 hover:text-[#A9ADB0]">
                 {chunks}
               </Link>
             ),
           })}
+          {" · "}
+          {/* Revocar tiene que costar los mismos clics que aceptar. */}
+          <PreferencesLink className="underline underline-offset-2 hover:text-[#A9ADB0]" />
         </p>
       </div>
     </footer>

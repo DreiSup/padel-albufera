@@ -4,18 +4,19 @@
 // Meta y Google necesitan señal. Estos eventos son lo que permite cerrar el
 // bucle offline (ctwa_clid / GCLID) y saber qué configuró quien acabó comprando.
 //
-// El estado de consentimiento lo gobierna Consent Mode v2 (denegado por
-// defecto, ver ConsentInit): los tags de GTM solo disparan tras el
-// consentimiento. Empujar al dataLayer es seguro en cualquier caso.
+// En Consent Mode básico, GTM solo existe si el usuario consintió. Empujar sin
+// consentimiento es inofensivo (la cola queda en memoria y nadie la consume),
+// pero se comprueba igualmente para no acumular basura ni dar la falsa
+// impresión de que se está midiendo.
+//
+// El tipo de window.dataLayer se declara una sola vez en src/types/global.d.ts.
 
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { readConsent } from "@/lib/consent/storage";
 
 export function pushEvento(evento: Record<string, unknown>) {
   if (typeof window === "undefined") return;
+  const consent = readConsent();
+  if (!consent || (!consent.analitica && !consent.marketing)) return;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(evento);
 }
