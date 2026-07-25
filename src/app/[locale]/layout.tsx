@@ -11,7 +11,11 @@ import { GtmLoader } from "@/components/consent/gtm-loader";
 import { MetaPixel } from "@/components/consent/meta-pixel";
 import { RouteChangeTracker } from "@/components/consent/route-change-tracker";
 import { routing } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/site";
 import "../globals.css";
+
+/** Imagen de previsualización al compartir. Foto real de obra, no un render. */
+const OG_IMAGE = "/pista-padel-azul-cristal-jardin.jpg";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -36,10 +40,36 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "hero" });
+  const title = `Pádel & Pickleball Albufera | ${t("h1")}`;
 
   return {
-    title: `Pádel & Pickleball Albufera | ${t("h1")}`,
+    // Sin metadataBase, Next no puede convertir las rutas de Open Graph en URLs
+    // absolutas y al compartir por WhatsApp —el canal principal del negocio— no
+    // aparece ni miniatura ni descripción.
+    metadataBase: new URL(SITE_URL),
+    title,
     description: t("sub"),
+    openGraph: {
+      type: "website",
+      siteName: "Pádel & Pickleball Albufera",
+      locale,
+      title,
+      description: t("sub"),
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1600,
+          height: 1200,
+          alt: "Pista de pádel de cristal construida por Pavimentos Albufera",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: t("sub"),
+      images: [OG_IMAGE],
+    },
   };
 }
 

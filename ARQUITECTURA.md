@@ -16,8 +16,9 @@ Web de captación de leads de **Pavimentos Albufera S.L.** (Valencia): pavimento
 de hormigón y construcción de pistas de pádel y pickleball.
 
 - **Ticket:** 20.000 € o más. Ciclo de venta de semanas o meses.
-- **Conversión:** clic en WhatsApp o teléfono. **No hay formularios reales**
-  (ver §8.1 — hay tres que aparentan funcionar y no funcionan).
+- **Conversión:** clic en WhatsApp o teléfono. Los formularios no envían a un
+  backend (no existe): componen un mensaje de WhatsApp con lo que el visitante
+  ha rellenado y abren la conversación. Ver §8.1.
 - **Tráfico:** mayoritariamente móvil y de pago (Google Ads, Meta Ads,
   click-to-WhatsApp). El visitante llega en frío desde un anuncio.
 - **Mercados:** España primero. Francia es la prioridad de expansión, después
@@ -71,11 +72,12 @@ pero `/fr/configurador`.
 | `/configurador` | `configurador/page.tsx` | SSG + island 3D |
 | `/proyectos` | `proyectos/page.tsx` | SSG |
 | `/proceso` | `proceso/page.tsx` | SSG |
-| `/como-se-construye` | `como-se-construye/page.tsx` | SSG — **placeholder** |
+| `/como-se-construye` | `como-se-construye/page.tsx` | SSG |
 | `/sobre-nosotros` | `sobre-nosotros/page.tsx` | SSG |
 | `/contacto` | `contacto/page.tsx` | SSG |
 | `/politica-cookies` | `politica-cookies/page.tsx` | SSG |
 | `/politica-privacidad` | `politica-privacidad/page.tsx` | SSG |
+| `/sitemap.xml` · `/robots.txt` | `sitemap.ts` · `robots.ts` | Estáticos |
 | `/api/meta-capi` | Route Handler | Dinámica (correcto) |
 | `/api/consent-log` | Route Handler | Dinámica (correcto) |
 
@@ -229,8 +231,12 @@ Conversión → mismo eventId → fbq('track', …, {eventID}) + POST /api/meta-
 | `whatsapp_click` | clic en WhatsApp del configurador | `configurador-3d.tsx` |
 | `telefono_click` | clic en llamar del configurador | `configurador-3d.tsx` |
 | `spa_page_view` | navegación cliente posterior | `route-change-tracker.tsx` |
+| `formulario_whatsapp` | envío de cualquier formulario | `lead-form.tsx` · `contacto/form.tsx` |
 
-⚠️ **Solo el configurador mide.** Ver §8.2.
+**Todos** los CTA de WhatsApp y teléfono miden, vía `components/contact-link.tsx`,
+que además envía `Contact` a Meta (píxel + CAPI) si hay consentimiento de
+marketing. El parámetro `origen` distingue desde dónde se convirtió
+(`barra_fija`, `cabecera`, `pie`, `home`, `servicio`, `proceso`…).
 
 ### Variables de entorno
 
@@ -276,92 +282,90 @@ npx eslint src
 
 ## 8. Problemas conocidos
 
-Auditoría de julio de 2026. Ordenados por gravedad real.
+Auditoría de julio de 2026, revisada tras la ronda de correcciones.
 
-### 8.1 🔴 Los tres formularios pierden los leads
+### 8.1 ✅ Formularios: resuelto, pero con una decisión pendiente
 
-`home/cta-form.tsx`, `service/cta-form.tsx` y `contacto/form.tsx` piden nombre,
-teléfono, email y tipo de proyecto. Al enviar ejecutan `setSent(true)` y
-muestran «gracias, te contactamos en 24 h».
+Los tres formularios (`lead-form.tsx` en home y servicios, `contacto/form.tsx`)
+mostraban «te contactamos en 24 h» **sin enviar nada a ninguna parte**: no hay
+backend. El lead se perdía y al usuario se le decía algo falso.
 
-**No hay backend. No se envía nada. El lead se pierde y el usuario cree que ha
-contactado.** No existe endpoint de contacto ni integración de correo.
+Ahora componen un mensaje de WhatsApp con todo lo rellenado y abren la
+conversación. El lead llega, ya cualificado, por el canal que la empresa usa de
+verdad, y el texto dice exactamente lo que va a pasar.
 
-En un negocio de ticket de 20.000 € cuyo tráfico es de pago, esto es lo más
-grave del repositorio. Además, el texto de éxito es una afirmación falsa al
-usuario.
+**Sigue sin haber endpoint de correo ni CRM.** Si algún día se quiere que el
+lead entre también por email o a una hoja de cálculo, el punto de enganche es la
+función `enviar()` de esos dos componentes.
 
-Opciones: (a) conectar un endpoint real que envíe el correo o escriba en la
-hoja de cálculo, (b) eliminar los formularios y dejar solo WhatsApp/teléfono,
-que es lo que dice `CLAUDE.md` que es la conversión real. Requiere decisión del
-cliente.
+### 8.2 ✅ Medición de conversiones: resuelto
 
-### 8.2 🔴 El 60 % de las conversiones no se mide
+Todos los enlaces de WhatsApp y teléfono pasan por
+`components/contact-link.tsx`, que emite `whatsapp_click` / `telefono_click` al
+dataLayer con el parámetro `origen`, y envía `Contact` a Meta (píxel + CAPI,
+deduplicado) si hay consentimiento de marketing. Antes solo medía el
+configurador, así que Ads y Meta optimizaban sobre una fracción de las
+conversiones.
 
-Hay **37 enlaces de WhatsApp/teléfono** en la web. Solo emiten evento los del
-`/configurador`. La barra fija `sticky-cta.tsx` —presente en 6 páginas y
-probablemente el punto de conversión más usado en móvil— **no emite nada**.
-Tampoco los de la cabecera ni los del pie.
+Los formularios emiten además `formulario_whatsapp` y un evento `Lead`.
 
-Google Ads y Meta están optimizando a ciegas sobre una fracción de las
-conversiones. Arreglarlo es convertir `sticky-cta`, y los CTA de cabecera y
-pie, en hojas cliente que llamen a `pushEvento` y, con consentimiento de
-marketing, a `trackMetaEvent('Contact')`.
+### 8.3 ✅ FR y EN: traducidos
 
-### 8.3 🟠 FR y EN están sin traducir
+Los cinco ficheros de mensajes tienen ahora paridad total de claves y FR/EN
+están traducidos de verdad, incluidos el configurador, la capa de
+consentimiento y las páginas legales. `de` y `nl` siguen desactivados en
+`routing.ts` y se mantienen sincronizados con el español como marcador.
 
-De 431 claves, **211 en francés y 212 en inglés son idénticas al español**. Es
-decir: aproximadamente la mitad de la web está en español cuando se sirve en
-`/fr` y `/en`, incluida toda la capa de consentimiento, el configurador y las
-páginas legales.
+**Conviene que un hablante nativo revise el francés antes de invertir en Ads en
+Francia**: la traducción es correcta pero no la ha validado un profesional.
 
-Francia es la prioridad de expansión declarada. Publicar así perjudica más que
-no tener el idioma.
+### 8.4 ✅ `sitemap.xml` y `robots.txt`: creados
 
-### 8.4 🟠 Sin `sitemap.xml` ni `robots.txt`
+`src/app/sitemap.ts` genera las 11 rutas con sus alternantes hreflang;
+`src/app/robots.ts` apunta al sitemap y excluye `/api/`.
 
-No existen `src/app/sitemap.ts` ni `src/app/robots.ts`. Con 11 rutas × 3
-idiomas y tráfico orgánico como objetivo declarado, es una carencia básica de
-SEO técnico. Next los genera con dos ficheros pequeños.
+### 8.5 ✅ `metadataBase` y Open Graph: resuelto
 
-### 8.5 🟠 Sin `metadataBase` ni Open Graph
+El layout declara `metadataBase` con `SITE_URL` y una imagen Open Graph real.
+Las 11 rutas × 3 idiomas llevan `canonical` y cuatro `hreflang` (es, fr, en,
+x-default), centralizados en `lib/metadata.ts`.
 
-No hay `metadataBase` en el layout ni ninguna imagen `openGraph` en toda la
-web. Consecuencia práctica: **al compartir cualquier página por WhatsApp —el
-canal principal del negocio— no aparece miniatura ni descripción.** Para una
-empresa que vende por WhatsApp, es una pérdida directa de credibilidad.
+⚠️ **`SITE_URL` está fijado a `https://www.padelalbufera.com`** en `lib/site.ts`.
+Si el dominio real es otro, hay que cambiarlo ahí o definir
+`NEXT_PUBLIC_SITE_URL`: si no, los enlaces canónicos y las miniaturas apuntarán
+a un dominio equivocado.
 
-### 8.6 🟡 Datos de empresa de relleno en producción
+### 8.6 🔴 Datos de empresa y contenido de relleno — REQUIERE AL CLIENTE
 
-`site-footer.tsx` y las dos páginas legales muestran `CIF B-00000000` y
-`C/ Dirección física, 00`. Los textos legales están marcados como pendientes de
-revisión por la asesoría, pero estos datos son visibles en todas las páginas.
+Visible en producción y **no se puede resolver desde el código**:
 
-También son de relleno: los proyectos de `proyectos/gallery.tsx` («Club
-deportivo — nombre», «Nombre Apellido · cargo, entidad») y los testimonios.
+- `CIF B-00000000` y `C/ Dirección física, 00` en el pie y en las dos páginas
+  legales. Inventar un CIF o una dirección sería falsear la identidad de una
+  empresa real.
+- `proyectos/gallery.tsx`: los ocho proyectos son de relleno («Club deportivo —
+  nombre», ubicaciones y plazos inventados) y los testimonios están firmados por
+  «Nombre Apellido · cargo, entidad». **Publicar reseñas inventadas no es solo un
+  placeholder feo: es publicidad engañosa.**
+- Las cifras de la home (17 años, +120 proyectos, garantía de 10 años) vienen del
+  diseño original y nadie las ha confirmado.
 
-### 8.7 🟡 `home/cta-form.tsx` y `service/cta-form.tsx` casi duplicados
+Hace falta que el cliente aporte datos reales o que se retiren esas secciones.
 
-122 líneas distintas de 154, y la diferencia real es que uno acepta un
-namespace de traducción y el otro tiene campos controlados. Si se decide
-mantener formularios (§8.1), unificarlos en un componente parametrizado.
+### 8.7 🟠 Textos legales sin revisión profesional
 
-### 8.8 🟡 `/como-se-construye` sigue siendo un placeholder
+`/politica-cookies` y `/politica-privacidad` están redactadas como punto de
+partida y llevan un aviso visible que lo dice. La asesoría del cliente tiene que
+revisarlas antes de publicar.
 
-Está en la navegación principal y solo muestra «estamos preparando esta
-experiencia». Una ruta indexable sin contenido.
+### 8.8 🟢 Menores pendientes
 
-### 8.9 🟢 Menores
-
-- `public/img/Logo-horizontal-scaled.webp` (48 KB) no se usa en ningún sitio.
-- Las escalas de `z-index` mezclan sintaxis (`z-45`, `z-[60]`, `z-70`) sin
-  criterio documentado. Mapa actual: cabecera 40 · barra CTA 45 · banner de
-  cookies 50 · `sheet` 60 · lightbox 70 · panel de preferencias 80.
-- Los logos de `site-header` y `site-footer` no llevan `sizes` ni `quality`.
-  Impacto pequeño (son fijos y pesan poco), pero incumplen la regla.
-- `CLAUDE.md` dice «`priority` solo una en toda la web»; en realidad hay 6, una
-  por página, que es la práctica correcta. Conviene reformular la regla como
-  «una por página» para que nadie la "arregle" quitándolas.
+- Las escalas de `z-index` mezclan sintaxis (`z-45`, `z-[60]`, `z-70`).
+  Mapa actual: cabecera 40 · barra CTA 45 · banner de cookies 50 · `sheet` 60 ·
+  lightbox 70 · panel de preferencias 80.
+- El throttling de `/api/meta-capi` es un `Map` en memoria: en serverless cada
+  instancia tiene el suyo. Frena abuso trivial, no un ataque distribuido.
+- El registro de consentimientos (`lib/consent/record.ts`) es un no-op: la
+  interfaz está lista, falta la base de datos.
 
 ---
 

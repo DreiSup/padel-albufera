@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Phone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,10 +9,29 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { ProjectsGallery } from "@/components/proyectos/gallery";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL_LABEL } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
+import { metadataPagina } from "@/lib/metadata";
 
 const HERO_IMG = { src: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano, uno de nuestros proyectos entregados" };
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "projects" });
+
+  return metadataPagina({
+    locale,
+    ruta: "/proyectos",
+    title: `${t("hero.h1")} | Pádel & Pickleball Albufera`,
+    description: t("hero.sub"),
+  });
+}
 
 export default async function ProyectosPage({
   params,
@@ -77,16 +97,16 @@ export default async function ProyectosPage({
               {t("cta.sub")}
             </p>
             <Button variant="whatsapp" asChild>
-              <a href={waHref("Hola, he visto vuestros proyectos y quiero un presupuesto.")}>
+              <ContactLink tipo="whatsapp" ubicacion="proyectos" mensaje={"Hola, he visto vuestros proyectos y quiero un presupuesto."}>
                 <WhatsappIcon className="size-5" />
                 WhatsApp directo
-              </a>
+              </ContactLink>
             </Button>
             <Button variant="outline" asChild>
-              <a href={`tel:${TEL}`}>
+              <ContactLink tipo="telefono" ubicacion="proyectos">
                 <Phone className="size-5" />
                 {TEL_LABEL}
-              </a>
+              </ContactLink>
             </Button>
           </div>
         </section>

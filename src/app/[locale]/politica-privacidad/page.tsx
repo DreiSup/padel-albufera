@@ -4,10 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
-import { routing } from "@/i18n/routing";
-
-const rutaLocal = (locale: string) =>
-  locale === routing.defaultLocale ? "/politica-privacidad" : `/${locale}/politica-privacidad`;
+import { alternatesDe } from "@/lib/metadata";
 
 export async function generateMetadata({
   params,
@@ -20,13 +17,7 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: {
-      canonical: rutaLocal(locale),
-      languages: {
-        ...Object.fromEntries(routing.locales.map((l) => [l, rutaLocal(l)])),
-        "x-default": rutaLocal(routing.defaultLocale),
-      },
-    },
+    alternates: alternatesDe(locale, "/politica-privacidad"),
   };
 }
 

@@ -6,10 +6,10 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { waHref } from "@/lib/site";
 import { specLabel } from "@/lib/spec-labels";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
+import { ContactLink } from "@/components/contact-link";
 
 interface ServiceModel {
   name: string;
@@ -121,10 +121,10 @@ export function ModelSelector({
       </div>
 
       <Button asChild className="mt-3 w-full">
-        <a href={waHref(`${waBaseMessage} (${m.name}).`)}>
+        <ContactLink tipo="whatsapp" ubicacion="selector_modelo" mensaje={`${waBaseMessage} (${m.name}).`}>
           <WhatsappIcon className="size-5" />
           {m.cta}
-        </a>
+        </ContactLink>
       </Button>
     </>
   );

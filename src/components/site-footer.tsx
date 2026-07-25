@@ -4,7 +4,8 @@ import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { PreferencesLink } from "@/components/consent/preferences-link";
-import { TEL, TEL_LABEL, NAV_ROUTES, waHref } from "@/lib/site";
+import { TEL_LABEL, NAV_ROUTES } from "@/lib/site";
+import { ContactLink } from "@/components/contact-link";
 
 function Divider() {
   return <div className="my-6 h-px bg-[#22262A]" />;
@@ -25,7 +26,7 @@ export async function SiteFooter() {
     <footer className="bg-[#0F1113] text-[#A9ADB0]">
       <div className="px-5 pt-12 pb-[58px] min-[900px]:mx-auto min-[900px]:max-w-[1200px] min-[900px]:px-10">
         <span className="inline-block rounded-lg bg-[#F4F2EE] px-3.5 py-2.5">
-          <Image src="/logo.webp" alt="Pádel & Pickleball Albufera" width={140} height={34} style={{ height: 34, width: "auto" }} />
+          <Image src="/logo.webp" alt="Pádel & Pickleball Albufera" width={140} height={34} sizes="140px" quality={70} style={{ height: 34, width: "auto" }} />
         </span>
         <p className="mt-3 text-sm font-semibold leading-[1.8] text-[#D8D6CF]">
           {t("footer.tagline")}
@@ -53,13 +54,18 @@ export async function SiteFooter() {
         <Divider />
         <FootHeading>{t("footer.contactTitle")}</FootHeading>
         <p className="text-sm leading-[1.8]">
-          <a href={`tel:${TEL}`} className="text-[#D8D6CF]">
+          <ContactLink tipo="telefono" ubicacion="pie" className="text-[#D8D6CF]">
             {TEL_LABEL}
-          </a>
+          </ContactLink>
           <br />
-          <a href={waHref(t("common.waMessage"))} className="text-[#D8D6CF]">
+          <ContactLink
+            tipo="whatsapp"
+            ubicacion="pie"
+            mensaje={t("common.waMessage")}
+            className="text-[#D8D6CF]"
+          >
             {t("footer.responseNote")}
-          </a>
+          </ContactLink>
           <br />
           info@padelalbufera.com
           <br />

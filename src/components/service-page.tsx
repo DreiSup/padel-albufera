@@ -11,13 +11,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { ModelSelector } from "@/components/service/model-selector";
-import { ServiceCtaForm } from "@/components/service/cta-form";
+import { LeadForm } from "@/components/lead-form";
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, waHref } from "@/lib/site";
 import { specLabel } from "@/lib/spec-labels";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
+import { ContactLink } from "@/components/contact-link";
 
 interface ServiceModel {
   name: string;
@@ -164,7 +164,7 @@ export async function ServicePage({
               {t("hero.sub")}
             </p>
             <Button asChild className="min-[900px]:max-w-[360px]">
-              <a href={`tel:${TEL}`}>{tc("common.requestQuote")}</a>
+              <ContactLink tipo="telefono" ubicacion="servicio">{tc("common.requestQuote")}</ContactLink>
             </Button>
           </div>
         </section>
@@ -265,10 +265,10 @@ export async function ServicePage({
             </p>
             <div className="mt-4 aspect-video rounded-[10px] bg-[#26292D] min-[900px]:max-w-[1120px]" />
             <Button variant="outline" className="mt-4 w-full border-white/30" asChild>
-              <a href={waHref(tc("common.waMessage"))}>
+              <ContactLink tipo="whatsapp" ubicacion="servicio" mensaje={tc("common.waMessage")}>
                 <WhatsappIcon className="size-5" />
                 {t("cover.cta")}
-              </a>
+              </ContactLink>
             </Button>
           </div>
         </section>
@@ -290,11 +290,14 @@ export async function ServicePage({
         </section>
 
         {/* CTA final */}
-        <ServiceCtaForm
-          ns={ns}
-          idPrefix={idPrefix}
+        <LeadForm
+          eyebrow={tc("common.requestQuote")}
+          titulo={t("cta.title")}
+          subtitulo={t("cta.sub")}
           waBaseMessage={waBaseMessage}
-          ctaProjectOptions={ctaProjectOptions}
+          opciones={ctaProjectOptions}
+          idPrefix={idPrefix}
+          origen={ns}
         />
       </main>
 

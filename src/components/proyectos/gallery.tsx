@@ -7,8 +7,8 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { waHref } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
 
 interface Project {
   id: string;
@@ -168,10 +168,10 @@ export function ProjectsGallery() {
             </div>
 
             <Button asChild className="mt-4 w-full">
-              <a href={waHref(`Hola, quiero un proyecto como el de ${open.loc} (${open.tipo}).`)}>
+              <ContactLink tipo="whatsapp" ubicacion="proyectos_detalle" mensaje={`Hola, quiero un proyecto como el de ${open.loc} (${open.tipo}).`}>
                 <WhatsappIcon className="size-5" />
                 {t("detail.cta")}
-              </a>
+              </ContactLink>
             </Button>
           </div>
         </div>

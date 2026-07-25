@@ -278,7 +278,6 @@
     "eyebrow": "Free quote",
     "title": "Shall we talk about your project?",
     "sub": "Free, no-obligation quote within 48 h. No fine print.",
-    "or": "or leave us your details",
     "nameLabel": "Name",
     "namePh": "Your name",
     "phoneLabel": "Phone",
@@ -292,12 +291,7 @@
       "Canopy / enclosure",
       "Renovation",
       "Other"
-    ],
-    "submit": "Get my free quote",
-    "privacy": "By submitting you accept the privacy policy. Reply within 24 working hours.",
-    "successTitle": "Received. We'll contact you within 24 working hours.",
-    "successSub": "In a hurry? Message us on WhatsApp now:",
-    "openWhatsApp": "Open WhatsApp"
+    ]
   },
   "footer": {
     "tagline": "Padel and pickleball court construction in Spain, France, Germany and Belgium",
@@ -725,13 +719,8 @@
       "summaryProject": "Project",
       "summaryResponse": "Response",
       "responseValue": "< 24 working hours",
-      "privacy": "By submitting you accept the privacy policy.",
       "continue": "Continue",
-      "submit": "Send request",
-      "successTitle": "Request sent!",
-      "successSub": "We'll contact you within 24 working hours for your {project}.",
-      "successWa": "In a hurry? Message us on WhatsApp",
-      "again": "Send another request"
+      "backAria": "Go back to the previous step"
     },
     "info": {
       "eyebrow": "Other ways",
@@ -747,209 +736,209 @@
   },
   "configurator": {
     "meta": {
-      "title": "Configura tu pista de pádel en 3D | Pádel Albufera",
-      "description": "Diseña tu pista de pádel en 3D —versión, cristal, césped, color y luz— y recibe el presupuesto por WhatsApp. Obra completa con solera de hormigón armado, hecha en Valencia."
+      "title": "Configure your padel court in 3D | Pádel Albufera",
+      "description": "Design your padel court in 3D — version, glass, turf, colour and lighting — and get the quote over WhatsApp. Full build including the reinforced concrete slab, out of Valencia."
     },
     "hero": {
-      "eyebrow": "Configurador 3D",
-      "h1": "Tu pista de pádel, <em>en tu jardín</em>",
-      "sub": "Móntala pieza a pieza, gírala en 3D y mándanos por WhatsApp exactamente la que quieres. Sin formularios.",
-      "solera": "Construimos la obra completa, empezando por la solera de hormigón armado sobre la que se monta la pista. Ahí se juega que no se descuadre."
+      "eyebrow": "3D configurator",
+      "h1": "Your padel court, <em>in your garden</em>",
+      "sub": "Build it piece by piece, spin it in 3D and send us over WhatsApp exactly the one you want. No forms.",
+      "solera": "We do the whole job, starting with the reinforced concrete slab the court sits on. That's what decides whether it stays true."
     },
-    "rotulo": "TU CLUB",
+    "rotulo": "YOUR CLUB",
     "visor": {
-      "posterAlt": "Pista de pádel de cristal construida en un jardín residencial",
-      "canvasAria": "Vista 3D de la pista. Flechas para girar, + y − para acercar.",
-      "cargando": "Preparando tu pista…",
-      "calidad": "Nitidez",
-      "calidadTitle": "Refracción real del cristal (equipos potentes)",
-      "noche": "Noche",
-      "dia": "Día",
+      "posterAlt": "Glass padel court built in a residential garden",
+      "canvasAria": "3D view of the court. Arrow keys to rotate, + and − to zoom.",
+      "cargando": "Preparing your court…",
+      "calidad": "Sharpness",
+      "calidadTitle": "Real glass refraction (powerful devices)",
+      "noche": "Night",
+      "dia": "Day",
       "vistas": {
-        "hero": "General",
-        "esquina": "Esquina",
-        "lateral": "Lateral",
-        "cenital": "Cenital",
-        "pista": "A pie de pista"
+        "hero": "Overview",
+        "esquina": "Corner",
+        "lateral": "Side",
+        "cenital": "Top-down",
+        "pista": "Courtside"
       }
     },
     "cat": {
       "version": {
-        "title": "Versión de la pista",
-        "help": "Define cuánta estructura queda a la vista en los fondos. Es la decisión que más cambia el aspecto y el precio.",
+        "title": "Court version",
+        "help": "Sets how much structure stays visible on the back walls. It's the choice that changes the look and the price the most.",
         "options": {
           "estandar": {
-            "name": "Estándar",
-            "desc": "Pilares y marcos intermedios a la vista en los fondos. La más rígida: viento fuerte y uso intensivo."
+            "name": "Standard",
+            "desc": "Intermediate posts and frames visible on the back walls. The stiffest option: strong wind and heavy use."
           },
           "semipanoramica": {
-            "name": "Semipanorámica",
-            "desc": "Fondos sin pilares intermedios, con esquineros de acero. El equilibrio más vendido."
+            "name": "Semi-panoramic",
+            "desc": "Back walls with no intermediate posts, using steel corner sections. The best-selling balance."
           },
           "fullpanoramica": {
-            "name": "Full panorámica",
-            "desc": "Fondos, esquinas y retornos diáfanos. Visión 360º, sin interrupciones."
+            "name": "Full panoramic",
+            "desc": "Clear back walls, corners and returns. Uninterrupted 360° visibility."
           }
         }
       },
       "modalidad": {
-        "title": "Modalidad",
-        "help": "La de dobles es la estándar. La individual pide menos parcela.",
+        "title": "Format",
+        "help": "Doubles is the standard. Singles needs less land.",
         "options": {
           "dobles": {
-            "name": "Dobles",
+            "name": "Doubles",
             "sub": "20 × 10 m"
           },
           "individual": {
-            "name": "Individual",
+            "name": "Singles",
             "sub": "20 × 6 m"
           }
         }
       },
       "entorno": {
-        "title": "Dónde va",
-        "help": "En cubierta e interior hace falta 6 m de altura libre; con 7 m el globo no toca techo.",
+        "title": "Where it goes",
+        "help": "Under cover or indoors you need 6 m of clear height; at 7 m the lob won't touch the roof.",
         "options": {
           "exterior": {
-            "name": "Exterior",
-            "sub": "jardín o finca"
+            "name": "Outdoors",
+            "sub": "garden or estate"
           },
           "cubierta": {
-            "name": "Cubierta",
-            "sub": "carpa o pabellón"
+            "name": "Under cover",
+            "sub": "canopy or sports hall"
           },
           "interior": {
-            "name": "Interior",
-            "sub": "nave"
+            "name": "Indoors",
+            "sub": "warehouse unit"
           }
         }
       },
       "cespedColor": {
-        "title": "Color del césped",
-        "help": "Azul, verde, naranja y púrpura son los colores oficiales FIP/FEP. El negro es una elección de diseño.",
+        "title": "Turf colour",
+        "help": "Blue, green, orange and purple are the official FIP/FEP colours. Black is a design choice.",
         "options": {
           "verde": {
-            "name": "Verde"
+            "name": "Green"
           },
           "azul": {
-            "name": "Azul"
+            "name": "Blue"
           },
           "teja": {
-            "name": "Teja"
+            "name": "Terracotta"
           },
           "purpura": {
-            "name": "Púrpura"
+            "name": "Purple"
           },
           "negro": {
-            "name": "Negro"
+            "name": "Black"
           }
         }
       },
       "cespedFibra": {
-        "title": "Fibra",
+        "title": "Fibre",
         "options": {
           "monofilamento": {
-            "name": "Monofilamento",
-            "sub": "bote uniforme · dura más"
+            "name": "Monofilament",
+            "sub": "even bounce · lasts longer"
           },
           "fibrilado": {
-            "name": "Fibrilado",
-            "sub": "más suave · más económico"
+            "name": "Fibrillated",
+            "sub": "softer · more affordable"
           },
           "hibrido": {
-            "name": "Híbrido",
-            "sub": "punto medio"
+            "name": "Hybrid",
+            "sub": "middle ground"
           }
         }
       },
       "cespedAltura": {
-        "title": "Altura de fibra",
+        "title": "Fibre height",
         "options": {
           "10": {
             "name": "10 mm"
           },
           "12": {
             "name": "12 mm",
-            "sub": "habitual"
+            "sub": "common"
           },
           "15": {
             "name": "15 mm",
-            "sub": "habitual"
+            "sub": "common"
           }
         }
       },
       "cristal": {
-        "title": "Cristal templado",
-        "help": "Con cantos pulidos. En panorámicas el de 12 mm no es opcional en la práctica.",
+        "title": "Tempered glass",
+        "help": "With polished edges. On panoramic courts, 12 mm isn't really optional in practice.",
         "options": {
           "10": {
             "name": "10 mm"
           },
           "12": {
             "name": "12 mm",
-            "sub": "recomendado"
+            "sub": "recommended"
           }
         }
       },
       "ral": {
-        "title": "Color de la estructura",
-        "help": "Acero galvanizado con pintura epoxi. Cualquier color de la carta RAL es posible.",
+        "title": "Structure colour",
+        "help": "Galvanised steel with epoxy paint. Any RAL chart colour is possible.",
         "options": {
           "5011": {
-            "name": "Azul"
+            "name": "Blue"
           },
           "6005": {
-            "name": "Verde"
+            "name": "Green"
           },
           "7016": {
-            "name": "Antracita"
+            "name": "Anthracite"
           },
           "9005": {
-            "name": "Negro"
+            "name": "Black"
           },
           "9010": {
-            "name": "Blanco"
+            "name": "White"
           },
           "otro": {
-            "name": "Otro RAL"
+            "name": "Other RAL"
           }
         }
       },
       "iluminacion": {
-        "title": "Iluminación LED",
+        "title": "LED lighting",
         "options": {
           "si": {
-            "name": "Con luz",
-            "sub": "jugar de noche"
+            "name": "With lighting",
+            "sub": "play at night"
           },
           "no": {
-            "name": "Sin luz"
+            "name": "No lighting"
           }
         }
       },
       "tipoLuz": {
-        "title": "Montaje de los focos",
-        "help": "Los postes exteriores reparten mejor y dejan la pista limpia. Los focos en estructura ahorran obra civil.",
+        "title": "Floodlight mounting",
+        "help": "External masts spread light better and keep the court clear. Structure-mounted floodlights save on groundwork.",
         "options": {
           "postes": {
-            "name": "4 postes de 6 m",
-            "sub": "brazo acodado exterior"
+            "name": "4 × 6 m masts",
+            "sub": "external cranked arm"
           },
           "integrada": {
-            "name": "Sobre estructura",
-            "sub": "proyectores en la viga"
+            "name": "On the structure",
+            "sub": "floodlights on the beam"
           }
         }
       },
       "potencia": {
-        "title": "Potencia por proyector",
+        "title": "Power per floodlight",
         "options": {
           "100": {
             "name": "100 W"
           },
           "150": {
             "name": "150 W",
-            "sub": "habitual"
+            "sub": "common"
           },
           "200": {
             "name": "200 W"
@@ -958,268 +947,333 @@
       },
       "extras": {
         "title": "Extras",
-        "help": "Puedes marcar varios.",
+        "help": "You can pick more than one.",
         "options": {
           "puertas": {
-            "name": "Puertas laterales",
-            "sub": "acceso por el centro"
+            "name": "Side doors",
+            "sub": "access at the centre"
           },
           "gradas": {
-            "name": "Gradas"
+            "name": "Seating"
           },
           "rotulacion": {
-            "name": "Rotulación"
+            "name": "Branding"
           },
           "marcador": {
-            "name": "Marcador"
+            "name": "Scoreboard"
           }
         }
       }
     },
     "ficha": {
-      "titulo": "Ficha técnica",
+      "titulo": "Spec sheet",
       "ref": "Ref. {ref}",
       "labels": {
-        "version": "Versión",
-        "modalidad": "Modalidad",
-        "ubicacion": "Ubicación",
-        "cesped": "Césped",
-        "cristal": "Cristal",
-        "estructura": "Estructura",
-        "iluminacion": "Iluminación",
+        "version": "Version",
+        "modalidad": "Format",
+        "ubicacion": "Location",
+        "cesped": "Turf",
+        "cristal": "Glass",
+        "estructura": "Structure",
+        "iluminacion": "Lighting",
         "extras": "Extras",
         "base": "Base"
       },
       "val": {
-        "cristal": "Templado {mm} mm, cantos pulidos",
-        "estructura": "Acero epoxi · RAL {codigo} {color}",
-        "estructuraOtro": "Acero epoxi · color RAL a definir",
-        "sinLuz": "Sin iluminación",
+        "cristal": "Tempered {mm} mm, polished edges",
+        "estructura": "Epoxy steel · RAL {codigo} {color}",
+        "estructuraOtro": "Epoxy steel · RAL colour to be confirmed",
+        "sinLuz": "No lighting",
         "conLuz": "LED {w} W · {tipo}",
-        "sinExtras": "Ninguno",
-        "base": "Solera de hormigón armado ≥ 15 cm, mallazo y pendiente de drenaje",
+        "sinExtras": "None",
+        "base": "Reinforced concrete slab ≥ 15 cm, welded mesh and drainage fall",
         "medidaDobles": "20 × 10 m",
         "medidaIndividual": "20 × 6 m"
       }
     },
     "wa": {
-      "intro": "Hola, he configurado una pista de pádel en vuestra web:",
-      "ref": "Referencia: {ref}",
-      "cierre": "¿Me podéis pasar presupuesto y fechas?"
+      "intro": "Hello, I've configured a padel court on your website:",
+      "ref": "Reference: {ref}",
+      "cierre": "Could you send me a quote and timings?"
     },
     "resumen": {
-      "eyebrow": "Tu configuración · {ref}",
-      "titulo": "Esta es tu pista",
-      "sub": "Te abrimos WhatsApp con toda la configuración escrita. Puedes editar el mensaje antes de enviarlo.",
-      "whatsapp": "Pedir presupuesto",
-      "telefono": "Llamar"
+      "eyebrow": "Your configuration · {ref}",
+      "titulo": "This is your court",
+      "sub": "We'll open WhatsApp with the whole configuration written out. You can edit the message before sending it.",
+      "whatsapp": "Request a quote",
+      "telefono": "Call"
     },
     "barra": {
       "whatsapp": "WhatsApp",
-      "telefono": "Llamar"
+      "telefono": "Call"
     },
     "social": {
-      "titulo": "Pistas que ya hemos construido",
-      "sub": "Una pista real en un jardín real vale más que cualquier render.",
+      "titulo": "Courts we've already built",
+      "sub": "A real court in a real garden beats any render.",
       "alt": {
-        "0": "Pista de pádel panorámica de cristal en entorno rural",
-        "1": "Pista de pádel con cerramiento completo de cristal en exterior",
-        "2": "Pista de césped verde junto a una arboleda"
+        "0": "Panoramic glass padel court in a rural setting",
+        "1": "Fully glazed padel court outdoors",
+        "2": "Green turf court beside a stand of trees"
       }
     },
     "faq": {
-      "titulo": "Antes de decidir",
+      "titulo": "Before you decide",
       "q": {
-        "licencia": "¿Necesito licencia de obra?",
-        "ruido": "¿Cuánto ruido hace y qué distancia dejo al vecino?",
-        "espacio": "¿Cuánto espacio necesito de verdad?",
-        "plazo": "¿Cuánto se tarda desde que firmo?",
-        "mantenimiento": "¿Qué mantenimiento tiene al año?"
+        "licencia": "Do I need planning permission?",
+        "ruido": "How much noise does it make, and how far from the neighbour?",
+        "espacio": "How much space do I actually need?",
+        "plazo": "How long from signing?",
+        "mantenimiento": "What maintenance does it need each year?"
       },
       "a": {
-        "licencia": "En la mayoría de municipios una pista descubierta va con licencia de obra menor; una cubierta suele exigir obra mayor. Te decimos qué necesitas en tu ayuntamiento y preparamos la documentación técnica.",
-        "ruido": "El pádel hace ruido de pelota y voces, sobre todo de noche. Se recomienda dejar unos 3 m a los linderos y orientar los fondos hacia tu parcela; en casos sensibles montamos cerramientos y horarios que reducen molestias.",
-        "espacio": "La pista de dobles ocupa 20 × 10 m, pero hay que contar el perímetro de mantenimiento: en la práctica conviene reservar unos 21 × 11 m. La individual baja a 20 × 6 m.",
-        "plazo": "Desde la firma, una pista estándar suele estar lista en 4 a 6 semanas si el terreno no da sorpresas. La solera necesita su tiempo de curado: no se acelera sin comprometer la obra.",
-        "mantenimiento": "Poco: cepillado del césped y repaso de la arena de sílice un par de veces al año, y revisión de tornillería y cristales. El resurfacing del césped llega a los 8-10 años según el uso."
+        "licencia": "In most municipalities an uncovered court falls under minor works consent; a covered one usually needs full permission. We'll tell you what your local council requires and prepare the technical documentation.",
+        "ruido": "Padel makes ball and voice noise, especially at night. Leaving around 3 m to the boundaries and facing the back walls towards your own plot is advisable; in sensitive cases we fit solutions that cut the nuisance.",
+        "espacio": "The doubles court takes 20 × 10 m, but you have to count the maintenance perimeter: in practice, allow around 21 × 11 m. Singles drops to 20 × 6 m.",
+        "plazo": "From signing, a standard court is usually ready in 4 to 6 weeks if the ground holds no surprises. The slab needs its curing time: rushing it compromises the build.",
+        "mantenimiento": "Not much: brushing the turf and topping up the silica sand once or twice a year, plus a check of the fixings and glass. Turf replacement comes at around 8-10 years depending on use."
       }
     }
   },
   "construction": {
-    "hero": {
-      "eyebrow": "New",
-      "h1": "How your court gets built",
-      "sub": "From bare ground to a court ready to play, step by step."
+    "meta": {
+      "title": "How a padel court is built | Pádel Albufera",
+      "description": "From groundwork to the first ball: the 6 construction phases of a padel court, with the real thicknesses, dimensions and materials we use."
     },
-    "comingSoon": "We're building this experience. Soon you'll see the whole construction process here, animated."
+    "hero": {
+      "eyebrow": "How it's built",
+      "h1": "From bare ground to the first ball",
+      "sub": "Six construction phases, carried out by our own crew. This is what happens underneath the court, and why it matters more than it looks."
+    },
+    "solera": {
+      "titulo": "It all comes down to the slab",
+      "texto": "A padel court is a steel-and-glass kit mounted on a concrete slab. Anyone can sell the kit; the slab is another matter. If the slab settles unevenly, the structure goes out of true, the doors stop closing and the glass works in torsion. Concrete flooring is where we come from: it's the part we know best and the one we don't subcontract.",
+      "dato1": "≥ 15 cm thick",
+      "dato1d": "Reinforced concrete with welded mesh.",
+      "dato2": "Drainage fall",
+      "dato2d": "Calculated so water clears on its own and the turf doesn't pool.",
+      "dato3": "Curing without shortcuts",
+      "dato3d": "Concrete needs its time. Rushing it compromises the whole job."
+    },
+    "fasesTitulo": "The six phases",
+    "fases": [
+      {
+        "n": "01",
+        "t": "Setting out and groundwork",
+        "d": "We set the court out on the ground and check orientation, access and water run-off. We excavate, strip the topsoil and compact the base in layers. Poorly compacted fill is the number one cause of settlement years down the line.",
+        "dato": "20 × 10 m court, plus working perimeter"
+      },
+      {
+        "n": "02",
+        "t": "Reinforced concrete slab",
+        "d": "Formwork, mesh and pour. The surface is power-floated to leave it flat and even, with the planned fall for drainage. The lighting ducts go in at this point too: cutting chases afterwards means doing the work twice.",
+        "dato": "≥ 15 cm with welded mesh and drainage fall"
+      },
+      {
+        "n": "03",
+        "t": "Structure assembly",
+        "d": "Posts, beams and frames in galvanised steel with an epoxy finish in the chosen RAL colour. Each piece is plumbed and levelled before tightening: glass does not forgive an out-of-square structure.",
+        "dato": "Galvanised steel + epoxy, RAL chart colour"
+      },
+      {
+        "n": "04",
+        "t": "Tempered glass",
+        "d": "Panels of 10 or 12 mm with polished edges, mounted on fixings with clearance so the glass can move. The back walls carry 3 m of glass topped with mesh up to 4 m; the sides are stepped.",
+        "dato": "10 or 12 mm tempered, polished edges"
+      },
+      {
+        "n": "05",
+        "t": "Turf and silica sand",
+        "d": "The turf is laid, the rolls are joined with glued seams and the lines are set out. Then comes the silica sand, brushed in over several passes: that's what gives the correct bounce and holds the fibre upright. A freshly sanded court needs a few days of play to settle.",
+        "dato": "5 cm lines · service line 6.95 m from the net"
+      },
+      {
+        "n": "06",
+        "t": "Lighting, net and handover",
+        "d": "LED floodlights are fitted, the net is tensioned and we walk the court with you for the final check. Heights, clearances and door closing are all verified before the job is signed off.",
+        "dato": "10 m net: 0.88 m at the centre, 0.92 m at the posts"
+      }
+    ],
+    "galeriaTitulo": "Real jobs",
+    "galeriaSub": "Photos from our own sites, not stock.",
+    "cierre": {
+      "titulo": "Got a plot in mind?",
+      "sub": "We'll come and see it, take measurements and tell you what's possible. The visit and the survey cost nothing."
+    }
   },
   "consent": {
-    "titulo": "Uso de cookies",
-    "texto": "Usamos cookies propias y de terceros para medir el uso de la web y la eficacia de nuestros anuncios. No se activa ninguna hasta que tú lo decidas.",
-    "verPolitica": "Ver política de cookies",
-    "aceptar": "Aceptar todo",
-    "rechazar": "Rechazar todo",
-    "configurar": "Configurar",
-    "preferencias": "Preferencias de cookies",
-    "retirar": "Retirar mi consentimiento",
+    "titulo": "Use of cookies",
+    "texto": "We use first-party and third-party cookies to measure how the site is used and how well our ads perform. None are activated until you decide.",
+    "verPolitica": "See cookie policy",
+    "aceptar": "Accept all",
+    "rechazar": "Reject all",
+    "configurar": "Customise",
+    "preferencias": "Cookie preferences",
+    "retirar": "Withdraw my consent",
     "cat": {
       "necesarias": {
-        "nombre": "Necesarias",
-        "desc": "Imprescindibles para que la web funcione y para recordar tu decisión sobre las cookies. No se pueden desactivar."
+        "nombre": "Necessary",
+        "desc": "Essential for the site to work and to remember your cookie choice. These cannot be switched off."
       },
       "analitica": {
-        "nombre": "Analítica",
-        "desc": "Nos dicen qué páginas se visitan y cómo se navega, para mejorar la web. Datos agregados, nunca para identificarte."
+        "nombre": "Analytics",
+        "desc": "Tell us which pages are visited and how people navigate, so we can improve the site. Aggregated data, never used to identify you."
       },
       "marketing": {
         "nombre": "Marketing",
-        "desc": "Permiten medir qué anuncios de Google y Meta traen clientes, y no mostrarte los mismos una y otra vez."
+        "desc": "Let us measure which Google and Meta ads bring in customers, and avoid showing you the same ones over and over."
       }
     },
     "panel": {
-      "titulo": "Preferencias de cookies",
-      "intro": "Elige qué quieres permitir. Puedes cambiarlo cuando quieras desde el pie de página.",
-      "siempreActiva": "Siempre activa",
-      "guardar": "Guardar preferencias"
+      "titulo": "Cookie preferences",
+      "intro": "Choose what you allow. You can change it at any time from the footer.",
+      "siempreActiva": "Always on",
+      "guardar": "Save preferences"
     }
   },
   "cookiePolicy": {
     "meta": {
-      "title": "Política de cookies | Pádel Albufera",
-      "description": "Qué cookies usamos, para qué, cuánto duran y cómo cambiar o retirar tu consentimiento."
+      "title": "Cookie policy | Pádel Albufera",
+      "description": "Which cookies we use, what for, how long they last, and how to change or withdraw your consent."
     },
-    "titulo": "Política de cookies",
-    "intro": "Esta página explica qué se guarda en tu navegador cuando visitas la web, para qué se usa y cómo puedes cambiar de opinión en cualquier momento. Sin tu consentimiento no se instala ninguna cookie que no sea estrictamente necesaria.",
+    "titulo": "Cookie policy",
+    "intro": "This page explains what gets stored in your browser when you visit the site, what it is used for, and how you can change your mind at any time. Without your consent, no cookie beyond the strictly necessary is installed.",
     "tabla": {
-      "titulo": "Cookies que puede instalar esta web",
+      "titulo": "Cookies this site may install",
       "nombre": "Cookie",
-      "proveedor": "Proveedor",
-      "finalidad": "Finalidad",
-      "duracion": "Duración",
-      "categoria": "Categoría",
-      "transferencia": "Transferencia internacional"
+      "proveedor": "Provider",
+      "finalidad": "Purpose",
+      "duracion": "Duration",
+      "categoria": "Category",
+      "transferencia": "International transfer"
     },
     "filas": [
       {
         "nombre": "cc_consent",
-        "proveedor": "Pádel Albufera (propia)",
-        "finalidad": "Guarda tu decisión sobre las cookies.",
-        "duracion": "6 meses",
-        "categoria": "Necesarias",
+        "proveedor": "Pádel Albufera (first-party)",
+        "finalidad": "Stores your cookie choice.",
+        "duracion": "6 months",
+        "categoria": "Necessary",
         "transferencia": "No"
       },
       {
         "nombre": "NEXT_LOCALE",
-        "proveedor": "Pádel Albufera (propia)",
-        "finalidad": "Recuerda el idioma elegido.",
-        "duracion": "1 año",
-        "categoria": "Necesarias",
+        "proveedor": "Pádel Albufera (first-party)",
+        "finalidad": "Remembers the language you chose.",
+        "duracion": "1 year",
+        "categoria": "Necessary",
         "transferencia": "No"
       },
       {
         "nombre": "_ga, _ga_*",
         "proveedor": "Google (GA4)",
-        "finalidad": "Distinguir usuarios y sesiones para medir el uso de la web.",
-        "duracion": "2 años",
-        "categoria": "Analítica",
-        "transferencia": "Sí — EE. UU. (Marco de Privacidad de Datos UE-EE. UU.)"
+        "finalidad": "Distinguish users and sessions to measure site usage.",
+        "duracion": "2 years",
+        "categoria": "Analytics",
+        "transferencia": "Yes — USA (EU–US Data Privacy Framework)"
       },
       {
         "nombre": "_gid",
         "proveedor": "Google (GA4)",
-        "finalidad": "Distinguir usuarios.",
-        "duracion": "24 horas",
-        "categoria": "Analítica",
-        "transferencia": "Sí — EE. UU."
+        "finalidad": "Distinguish users.",
+        "duracion": "24 hours",
+        "categoria": "Analytics",
+        "transferencia": "Yes — USA"
       },
       {
         "nombre": "_gcl_au",
         "proveedor": "Google Ads",
-        "finalidad": "Atribuir conversiones a los anuncios.",
-        "duracion": "90 días",
+        "finalidad": "Attribute conversions to ads.",
+        "duracion": "90 days",
         "categoria": "Marketing",
-        "transferencia": "Sí — EE. UU."
+        "transferencia": "Yes — USA"
       },
       {
         "nombre": "_fbp",
         "proveedor": "Meta",
-        "finalidad": "Identificar navegadores para medir y segmentar anuncios.",
-        "duracion": "90 días",
+        "finalidad": "Identify browsers to measure and target ads.",
+        "duracion": "90 days",
         "categoria": "Marketing",
-        "transferencia": "Sí — EE. UU."
+        "transferencia": "Yes — USA"
       },
       {
         "nombre": "_fbc",
         "proveedor": "Meta",
-        "finalidad": "Guardar el identificador del clic en un anuncio para atribuir la conversión.",
-        "duracion": "90 días",
+        "finalidad": "Store the ad click identifier to attribute the conversion.",
+        "duracion": "90 days",
         "categoria": "Marketing",
-        "transferencia": "Sí — EE. UU."
+        "transferencia": "Yes — USA"
       }
     ],
     "secciones": {
       "que": {
-        "titulo": "Qué usamos y cuándo",
-        "texto": "Si aceptas analítica, cargamos Google Tag Manager con Google Analytics 4 para saber qué páginas se visitan. Si aceptas marketing, se cargan además las etiquetas de Google Ads y el píxel de Meta para medir qué anuncios funcionan. Si rechazas, no se carga ninguna de esas herramientas: no es que se carguen y no midan, es que no se descargan del servidor."
+        "titulo": "What we use and when",
+        "texto": "If you accept analytics, we load Google Tag Manager with Google Analytics 4 to see which pages get visited. If you accept marketing, the Google Ads tags and the Meta pixel are loaded as well, to measure which ads work. If you decline, none of those tools load at all: it isn't that they load and stop measuring — they are never downloaded."
       },
       "servidor": {
-        "titulo": "Medición desde nuestro servidor",
-        "texto": "Cuando aceptas marketing y realizas una acción de contacto, enviamos ese mismo evento a Meta también desde nuestro servidor (Conversions API), con un identificador compartido para que no se cuente dos veces. Si nos has facilitado email o teléfono, viajan cifrados con SHA-256 y nunca en claro. Sin consentimiento de marketing, este envío no se produce."
+        "titulo": "Measurement from our server",
+        "texto": "When you accept marketing and take a contact action, we also send that same event to Meta from our server (Conversions API), with a shared identifier so it isn't counted twice. If you gave us an email or phone number, they travel hashed with SHA-256, never in the clear. Without marketing consent, this request never happens."
       },
       "terceros": {
-        "titulo": "Terceros y transferencias",
-        "texto": "Google y Meta actúan como proveedores propios y tratan los datos según sus respectivas políticas de privacidad. Ambos pueden tratar datos en Estados Unidos, amparados en el Marco de Privacidad de Datos UE-EE. UU."
+        "titulo": "Third parties and transfers",
+        "texto": "Google and Meta act as providers and process data under their own privacy policies. Both may process data in the United States under the EU–US Data Privacy Framework."
       },
       "derechos": {
-        "titulo": "Tus derechos",
-        "texto": "Puedes acceder, rectificar, suprimir, oponerte o limitar el tratamiento de tus datos, y retirar tu consentimiento en cualquier momento sin que ello afecte a la licitud del tratamiento previo. Escríbenos a info@padelalbufera.com. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es)."
+        "titulo": "Your rights",
+        "texto": "You can access, rectify, erase, object to or restrict the processing of your data, and withdraw your consent at any time without affecting the lawfulness of processing carried out beforehand. Write to info@padelalbufera.com. You may also lodge a complaint with the relevant supervisory authority."
       }
     },
     "cambiar": {
-      "titulo": "Cambiar o retirar tu consentimiento",
-      "texto": "Retirar el consentimiento es tan fácil como darlo. Abre el panel para ajustar categoría a categoría, o retíralo del todo: borraremos las cookies que Google y Meta hubieran instalado y recargaremos la página.",
-      "abrirPanel": "Abrir preferencias"
+      "titulo": "Change or withdraw your consent",
+      "texto": "Withdrawing consent should be as easy as giving it. Open the panel to adjust category by category, or withdraw it entirely: we will delete the cookies Google and Meta installed and reload the page.",
+      "abrirPanel": "Open preferences"
     },
-    "responsable": "Responsable: Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com",
-    "aviso": "Documento orientativo generado como punto de partida. No es asesoramiento legal: la asesoría de la empresa debe revisarlo y completar los datos identificativos antes de publicar."
+    "responsable": "Controller: Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia, Spain · info@padelalbufera.com",
+    "aviso": "Indicative document provided as a starting point. This is not legal advice: the company's legal adviser must review it and complete the identifying details before publication."
   },
   "privacyPolicy": {
     "meta": {
-      "title": "Política de privacidad | Pádel Albufera",
-      "description": "Cómo tratamos tus datos personales, con qué base legal y qué derechos tienes."
+      "title": "Privacy policy | Pádel Albufera",
+      "description": "How we handle your personal data, on what legal basis, and what rights you have."
     },
-    "titulo": "Política de privacidad",
-    "intro": "Cómo tratamos los datos personales que nos facilitas al contactar con nosotros.",
+    "titulo": "Privacy policy",
+    "intro": "How we handle the personal data you give us when you get in touch.",
     "secciones": {
       "responsable": {
-        "titulo": "Responsable del tratamiento",
-        "texto": "Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia · info@padelalbufera.com"
+        "titulo": "Data controller",
+        "texto": "Pavimentos Albufera S.L. · CIF B-00000000 · C/ Dirección física, 00 · 46000 Valencia, Spain · info@padelalbufera.com"
       },
       "datos": {
-        "titulo": "Qué datos tratamos",
-        "texto": "Los que nos facilitas al escribirnos por WhatsApp, llamarnos o enviarnos un correo: nombre, teléfono, email y la información sobre el proyecto que quieras contarnos. También datos técnicos de navegación si has aceptado cookies de analítica o marketing."
+        "titulo": "What data we handle",
+        "texto": "Whatever you give us when you message us on WhatsApp, call, or email: name, phone, email and whatever you want to tell us about your project. Also technical browsing data if you accepted analytics or marketing cookies."
       },
       "finalidad": {
-        "titulo": "Para qué los usamos",
-        "texto": "Para responder a tu consulta, preparar el presupuesto y hacer el seguimiento comercial del proyecto. Si aceptaste marketing, también para medir la eficacia de nuestros anuncios."
+        "titulo": "What we use it for",
+        "texto": "To answer your enquiry, prepare the quote and follow up on the project commercially. If you accepted marketing, also to measure how well our ads perform."
       },
       "base": {
-        "titulo": "Base legal",
-        "texto": "Tu consentimiento al contactarnos y, en la fase de presupuesto, la aplicación de medidas precontractuales a petición tuya. Para las cookies de analítica y marketing, exclusivamente tu consentimiento."
+        "titulo": "Legal basis",
+        "texto": "Your consent when you contact us and, at the quoting stage, pre-contractual steps taken at your request. For analytics and marketing cookies, your consent alone."
       },
       "conservacion": {
-        "titulo": "Cuánto los conservamos",
-        "texto": "Mientras dure la relación comercial y, después, durante los plazos legales de conservación fiscal y de responsabilidad de la obra."
+        "titulo": "How long we keep it",
+        "texto": "For as long as the commercial relationship lasts and, afterwards, for the statutory tax retention periods and the liability period for the works."
       },
       "destinatarios": {
-        "titulo": "Quién más los ve",
-        "texto": "Nuestros proveedores tecnológicos (alojamiento y herramientas de medición), que actúan como encargados del tratamiento. No vendemos datos a nadie."
+        "titulo": "Who else sees it",
+        "texto": "Our technology providers (hosting and measurement tools), acting as data processors. We do not sell data to anyone."
       },
       "derechos": {
-        "titulo": "Tus derechos",
-        "texto": "Acceso, rectificación, supresión, oposición, limitación y portabilidad, escribiendo a info@padelalbufera.com. Puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es)."
+        "titulo": "Your rights",
+        "texto": "Access, rectification, erasure, objection, restriction and portability, by writing to info@padelalbufera.com. You may also lodge a complaint with the relevant supervisory authority."
       }
     },
-    "aviso": "Documento orientativo generado como punto de partida. No es asesoramiento legal: la asesoría de la empresa debe revisarlo y completar los datos identificativos antes de publicar."
+    "aviso": "Indicative document provided as a starting point. This is not legal advice: the company's legal adviser must review it and complete the identifying details before publication."
+  },
+  "lead": {
+    "or": "or tell us about your project",
+    "opcional": "(optional)",
+    "submit": "Send via WhatsApp",
+    "aviso": "WhatsApp will open with your details already written out. You can review them before sending.",
+    "msgIntro": "Hello, I'd like a quote. Here are my details:"
   }
 }

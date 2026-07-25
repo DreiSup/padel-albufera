@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,10 +8,29 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { ContactoForm } from "@/components/contacto/form";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL_LABEL } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
+import { metadataPagina } from "@/lib/metadata";
 
 const TEAM_IMG = { src: "/equipo-pavimentos-albufera-furgoneta.jpg", alt: "Equipo de Pavimentos Albufera junto a la furgoneta de la empresa" };
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return metadataPagina({
+    locale,
+    ruta: "/contacto",
+    title: `${t("header.title")} | Pádel & Pickleball Albufera`,
+    description: t("header.sub"),
+  });
+}
 
 export default async function ContactoPage({
   params,
@@ -38,10 +58,7 @@ export default async function ContactoPage({
               {t("header.sub")}
             </p>
             <div className="mt-[18px] grid grid-cols-2 gap-2.5 min-[900px]:max-w-[560px]">
-              <a
-                href={waHref(tc("common.waMessage"))}
-                className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]"
-              >
+              <ContactLink tipo="whatsapp" ubicacion="contacto" mensaje={tc("common.waMessage")} className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]">
                 <WhatsappIcon className="size-5" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-75">
@@ -51,11 +68,8 @@ export default async function ContactoPage({
                     WhatsApp
                   </div>
                 </div>
-              </a>
-              <a
-                href={`tel:${TEL}`}
-                className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white"
-              >
+              </ContactLink>
+              <ContactLink tipo="telefono" ubicacion="contacto" className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white">
                 <Phone className="size-5 text-[var(--acc)]" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-70">
@@ -65,7 +79,7 @@ export default async function ContactoPage({
                     {tc("common.call")}
                   </div>
                 </div>
-              </a>
+              </ContactLink>
             </div>
           </div>
         </section>
@@ -80,10 +94,10 @@ export default async function ContactoPage({
           </h2>
           <div className="mt-2">
             <InfoLine icon={Phone} title={t("info.phone")}>
-              <a href={`tel:${TEL}`}>{TEL_LABEL}</a> · {t("info.phoneNote")}
+              <ContactLink tipo="telefono" ubicacion="contacto">{TEL_LABEL}</ContactLink> · {t("info.phoneNote")}
             </InfoLine>
             <InfoLine icon={WhatsappIcon} title={t("info.whatsapp")}>
-              <a href={waHref(tc("common.waMessage"))}>{tc("common.whatsappDirect")}</a> · {t("info.whatsappNote")}
+              <ContactLink tipo="whatsapp" ubicacion="contacto" mensaje={tc("common.waMessage")}>{tc("common.whatsappDirect")}</ContactLink> · {t("info.whatsappNote")}
             </InfoLine>
             <InfoLine icon={Mail} title={t("info.email")}>
               info@padelalbufera.com

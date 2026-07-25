@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ChevronRight,
@@ -22,13 +23,14 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { HomeStatsSection } from "@/components/home/stats-section";
-import { HomeCtaForm } from "@/components/home/cta-form";
+import { LeadForm } from "@/components/lead-form";
 import { VideoThumb } from "@/components/home/video-thumb";
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { TEL, waHref } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
+import { metadataPagina } from "@/lib/metadata";
 
 const CARD_HREFS = ["/padel", "/padel", "/pickleball", "/padel#cubiertas"];
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
@@ -66,6 +68,23 @@ interface WhyItem {
 interface FaqItem {
   q: string;
   a: string;
+}
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "hero" });
+
+  return metadataPagina({
+    locale,
+    ruta: "/",
+    title: `${t("h1")} | Pádel & Pickleball Albufera`,
+    description: t("sub"),
+  });
 }
 
 export default async function HomePage({
@@ -120,13 +139,13 @@ export default async function HomePage({
             </p>
             <div className="flex flex-col gap-2.5 min-[900px]:max-w-[560px] min-[900px]:flex-row">
               <Button asChild>
-                <a href={`tel:${TEL}`}>{t("common.requestQuote")}</a>
+                <ContactLink tipo="telefono" ubicacion="home">{t("common.requestQuote")}</ContactLink>
               </Button>
               <Button variant="outline" asChild>
-                <a href={waHref(t("common.waMessage"))}>
+                <ContactLink tipo="whatsapp" ubicacion="home" mensaje={t("common.waMessage")}>
                   <WhatsappIcon className="size-5" />
                   {t("common.whatsappDirect")}
-                </a>
+                </ContactLink>
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -384,7 +403,15 @@ export default async function HomePage({
         </section>
 
         {/* CTA final */}
-        <HomeCtaForm />
+        <LeadForm
+          eyebrow={t("cta.eyebrow")}
+          titulo={t("cta.title")}
+          subtitulo={t("cta.sub")}
+          waBaseMessage={t("common.waMessage")}
+          opciones={t.raw("cta.typeOptions") as string[]}
+          idPrefix="home"
+          origen="home"
+        />
       </main>
 
       <SiteFooter />

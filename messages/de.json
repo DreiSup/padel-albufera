@@ -278,7 +278,6 @@
     "eyebrow": "Kostenloses Angebot",
     "title": "Sprechen wir über Ihr Projekt?",
     "sub": "Kostenloses, unverbindliches Angebot innerhalb von 48 h. Ohne Kleingedrucktes.",
-    "or": "oder hinterlassen Sie Ihre Daten",
     "nameLabel": "Name",
     "namePh": "Ihr Name",
     "phoneLabel": "Telefon",
@@ -292,12 +291,7 @@
       "Überdachung / Einhausung",
       "Sanierung",
       "Sonstiges"
-    ],
-    "submit": "Kostenloses Angebot erhalten",
-    "privacy": "Mit dem Absenden akzeptieren Sie die Datenschutzerklärung. Antwort innerhalb von 24 h an Werktagen.",
-    "successTitle": "Erhalten. Wir melden uns innerhalb von 24 h an Werktagen.",
-    "successSub": "Eilig? Schreiben Sie uns jetzt per WhatsApp:",
-    "openWhatsApp": "WhatsApp öffnen"
+    ]
   },
   "footer": {
     "tagline": "Bau von Padel- und Pickleball-Courts in Spanien, Frankreich, Deutschland und Belgien",
@@ -725,13 +719,8 @@
       "summaryProject": "Projekt",
       "summaryResponse": "Antwort",
       "responseValue": "< 24 Werkstunden",
-      "privacy": "Mit dem Absenden akzeptieren Sie die Datenschutzerklärung.",
       "continue": "Weiter",
-      "submit": "Anfrage senden",
-      "successTitle": "Anfrage gesendet!",
-      "successSub": "Wir kontaktieren Sie innerhalb von 24 Werkstunden zu Ihrem {project}.",
-      "successWa": "Eilig? Schreiben Sie uns per WhatsApp",
-      "again": "Weitere Anfrage senden"
+      "backAria": "Zurück zum vorherigen Schritt"
     },
     "info": {
       "eyebrow": "Weitere Wege",
@@ -1046,12 +1035,70 @@
     }
   },
   "construction": {
-    "hero": {
-      "eyebrow": "Neu",
-      "h1": "So wird Ihr Court gebaut",
-      "sub": "Vom Rohboden bis zum spielfertigen Court, Schritt für Schritt."
+    "meta": {
+      "title": "Cómo se construye una pista de pádel | Pádel Albufera",
+      "description": "Del movimiento de tierras a la primera pelota: las 6 fases de obra de una pista de pádel, con los espesores, medidas y materiales reales que usamos."
     },
-    "comingSoon": "Wir arbeiten an diesem Erlebnis. Bald sehen Sie hier den gesamten Bauprozess animiert."
+    "hero": {
+      "eyebrow": "Cómo se construye",
+      "h1": "Del terreno a la primera pelota",
+      "sub": "Seis fases de obra, ejecutadas por nuestro equipo. Esto es lo que pasa bajo la pista y por qué importa más de lo que parece."
+    },
+    "solera": {
+      "titulo": "Todo se juega en la solera",
+      "texto": "Una pista de pádel es un kit de acero y vidrio montado sobre una losa de hormigón. El kit lo vende cualquiera; la losa no. Si la solera se asienta de forma desigual, la estructura se descuadra, las puertas dejan de cerrar y el vidrio trabaja a torsión. Venimos del pavimento de hormigón: esa es la parte que mejor sabemos hacer y la que no subcontratamos.",
+      "dato1": "≥ 15 cm de espesor",
+      "dato1d": "Hormigón armado con mallazo electrosoldado.",
+      "dato2": "Pendiente de drenaje",
+      "dato2d": "Calculada para que el agua salga sola y el césped no encharque.",
+      "dato3": "Curado sin prisas",
+      "dato3d": "El hormigón necesita su tiempo. Acelerarlo compromete toda la obra."
+    },
+    "fasesTitulo": "Las seis fases",
+    "fases": [
+      {
+        "n": "01",
+        "t": "Replanteo y movimiento de tierras",
+        "d": "Marcamos la pista sobre el terreno y comprobamos orientación, accesos y evacuación de agua. Se excava, se retira la tierra vegetal y se compacta la base con zahorra en tongadas. Un relleno mal compactado es la causa número uno de asientos años después.",
+        "dato": "20 × 10 m de pista, más perímetro de trabajo"
+      },
+      {
+        "n": "02",
+        "t": "Solera de hormigón armado",
+        "d": "Encofrado, mallazo y vertido. Se fratasa a máquina para dejar una superficie plana y regular, con la pendiente prevista para el drenaje. Aquí se dejan también los pasatubos de la iluminación: abrir rozas después es rehacer trabajo.",
+        "dato": "≥ 15 cm con mallazo y pendiente de drenaje"
+      },
+      {
+        "n": "03",
+        "t": "Montaje de la estructura",
+        "d": "Postes, vigas y marcos de acero galvanizado con acabado epoxi en el color RAL elegido. Se aploma y nivela pieza a pieza antes de apretar: el vidrio no perdona una estructura fuera de escuadra.",
+        "dato": "Acero galvanizado + epoxi, color de carta RAL"
+      },
+      {
+        "n": "04",
+        "t": "Vidrio templado",
+        "d": "Paños de 10 o 12 mm con los cantos pulidos, montados sobre soportes con holgura para que el vidrio pueda trabajar. Los fondos llevan 3 m de cristal rematados con malla hasta los 4 m; los laterales van escalonados.",
+        "dato": "10 o 12 mm templado, cantos pulidos"
+      },
+      {
+        "n": "05",
+        "t": "Césped y arena de sílice",
+        "d": "Se extiende el césped, se unen los rollos con junta encolada y se marcan las líneas. Después entra la arena de sílice, cepillada en varias pasadas: es lo que da el bote correcto y sujeta la fibra. Una pista recién sembrada de arena necesita unos días de juego para asentarse.",
+        "dato": "Líneas de 5 cm · saque a 6,95 m de la red"
+      },
+      {
+        "n": "06",
+        "t": "Iluminación, red y entrega",
+        "d": "Montaje de los proyectores LED, tensado de la red y revisión final contigo sobre la pista. Se comprueban alturas, holguras y cierre de puertas antes de dar la obra por terminada.",
+        "dato": "Red de 10 m: 0,88 m en el centro, 0,92 m en los laterales"
+      }
+    ],
+    "galeriaTitulo": "Obra real",
+    "galeriaSub": "Fotos de nuestras propias obras, no de catálogo.",
+    "cierre": {
+      "titulo": "¿Tienes una parcela en mente?",
+      "sub": "Vamos a verla, medimos y te decimos qué se puede hacer. La visita y el estudio no cuestan nada."
+    }
   },
   "consent": {
     "titulo": "Uso de cookies",
@@ -1221,5 +1268,12 @@
       }
     },
     "aviso": "Documento orientativo generado como punto de partida. No es asesoramiento legal: la asesoría de la empresa debe revisarlo y completar los datos identificativos antes de publicar."
+  },
+  "lead": {
+    "or": "o cuéntanos tu proyecto",
+    "opcional": "(opcional)",
+    "submit": "Enviar por WhatsApp",
+    "aviso": "Se abrirá WhatsApp con tus datos ya escritos. Podrás revisarlos antes de enviar.",
+    "msgIntro": "Hola, me interesa un presupuesto. Estos son mis datos:"
   }
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Heart, MapPin, Phone, ShieldCheck, Users, Wrench } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,8 +9,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { AboutStatsCounter } from "@/components/about/stats-counter";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL_LABEL } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
+import { metadataPagina } from "@/lib/metadata";
 
 const HERO_IMG = { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario del equipo pintando las líneas de una pista de pádel" };
 const STORY_IMG = { src: "/instalacion-cesped-pista-padel-atardecer.jpg", alt: "Equipo instalando el césped artificial de una pista de pádel al atardecer" };
@@ -34,6 +37,23 @@ interface Milestone {
 interface Value {
   t: string;
   d: string;
+}
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
+
+  return metadataPagina({
+    locale,
+    ruta: "/sobre-nosotros",
+    title: `${t("hero.h1")} | Pádel & Pickleball Albufera`,
+    description: t("hero.sub"),
+  });
 }
 
 export default async function SobreNosotrosPage({
@@ -234,16 +254,16 @@ export default async function SobreNosotrosPage({
             </h2>
             <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">{t("cta.sub")}</p>
             <Button variant="whatsapp" asChild>
-              <a href={waHref("Hola, quiero conocer vuestro trabajo y pedir una visita.")}>
+              <ContactLink tipo="whatsapp" ubicacion="sobre_nosotros" mensaje={"Hola, quiero conocer vuestro trabajo y pedir una visita."}>
                 <WhatsappIcon className="size-5" />
                 WhatsApp directo
-              </a>
+              </ContactLink>
             </Button>
             <Button variant="outline" asChild>
-              <a href={`tel:${TEL}`}>
+              <ContactLink tipo="telefono" ubicacion="sobre_nosotros">
                 <Phone className="size-5" />
                 {TEL_LABEL}
-              </a>
+              </ContactLink>
             </Button>
           </div>
         </section>

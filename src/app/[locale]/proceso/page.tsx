@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Camera, Check, Clock, Euro, FileText, Key, MapPin, Phone, ShieldCheck, Wrench } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -13,8 +14,10 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { TEL_LABEL } from "@/lib/site";
 import { BLUR } from "@/lib/image-blur";
+import { ContactLink } from "@/components/contact-link";
+import { metadataPagina } from "@/lib/metadata";
 
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const PLEDGE_ICONS = [Euro, Clock, Camera, ShieldCheck];
@@ -42,6 +45,23 @@ interface Pledge {
 interface FaqItem {
   q: string;
   a: string;
+}
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "process" });
+
+  return metadataPagina({
+    locale,
+    ruta: "/proceso",
+    title: `${t("hero.h1")} | Pádel & Pickleball Albufera`,
+    description: t("hero.sub"),
+  });
 }
 
 export default async function ProcesoPage({
@@ -159,16 +179,16 @@ export default async function ProcesoPage({
             </div>
             <div className="flex w-full flex-col gap-2 min-[900px]:w-auto min-[900px]:shrink-0 min-[900px]:flex-row">
               <Button variant="whatsapp" asChild>
-                <a href={waHref("Hola, quiero reservar la visita técnica gratuita.")}>
+                <ContactLink tipo="whatsapp" ubicacion="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
                   <WhatsappIcon className="size-5" />
                   {tc("common.whatsappDirect")}
-                </a>
+                </ContactLink>
               </Button>
               <Button variant="ghost" asChild>
-                <a href={`tel:${TEL}`}>
+                <ContactLink tipo="telefono" ubicacion="proceso">
                   <Phone className="size-5" />
                   {tc("common.call")}
-                </a>
+                </ContactLink>
               </Button>
             </div>
           </div>
@@ -233,16 +253,16 @@ export default async function ProcesoPage({
               {t("cta.sub")}
             </p>
             <Button variant="whatsapp" asChild>
-              <a href={waHref("Hola, quiero reservar la visita técnica gratuita.")}>
+              <ContactLink tipo="whatsapp" ubicacion="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
                 <WhatsappIcon className="size-5" />
                 {tc("common.whatsappDirect")}
-              </a>
+              </ContactLink>
             </Button>
             <Button variant="outline" asChild>
-              <a href={`tel:${TEL}`}>
+              <ContactLink tipo="telefono" ubicacion="proceso">
                 <Phone className="size-5" />
                 {tc("common.call")} · {TEL_LABEL}
-              </a>
+              </ContactLink>
             </Button>
           </div>
         </section>

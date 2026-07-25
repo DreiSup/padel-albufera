@@ -11,7 +11,8 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { NavMoreMenu } from "@/components/nav-more-menu";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { NAV_ROUTES, PRIMARY_NAV_ROUTES, TEL, waHref } from "@/lib/site";
+import { NAV_ROUTES, PRIMARY_NAV_ROUTES } from "@/lib/site";
+import { ContactLink } from "@/components/contact-link";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,6 +38,8 @@ export function SiteHeader() {
             alt="Pádel & Pickleball Albufera"
             width={140}
             height={34}
+            sizes="140px"
+            quality={70}
             className={`block w-auto transition-[height] ${compact ? "h-[29px]" : "h-[34px]"}`}
           />
         </Link>
@@ -53,22 +56,25 @@ export function SiteHeader() {
           ))}
           <NavMoreMenu className="shrink-0" />
           <LanguageSwitcher className="ml-1.5 shrink-0" />
-          <a
-            href={waHref(t("common.waMessage"))}
+          <ContactLink
+            tipo="whatsapp"
+            ubicacion="cabecera"
+            mensaje={t("common.waMessage")}
             className="shrink-0 rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold whitespace-nowrap text-[#07130C] hover:brightness-95"
           >
             {t("common.requestQuote")}
-          </a>
+          </ContactLink>
         </nav>
 
         <div className="flex items-center gap-2 min-[1100px]:hidden">
-          <a
-            href={`tel:${TEL}`}
+          <ContactLink
+            tipo="telefono"
+            ubicacion="cabecera"
             aria-label={t("common.call")}
             className="flex size-11 items-center justify-center rounded-lg border-[1.5px] border-[#E0DDD3] bg-white text-[#1A1C1E]"
           >
             <Phone className="size-5" />
-          </a>
+          </ContactLink>
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <button
@@ -80,7 +86,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent>
               <div className="mb-4 flex items-center justify-between">
-                <Image src="/logo.webp" alt="Pádel & Pickleball Albufera" width={120} height={30} style={{ height: 30, width: "auto" }} />
+                <Image src="/logo.webp" alt="Pádel & Pickleball Albufera" width={120} height={30} sizes="120px" quality={70} style={{ height: 30, width: "auto" }} />
                 <SheetClose asChild>
                   <button
                     aria-label="Cerrar menú"
@@ -107,16 +113,16 @@ export function SiteHeader() {
               </div>
               <div className="mt-4 flex flex-col gap-2.5">
                 <Button variant="whatsapp" asChild>
-                  <a href={waHref(t("common.waMessage"))}>
+                  <ContactLink tipo="whatsapp" ubicacion="menu_movil" mensaje={t("common.waMessage")}>
                     <WhatsappIcon className="size-5" />
                     {t("common.whatsappDirect")}
-                  </a>
+                  </ContactLink>
                 </Button>
                 <Button asChild>
-                  <a href={`tel:${TEL}`}>
+                  <ContactLink tipo="telefono" ubicacion="menu_movil">
                     <Phone className="size-5" />
                     {t("common.callNow")}
-                  </a>
+                  </ContactLink>
                 </Button>
               </div>
             </SheetContent>

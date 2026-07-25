@@ -1,3 +1,9 @@
+// Dominio canónico. Necesario para metadataBase, sitemap y las URLs absolutas
+// de Open Graph (sin él, al compartir por WhatsApp no sale miniatura).
+// Se puede sobrescribir por entorno para previsualizaciones.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.padelalbufera.com";
+
 export const WA_NUMBER = "34614207633";
 export const WA_MESSAGE_DEFAULT =
   "Hola, quiero un presupuesto para construir una pista.";
