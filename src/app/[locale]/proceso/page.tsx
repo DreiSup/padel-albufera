@@ -14,10 +14,12 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL_LABEL } from "@/lib/site";
+
 import { BLUR } from "@/lib/image-blur";
-import { ContactLink } from "@/components/contact-link";
 import { metadataPagina } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const PLEDGE_ICONS = [Euro, Clock, Camera, ShieldCheck];
@@ -46,7 +48,6 @@ interface FaqItem {
   q: string;
   a: string;
 }
-
 
 export async function generateMetadata({
   params,
@@ -179,16 +180,16 @@ export default async function ProcesoPage({
             </div>
             <div className="flex w-full flex-col gap-2 min-[900px]:w-auto min-[900px]:shrink-0 min-[900px]:flex-row">
               <Button variant="whatsapp" asChild>
-                <ContactLink tipo="whatsapp" ubicacion="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
+                <WhatsAppLink placement="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
                   <WhatsappIcon className="size-5" />
                   {tc("common.whatsappDirect")}
-                </ContactLink>
+                </WhatsAppLink>
               </Button>
               <Button variant="ghost" asChild>
-                <ContactLink tipo="telefono" ubicacion="proceso">
+                <PhoneLink placement="proceso">
                   <Phone className="size-5" />
                   {tc("common.call")}
-                </ContactLink>
+                </PhoneLink>
               </Button>
             </div>
           </div>
@@ -253,16 +254,16 @@ export default async function ProcesoPage({
               {t("cta.sub")}
             </p>
             <Button variant="whatsapp" asChild>
-              <ContactLink tipo="whatsapp" ubicacion="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
+              <WhatsAppLink placement="proceso" mensaje={"Hola, quiero reservar la visita técnica gratuita."}>
                 <WhatsappIcon className="size-5" />
                 {tc("common.whatsappDirect")}
-              </ContactLink>
+              </WhatsAppLink>
             </Button>
             <Button variant="outline" asChild>
-              <ContactLink tipo="telefono" ubicacion="proceso">
+              <PhoneLink placement="proceso">
                 <Phone className="size-5" />
-                {tc("common.call")} · {TEL_LABEL}
-              </ContactLink>
+                {tc("common.call")} · <PhoneNumber />
+              </PhoneLink>
             </Button>
           </div>
         </section>

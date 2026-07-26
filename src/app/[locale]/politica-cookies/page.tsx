@@ -22,7 +22,7 @@ export async function generateMetadata({
   };
 }
 
-const SECCIONES = ["que", "servidor", "terceros", "derechos"] as const;
+const SECCIONES = ["que", "terceros", "derechos"] as const;
 
 interface Fila {
   nombre: string;

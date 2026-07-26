@@ -1,22 +1,17 @@
+import type { AppPathname } from "@/i18n/routing";
+
 // Dominio canónico. Necesario para metadataBase, sitemap y las URLs absolutas
 // de Open Graph (sin él, al compartir por WhatsApp no sale miniatura).
 // Se puede sobrescribir por entorno para previsualizaciones.
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.padelalbufera.com";
 
-export const WA_NUMBER = "34614207633";
-export const WA_MESSAGE_DEFAULT =
-  "Hola, quiero un presupuesto para construir una pista.";
-export const TEL = "+34614207633";
-export const TEL_LABEL = "+34 614 20 76 33";
-
-export function waHref(message: string = WA_MESSAGE_DEFAULT) {
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-}
+// Los datos de contacto (números por idioma, waHref, placements) viven en
+// src/lib/contact.ts y salen de variables de entorno. No los dupliques aquí.
 
 export type NavKey = "home" | "padel" | "pickleball" | "configurator" | "construction" | "projects" | "process" | "about" | "contact";
 
-export const NAV_ROUTES: { key: NavKey; href: string }[] = [
+export const NAV_ROUTES: { key: NavKey; href: AppPathname }[] = [
   { key: "home", href: "/" },
   { key: "padel", href: "/padel" },
   { key: "pickleball", href: "/pickleball" },

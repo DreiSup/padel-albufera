@@ -12,7 +12,8 @@ import { NavMoreMenu } from "@/components/nav-more-menu";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import { NAV_ROUTES, PRIMARY_NAV_ROUTES } from "@/lib/site";
-import { ContactLink } from "@/components/contact-link";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -56,25 +57,21 @@ export function SiteHeader() {
           ))}
           <NavMoreMenu className="shrink-0" />
           <LanguageSwitcher className="ml-1.5 shrink-0" />
-          <ContactLink
-            tipo="whatsapp"
-            ubicacion="cabecera"
+          <WhatsAppLink placement="cabecera"
             mensaje={t("common.waMessage")}
             className="shrink-0 rounded-lg bg-[var(--acc)] px-[17px] py-[11px] text-sm font-bold whitespace-nowrap text-[#07130C] hover:brightness-95"
           >
             {t("common.requestQuote")}
-          </ContactLink>
+          </WhatsAppLink>
         </nav>
 
         <div className="flex items-center gap-2 min-[1100px]:hidden">
-          <ContactLink
-            tipo="telefono"
-            ubicacion="cabecera"
+          <PhoneLink placement="cabecera"
             aria-label={t("common.call")}
             className="flex size-11 items-center justify-center rounded-lg border-[1.5px] border-[#E0DDD3] bg-white text-[#1A1C1E]"
           >
             <Phone className="size-5" />
-          </ContactLink>
+          </PhoneLink>
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <button
@@ -113,16 +110,16 @@ export function SiteHeader() {
               </div>
               <div className="mt-4 flex flex-col gap-2.5">
                 <Button variant="whatsapp" asChild>
-                  <ContactLink tipo="whatsapp" ubicacion="menu_movil" mensaje={t("common.waMessage")}>
+                  <WhatsAppLink placement="menu_movil" mensaje={t("common.waMessage")}>
                     <WhatsappIcon className="size-5" />
                     {t("common.whatsappDirect")}
-                  </ContactLink>
+                  </WhatsAppLink>
                 </Button>
                 <Button asChild>
-                  <ContactLink tipo="telefono" ubicacion="menu_movil">
+                  <PhoneLink placement="menu_movil">
                     <Phone className="size-5" />
                     {t("common.callNow")}
-                  </ContactLink>
+                  </PhoneLink>
                 </Button>
               </div>
             </SheetContent>

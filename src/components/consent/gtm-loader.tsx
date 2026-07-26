@@ -6,12 +6,18 @@ import { useEffect, useRef, useState } from "react";
 import { consentConfig } from "@/consent.config";
 import { useConsent } from "./consent-provider";
 
-// Consent Mode BÁSICO: GTM no se carga hasta que hay consentimiento. El
-// bloqueo es previo al contenedor, no una comprobación dentro de GTM.
+// Carga de GTM. Dos modos, según haya CMP externa configurada o no.
 //
-// El orden es obligatorio: `consent default` (todo denied) → `consent update`
-// (estado real) → y SOLO ENTONCES inyectar el contenedor. Al revés, las
-// etiquetas se inicializarían sin conocer el estado de consentimiento.
+// CON CMP externa (NEXT_PUBLIC_CMP_ID puesto):
+//   El `consent default` ya lo fijó ConsentDefaultScript inline en el <head>, y
+//   la CMP emite su propio `consent update`. Aquí solo se inyecta el contenedor
+//   en cuanto arranca, porque el default restrictivo ya protege.
+//
+// SIN CMP (modo básico, por defecto):
+//   GTM no se descarga hasta que el banner propio recibe un sí. El orden es
+//   obligatorio: `consent default` (todo denied) → `consent update` (estado
+//   real) → y SOLO ENTONCES inyectar. Al revés, las etiquetas se
+//   inicializarían sin conocer el estado.
 
 /**
  * gtag empuja el objeto `arguments`, no un array. No es un capricho de estilo:
@@ -28,16 +34,30 @@ function gtag(...args: unknown[]) {
   window.dataLayer.push(capturarArguments(...args));
 }
 
+/** Con CMP externa el consentimiento lo gobierna ella, no nuestro banner. */
+const CMP_EXTERNA = Boolean(process.env.NEXT_PUBLIC_CMP_ID);
+
 export function GtmLoader() {
   const { consent } = useConsent();
   const [inyectar, setInyectar] = useState(false);
   // El `default` solo puede emitirse una vez por carga de página.
   const inicializado = useRef(false);
 
-  const permitido = Boolean(consent && (consent.analitica || consent.marketing));
+  const permitido = CMP_EXTERNA || Boolean(consent && (consent.analitica || consent.marketing));
 
   useEffect(() => {
-    if (!consent || !consentConfig.gtmId || !permitido) return;
+    if (!consentConfig.gtmId || !permitido) return;
+
+    if (CMP_EXTERNA) {
+      // El default ya está inline en el <head> y el update lo manda la CMP.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInyectar(true);
+      return;
+    }
+
+    if (!consent) return;
 
     if (!inicializado.current) {
       inicializado.current = true;
@@ -70,7 +90,7 @@ export function GtmLoader() {
 
     // Si el usuario cambia preferencias con GTM ya cargado, lo anterior emite
     // solo un `consent update`; esto no reinyecta nada porque el estado ya es true.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setInyectar(true);
   }, [consent, permitido]);
 

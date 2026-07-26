@@ -29,10 +29,13 @@ import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import { BLUR } from "@/lib/image-blur";
-import { ContactLink } from "@/components/contact-link";
 import { metadataPagina } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import type { AppPathname } from "@/i18n/routing";
 
-const CARD_HREFS = ["/padel", "/padel", "/pickleball", "/padel#cubiertas"];
+// Tipado contra el mapa de rutas: un slug inventado no compila.
+const CARD_HREFS: AppPathname[] = ["/padel", "/padel", "/pickleball", "/padel"];
 const STEP_ICONS = [MapPin, FileText, Wrench, Key];
 const WHY_ICONS = [FileText, Layers, ShieldCheck];
 
@@ -139,13 +142,13 @@ export default async function HomePage({
             </p>
             <div className="flex flex-col gap-2.5 min-[900px]:max-w-[560px] min-[900px]:flex-row">
               <Button asChild>
-                <ContactLink tipo="telefono" ubicacion="home">{t("common.requestQuote")}</ContactLink>
+                <PhoneLink placement="hero">{t("common.requestQuote")}</PhoneLink>
               </Button>
               <Button variant="outline" asChild>
-                <ContactLink tipo="whatsapp" ubicacion="home" mensaje={t("common.waMessage")}>
+                <WhatsAppLink placement="hero" mensaje={t("common.waMessage")}>
                   <WhatsappIcon className="size-5" />
                   {t("common.whatsappDirect")}
-                </ContactLink>
+                </WhatsAppLink>
               </Button>
             </div>
             <div className="flex flex-wrap gap-2">

@@ -9,13 +9,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { ProjectsGallery } from "@/components/proyectos/gallery";
-import { TEL_LABEL } from "@/lib/site";
+
 import { BLUR } from "@/lib/image-blur";
-import { ContactLink } from "@/components/contact-link";
 import { metadataPagina } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 const HERO_IMG = { src: "/pistas-padel-cristal-panoramica-urbana.jpg", alt: "Dos pistas de pádel panorámicas de cristal en entorno urbano, uno de nuestros proyectos entregados" };
-
 
 export async function generateMetadata({
   params,
@@ -97,16 +98,16 @@ export default async function ProyectosPage({
               {t("cta.sub")}
             </p>
             <Button variant="whatsapp" asChild>
-              <ContactLink tipo="whatsapp" ubicacion="proyectos" mensaje={"Hola, he visto vuestros proyectos y quiero un presupuesto."}>
+              <WhatsAppLink placement="proyectos" mensaje={"Hola, he visto vuestros proyectos y quiero un presupuesto."}>
                 <WhatsappIcon className="size-5" />
                 WhatsApp directo
-              </ContactLink>
+              </WhatsAppLink>
             </Button>
             <Button variant="outline" asChild>
-              <ContactLink tipo="telefono" ubicacion="proyectos">
+              <PhoneLink placement="proyectos">
                 <Phone className="size-5" />
-                {TEL_LABEL}
-              </ContactLink>
+                <PhoneNumber />
+              </PhoneLink>
             </Button>
           </div>
         </section>

@@ -1,24 +1,21 @@
 import type { Metadata } from "next";
 
-import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
+import { routing, type AppPathname } from "@/i18n/routing";
 
 // Alternantes de idioma (hreflang) y canonical, en un solo sitio.
 //
-// Sin esto, Google puede tratar /fr/padel y /padel como páginas duplicadas y
-// elegir por su cuenta cuál indexar. Con Francia como mercado prioritario, eso
-// es exactamente lo que no queremos.
-//
-// `localePrefix: "as-needed"` implica que el idioma por defecto NO lleva
-// prefijo: /padel en español, /fr/padel en francés.
+// Las URLs se piden a `getPathname` de next-intl, NUNCA se construyen a mano:
+// con slugs traducidos, concatenar `/${locale}${ruta}` daría `/fr/padel` en vez
+// de `/fr/terrain-de-padel` y el clúster hreflang quedaría roto. Y un solo
+// error en un clúster hace que Google ignore el clúster entero.
 
-export function rutaLocalizada(locale: string, ruta: string): string {
-  const prefijo = locale === routing.defaultLocale ? "" : `/${locale}`;
-  const limpia = ruta === "/" ? "" : ruta;
-  return `${prefijo}${limpia}` || "/";
+export function rutaLocalizada(locale: string, ruta: AppPathname): string {
+  return getPathname({ locale: locale as (typeof routing.locales)[number], href: ruta });
 }
 
 /** Bloque `alternates` con canonical y todos los hreflang de una ruta. */
-export function alternatesDe(locale: string, ruta: string): Metadata["alternates"] {
+export function alternatesDe(locale: string, ruta: AppPathname): Metadata["alternates"] {
   return {
     canonical: rutaLocalizada(locale, ruta),
     languages: {
@@ -32,7 +29,7 @@ export function alternatesDe(locale: string, ruta: string): Metadata["alternates
 
 interface MetadataPaginaOpts {
   locale: string;
-  ruta: string;
+  ruta: AppPathname;
   title: string;
   description: string;
 }

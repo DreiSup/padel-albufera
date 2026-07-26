@@ -9,10 +9,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { AboutStatsCounter } from "@/components/about/stats-counter";
-import { TEL_LABEL } from "@/lib/site";
+
 import { BLUR } from "@/lib/image-blur";
-import { ContactLink } from "@/components/contact-link";
 import { metadataPagina } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 const HERO_IMG = { src: "/pintado-lineas-pista-padel-azul.jpg", alt: "Operario del equipo pintando las líneas de una pista de pádel" };
 const STORY_IMG = { src: "/instalacion-cesped-pista-padel-atardecer.jpg", alt: "Equipo instalando el césped artificial de una pista de pádel al atardecer" };
@@ -38,7 +40,6 @@ interface Value {
   t: string;
   d: string;
 }
-
 
 export async function generateMetadata({
   params,
@@ -254,16 +255,16 @@ export default async function SobreNosotrosPage({
             </h2>
             <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">{t("cta.sub")}</p>
             <Button variant="whatsapp" asChild>
-              <ContactLink tipo="whatsapp" ubicacion="sobre_nosotros" mensaje={"Hola, quiero conocer vuestro trabajo y pedir una visita."}>
+              <WhatsAppLink placement="sobre_nosotros" mensaje={"Hola, quiero conocer vuestro trabajo y pedir una visita."}>
                 <WhatsappIcon className="size-5" />
                 WhatsApp directo
-              </ContactLink>
+              </WhatsAppLink>
             </Button>
             <Button variant="outline" asChild>
-              <ContactLink tipo="telefono" ubicacion="sobre_nosotros">
+              <PhoneLink placement="sobre_nosotros">
                 <Phone className="size-5" />
-                {TEL_LABEL}
-              </ContactLink>
+                <PhoneNumber />
+              </PhoneLink>
             </Button>
           </div>
         </section>

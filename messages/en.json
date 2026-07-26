@@ -1186,32 +1186,12 @@
         "duracion": "90 days",
         "categoria": "Marketing",
         "transferencia": "Yes — USA"
-      },
-      {
-        "nombre": "_fbp",
-        "proveedor": "Meta",
-        "finalidad": "Identify browsers to measure and target ads.",
-        "duracion": "90 days",
-        "categoria": "Marketing",
-        "transferencia": "Yes — USA"
-      },
-      {
-        "nombre": "_fbc",
-        "proveedor": "Meta",
-        "finalidad": "Store the ad click identifier to attribute the conversion.",
-        "duracion": "90 days",
-        "categoria": "Marketing",
-        "transferencia": "Yes — USA"
       }
     ],
     "secciones": {
       "que": {
         "titulo": "What we use and when",
         "texto": "If you accept analytics, we load Google Tag Manager with Google Analytics 4 to see which pages get visited. If you accept marketing, the Google Ads tags and the Meta pixel are loaded as well, to measure which ads work. If you decline, none of those tools load at all: it isn't that they load and stop measuring — they are never downloaded."
-      },
-      "servidor": {
-        "titulo": "Measurement from our server",
-        "texto": "When you accept marketing and take a contact action, we also send that same event to Meta from our server (Conversions API), with a shared identifier so it isn't counted twice. If you gave us an email or phone number, they travel hashed with SHA-256, never in the clear. Without marketing consent, this request never happens."
       },
       "terceros": {
         "titulo": "Third parties and transfers",
@@ -1275,5 +1255,9 @@
     "submit": "Send via WhatsApp",
     "aviso": "WhatsApp will open with your details already written out. You can review them before sending.",
     "msgIntro": "Hello, I'd like a quote. Here are my details:"
+  },
+  "conversion": {
+    "waDefault": "Hello, I would like a quote for a padel court.",
+    "refLinea": "Ref.: {ref}"
   }
 }

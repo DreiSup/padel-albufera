@@ -8,13 +8,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
 import { ContactoForm } from "@/components/contacto/form";
-import { TEL_LABEL } from "@/lib/site";
+
 import { BLUR } from "@/lib/image-blur";
-import { ContactLink } from "@/components/contact-link";
 import { metadataPagina } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 const TEAM_IMG = { src: "/equipo-pavimentos-albufera-furgoneta.jpg", alt: "Equipo de Pavimentos Albufera junto a la furgoneta de la empresa" };
-
 
 export async function generateMetadata({
   params,
@@ -58,7 +59,7 @@ export default async function ContactoPage({
               {t("header.sub")}
             </p>
             <div className="mt-[18px] grid grid-cols-2 gap-2.5 min-[900px]:max-w-[560px]">
-              <ContactLink tipo="whatsapp" ubicacion="contacto" mensaje={tc("common.waMessage")} className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]">
+              <WhatsAppLink placement="contacto" mensaje={tc("common.waMessage")} className="flex flex-col gap-2 rounded-[10px] border border-[#25D366] bg-[#25D366] p-4 text-[#062B14]">
                 <WhatsappIcon className="size-5" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-75">
@@ -68,8 +69,8 @@ export default async function ContactoPage({
                     WhatsApp
                   </div>
                 </div>
-              </ContactLink>
-              <ContactLink tipo="telefono" ubicacion="contacto" className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white">
+              </WhatsAppLink>
+              <PhoneLink placement="contacto" className="flex flex-col gap-2 rounded-[10px] border border-[#2B3034] bg-[#212428] p-4 text-white">
                 <Phone className="size-5 text-[var(--acc)]" />
                 <div>
                   <div className="text-[11px] font-semibold uppercase tracking-wide opacity-70">
@@ -79,7 +80,7 @@ export default async function ContactoPage({
                     {tc("common.call")}
                   </div>
                 </div>
-              </ContactLink>
+              </PhoneLink>
             </div>
           </div>
         </section>
@@ -94,10 +95,10 @@ export default async function ContactoPage({
           </h2>
           <div className="mt-2">
             <InfoLine icon={Phone} title={t("info.phone")}>
-              <ContactLink tipo="telefono" ubicacion="contacto">{TEL_LABEL}</ContactLink> · {t("info.phoneNote")}
+              <PhoneLink placement="contacto"><PhoneNumber /></PhoneLink> · {t("info.phoneNote")}
             </InfoLine>
             <InfoLine icon={WhatsappIcon} title={t("info.whatsapp")}>
-              <ContactLink tipo="whatsapp" ubicacion="contacto" mensaje={tc("common.waMessage")}>{tc("common.whatsappDirect")}</ContactLink> · {t("info.whatsappNote")}
+              <WhatsAppLink placement="contacto" mensaje={tc("common.waMessage")}>{tc("common.whatsappDirect")}</WhatsAppLink> · {t("info.whatsappNote")}
             </InfoLine>
             <InfoLine icon={Mail} title={t("info.email")}>
               info@padelalbufera.com

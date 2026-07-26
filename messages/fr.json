@@ -1186,32 +1186,12 @@
         "duracion": "90 jours",
         "categoria": "Marketing",
         "transferencia": "Oui — États-Unis"
-      },
-      {
-        "nombre": "_fbp",
-        "proveedor": "Meta",
-        "finalidad": "Identifier les navigateurs pour mesurer et cibler les publicités.",
-        "duracion": "90 jours",
-        "categoria": "Marketing",
-        "transferencia": "Oui — États-Unis"
-      },
-      {
-        "nombre": "_fbc",
-        "proveedor": "Meta",
-        "finalidad": "Conserver l'identifiant du clic publicitaire pour attribuer la conversion.",
-        "duracion": "90 jours",
-        "categoria": "Marketing",
-        "transferencia": "Oui — États-Unis"
       }
     ],
     "secciones": {
       "que": {
         "titulo": "Ce que nous utilisons et quand",
         "texto": "Si vous acceptez la mesure d'audience, nous chargeons Google Tag Manager avec Google Analytics 4 pour savoir quelles pages sont consultées. Si vous acceptez le marketing, les balises Google Ads et le pixel Meta sont également chargés pour mesurer l'efficacité des publicités. Si vous refusez, aucun de ces outils n'est chargé : il ne s'agit pas d'outils chargés qui ne mesurent rien, ils ne sont tout simplement pas téléchargés."
-      },
-      "servidor": {
-        "titulo": "Mesure depuis notre serveur",
-        "texto": "Lorsque vous acceptez le marketing et effectuez une action de contact, nous envoyons également cet événement à Meta depuis notre serveur (Conversions API), avec un identifiant commun afin qu'il ne soit pas comptabilisé deux fois. Si vous nous avez communiqué un e-mail ou un téléphone, ils sont transmis chiffrés en SHA-256, jamais en clair. Sans consentement marketing, cet envoi n'a pas lieu."
       },
       "terceros": {
         "titulo": "Tiers et transferts",
@@ -1275,5 +1255,9 @@
     "submit": "Envoyer par WhatsApp",
     "aviso": "WhatsApp s'ouvrira avec vos informations déjà rédigées. Vous pourrez les relire avant d'envoyer.",
     "msgIntro": "Bonjour, je souhaite un devis. Voici mes coordonnées :"
+  },
+  "conversion": {
+    "waDefault": "Bonjour, je souhaite un devis pour un terrain de padel.",
+    "refLinea": "Réf : {ref}"
   }
 }

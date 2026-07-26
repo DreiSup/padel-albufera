@@ -17,7 +17,10 @@ import { WhatsappIcon } from "@/components/icons";
 import { specLabel } from "@/lib/spec-labels";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
-import { ContactLink } from "@/components/contact-link";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { JsonLdScript } from "@/components/json-ld";
+import { migasJsonLd, servicioJsonLd } from "@/lib/structured-data";
 
 interface ServiceModel {
   name: string;
@@ -126,8 +129,23 @@ export async function ServicePage({
   const images = SERVICE_IMAGES[ns];
   const ctaProjectOptions = [...items.map((i) => i.name), t("cover.cta")];
 
+  const rutaServicio = `${locale === "es" ? "" : `/${locale}`}/${ns}`;
+  const datos = [
+    servicioJsonLd({
+      nombre: t("hero.h1"),
+      descripcion: t("hero.sub"),
+      url: rutaServicio,
+      imagen: images.hero.src,
+    }),
+    migasJsonLd([
+      { nombre: tc("nav.home"), url: locale === "es" ? "/" : `/${locale}` },
+      { nombre: tc(`nav.${ns}`), url: rutaServicio },
+    ]),
+  ];
+
   return (
     <div className="bg-[#F4F2EE] text-[#1A1C1E]">
+      <JsonLdScript data={datos} />
       <SiteHeader />
 
       <main className="pt-16 pb-[58px] min-[1100px]:pt-[74px] min-[1100px]:pb-0">
@@ -164,7 +182,7 @@ export async function ServicePage({
               {t("hero.sub")}
             </p>
             <Button asChild className="min-[900px]:max-w-[360px]">
-              <ContactLink tipo="telefono" ubicacion="servicio">{tc("common.requestQuote")}</ContactLink>
+              <PhoneLink placement="servicio">{tc("common.requestQuote")}</PhoneLink>
             </Button>
           </div>
         </section>
@@ -265,10 +283,10 @@ export async function ServicePage({
             </p>
             <div className="mt-4 aspect-video rounded-[10px] bg-[#26292D] min-[900px]:max-w-[1120px]" />
             <Button variant="outline" className="mt-4 w-full border-white/30" asChild>
-              <ContactLink tipo="whatsapp" ubicacion="servicio" mensaje={tc("common.waMessage")}>
+              <WhatsAppLink placement="servicio" mensaje={tc("common.waMessage")}>
                 <WhatsappIcon className="size-5" />
                 {t("cover.cta")}
-              </ContactLink>
+              </WhatsAppLink>
             </Button>
           </div>
         </section>

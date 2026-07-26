@@ -36,7 +36,7 @@ de hormigón y construcción de pistas de pádel y pickleball.
 | Componentes | shadcn/ui (copiados al repo: `accordion`, `button`, `sheet`) |
 | i18n | next-intl v4 |
 | 3D | Three.js 0.185 (**solo** en `/configurador`) |
-| Medición | GTM + Meta Pixel + Conversions API, tras consentimiento |
+| Medición | GTM + Consent Mode v2 + atribución propia de GCLID |
 | Despliegue | Vercel |
 
 **Next.js 16 no es el Next que conoces.** Hay cambios que rompen respecto a
@@ -61,8 +61,12 @@ Todas bajo `src/app/[locale]/`. Locales activos: **`es` (por defecto), `fr`,
 `en`**. `de` y `nl` están desactivados en `src/i18n/routing.ts` pero conservan
 sus ficheros de mensajes.
 
-`localePrefix: "as-needed"` → el español no lleva prefijo: `/configurador`,
-pero `/fr/configurador`.
+`localePrefix: "as-needed"` → el español no lleva prefijo. Además los **slugs
+están traducidos** (`pathnames` en `src/i18n/routing.ts`): `/configurador` en
+español, `/fr/configurateur` en francés, `/en/configurator` en inglés.
+
+La landing de Google Ads para Francia es **`/fr/terrain-de-padel`** (la keyword
+exacta), que es la propia página de servicio de pádel.
 
 | Ruta | Fichero | Estado |
 |---|---|---|
@@ -78,7 +82,7 @@ pero `/fr/configurador`.
 | `/politica-cookies` | `politica-cookies/page.tsx` | SSG |
 | `/politica-privacidad` | `politica-privacidad/page.tsx` | SSG |
 | `/sitemap.xml` · `/robots.txt` | `sitemap.ts` · `robots.ts` | Estáticos |
-| `/api/meta-capi` | Route Handler | Dinámica (correcto) |
+| `/api/lead-ref` | Route Handler | Dinámica (correcto) |
 | `/api/consent-log` | Route Handler | Dinámica (correcto) |
 
 **Regla dura:** las rutas de marketing son estáticas y deben seguir siéndolo.
@@ -96,17 +100,21 @@ llama `proxy.ts`, no `middleware.ts`).
 ```
 src/
 ├── app/[locale]/…              rutas (Server Components, todas estáticas)
-│   └── api/                    meta-capi · consent-log
+│   └── api/                    lead-ref · consent-log
 ├── components/
 │   ├── ui/                     shadcn: accordion, button, sheet
-│   ├── consent/                capa de consentimiento (§6)
+│   ├── consent/                capa de consentimiento (§6.1)
+│   ├── conversion/             WhatsAppLink · PhoneLink · PhoneNumber (§6.4)
+│   ├── attribution/            captura de gclid (§6.2)
 │   ├── configurador/           island 3D (§5)
 │   ├── home/ service/ about/ proyectos/ contacto/
 │   ├── site-header · site-footer · sticky-cta · service-page · icons
 ├── lib/
 │   ├── consent/                storage · types · record
+│   ├── attribution/            storage · types · use-attribution
+│   ├── contact.ts              números por idioma (env) · placements
+│   ├── structured-data.ts      JSON-LD tipado
 │   ├── configurador/           engine · catalogo · estado · mensaje
-│   ├── meta/                   track · hash
 │   ├── site.ts                 teléfono, WhatsApp, rutas de navegación
 │   ├── image-blur.ts           mapa de blurDataURL
 │   └── analytics.ts            pushEvento al dataLayer
@@ -180,71 +188,91 @@ separa a esta empresa de un montador de kits.
 
 ---
 
-## 6. Consentimiento y medición
+## 6. Consentimiento, medición y atribución
 
-**Consent Mode BÁSICO.** Sin consentimiento **no se descarga nada** de Google
-ni de Meta. No es que carguen y no midan: no se piden.
+### 6.1 Consentimiento: dos modos, conmutados por variable
 
-Se eligió básico y no avanzado a propósito: el modelado de conversiones de
-Google exige ~700 clics de anuncio en 7 días y el conductual de GA4 ~1.000
-eventos diarios denegados. Este cliente no llega, así que el modo avanzado solo
-aportaría exposición legal sin beneficio.
+Se decide con `NEXT_PUBLIC_CMP_ID`, sin tocar código.
 
-### Flujo
+**Sin CMP (por defecto).** Banner propio (`components/consent/`). Sin un sí
+explícito **no se descarga nada** de Google: ni el contenedor. Más conservador
+que lo que exige la CNIL, y ya conforme para lanzar en Francia.
 
-```
-ConsentProvider  ← lee la cookie cc_consent
-   ├─ sin cookie ─────► CookieBanner (no se carga NADA de terceros)
-   ├─ analitica||marketing ─► GtmLoader
-   │      consent default (denied) → consent update → gtm.start → inyecta GTM
-   ├─ marketing ──────► MetaPixel (fbq init + PageView)
-   └─ siempre ────────► RouteChangeTracker (spa_page_view / fbq PageView)
-
-Conversión → mismo eventId → fbq('track', …, {eventID}) + POST /api/meta-capi
-                                          el servidor RELEE la cookie
-```
+**Con CMP externa (Axeptio/Didomi).** `ConsentDefaultScript` emite el
+`consent default` restrictivo **inline en el `<head>`** —no con `next/script`:
+`beforeInteractive` no garantiza precedencia sobre un script que inyecta la
+propia CMP, y aquí el orden ES el requisito—. Lleva `wait_for_update: 500` y
+`region` acotada a EEE + UK + Suiza. La CMP emite el `update`. El banner propio
+se desactiva solo.
 
 ### Reglas que no son opinables
 
-- **El orden de carga es obligatorio:** `consent default` (todo denegado) →
-  `consent update` → y solo entonces inyectar el contenedor.
+- **El orden de carga:** `consent default` (denegado) → CMP → `consent update`
+  → contenedor. Nunca al revés.
 - **`gtag` empuja el objeto `arguments`, no un array.** Con un array plano
   Google ignora los comandos de consentimiento en silencio.
-- **Aceptar y rechazar comparten variante, tamaño y jerarquía.** Degradar el
-  rechazo a `ghost` o a un enlace invalida el consentimiento (criterio AEPD y
-  CNIL). Hay un comentario en el código para que nadie lo "mejore".
-- **Sin casillas premarcadas**: `analitica` y `marketing` arrancan en `false`.
-- **Cerrar no es consentir.** No hay "X" de cierre en el banner.
-- **El servidor nunca se fía del cliente.** `/api/meta-capi` relee `cc_consent`
-  con `cookies()` y responde 204 si no hay marketing.
-- **El píxel va en React, no en GTM.** Dentro de GTM se pierde el control del
-  `eventID` y Meta cuenta cada conversión dos veces.
-- **`event_id` y `event_name` idénticos** en píxel y CAPI, o no hay
-  deduplicación.
-- **El token de la CAPI jamás lleva prefijo `NEXT_PUBLIC_`.**
+- **Aceptar y rechazar comparten variante, tamaño y jerarquía** en el banner
+  propio. Degradar el rechazo invalida el consentimiento (AEPD y CNIL).
+- **Sin casillas premarcadas.** Cerrar no es consentir: no hay "X".
 
-### Eventos
+### 6.2 Atribución de campaña — el corazón del sistema
 
-| Evento | Cuándo | Dónde está |
+Con un ticket de 20.000 € y presupuesto ajustado, saber **qué keyword generó
+cada obra** es el objetivo de todo esto.
+
+```
+Aterrizaje con ?gclid=…
+   → AttributionTracker (hoja cliente, lee window.location.search en useEffect)
+   → cookie pa_attr (90 d, SameSite=Lax) con gclid/utm + ref_code de 6 chars
+   → POST /api/lead-ref → LEAD_WEBHOOK_URL (hoja de cálculo hoy, CRM mañana)
+   → el ref_code viaja en el mensaje de WhatsApp
+```
+
+- **Se lee `window.location.search`, NO `useSearchParams`.** Con
+  `useSearchParams` Next exige un límite de Suspense y saca la página del
+  prerenderizado. El componente no renderiza nada, así que el SSG queda intacto.
+- **Código de referencia sin caracteres ambiguos** (`ABCDEFGHJKMNPQRSTUVWXYZ23456789`):
+  se dicta por teléfono y se teclea a mano en una hoja.
+- **Criterio: último clic no directo gana** (el modelo de GA4). Navegar dentro
+  del sitio no sobrescribe; solo una llegada nueva con parámetros de campaña.
+- **El `ref_code` NO se regenera al reatribuir**: si el visitante ya mandó un
+  WhatsApp con ese código, cambiarlo rompería el cruce en la hoja.
+- El POST va con `sendBeacon` y **falla en silencio**: si el webhook está caído,
+  el usuario no se entera y los CTA siguen funcionando.
+
+### 6.3 Eventos
+
+Los triggers de GTM se configuran contra estos nombres. **No los cambies sin
+avisar a quien lleva Ads.**
+
+| Evento | Cuándo | Parámetros |
 |---|---|---|
-| `configurador_interaccion` | primer cambio de opción | `configurador-3d.tsx` |
-| `whatsapp_click` | clic en WhatsApp del configurador | `configurador-3d.tsx` |
-| `telefono_click` | clic en llamar del configurador | `configurador-3d.tsx` |
-| `spa_page_view` | navegación cliente posterior | `route-change-tracker.tsx` |
-| `formulario_whatsapp` | envío de cualquier formulario | `lead-form.tsx` · `contacto/form.tsx` |
+| `page_view` | Cada vista, **incluida la inicial** | `page_path`, `page_title`, `locale`, `ref_code` |
+| `whatsapp_click` | Clic en cualquier WhatsApp | `ref_code`, `placement`, `page_path`, `locale` |
+| `phone_click` | Clic en cualquier teléfono | `ref_code`, `placement`, `page_path`, `locale` |
+| `formulario_whatsapp` | Envío de formulario | + `tipo_proyecto` |
+| `configurador_interaccion` | Primer cambio en el 3D | — |
 
-**Todos** los CTA de WhatsApp y teléfono miden, vía `components/contact-link.tsx`,
-que además envía `Contact` a Meta (píxel + CAPI) si hay consentimiento de
-marketing. El parámetro `origen` distingue desde dónde se convirtió
-(`barra_fija`, `cabecera`, `pie`, `home`, `servicio`, `proceso`…).
+⚠️ **`page_view` es manual y cubre TODAS las vistas.** Hay que **desactivar el
+`page_view` automático de la etiqueta de configuración de GA4** en GTM o cada
+vista inicial se contará dos veces.
 
-### Variables de entorno
+### 6.4 Componentes de conversión
 
-Ver `.env.example`. `NEXT_PUBLIC_GTM_ID` está configurado (`GTM-KDTKF4J6`);
-faltan las de Meta. Sin valor, el cargador correspondiente simplemente no hace
-nada — la web no se rompe.
+Única forma de enlazar a WhatsApp o al teléfono en toda la web:
 
-**En Vercel hay que declararlas también**: `.env.local` no se sube al repo.
+| Componente | Qué hace |
+|---|---|
+| `conversion/whatsapp-link.tsx` | URL `wa.me` con el número del idioma activo, mensaje traducido y `ref_code` |
+| `conversion/phone-link.tsx` | `tel:` con el número del idioma activo |
+| `conversion/phone-number.tsx` | El número **visible**, como texto |
+
+Los números salen de variables de entorno por idioma (`lib/contact.ts`).
+
+**El teléfono se renderiza SIEMPRE desde estos componentes**, y el nodo lleva la
+clase `js-phone-number` (`PHONE_DNI_CLASS`) para que la sustitución dinámica de
+número de Google Ads pueda actuar. Un `tel:` escrito a mano en otro sitio queda
+fuera del informe de llamadas.
 
 ---
 
@@ -362,8 +390,9 @@ revisarlas antes de publicar.
 - Las escalas de `z-index` mezclan sintaxis (`z-45`, `z-[60]`, `z-70`).
   Mapa actual: cabecera 40 · barra CTA 45 · banner de cookies 50 · `sheet` 60 ·
   lightbox 70 · panel de preferencias 80.
-- El throttling de `/api/meta-capi` es un `Map` en memoria: en serverless cada
-  instancia tiene el suyo. Frena abuso trivial, no un ataque distribuido.
+- El throttling de `/api/lead-ref` y `/api/consent-log` es un `Map` en memoria:
+  en serverless cada instancia tiene el suyo. Frena abuso trivial, no un ataque
+  distribuido.
 - El registro de consentimientos (`lib/consent/record.ts`) es un no-op: la
   interfaz está lista, falta la base de datos.
 
@@ -393,18 +422,15 @@ revisarlas antes de publicar.
 ### En GTM
 - Marcar el consentimiento incorporado de cada etiqueta: `analytics_storage`
   para GA4; `ad_storage` + `ad_user_data` para Google Ads.
-- Crear el activador para el evento personalizado `spa_page_view`.
-- Dejar activo el `page_view` automático de la etiqueta de configuración de
-  GA4: cubre la carga inicial, y `spa_page_view` cubre solo las navegaciones
-  posteriores. Desactivarlo obligaría a disparar también la primera vista a
-  mano y es una fuente clásica de vistas duplicadas o perdidas.
+- **DESACTIVAR el `page_view` automático de la etiqueta de configuración de
+  GA4.** Esta web lo emite manualmente en todas las vistas, incluida la
+  inicial. Si se deja activo, cada vista inicial se cuenta dos veces.
+- Crear el activador para `whatsapp_click` y `phone_click`, y pasar `ref_code`
+  y `placement` como parámetros del evento de conversión de Google Ads.
+- Si se usan números de desvío: la sustitución dinámica debe apuntar a los nodos
+  con la clase `js-phone-number`.
 - Revisar la vista general de consentimiento para detectar etiquetas sin
   comprobación.
-
-### En Meta
-- Generar el token de la CAPI en Gestor de Eventos → Configuración.
-- Validar la deduplicación con `META_TEST_EVENT_CODE` y **vaciarlo después**:
-  con ese código puesto, los eventos no cuentan como reales.
 
 ---
 
@@ -417,20 +443,23 @@ revisarlas antes de publicar.
 tiene que seguir siendo totalmente navegable.
 
 **Aceptando todo:** Tag Assistant debe mostrar el `consent default` (denied)
-seguido del `consent update` (granted), en ese orden. Meta Pixel Helper debe
-detectar **un solo** `PageView`. Navegar a otra ruta genera un `spa_page_view`
-y un `PageView` de Meta, sin duplicados. Una conversión debe aparecer en el
-Gestor de Eventos marcada como **deduplicada**.
+seguido del `consent update` (granted), en ese orden. Navegar a otra ruta
+genera **un solo** `page_view` en el dataLayer, con su `page_path` y su
+`ref_code`. Un clic en WhatsApp genera un `whatsapp_click` con `placement`.
 
 **Consentimiento parcial (analítica sí, marketing no):** GTM carga, GA4 mide,
-`ad_storage` en `denied`, el píxel **no** se carga y `/api/meta-capi` responde
-204.
+`ad_storage` en `denied` y `ads_data_redaction` en `true`.
 
 **Revocación:** desde el pie, borra las cookies de terceros y recarga; el
 estado resultante es idéntico al de un usuario que rechaza por primera vez.
 
 Subir `policyVersion` en `consent.config.ts` hace reaparecer el banner a todo
 el mundo.
+
+**Atribución:** entra con `?gclid=TEST123`. En Application → Cookies debe
+aparecer `pa_attr` con el `gclid` y un `ref` de 6 caracteres. El botón de
+WhatsApp debe llevar ese código en el mensaje. `npm run build` debe seguir
+marcando las rutas de marketing como `●`.
 
 > Un estado verde en Tag Assistant **no** confirma que el consentimiento
 > funcione: solo que la etiqueta existe y dispara. La verificación real es la
@@ -440,9 +469,11 @@ el mundo.
 
 ## 12. Reutilizar la capa de consentimiento en otro proyecto
 
-Copiar `src/consent.config.ts`, `src/lib/consent/`, `src/lib/meta/`,
-`src/components/consent/`, `src/app/api/meta-capi/`, `src/app/api/consent-log/`
-y `src/types/global.d.ts`.
+Copiar `src/consent.config.ts`, `src/lib/consent/`, `src/components/consent/`,
+`src/app/api/consent-log/` y `src/types/global.d.ts`.
+
+Para llevarte también la atribución de campaña: `src/lib/attribution/`,
+`src/components/attribution/` y `src/app/api/lead-ref/`.
 
 Después tocar **solo**:
 

@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { CoverIcon, GridIcon, PadelIcon, RenoIcon, WhatsappIcon } from "@/components/icons";
-import { waHref } from "@/lib/site";
+import { waHref } from "@/lib/contact";
 import { pushEvento } from "@/lib/analytics";
-import { trackMetaEvent } from "@/lib/meta/track";
+import { useAttribution } from "@/lib/attribution/use-attribution";
 
 // Asistente de contacto en 3 pasos.
 //
@@ -52,6 +52,9 @@ function FormField({
 export function ContactoForm() {
   const t = useTranslations("contact");
   const tl = useTranslations("lead");
+  const tconv = useTranslations("conversion");
+  const locale = useLocale();
+  const attr = useAttribution();
   const [step, setStep] = useState(1);
   const [proj, setProj] = useState(0);
 
@@ -88,15 +91,18 @@ export function ContactoForm() {
       `• ${t("form.phoneLabel")}: ${telefono}`,
       email ? `• ${t("form.emailLabel")}: ${email}` : null,
       mensaje ? `\n${mensaje}` : null,
+      attr?.ref ? `\n${tconv("refLinea", { ref: attr.ref })}` : null,
     ].filter(Boolean);
 
-    pushEvento({ event: "formulario_whatsapp", origen: "contacto", tipo_proyecto: picked.t });
-    void trackMetaEvent(
-      "Lead",
-      { origen: "contacto", tipo_proyecto: picked.t },
-      { email, phone: telefono },
-    );
-    window.location.assign(waHref(lineas.join("\n")));
+    pushEvento({
+      event: "formulario_whatsapp",
+      ref_code: attr?.ref ?? "",
+      placement: "contacto",
+      page_path: window.location.pathname,
+      locale,
+      tipo_proyecto: picked.t,
+    });
+    window.location.assign(waHref(locale, lineas.join("\n")));
   };
 
   return (

@@ -4,8 +4,10 @@ import { getTranslations } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import { PreferencesLink } from "@/components/consent/preferences-link";
-import { TEL_LABEL, NAV_ROUTES } from "@/lib/site";
-import { ContactLink } from "@/components/contact-link";
+import { NAV_ROUTES } from "@/lib/site";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 function Divider() {
   return <div className="my-6 h-px bg-[#22262A]" />;
@@ -54,18 +56,16 @@ export async function SiteFooter() {
         <Divider />
         <FootHeading>{t("footer.contactTitle")}</FootHeading>
         <p className="text-sm leading-[1.8]">
-          <ContactLink tipo="telefono" ubicacion="pie" className="text-[#D8D6CF]">
-            {TEL_LABEL}
-          </ContactLink>
+          <PhoneLink placement="footer" className="text-[#D8D6CF]">
+            <PhoneNumber />
+          </PhoneLink>
           <br />
-          <ContactLink
-            tipo="whatsapp"
-            ubicacion="pie"
+          <WhatsAppLink placement="footer"
             mensaje={t("common.waMessage")}
             className="text-[#D8D6CF]"
           >
             {t("footer.responseNote")}
-          </ContactLink>
+          </WhatsAppLink>
           <br />
           info@padelalbufera.com
           <br />

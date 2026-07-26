@@ -2,22 +2,22 @@ import { Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, TEL_LABEL } from "@/lib/site";
 import { referencia, type Tr } from "@/lib/configurador/mensaje";
 import type { Estado } from "@/lib/configurador/estado";
+import { PhoneNumber } from "@/components/conversion/phone-number";
+import { PhoneLink } from "@/components/conversion/phone-link";
 
 interface ResumenProps {
   estado: Estado;
   t: Tr;
   waHref: string;
   onWhatsapp: () => void;
-  onTelefono: () => void;
 }
 
 // Cerrar el círculo: "esta es tu pista, pregúntanos por ella". El mensaje de
 // WhatsApp llega ya redactado con toda la configuración; el usuario puede
 // editarlo antes de enviar.
-export function ResumenCta({ estado, t, waHref, onWhatsapp, onTelefono }: ResumenProps) {
+export function ResumenCta({ estado, t, waHref, onWhatsapp }: ResumenProps) {
   return (
     <section className="mt-10 rounded-2xl border border-[#E2DFD6] bg-[#17191B] p-6 text-[#EDEBE5]">
       <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--acc)]">
@@ -38,10 +38,10 @@ export function ResumenCta({ estado, t, waHref, onWhatsapp, onTelefono }: Resume
           </a>
         </Button>
         <Button variant="outline" asChild className="min-[560px]:flex-1">
-          <a href={`tel:${TEL}`} onClick={onTelefono}>
+          <PhoneLink placement="configurador">
             <Phone className="size-5" />
-            {t("resumen.telefono")} · {TEL_LABEL}
-          </a>
+            {t("resumen.telefono")} · <PhoneNumber />
+          </PhoneLink>
         </Button>
       </div>
     </section>

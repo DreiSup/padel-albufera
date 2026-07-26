@@ -13,9 +13,13 @@ export function CookieBanner() {
   const { consent, isLoaded, acceptAll, rejectAll, openPreferences, preferencesOpen } =
     useConsent();
 
+  // Con CMP externa configurada, la interfaz de consentimiento es la suya:
+  // dos banners a la vez serían un desastre legal y de usabilidad.
+  const cmpExterna = Boolean(process.env.NEXT_PUBLIC_CMP_ID);
+
   // Nada hasta haber leído la cookie, para no parpadear en usuarios que ya
   // decidieron. Al ser position:fixed, el banner no desplaza contenido (0 CLS).
-  const mostrarBanner = isLoaded && consent === null;
+  const mostrarBanner = !cmpExterna && isLoaded && consent === null;
 
   return (
     <>

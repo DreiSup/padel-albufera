@@ -2,13 +2,16 @@
 
 import { useState, type FormEvent } from "react";
 import { Phone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, TEL_LABEL, waHref } from "@/lib/site";
+import { waHref } from "@/lib/contact";
 import { pushEvento } from "@/lib/analytics";
-import { trackMetaEvent } from "@/lib/meta/track";
+import { useAttribution } from "@/lib/attribution/use-attribution";
+import { PhoneNumber } from "@/components/conversion/phone-number";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
 
 // Formulario de captación único, parametrizado. Sustituye a los dos que había
 // (home y service), que eran casi idénticos.
@@ -85,14 +88,23 @@ export function LeadForm({
   origen,
 }: LeadFormProps) {
   const t = useTranslations();
+  const locale = useLocale();
+  const attr = useAttribution();
   const [nombre, setNombre] = useState("");
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
   const [tipo, setTipo] = useState(opciones[0] ?? "");
 
   function medir(evento: string) {
-    pushEvento({ event: evento, origen, tipo_proyecto: tipo });
-    void trackMetaEvent("Lead", { origen, tipo_proyecto: tipo }, { email, phone: telefono });
+    pushEvento({
+      event: evento,
+      ref_code: attr?.ref ?? "",
+      placement: "formulario",
+      page_path: typeof window !== "undefined" ? window.location.pathname : "",
+      locale,
+      origen,
+      tipo_proyecto: tipo,
+    });
   }
 
   function enviar(e: FormEvent<HTMLFormElement>) {
@@ -105,10 +117,12 @@ export function LeadForm({
       `• ${t("cta.phoneLabel")}: ${telefono}`,
       email ? `• ${t("cta.emailLabel")}: ${email}` : null,
       `• ${t("cta.typeLabel")}: ${tipo}`,
+      // El código de referencia es lo que cruza este lead con su campaña.
+      attr?.ref ? `\n${t("conversion.refLinea", { ref: attr.ref })}` : null,
     ].filter(Boolean);
 
     medir("formulario_whatsapp");
-    window.location.assign(waHref(lineas.join("\n")));
+    window.location.assign(waHref(locale, lineas.join("\n")));
   }
 
   return (
@@ -124,16 +138,16 @@ export function LeadForm({
         <p className="m-0 text-[15px] leading-[1.5] text-[#C9CDD0]">{subtitulo}</p>
 
         <Button variant="whatsapp" asChild>
-          <a href={waHref(waBaseMessage)} onClick={() => medir("whatsapp_click")}>
+          <WhatsAppLink placement="formulario" mensaje={waBaseMessage}>
             <WhatsappIcon className="size-5" />
             {t("common.whatsappDirect")}
-          </a>
+          </WhatsAppLink>
         </Button>
         <Button variant="outline" asChild>
-          <a href={`tel:${TEL}`} onClick={() => medir("telefono_click")}>
+          <PhoneLink placement="formulario">
             <Phone className="size-5" />
-            {t("common.call")} · {TEL_LABEL}
-          </a>
+            {t("common.call")} · <PhoneNumber />
+          </PhoneLink>
         </Button>
 
         <div className="my-1 flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-[#7A7E82] before:h-px before:flex-1 before:bg-[#2B3034] after:h-px after:flex-1 after:bg-[#2B3034]">

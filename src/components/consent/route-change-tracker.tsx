@@ -2,49 +2,49 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { useLocale } from "next-intl";
 
-import { useConsent } from "./consent-provider";
+import { pushEvento } from "@/lib/analytics";
+import { useAttribution } from "@/lib/attribution/use-attribution";
 
-// En App Router no hay recarga entre rutas, así que ni GTM ni el píxel detectan
-// solos los cambios de página. Este componente los avisa.
+// Vistas de página, manuales.
 //
-// Se salta el primer render: esa vista ya la cubren la carga inicial de GTM y
-// el PageView del código base del píxel. Sin ese salto, cada entrada contaría dos veces.
+// El App Router no recarga entre rutas, así que GTM no detecta las navegaciones
+// por su cuenta. Aquí se emite `page_view` en TODAS las vistas, incluida la
+// primera: una sola fuente de verdad en vez de repartirlas entre GA4 y esto.
+//
+// ⚠️ REQUIERE configuración en GTM: hay que DESACTIVAR el `page_view`
+// automático de la etiqueta de configuración de GA4 ("Enviar un evento de
+// vista de página cuando se cargue esta configuración"). Si se deja activo,
+// cada vista inicial se cuenta dos veces.
 //
 // Debe ir envuelto en <Suspense> en el layout: useSearchParams sin Suspense
 // rompe el prerenderizado estático en build.
 
 export function RouteChangeTracker() {
-  const { consent } = useConsent();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const primeraVez = useRef(true);
+  const locale = useLocale();
+  const attr = useAttribution();
+  const ultimaVista = useRef<string | null>(null);
 
-  const analitica = consent?.analitica ?? false;
-  const marketing = consent?.marketing ?? false;
   const qs = searchParams.toString();
 
   useEffect(() => {
-    if (primeraVez.current) {
-      primeraVez.current = false;
-      return;
-    }
-
     const pagePath = qs ? `${pathname}?${qs}` : pathname;
+    // Evita duplicar si el efecto se reejecuta sin cambio real de ruta (por
+    // ejemplo cuando llega la cookie de atribución y cambia `attr`).
+    if (ultimaVista.current === pagePath) return;
+    ultimaVista.current = pagePath;
 
-    if (analitica || marketing) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "spa_page_view",
-        page_path: pagePath,
-        page_title: document.title,
-      });
-    }
-
-    if (marketing) {
-      window.fbq?.("track", "PageView");
-    }
-  }, [pathname, qs, analitica, marketing]);
+    pushEvento({
+      event: "page_view",
+      page_path: pagePath,
+      page_title: document.title,
+      locale,
+      ref_code: attr?.ref ?? "",
+    });
+  }, [pathname, qs, locale, attr]);
 
   return null;
 }

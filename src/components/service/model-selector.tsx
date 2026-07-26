@@ -9,7 +9,7 @@ import { WhatsappIcon } from "@/components/icons";
 import { specLabel } from "@/lib/spec-labels";
 import { BLUR } from "@/lib/image-blur";
 import type { Locale } from "@/i18n/routing";
-import { ContactLink } from "@/components/contact-link";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
 
 interface ServiceModel {
   name: string;
@@ -121,10 +121,10 @@ export function ModelSelector({
       </div>
 
       <Button asChild className="mt-3 w-full">
-        <ContactLink tipo="whatsapp" ubicacion="selector_modelo" mensaje={`${waBaseMessage} (${m.name}).`}>
+        <WhatsAppLink placement="servicio" mensaje={`${waBaseMessage} (${m.name}).`}>
           <WhatsappIcon className="size-5" />
           {m.cta}
-        </ContactLink>
+        </WhatsAppLink>
       </Button>
     </>
   );

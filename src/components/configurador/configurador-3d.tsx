@@ -2,11 +2,13 @@
 
 import { Phone } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { WhatsappIcon } from "@/components/icons";
-import { TEL, WA_NUMBER } from "@/lib/site";
+import { waHref as construirWaHref } from "@/lib/contact";
 import { pushEvento } from "@/lib/analytics";
+import { useAttribution } from "@/lib/attribution/use-attribution";
+import { PhoneLink } from "@/components/conversion/phone-link";
 import type { GrupoCatalogo, Vista } from "@/lib/configurador/catalogo";
 import {
   ESTADO_INICIAL,
@@ -35,6 +37,9 @@ interface Props {
 // estático (intro, prueba social, FAQ) llega como slots servidos.
 export function Configurador3D({ intro, social, faq }: Props) {
   const t = useTranslations("configurator");
+  const tconv = useTranslations("conversion");
+  const locale = useLocale();
+  const attr = useAttribution();
   // Traductor seguro para claves opcionales (help/sub/desc no siempre existen).
   const tt = (key: string) => (t.has(key) ? t(key) : "");
   // Traductor con valores, para ficha y mensaje.
@@ -142,8 +147,13 @@ export function Configurador3D({ intro, social, faq }: Props) {
     engineRef.current?.setQuality(siguiente);
   }
 
-  const mensaje = construirMensaje(tv, estado);
-  const waHref = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+  // El mensaje lleva la configuración completa MÁS el código de campaña: así
+  // se cruza la obra vendida con la keyword que trajo al visitante.
+  const mensajeBase = construirMensaje(tv, estado);
+  const mensaje = attr?.ref
+    ? `${mensajeBase}\n${tconv("refLinea", { ref: attr.ref })}`
+    : mensajeBase;
+  const waHref = construirWaHref(locale, mensaje);
   const medida = tv(
     estado.modalidad === "dobles" ? "ficha.val.medidaDobles" : "ficha.val.medidaIndividual",
   );
@@ -160,9 +170,14 @@ export function Configurador3D({ intro, social, faq }: Props) {
   };
 
   const onWhatsapp = () =>
-    pushEvento({ event: "whatsapp_click", origen: "configurador_3d", ...paramsConfig });
-  const onTelefono = () =>
-    pushEvento({ event: "telefono_click", origen: "configurador_3d", ...paramsConfig });
+    pushEvento({
+      event: "whatsapp_click",
+      ref_code: attr?.ref ?? "",
+      placement: "configurador",
+      page_path: typeof window !== "undefined" ? window.location.pathname : "",
+      locale,
+      ...paramsConfig,
+    });
 
   return (
     <div className="min-[1100px]:grid min-[1100px]:grid-cols-[minmax(0,1fr)_440px] min-[1100px]:items-start">
@@ -193,12 +208,14 @@ export function Configurador3D({ intro, social, faq }: Props) {
           t={tv}
           waHref={waHref}
           onWhatsapp={onWhatsapp}
-          onTelefono={onTelefono}
         />
       </div>
 
       {/* Barra de contacto siempre visible en móvil, con la config en vivo. */}
-      <div className="fixed inset-x-0 bottom-0 z-45 flex shadow-[0_-4px_18px_rgba(0,0,0,0.16)] min-[1100px]:hidden">
+      <div
+        className="fixed inset-x-0 bottom-0 z-45 flex shadow-[0_-4px_18px_rgba(0,0,0,0.16)] min-[1100px]:hidden"
+        style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+      >
         <a
           href={waHref}
           onClick={onWhatsapp}
@@ -208,13 +225,12 @@ export function Configurador3D({ intro, social, faq }: Props) {
         >
           <WhatsappIcon className="size-5" /> {t("barra.whatsapp")}
         </a>
-        <a
-          href={`tel:${TEL}`}
-          onClick={onTelefono}
+        <PhoneLink
+          placement="configurador"
           className="flex h-[58px] flex-1 items-center justify-center gap-2 bg-[var(--acc)] text-[15.5px] font-bold text-[#07130C]"
         >
           <Phone className="size-5" /> {t("barra.telefono")}
-        </a>
+        </PhoneLink>
       </div>
     </div>
   );

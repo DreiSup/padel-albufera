@@ -5,13 +5,17 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
+import { AttributionTracker } from "@/components/attribution/attribution-tracker";
+import { CmpLoader } from "@/components/consent/cmp-loader";
+import { ConsentDefaultScript } from "@/components/consent/consent-default-script";
 import { ConsentProvider } from "@/components/consent/consent-provider";
 import { CookieBanner } from "@/components/consent/cookie-banner";
 import { GtmLoader } from "@/components/consent/gtm-loader";
-import { MetaPixel } from "@/components/consent/meta-pixel";
 import { RouteChangeTracker } from "@/components/consent/route-change-tracker";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/site";
+import { negocioJsonLd } from "@/lib/structured-data";
+import { JsonLdScript } from "@/components/json-ld";
 import "../globals.css";
 
 /** Imagen de previsualización al compartir. Foto real de obra, no un render. */
@@ -91,18 +95,27 @@ export default async function RootLayout({
       lang={locale}
       className={`${barlowCondensed.variable} ${instrumentSans.variable}`}
     >
-      {/* Consent Mode BÁSICO: ni GTM ni el píxel se inyectan aquí. Cada loader
-          decide si cargar según el consentimiento, ya dentro del provider. */}
+      <head>
+        {/* Consent Mode v2. Inline y lo primero de todo: cuando hay CMP externa,
+            el default restrictivo tiene que estar fijado antes de que la CMP y
+            GTM arranquen. Sin CMP no emite nada y manda el modo básico, donde
+            GtmLoader no descarga nada hasta tener un sí. */}
+        <ConsentDefaultScript />
+      </head>
       <body>
+        <JsonLdScript data={negocioJsonLd(locale)} />
+        <CmpLoader />
         <NextIntlClientProvider>
           <ConsentProvider>
             {children}
+            {/* Captura gclid/utm al aterrizar. No renderiza nada y lee la URL
+                con window.location, así que no saca la ruta del SSG. */}
+            <AttributionTracker />
             {/* useSearchParams exige Suspense o rompe el prerender estático. */}
             <Suspense fallback={null}>
               <RouteChangeTracker />
             </Suspense>
             <GtmLoader />
-            <MetaPixel />
             <CookieBanner />
           </ConsentProvider>
         </NextIntlClientProvider>

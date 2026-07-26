@@ -15,7 +15,6 @@ export const consentConfig = {
   policyVersion: 1,
   categories: CONSENT_CATEGORIES,
   gtmId: process.env.NEXT_PUBLIC_GTM_ID,
-  metaPixelId: process.env.NEXT_PUBLIC_META_PIXEL_ID,
   cookiePolicyUrl: "/politica-cookies",
   privacyPolicyUrl: "/politica-privacidad",
 } as const;
@@ -28,8 +27,6 @@ export const THIRD_PARTY_COOKIES = [
   "_gcl_au",
   "_gcl_aw",
   "_gcl_dc",
-  "_fbp",
-  "_fbc",
 ] as const;
 
 /** Prefijos de cookie con sufijo variable (p. ej. _ga_XXXXXXXX de GA4). */

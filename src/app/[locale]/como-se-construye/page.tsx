@@ -8,10 +8,12 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { WhatsappIcon } from "@/components/icons";
-import { ContactLink } from "@/components/contact-link";
-import { TEL_LABEL } from "@/lib/site";
+
 import { BLUR } from "@/lib/image-blur";
 import { alternatesDe } from "@/lib/metadata";
+import { WhatsAppLink } from "@/components/conversion/whatsapp-link";
+import { PhoneLink } from "@/components/conversion/phone-link";
+import { PhoneNumber } from "@/components/conversion/phone-number";
 
 export async function generateMetadata({
   params,
@@ -178,20 +180,18 @@ export default async function ComoSeConstruyePage({
             </p>
             <div className="mt-6 flex flex-col gap-2.5 min-[560px]:flex-row min-[560px]:max-w-[560px]">
               <Button variant="whatsapp" asChild className="min-[560px]:flex-1">
-                <ContactLink
-                  tipo="whatsapp"
-                  ubicacion="como_se_construye"
+                <WhatsAppLink placement="como_se_construye"
                   mensaje={tc("common.waMessage")}
                 >
                   <WhatsappIcon className="size-5" />
                   {tc("common.whatsappDirect")}
-                </ContactLink>
+                </WhatsAppLink>
               </Button>
               <Button variant="outline" asChild className="min-[560px]:flex-1">
-                <ContactLink tipo="telefono" ubicacion="como_se_construye">
+                <PhoneLink placement="como_se_construye">
                   <Phone className="size-5" />
-                  {tc("common.call")} · {TEL_LABEL}
-                </ContactLink>
+                  {tc("common.call")} · <PhoneNumber />
+                </PhoneLink>
               </Button>
             </div>
           </div>
